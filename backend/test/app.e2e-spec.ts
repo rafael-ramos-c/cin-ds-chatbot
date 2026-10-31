@@ -22,6 +22,7 @@ describe('AppController (HTTP com orquestração real)', () => {
 
   beforeEach(async () => {
     vi.stubEnv('AI_SERVICE_URL', 'http://busca.test:8000');
+    vi.stubEnv('AI_SERVICE_TIMEOUT_MS', undefined);
     vi.stubEnv('FALLBACK_DISTANCE_THRESHOLD', '0.8');
     fetchMock.mockReset().mockResolvedValue(Response.json(resultado));
     vi.stubGlobal('fetch', fetchMock);
@@ -219,26 +220,48 @@ describe('AppController (HTTP com orquestração real)', () => {
     expect(fetchMock).not.toHaveBeenCalled();
   });
 
-  it('retorna 504 no timeout sem converter a falha em fallback', async () => {
-    const controller = new AbortController();
-    const timeout = vi
-      .spyOn(AbortSignal, 'timeout')
-      .mockReturnValue(controller.signal);
-    fetchMock.mockImplementation(() => {
-      controller.abort();
-      return Promise.reject(
-        new DOMException('segredo interno', 'TimeoutError'),
+  it.each(['0', '2147483648', 'segredo-interno'])(
+    'retorna 503 seguro para timeout inválido %s',
+    async (raw) => {
+      vi.stubEnv('AI_SERVICE_TIMEOUT_MS', raw);
+      const response = await request(app.getHttpServer())
+        .post('/api/v1/conversa')
+        .send({ consulta })
+        .expect(503);
+      expect(response.body.message).toBe(
+        'Tempo limite do serviço de busca não configurado corretamente.',
       );
-    });
-    const response = await request(app.getHttpServer())
-      .post('/api/v1/conversa')
-      .send({ consulta })
-      .expect(504);
-    expect(timeout).toHaveBeenCalledWith(5000);
-    expect(response.body.message).toBe(
-      'Tempo limite do serviço de busca excedido.',
-    );
-    expect(response.body).not.toHaveProperty('fallback_acionado');
-    expect(response.text).not.toContain('segredo');
-  });
+      expect(response.body).not.toHaveProperty('fallback_acionado');
+      expect(response.body).not.toHaveProperty('template_email');
+      expect(response.body.message).not.toContain(raw);
+      expect(fetchMock).not.toHaveBeenCalled();
+    },
+  );
+
+  it.each([undefined, '30000'])(
+    'retorna 504 no timeout sem converter a falha em fallback (configuração %s)',
+    async (configuredTimeout) => {
+      vi.stubEnv('AI_SERVICE_TIMEOUT_MS', configuredTimeout);
+      const controller = new AbortController();
+      const timeout = vi
+        .spyOn(AbortSignal, 'timeout')
+        .mockReturnValue(controller.signal);
+      fetchMock.mockImplementation(() => {
+        controller.abort();
+        return Promise.reject(
+          new DOMException('segredo interno', 'TimeoutError'),
+        );
+      });
+      const response = await request(app.getHttpServer())
+        .post('/api/v1/conversa')
+        .send({ consulta })
+        .expect(504);
+      expect(timeout).toHaveBeenCalledWith(Number(configuredTimeout ?? 5000));
+      expect(response.body.message).toBe(
+        'Tempo limite do serviço de busca excedido.',
+      );
+      expect(response.body).not.toHaveProperty('fallback_acionado');
+      expect(response.text).not.toContain('segredo');
+    },
+  );
 });

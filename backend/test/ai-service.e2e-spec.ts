@@ -15,6 +15,7 @@ describe('AiService (HTTP integration)', () => {
 
   beforeEach(async () => {
     vi.stubEnv('FALLBACK_DISTANCE_THRESHOLD', '0.8');
+    vi.stubEnv('AI_SERVICE_TIMEOUT_MS', undefined);
     distancia = 1;
     contexto = '';
     status = 200;

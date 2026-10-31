@@ -51,7 +51,7 @@ export class AiService {
     }
 
     const endpoint = this.getEndpoint();
-    const signal = AbortSignal.timeout(30000);
+    const signal = AbortSignal.timeout(this.getTimeoutMs());
     let response: Response;
     try {
       response = await fetch(endpoint, {
@@ -108,16 +108,38 @@ export class AiService {
     };
   }
 
+  private getTimeoutMs(): number {
+    const raw = process.env.AI_SERVICE_TIMEOUT_MS;
+    if (raw === undefined) return 5000;
+
+    const value = raw.trim();
+    const timeout = Number(value);
+    // Node timers overflow above the signed 32-bit integer limit.
+    if (
+      !/^\d+$/.test(value) ||
+      !Number.isSafeInteger(timeout) ||
+      timeout < 1 ||
+      timeout > 2_147_483_647
+    ) {
+      throw new ServiceUnavailableException(
+        'Tempo limite do serviço de busca não configurado corretamente.',
+      );
+    }
+    return timeout;
+  }
+
   private getEndpoint(): URL {
     try {
-      const baseUrlStr = process.env.AI_SERVICE_URL || 'http://localhost:8000';
-      const base = new URL(baseUrlStr);
+      const origin = process.env.AI_SERVICE_URL?.trim() ?? '';
+      const base = new URL(origin);
       if (
         !['http:', 'https:'].includes(base.protocol) ||
         base.username ||
         base.password ||
         base.search ||
-        base.hash
+        base.hash ||
+        base.pathname !== '/' ||
+        !/^https?:\/\/[^/?#\\]+\/?$/i.test(origin)
       ) {
         throw new Error('Invalid origin');
       }
