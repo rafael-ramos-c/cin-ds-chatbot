@@ -96,12 +96,12 @@ def construir(destino):
     p('Escolha: trecho já exercitado por fontes válidas, múltiplas e página inválida; risco pequeno e identidade dos testes conferida. A definição, chamada e retorno acrescentam três statements cobertos; o aumento percentual não é nova capacidade de teste. Quatro linhas e um branch continuam descobertos. A medição nova não substitui a comparação V1/V2 antiga.', 'Pequeno')
     link('Congelamento anterior: c93450a (HTML complementado em c9328fe)', REPO + '/commit/c93450a')
     link('Refatoração isolada IA-REF-04: c0f7116 (diff completo)', REPO + '/commit/c0f7116')
-    p('Evidências: IA-REF-04-evidencias/antes e depois, com execucao.json, coverage.json, HTML e snapshot do retriever. Comparacao.json confere hashes iguais da V2 e V1 importada. Comando existente: python scripts/medir_us01.py v2 DESTINO_NOVO, em ai-service/.', 'Pequeno')
+    p('Evidências: IA-REF-04-evidencias/antes e depois, com execucao.json, coverage.json, HTML e snapshot do retriever. comparacao.json confere hashes iguais da V2 e V1 importada. Comando existente: python scripts/medir_us01.py v2 DESTINO_NOVO, em ai-service/.', 'Pequeno')
     h('4. BACK-REF-03 | Complemento de regressão corrente')
     p('Extract Function de política de URL em AiService.getEndpoint para origemInvalida. Melhora coesão do fluxo; preserva sete condições OR, ordem, regex, rota e exceção. Escolha: política já protegida por testes. Antes/depois: mesma regressão corrente 256/256, linhas 64/64 -> 65/65, branches 84/84 -> 84/84; funções 8/10 -> 9/11. Não é a V2 acadêmica antiga nem a adição de timeout, que já existia. Evidências: BACK-REF-03-evidencias/ e relatório complementar.', 'Pequeno')
     link('BACK-REF-03: 27d0d9b | congelamento anterior 2a33101', REPO + '/commit/27d0d9b')
     h('Reflexão: inspeção, ferramentas e LLM')
-    p('A leitura assistida localizou decisões repetidas e responsabilidades misturadas. O histórico não separa autoria humana/LLM de cada achado; não há descoberta exclusiva comprovada. A inspeção do diff distinguiu extração de mudanças funcionais de limiar e erros HTTP. Vitest/V8 e coverage.py medem execução, não SRP; lint não certifica adequação do projeto. Não houve Sonar ou detector de smells. O benchmark encontrou aceitação indevida de perguntas externas apesar dos testes verdes: QA-01 segue aberta. Essas diferenças fundamentam a revisão crítica, em vez de equiparar cobertura a correção.')
+    p('Inspeção assistida e cobertura não certificam adequação: os testes verdes não detectaram texto vertical nem falta de continuidade. Ajustes posteriores de 10/11 normalizam PPCs, restringem temas explícitos e tratam formulário sem URL; são correções funcionais, não novas refatorações. Regressão atual: 27 IA, 21 V2 e 18 UI aprovados; AppTest e HTTP real registrados em docs/correcoes/20261110-conversa/. A medição antes/depois acima pertence às revisões históricas. QA-01 continua aberta: o benchmark anterior não foi refeito; mock não mede resposta acadêmica. Não há descoberta exclusiva humana/LLM comprovada nem Sonar ou mutação. O estado atual tem 21 documentos e 6.779 trechos; busca ainda pode retornar fontes secundárias pouco pertinentes.', 'Pequeno')
 
     def rodape(canvas, doc):
         canvas.setFont('Helvetica', 8)
@@ -118,7 +118,7 @@ def construir(destino):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--saida', type=Path, default=HERE / 'relatorio-refatoracoes-sprint3-reforco-20261110.pdf')
+    parser.add_argument('--saida', type=Path, default=HERE / 'relatorio-refatoracoes-sprint3-conversa-20261110.pdf')
     args = parser.parse_args()
     if args.saida.exists():
         parser.error('Use uma saída nova; não substituir evidência anterior automaticamente.')

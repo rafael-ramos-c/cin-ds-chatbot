@@ -170,3 +170,8 @@ As instruções completas dos três terminais e a auditoria dos PPCs estão em
 [Manual do serviço de IA](docs/manual_desenvolvedor_ia.md).
 Os requisitos acadêmicos, relatórios históricos V1/V2 e refatorações estão em
 [Consolidação da Sprint 3](docs/testes/CONSOLIDACAO-SPRINT3.md).
+
+
+## Correções documentais e conversa limitada — 10/11
+
+Normalização de páginas com extração vertical, filtros temáticos explícitos e continuação limitada de formulário de segunda chamada. Ao trocar curso/perfil o histórico é limpo. Sem endereço nos trechos, o pedido de download informa a ausência na consulta. Não é LLM real nem cobertura de qualquer conversa. [Evidências, testes e limites](docs/correcoes/20261110-conversa/README.md).

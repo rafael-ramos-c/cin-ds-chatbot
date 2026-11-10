@@ -1,3 +1,5 @@
+> Revisão conversacional de 10/11: novos PDFs com `conversa` no nome e correções funcionais posteriores às métricas históricas. Conferência atual: `python docs/correcoes/20261110-conversa/verificar_pacote.py`. Os verificadores anteriores conferem revisões históricas e seus hashes não certificam o código modificado agora. Consulte [limites e reprodução](correcoes/20261110-conversa/README.md).
+
 ## Versão reforçada para envio
 
 Use os dois PDFs com **reforco-20261110** no nome. Versões anteriores permanecem
@@ -13,8 +15,8 @@ organiza o material; não é declaração de aprovação da professora ou do gru
 
 ## Arquivos principais para entregar
 
-1. [Análise crítica, cinco páginas](testes/analise-critica-sprint3-reforco-20261110.pdf).
-2. [Refatorações, três páginas e três itens](qualidade/relatorio-refatoracoes-sprint3-reforco-20261110.pdf).
+1. [Análise crítica, cinco páginas](testes/analise-critica-sprint3-conversa-20261110.pdf).
+2. [Refatorações, três páginas e três itens](qualidade/relatorio-refatoracoes-sprint3-conversa-20261110.pdf).
 3. [Matriz final de rastreabilidade](testes/matriz-rastreabilidade.md).
 4. [Log da LLM e referências às interações originais](testes/llm-log.md).
 5. [Dívidas técnicas](qualidade/divida-tecnica.md) e [log de análise](qualidade/log-analise.md).

@@ -76,6 +76,12 @@ st.markdown("""
 # -----------------------------------------------------------------------------
 mensagem_inicial = f"Olá! Sou o assistente virtual da SecGrad CIn. Estou configurado para o curso de **{curso}** ({perfil}). Como posso ajudar hoje?"
 
+contexto_atual = (curso, perfil)
+if st.session_state.get('contexto_conversa') != contexto_atual:
+    st.session_state.messages = []
+    st.session_state.pergunta_pendente = None
+    st.session_state.contexto_conversa = contexto_atual
+
 if "messages" not in st.session_state or len(st.session_state.messages) == 0:
     st.session_state.messages = [{"role": "assistant", "content": mensagem_inicial, "sources": []}]
 else:
@@ -91,6 +97,7 @@ for msg in st.session_state.messages:
         st.markdown(msg["content"])
         if "sources" in msg and msg["sources"]:
             with st.expander("📄 Fontes e Trechos Utilizados"):
+                st.caption("Trechos recuperados dos documentos; quebras artificiais de linha podem ser normalizadas. Confira a página indicada. A recuperação, por si só, não confirma que o trecho responde à pergunta.")
                 for src in msg["sources"]:
                     doc_nome = str(src.get('documento', 'Documento Não Identificado'))
                     trecho_txt = src.get('trecho', '')
@@ -120,7 +127,7 @@ if prompt:
         with st.spinner("A consultar resoluções e documentos da SecGrad..."):
             
             # Chama a função do src/ui/api_client.py
-            resultado = enviar_pergunta(prompt, curso, perfil)
+            resultado = enviar_pergunta(prompt, curso, perfil, historico=st.session_state.messages[:-1])
             
             if resultado.get("sucesso"):
                 resposta_texto = resultado.get("resposta")
@@ -137,6 +144,7 @@ if prompt:
             message_placeholder.markdown(resposta_texto)
             if fontes:
                 with st.expander("📄 Fontes e Trechos Utilizados"):
+                    st.caption("Trechos recuperados dos documentos; quebras artificiais de linha podem ser normalizadas. Confira a página indicada. A recuperação, por si só, não confirma que o trecho responde à pergunta.")
                     for src in fontes:
                         doc_nome = str(src.get('documento', 'Documento Oficial'))
                         trecho_txt = src.get('trecho') or src.get('excerpt', '')

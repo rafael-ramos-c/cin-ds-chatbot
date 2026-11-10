@@ -1,6 +1,7 @@
 import re
 
 import requests
+from src.ui.conversation import contextualizar, pedido_endereco
 
 NESTJS_API_URL = "http://localhost:3000/api/v1/conversa"
 
@@ -28,14 +29,17 @@ def extrair_trechos(contexto, fontes):
         trechos.append(contexto[atual.end():fim].strip())
     return trechos
 
-def enviar_pergunta(prompt: str, curso: str, perfil: str):
+def enviar_pergunta(prompt: str, curso: str, perfil: str, historico=None):
     """
     Envia a pergunta para o NestJS e processa a resposta de contexto
     ou o template de e-mail gerado pelo FallbackService.
     """
+    consulta, ambiguo = contextualizar(str(prompt).strip(), historico or [])
+    if ambiguo:
+        return {'sucesso': True, 'resposta': 'A qual requerimento ou formulário você se refere? Informe o procedimento, por exemplo, segunda chamada de prova.', 'fontes': []}
     payload = {
         "consulta": {
-            "pergunta": str(prompt).strip(),
+            "pergunta": consulta,
             "curso": str(curso).strip() if curso else "Geral",
             "perfil": str(perfil).strip() if perfil else "Todos",
             "top_k": 3
@@ -81,6 +85,16 @@ def enviar_pergunta(prompt: str, curso: str, perfil: str):
                     "documento": f"{arquivo} (pág. {pagina})",
                     "trecho": trecho,
                 })
+
+            if (data.get('fallback_acionado') is not True and pedido_endereco(consulta)
+                    and not re.search(r'https?://\S+', '\n'.join(trechos), re.I)):
+                texto_final = (
+                    'Não encontrei um endereço para obter esse requerimento nos trechos consultados. '
+                    'A referência ao formulário, sozinha, não informa onde baixá-lo. '
+                    'Confirme o endereço com a secretaria ou coordenação do curso. '
+                    'Os trechos abaixo são referências da busca, não um link de download.\n\n'
+                    '[VERIFICAÇÃO DOCUMENTAL LIMITADA — SEM GERAÇÃO POR LLM]'
+                )
             
             return {
                 "sucesso": True,
