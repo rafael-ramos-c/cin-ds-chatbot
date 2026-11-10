@@ -26,6 +26,6 @@ comparação V1/V2 histórica. BACK-REF-03 permanece como evidência complementa
 protegida pela regressão corrente. IA-REF-04 permite ter três itens diretamente
 protegidos pelas V2 acadêmicas: BACK-REF-01, IA-REF-02 e IA-REF-04.
 
-Status inicial: identificado e medido antes; aplicar somente após salvar o estado.
+Status: Refatorado no commit c0f7116, após os registros c93450a e c9328fe. V2 21/21 antes/depois, hashes iguais. Linhas 93/97 -> 96/100; branches 41/42 em ambos. O ganho de statements é estrutural, não expansão da suíte.
 Rafael assumiu o fechamento com assistência neste chat; revisão humana do grupo
 não é substituída por assinatura inventada.

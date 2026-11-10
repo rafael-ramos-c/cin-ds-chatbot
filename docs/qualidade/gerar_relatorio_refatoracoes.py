@@ -47,8 +47,8 @@ def construir(destino):
 
     p('Relatório de refatorações', 'Titulo')
     p('Chatbot SecGrad | CInCoders | Sprint 3 | Revisão de 10/11/2026', 'Pequeno')
-    p('TRÊS ITENS COM EVIDÊNCIAS ANTES E DEPOIS', 'Sub')
-    p('Três itens com ID e commits separados. Os dois primeiros preservam a V2 acadêmica histórica; o terceiro usa a V2 de regressão corrente, derivada da evolução de geração, sem substituir a baseline histórica. Testes delimitam a proteção: não certificam precisão semântica de respostas.')
+    p('TRÊS ITENS COM V2 ACADÊMICA E UM COMPLEMENTO', 'Sub')
+    p('BACK-REF-01, IA-REF-02 e IA-REF-04 têm proteção direta das V2 acadêmicas preservadas e commits separados. BACK-REF-03 permanece como complemento com regressão corrente. Nenhum teste histórico foi editado. Refatoração melhora estrutura, não certifica precisão semântica.')
     h('1. BACK-REF-01 | Victor | Duplicação de decisão')
     p('Local: backend/src/orchestration/fallback.service.ts, identificarSetor. Dois ifs adjacentes retornavam SecGrad. A duplicação fragmentava a manutenção do mesmo destino; uma alteração poderia atualizar só parte das palavras-chave. Categoria: Duplicated Code e integridade conceitual, sem atribuir violação de todos os princípios SOLID.')
     p('Escolha: pequena mudança com proteção da V2 e benefício claro de manutenção. Técnica: Consolidate Conditional Expression. Consolidam-se as cinco verificações com OR e um único retorno, preservando ordem, curto-circuito e prioridade dos ramos NEAP, pós-graduação e padrão.')
@@ -69,7 +69,7 @@ def construir(destino):
     h('2. IA-REF-02 | Rafael | Extract Function')
     p('Local: ai-service/src/retriever.py, buscar_contexto. A função valida entradas, acessa coleção, verifica retorno, formata contexto e monta fontes. A integridade das listas/distâncias é uma responsabilidade distinguível. Categorias: Long Method, coesão e SRP; o problema é a mistura de razões de mudança, não apenas contar linhas.')
     p('Escolha: isolar uma responsabilidade já coberta e de baixo risco. Técnica: Extract Function, extraindo _validar_resultado_vetorial. O bloco permanece no mesmo ponto do fluxo, antes da formatação. A nova função é interna e não cria contrato público nem dependência entre testes e detalhe privado.')
-    p('Antes: buscar_contexto contém o bloco que compara os tamanhos das listas e percorre as distâncias, rejeitando tipos inválidos e números não finitos. Depois: buscar_contexto chama a função interna que contém literalmente esse bloco. A validação de páginas permanece no lugar original.')
+    p('Antes: buscar_contexto contém o bloco que compara os tamanhos das listas e percorre as distâncias, rejeitando tipos inválidos e números não finitos. Depois: buscar_contexto chama a função interna que contém literalmente esse bloco. Na revisão histórica IA-REF-02, a validação de páginas permaneceu no lugar original; IA-REF-04 a reorganiza em etapa separada.')
     p('Listas de comprimentos diferentes e distâncias inválidas continuam lançando InvalidSearchResult com as mesmas mensagens. Não se altera política de fallback, cálculo de distância, fonte ou tratamento HTTP. A extração não resolve todas as responsabilidades restantes do retriever.')
     tabela([['Evidência histórica', 'Antes', 'Depois'],
             ['V2 congelada', '21/21', '21/21'],
@@ -85,40 +85,40 @@ def construir(destino):
     p('A ingestão agora avisa sobre páginas sem texto e possui dois testes novos. É correção de observabilidade/contrato de retorno, não terceira refatoração sem mudança de comportamento. Do mesmo modo, alterar URL padrão é mudança funcional e não substitui a terceira entrega.', 'Pequeno')
 
     story.append(PageBreak())
-    p('Origem da API e reflexão crítica', 'Titulo')
-    h('3. BACK-REF-03 | Rafael, assumindo fechamento de Eric')
-    p('Local: backend/src/ai-service/ai-service.service.ts, getEndpoint. Parsing, política detalhada de origem, construção da rota e tradução de exceção dividiam o mesmo fluxo. Categorias: Long Method relativo ao fluxo e coesão. A extração melhora a separação local de responsabilidades; não resolve todas as razões de mudança da classe.')
-    p('Técnica: Extract Function. O predicado origemInvalida(origin, base) recebe literalmente as sete condições OR, na mesma ordem. Leitura de ambiente, parsing, rota e catch ficam em getEndpoint. Mantêm-se protocolos, regex, credenciais, query, fragmento, caminho, mensagem HTTP e curto-circuito. A função é interna, sem nova API pública.')
-    p('Antes: getEndpoint contém if com sete condições. Depois: if (origemInvalida(origin, base)). Escolha: mudança pequena em política já protegida por testes de origens inválidas e dos dois endpoints. Não é a adição de timeout descrita por Eric, que já existia, nem a restauração funcional de 0,8.')
-    tabela([['Mesma configuração / Node 24.22.1', 'Antes', 'Depois'],
-            ['V2 de regressão corrente', '256/256', '256/256'],
-            ['Linhas do AiService', '64/64 (100%)', '65/65 (100%)'],
-            ['Branches do AiService', '84/84 (100%)', '84/84 (100%)'],
-            ['Funções do AiService', '8/10 (80%)', '9/11 (81,81%)']])
-    p('A seleção de 52 testes de geração está contida nos 256; não somar os totais. Hashes da suíte e configuração foram conferidos. A função acrescenta uma linha instrumentada e uma função coberta; não representa comportamento novo. A V2 acadêmica histórica de 105 casos permanece preservada e não é apresentada como reexecutada na produção atual.', 'Pequeno')
-    link('Congelamento anterior: 2a33101 | evidência antes da alteração', REPO + '/commit/2a33101')
-    link('Refatoração isolada: 27d0d9b | diff antes/depois', REPO + '/commit/27d0d9b')
-    p('Evidências: BACK-REF-03-evidencias/antes e depois (vitest-results.json, HTML e estado); comparacao.json. Configuração: backend/vitest.back-ref03.config.mts. Diagnóstico: BACK-REF-03-divida.md. Correções funcionais de UI/limiar ficaram no commit 0b334a7.', 'Pequeno')
+    p('Fonte documental e reflexão crítica', 'Titulo')
+    h('3. IA-REF-04 | Rafael | V2 acadêmica da Parte 1')
+    p('Local: ai-service/src/retriever.py, buscar_contexto. O laço combinava política de aliases dos metadados, rejeição de página, apresentação do contexto e montagem de fontes. Categorias: Long Method, coesão e orientação SRP local. Alterar chaves legadas exigia navegar pela formatação; separar essa política torna seu limite explícito.')
+    p('Técnica: Extract Function para _ler_fonte(metadata). Antes: leituras de documento/source, pagina/page, curso_alvo/curso e validação de página no laço. Depois: o laço chama a função e recebe nome, página e curso. Mesma ordem dos get, inclusive defaults eager, precedência de chaves, valores padrão e InvalidSearchResult. A chamada continua antes de construir o cabeçalho. Não muda filtro, distância ou formato público.')
+    tabela([['Mesmo escopo e coverage.py 7.17.0', 'Antes', 'Depois'],
+            ['V2 acadêmica US-01, sem edição', '21/21', '21/21'],
+            ['Linhas: retriever + metadata_utils', '93/97 (95,88%)', '96/100 (96%)'],
+            ['Branches: mesmo escopo', '41/42 (97,62%)', '41/42 (97,62%)']])
+    p('Escolha: trecho já exercitado por fontes válidas, múltiplas e página inválida; risco pequeno e identidade dos testes conferida. A definição, chamada e retorno acrescentam três statements cobertos; o aumento percentual não é nova capacidade de teste. Quatro linhas e um branch continuam descobertos. A medição nova não substitui a comparação V1/V2 antiga.', 'Pequeno')
+    link('Congelamento anterior: c93450a (HTML complementado em c9328fe)', REPO + '/commit/c93450a')
+    link('Refatoração isolada IA-REF-04: c0f7116 (diff completo)', REPO + '/commit/c0f7116')
+    p('Evidências: IA-REF-04-evidencias/antes e depois, com execucao.json, coverage.json, HTML e snapshot do retriever. Comparacao.json confere hashes iguais da V2 e V1 importada. Comando existente: python scripts/medir_us01.py v2 DESTINO_NOVO, em ai-service/.', 'Pequeno')
+    h('4. BACK-REF-03 | Complemento de regressão corrente')
+    p('Extract Function de política de URL em AiService.getEndpoint para origemInvalida. Melhora coesão do fluxo; preserva sete condições OR, ordem, regex, rota e exceção. Escolha: política já protegida por testes. Antes/depois: mesma regressão corrente 256/256, linhas 64/64 -> 65/65, branches 84/84 -> 84/84; funções 8/10 -> 9/11. Não é a V2 acadêmica antiga nem a adição de timeout, que já existia. Evidências: BACK-REF-03-evidencias/ e relatório complementar.', 'Pequeno')
+    link('BACK-REF-03: 27d0d9b | congelamento anterior 2a33101', REPO + '/commit/27d0d9b')
     h('Reflexão: inspeção, ferramentas e LLM')
-    p('Leitura do fluxo com apoio de LLM identificou decisão repetida, integridade vetorial misturada à formatação e política de URL dentro da construção. O histórico não separa autoria de cada achado; não se atribui descoberta exclusiva à pessoa ou à LLM. A inspeção do diff confirmou ordem e mensagens e rejeitou como refatoração a mudança do limiar e novos tratamentos de erro.')
-    p('Vitest/V8, coverage.py e lint medem caminhos e problemas locais, mas não diagnosticam SRP nem validam adequação documental. Não houve Sonar ou ferramenta de smells executada. O benchmark real encontrou aceitação indevida de perguntas externas apesar dos testes verdes: dívida QA-01 permanece aberta. EC22 foi justificada como contracapa administrativa, sem apagar a página. Ver docs/testes/fechamento-final-20261110/.')
+    p('A leitura assistida localizou decisões repetidas e responsabilidades misturadas. O histórico não separa autoria humana/LLM de cada achado; não há descoberta exclusiva comprovada. A inspeção do diff distinguiu extração de mudanças funcionais de limiar e erros HTTP. Vitest/V8 e coverage.py medem execução, não SRP; lint não certifica adequação do projeto. Não houve Sonar ou detector de smells. O benchmark encontrou aceitação indevida de perguntas externas apesar dos testes verdes: QA-01 segue aberta. Essas diferenças fundamentam a revisão crítica, em vez de equiparar cobertura a correção.')
 
     def rodape(canvas, doc):
         canvas.setFont('Helvetica', 8)
         canvas.setFillColor(colors.HexColor('#4a5c69'))
-        canvas.drawString(59, 30, 'Sprint 3 | Três refatorações | 10/11/2026')
+        canvas.drawString(59, 30, 'Sprint 3 | Reforço com V2 acadêmica | 10/11/2026')
         canvas.drawRightString(A4[0] - 59, 30, str(doc.page))
 
     SimpleDocTemplate(str(destino), pagesize=A4, rightMargin=59, leftMargin=59,
                       topMargin=45, bottomMargin=48,
-                      title='Refatorações da Sprint 3 - três itens',
+                      title='Refatorações da Sprint 3 - reforço acadêmico',
                       author='Equipe CInCoders - consolidação de Rafael').build(
                           story, onFirstPage=rodape, onLaterPages=rodape)
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--saida', type=Path, default=HERE / 'relatorio-refatoracoes-sprint3-final-20261110.pdf')
+    parser.add_argument('--saida', type=Path, default=HERE / 'relatorio-refatoracoes-sprint3-reforco-20261110.pdf')
     args = parser.parse_args()
     if args.saida.exists():
         parser.error('Use uma saída nova; não substituir evidência anterior automaticamente.')

@@ -80,3 +80,25 @@ Fontes públicas para o AppTest headless utilizado:
 https://docs.streamlit.io/develop/api-reference/app-testing/st.testing.v1.apptest
 O teste usa HTTP real aos processos temporários, sem navegador, e não substitui
 inspeção visual humana. PDFs finais foram renderizados e conferidos página a página.
+
+
+## Reforço de aderência à V2 acadêmica - 10/11/2026
+
+Pedido do usuário: "Então, você consegue continuar trabalhando na minha parte,
+na de Victor e na de Eric no projeto de forma a fazermos uma entrega ainda melhor
+dessa Sprint 3?" Objetivo: mitigar o uso de regressão corrente como única proteção
+do terceiro item, e auditar as afirmações da entrega.
+
+Leitura assistida do módulo retriever localizou política de aliases e validação
+de página no laço que também monta contexto e fontes. Propôs-se Extract Function
+_ler_fonte, mantendo ordem, precedência e exceções. Diagnóstico anterior ao código
+em IA-REF-04-divida.md; execução anterior com o medidor existente e V2 acadêmica
+sem edição, commit c93450a; HTML incluído em c9328fe porque a regra geral o ignora.
+Alteração pequena e isolada no commit c0f7116. V2 21/21 antes/depois e mesmos hashes,
+linhas 93/97 -> 96/100, branches 41/42 em ambos. Não houve teste acrescentado para
+inflar a cobertura ou mudança de denominador entre V1 e V2 históricas.
+
+Mantiveram-se os falsos positivos e ressalvas no benchmark original, sem tentar
+apagar a limitação. Não há histórico recuperado para completar prompt V2 antigo
+nem dados para afirmar snapshot exato do modelo. Identificação assistida neste
+chat, sem medida experimental de autoria exclusiva humana versus LLM.

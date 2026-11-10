@@ -1,3 +1,10 @@
+## Versão reforçada para envio
+
+Use os dois PDFs com **reforco-20261110** no nome. Versões anteriores permanecem
+históricas. [Auditoria e reforço](testes/reforco-entrega-20261110/README.md):
+três refatorações protegidas pelas V2 acadêmicas, mais BACK-REF-03 complementar.
+Não houve recuperação fictícia dos prompts que faltam nem aprovação humana inventada.
+
 # Entrega da Sprint 3 - Chatbot SecGrad / CInCoders
 
 Fechamento técnico em 10/11/2026 por Rafael, assumindo as etapas finais de Victor
@@ -6,8 +13,8 @@ organiza o material; não é declaração de aprovação da professora ou do gru
 
 ## Arquivos principais para entregar
 
-1. [Análise crítica, cinco páginas](testes/analise-critica-sprint3-final-20261110.pdf).
-2. [Refatorações, três páginas e três itens](qualidade/relatorio-refatoracoes-sprint3-final-20261110.pdf).
+1. [Análise crítica, cinco páginas](testes/analise-critica-sprint3-reforco-20261110.pdf).
+2. [Refatorações, três páginas e três itens](qualidade/relatorio-refatoracoes-sprint3-reforco-20261110.pdf).
 3. [Matriz final de rastreabilidade](testes/matriz-rastreabilidade.md).
 4. [Log da LLM e referências às interações originais](testes/llm-log.md).
 5. [Dívidas técnicas](qualidade/divida-tecnica.md) e [log de análise](qualidade/log-analise.md).
@@ -37,7 +44,8 @@ são entregas complementares dos roteiros e acompanham o pacote.
 - IA-REF-02: 8e2f8f6 (histórico de Rafael).
 - Correções funcionais atuais: 0b334a7 (limiar e fonte literal; não refatoração).
 - Congelamento antes de BACK-REF-03: 2a33101.
-- BACK-REF-03: 27d0d9bd4a97556fab53b4d4a3762279cf6f8b8e.
+- BACK-REF-03 complementar: 27d0d9bd4a97556fab53b4d4a3762279cf6f8b8e.
+- IA-REF-04: c0f7116; V2 acadêmica anterior registrada em c93450a/c9328fe.
 
 Publicar a branch preservando esses commits. Não usar squash se isso apagar a
 separação exigida entre a correção funcional, o registro anterior e o item refatorado.
@@ -60,9 +68,10 @@ O código não foi enviado automaticamente ao GitHub.
   da meta não ocorre nesse recorte. O PDF explica teto e ganho funcional, sem
   trocar denominadores. Se houver exigência de interpretação, esclarecer com o
   monitor; não se presume dispensa dessa meta pela professora.
-- BACK-REF-03 utiliza V2 de regressão corrente, com proteção de URL e geração;
-  não é execução dos 105 testes antigos sobre a produção atual. O relatório
-  distingue as camadas. Nenhuma suíte antiga foi alterada para fabricar aprovação.
+- Reforço: IA-REF-04 usa diretamente a V2 acadêmica preservada, com 21/21 antes/depois.
+  Assim, BACK-REF-01, IA-REF-02 e IA-REF-04 atendem à proteção pelas V2 da Parte 1.
+  BACK-REF-03 permanece como complemento com regressão corrente; não se apresenta
+  como execução dos 105 testes antigos. Nenhuma suíte antiga foi alterada.
 - O uso assistido da matriz foi autorizado e aprovado conforme informado por
   Rafael; não existem atas/assinaturas criadas por nós para substituir essa informação.
 

@@ -1,0 +1,47 @@
+{
+  "v2_academica_preservada": true,
+  "testes_antes": 21,
+  "testes_depois": 21,
+  "hashes_testes_identicos": true,
+  "escopo": [
+    "src.retriever",
+    "src.metadata_utils"
+  ],
+  "totais": {
+    "antes": {
+      "covered_lines": 93,
+      "num_statements": 97,
+      "percent_covered": 96.40287769784173,
+      "percent_covered_display": "96",
+      "missing_lines": 4,
+      "excluded_lines": 0,
+      "percent_statements_covered": 95.87628865979381,
+      "percent_statements_covered_display": "96",
+      "num_branches": 42,
+      "num_partial_branches": 1,
+      "covered_branches": 41,
+      "missing_branches": 1,
+      "percent_branches_covered": 97.61904761904762,
+      "percent_branches_covered_display": "98"
+    },
+    "depois": {
+      "covered_lines": 96,
+      "num_statements": 100,
+      "percent_covered": 96.47887323943662,
+      "percent_covered_display": "96",
+      "missing_lines": 4,
+      "excluded_lines": 0,
+      "percent_statements_covered": 96.0,
+      "percent_statements_covered_display": "96",
+      "num_branches": 42,
+      "num_partial_branches": 1,
+      "covered_branches": 41,
+      "missing_branches": 1,
+      "percent_branches_covered": 97.61904761904762,
+      "percent_branches_covered_display": "98"
+    }
+  },
+  "commit_refatoracao": "c0f7116ed9361b0c821a35eddc7e52677eb6d63c",
+  "commit_registro_anterior": "c93450a",
+  "commit_html_anterior": "c9328fe"
+}

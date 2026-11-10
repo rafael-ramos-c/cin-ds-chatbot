@@ -162,3 +162,21 @@ preexistentes, não com zero avisos. AppTest foi headless; geração é mock.
 Evidências: fechamento-final-20261110/ e ../qualidade/BACK-REF-03-evidencias/.
 Comandos e hashes na verificação final. Esta rodada suplementa o histórico,
 sem reescrever V1/V2, prompts originais ou métricas da comparação acadêmica.
+
+
+## Reforço da entrega com V2 acadêmica - 10/11/2026
+
+Prompt do usuário: "Então, você consegue continuar trabalhando na minha parte,
+na de Victor e na de Eric no projeto de forma a fazermos uma entrega ainda melhor
+dessa Sprint 3?" Este chat continuou com os roteiros e o código como contexto.
+Modelo/snapshot exato não disponibilizado; não foi criada nova V1.
+
+Saída: diagnóstico IA-REF-04, medição anterior da mesma V2 da Parte 1, extração
+de leitura/validação dos metadados em retriever.py e medição posterior. Os arquivos
+completos, comandos, hashes e cobertura estão em ../qualidade/IA-REF-04-evidencias/;
+código isolado em c0f7116. Os testes V1/V2 não foram editados. As métricas da nova
+refatoração não substituem a comparação histórica das suítes.
+
+Auditoria documental atualiza a preferência dos PDFs para reforco-20261110,
+mantendo o limite cinco/três páginas e os arquivos anteriores. O registro não
+substitui aprovação humana nem reconstrói prompts históricos ausentes.
