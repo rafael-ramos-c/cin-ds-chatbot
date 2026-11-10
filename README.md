@@ -2,6 +2,56 @@
 
 > **Estado atual:** protótipo Streamlit, orquestrador NestJS e serviço FastAPI/ChromaDB. A rota pública é `POST /api/v1/conversa`. A geração real por LLM ainda não está implementada: o modo `mock` retorna somente um aviso explícito. A UI atualmente prioriza o contexto recuperado e, por isso, não comprova a exibição de uma resposta gerada. Validação da ingestão e pendências atuais: [PPCs e integração](docs/testes/validacao-ppcs/README.md).
 
+
+### Windows / PowerShell: evitar o erro 503 de configuracao
+
+Na raiz do repositorio, use tres terminais separados. Se os servicos ja estiverem
+rodando, pare-os com Ctrl+C antes de reiniciar; nao abra duas instancias na mesma porta.
+
+**Terminal 1 — FastAPI**, usando o ambiente Python do projeto e a base ja ingerida:
+
+```powershell
+.\venv\Scripts\Activate.ps1
+cd ai-service
+$env:SECGRAD_GENERATION_MODE = "mock"
+python -m uvicorn main:app --reload --port 8000
+```
+
+`mock` e uma simulacao explicita de integracao, nao uma LLM real nem uma resposta
+academica validada. Sem esse modo, a geracao com contexto retorna 503. Nao use
+resultados simulados como prova de qualidade das respostas no benchmark.
+
+**Terminal 2 — NestJS**, na raiz (Node.js 24 e `npm ci` em `backend/` previamente instalados):
+
+```powershell
+.\backend\scripts\iniciar-local.ps1
+```
+
+Esse comando configura `AI_SERVICE_URL=http://127.0.0.1:8000` e timeout de 30000 ms
+somente quando as variaveis estiverem ausentes, valida a configuracao e executa
+`npm run start:dev` em `backend/`. Valores ja definidos sao preservados; uma URL
+invalida gera orientacao antes de iniciar. Nao altera o padrao de producao nem
+carrega `.env` automaticamente. Para conferir sem iniciar: acrescente
+`-VerificarConfiguracao`. Se precisar mudar o endereco neste terminal:
+
+```powershell
+$env:AI_SERVICE_URL = "http://127.0.0.1:8000"
+.\backend\scripts\iniciar-local.ps1
+```
+
+**Terminal 3 — interface**, na raiz:
+
+```powershell
+.\venv\Scripts\Activate.ps1
+python -m streamlit run app.py
+```
+
+As variaveis de um terminal nao sao compartilhadas com os demais. A mensagem
+`Servico de busca nao configurado` indica configuracao ausente/invalida no
+NestJS: reinicie o terminal 2 pelo roteiro acima. `Servico de busca indisponivel`
+indica que o endereco foi configurado, mas a conexao falhou; confira o terminal 1.
+O venv e necessario para os comandos Python, nao para Git ou NestJS.
+
 ### Execução corrigida do serviço de IA
 
 Fechamento do backend em 08/11: `AI_SERVICE_URL` explícita é obrigatória e as seis
