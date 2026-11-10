@@ -16,6 +16,19 @@ def _validar_resultado_vetorial(documentos, metadados, distancias):
             raise InvalidSearchResult("Distância inválida na origem.")
 
 
+def _ler_fonte(metadata):
+    """Lê aliases da fonte e valida a página antes de formatar o contexto."""
+    nome_documento = metadata.get(
+        "documento",
+        metadata.get("source", "Documento Oficial"),
+    )
+    numero_pagina = metadata.get("pagina", metadata.get("page", 1))
+    curso_documento = metadata.get("curso_alvo", metadata.get("curso", "Geral"))
+    if type(numero_pagina) is not int or numero_pagina < 1:
+        raise InvalidSearchResult("Página inválida na origem.")
+    return nome_documento, numero_pagina, curso_documento
+
+
 def obter_collection():
     """
     Abre a coleção do ChromaDB somente quando ela for necessária.
@@ -107,26 +120,7 @@ def buscar_contexto(
         documentos,
         metadados,
     ):
-        nome_documento = metadata.get(
-            "documento",
-            metadata.get(
-                "source",
-                "Documento Oficial",
-            ),
-        )
-
-        numero_pagina = metadata.get(
-            "pagina",
-            metadata.get("page", 1),
-        )
-
-        curso_documento = metadata.get(
-            "curso_alvo",
-            metadata.get("curso", "Geral"),
-        )
-
-        if type(numero_pagina) is not int or numero_pagina < 1:
-            raise InvalidSearchResult("Página inválida na origem.")
+        nome_documento, numero_pagina, curso_documento = _ler_fonte(metadata)
 
         identificacao = (
             f"[Documento: {nome_documento} | "
