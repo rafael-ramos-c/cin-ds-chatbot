@@ -12,6 +12,7 @@ Prazo interno de revisão: 13/11; entrega: 15/11 às 23h59 (Fortaleza).
 | BACK-REF-01 / backend/src/orchestration/fallback.service.ts, identificarSetor | Duplicated Code e integridade conceitual: decisões adjacentes repetem destino e dificultam mudar palavras-chave sem divergência | Leitura do fluxo com apoio de LLM, registro histórico de Victor | Refatorado por Consolidate Conditional Expression, f7a067f | V2 histórica 105/105 antes/depois; BACK-REF-01-relatorio.md |
 | IA-REF-02 / ai-service/src/retriever.py, buscar_contexto | Long Method, coesão e orientação SRP: integridade vetorial misturada a formatação e consulta | Inspeção assistida em etapa anterior | Refatorado por Extract Function, 8e2f8f6 | Mesma V2 US-01 21/21 antes/depois; IA-REF-02-relatorio.md |
 | BACK-REF-03 / backend/src/ai-service/ai-service.service.ts, getEndpoint | Coesão de método, Long Method relativo ao fluxo: política de origem ocupa a construção de rota e tratamento HTTP, dificultando localizar a regra | Inspeção do módulo neste chat, apoio de LLM; descarta alegação de remover todo acoplamento da classe | Refatorado por Extract Function, 27d0d9b; congelamento 2a33101 | V2 de regressão corrente 256/256 antes/depois, hashes iguais; BACK-REF-03-relatorio.md. Não reatribuir à baseline V2 antiga |
+| IA-REF-04 / ai-service/src/retriever.py, buscar_contexto e bloco de metadados | Long Method e coesão/SRP local: política de aliases e validação de página misturada à apresentação; mudanças exigem navegar pela montagem de contexto | Inspeção assistida após auditar aderência das refatorações à Parte 1 | Refatorado por Extract Function, c0f7116, após registro c93450a | Mesma V2 acadêmica US-01 21/21 antes/depois e hashes iguais; IA-REF-04-relatorio.md |
 | DATA-01 / data/raw/ e ai-service/data/, config.py | Duplicação de dados e integridade conceitual: duas cópias podem ser editadas em paralelo e divergir | Inspeção do histórico e diretórios | Aberta, mitigada por data/raw canônico; Ricardo/Rafael revisam dependências antes de arquivar legado, próximo ciclo | Nenhum arquivo foi removido; concluir com origem única ou legado arquivado e referências atualizadas |
 | API-01 / src/ui/api_client.py, extrair_trechos e contrato contexto | Acoplamento ao formato textual e information hiding frágil: UI depende de cabeçalho da recuperação | Leitura assistida durante correção de fontes | Aberta, mitigada por associação estrita de arquivo/página/curso; Rafael, próximo ciclo | Evoluir contrato para trechos estruturados com compatibilidade e testes ponta a ponta; hoje omite citação quando não consegue associar, sem inventar texto |
 | UI-DUP-01 / app.py, histórico e resposta imediata | Duplicated Code: renderização das fontes aparece em dois blocos, tornando ajustes visuais propensos a divergência | Inspeção assistida dos dois loops | Aberta; Rafael assumiu Eric, próximo ciclo | Caracterizar UI e extrair componente mantendo comportamento; não contou como terceira refatoração |
@@ -30,7 +31,7 @@ Prazo interno de revisão: 13/11; entrega: 15/11 às 23h59 (Fortaleza).
 ## Escopo procurado e falsos enquadramentos descartados
 
 Revisados fallback, orquestração, cliente HTTP, origem de URL, retriever,
-metadados, sincronização da ingestão, interface e catálogo. Há seis itens de
+metadados, sincronização da ingestão, interface e catálogo. Há sete itens de
 projeto/manutenção neste registro; não se completou uma meta numérica com
 problemas inventados. As tabelas de validação não são seis novos code smells.
 
@@ -43,3 +44,8 @@ Oxlint foi executado (dois avisos preexistentes de stringificação em testes,
 nenhum erro). Não houve Sonar/jscpd nem medida automática de smells. Cobertura
 não comprova boa arquitetura. React, Keycloak/LDAP, Docker Compose/Swarm e LLM
 real são requisitos gerais ainda pendentes, não contados como refatorações.
+
+
+Reforço de 10/11: os três itens principais para a exigência de V2 da Parte 1 são
+BACK-REF-01, IA-REF-02 e IA-REF-04. BACK-REF-03 é complementar. Cada execução
+permanece ligada à sua baseline, sem substituir métricas V1/V2 históricas.

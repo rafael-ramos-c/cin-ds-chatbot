@@ -1,7 +1,7 @@
 ## Versões para entrega - 10/11/2026
 
-- [Análise crítica final, cinco páginas](../testes/analise-critica-sprint3-final-20261110.pdf).
-- [Três refatorações, três páginas](relatorio-refatoracoes-sprint3-final-20261110.pdf).
+- [Análise crítica final, cinco páginas](../testes/analise-critica-sprint3-reforco-20261110.pdf).
+- [Três refatorações, três páginas](relatorio-refatoracoes-sprint3-reforco-20261110.pdf).
 - [Índice completo e ressalvas](../ENTREGA-SPRINT3.md).
 
 Rafael assumiu a conclusão de Victor e Eric. BACK-REF-03 tem commit identificado,

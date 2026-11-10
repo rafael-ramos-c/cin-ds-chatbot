@@ -108,7 +108,7 @@ h('7 Conclusão e alcance')
 p('A equipe usaria LLM para propor testes e explorar classes de entrada, preservando requisitos externos como oráculo e revisando casos contra eles. A evidência mostra por que quantidade e cobertura não bastam: 65 testes e 100% de branches no backend deixavam obrigações HTTP incompletas. O ganho da V2 está na ligação entre requisito, entrada, resultado e fronteira realmente exercitada.')
 p('A IA teve aumento controlado de branches de 76,19% para 97,62%; o backend permaneceu no teto de 100% no escopo original. O atendimento literal da meta de aumento do backend requer a ressalva de teto e eventual alinhamento com o monitor, sem degradar V1, trocar denominadores ou inventar um delta.')
 p('As suítes e medições históricas foram preservadas. A base pós-OCR tem 21 documentos e 6.811 trechos, com sete pares curso/perfil auditados. EC anterior 22 continua sem texto: inspeção visual e relato de Ricardo identificam contracapa com etiqueta administrativa, sem conteúdo curricular corrido; exclusão justificada, não OCR declarado bem-sucedido. Quatro páginas de SI ganharam texto, cuja fidelidade Ricardo relatou conferir.')
-p('No fechamento de 10/11, Node 24.22.1: 256 testes correntes do backend, 34 e2e mais dois opt-in, 20 da IA, 21 V2 da US-01 e 12 do cliente UI aprovados; seleção de 52 é subconjunto. Build e lint passaram, com dois avisos preexistentes. BACK-REF-03 tem mesma regressão corrente 256/256 antes/depois e commit próprio; não substitui V2 acadêmica histórica. AppTest com HTTP real confirmou aviso mock, página e trecho literal. Sem navegador ou LLM real.')
+p('No fechamento de 10/11, Node 24.22.1: 256 testes correntes do backend, 34 e2e mais dois opt-in, 20 da IA, 21 V2 da US-01 e 12 do cliente UI aprovados; seleção de 52 é subconjunto. Build e lint passaram, com dois avisos preexistentes. IA-REF-04 acrescenta proteção direta da V2 acadêmica: 21/21 antes/depois, mesmas fontes e branches 41/42. BACK-REF-03 mantém 256/256 como complemento. AppTest com HTTP real confirmou aviso mock, página e trecho literal. Sem navegador ou LLM real.')
 p('Benchmark: 25 perguntas, 50 chamadas comparando limiares. Com 0,8: 15/25 decisões de fallback conforme expectativa, dez aceitações fora do escopo e nenhuma recusa dos 15 casos dentro. Com 0,5: 18/25, sete aceitações externas. Sete controles recuperaram o PPC esperado. Pergunta curta carburador e frase completa não equivalem. Não há limiar calibrado; mantém-se 0,8 provisório, registra-se QA-01 e não se afirma precisão de resposta acadêmica com mock. Evidências, oráculos e limitações: fechamento-final-20261110/.')
 h('Apêndices e evidências entregues com o PDF')
 p('A: matriz-rastreabilidade.md; B: llm-log.md e suas referências integrais; memória de cálculo: inventario-consolidado.md e indicadores-consolidados.json. Índice e instruções: CONSOLIDACAO-SPRINT3.md. Todos ficam na mesma pasta docs/testes e devem acompanhar este PDF.', 'SmallLocal')
@@ -124,7 +124,7 @@ def footer(canvas, doc):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--saida', type=Path, default=HERE / 'analise-critica-sprint3-final-20261110.pdf')
+    parser.add_argument('--saida', type=Path, default=HERE / 'analise-critica-sprint3-reforco-20261110.pdf')
     args = parser.parse_args()
     if args.saida.exists():
         parser.error('Escolha uma saída nova para preservar os relatórios anteriores.')

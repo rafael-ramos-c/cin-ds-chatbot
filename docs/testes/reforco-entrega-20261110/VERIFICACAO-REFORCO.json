@@ -1,0 +1,292 @@
+{
+  "status": "reforco_verificado_com_ressalvas_historicas",
+  "v2_academica_antes": 21,
+  "v2_academica_depois": 21,
+  "suite_identica": true,
+  "commit_refatoracao": "c0f7116",
+  "pdf_paginas": {
+    "docs/testes/analise-critica-sprint3-reforco-20261110.pdf": 5,
+    "docs/qualidade/relatorio-refatoracoes-sprint3-reforco-20261110.pdf": 3
+  },
+  "manifesto": [
+    {
+      "arquivo": "docs/ENTREGA-SPRINT3.md",
+      "sha256": "08da02f653776969f512eaa1a0df5eb182cab4ffc86b0b1206a8b49edb99e46a",
+      "sha256_utf8_lf": "2e94d7b8ecb48876df4bc117aeb4a3946a6c7057bea1b0ac2f53424214a0e736"
+    },
+    {
+      "arquivo": "docs/qualidade/divida-tecnica.md",
+      "sha256": "8c448094a4f74a88b018c578cfc9e9b17f66e0b79accdfd38df3e3607614f83c",
+      "sha256_utf8_lf": "593ff08facbf262ede0685bdc118a5bf44ce68c26b251bb6bcb2d96925ca2c4d"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/antes/.coverage",
+      "sha256": "0468597c7c0d10b9d86eaaf61df4f4105f136585ae2eaee8ef66863efa4aea17"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/antes/coverage.json",
+      "sha256": "415c3423249a62c5b266b039dde97a97bf0af0e26a5c14684442ce878eeb4953",
+      "sha256_utf8_lf": "415c3423249a62c5b266b039dde97a97bf0af0e26a5c14684442ce878eeb4953"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/antes/execucao.json",
+      "sha256": "27e3b4069ef2b07112e2c17c53cf9082d7037ffdc505d867324b2d574ee64767",
+      "sha256_utf8_lf": "b8fae626292b75963876a9a957fadf3e69c4e94f5e5d95874b40550d06206963"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/antes/execucao.txt",
+      "sha256": "96e814846d6ba29cb9654ed7381eb78a9413cf200ddb10ab23007619c1ae4a9b",
+      "sha256_utf8_lf": "92168d1a12dd1cbf3b89e81faa82eff2ac5946b2b44c826d450d4500c02fa6ad"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/antes/html/.gitignore",
+      "sha256": "962528463ab78acaec8811f7ce0f0b63058b4ec537c4fe6be4bec532c9b1451f",
+      "sha256_utf8_lf": "8c2eb1fa82c314dc11791274cb7aa967245d1908442d6e788bc77f6e1aa5c2b8"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/antes/html/class_index.html",
+      "sha256": "24748c6ca75da9ee86d89a0d8eec1e86e3a89ba7d0b27c168ef039f708c95ed6",
+      "sha256_utf8_lf": "24748c6ca75da9ee86d89a0d8eec1e86e3a89ba7d0b27c168ef039f708c95ed6"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/antes/html/coverage_html_cb_c74880ea.js",
+      "sha256": "344f30d7f3a0671e236e37465d4d9df9ba01763cba160eeec83d534ddccef9ae",
+      "sha256_utf8_lf": "420dceb04f21b928d771cf8aa731001cf8cfaea889cefc92ceab1c427f30f2cf"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/antes/html/favicon_32_cb_c827f16f.png",
+      "sha256": "bc8100fa8743c11bd243eb3259f4b012758651612fd9bf93bf8b734d17f02561"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/antes/html/function_index.html",
+      "sha256": "2cc5db3f9716290e1061ee31a23b4735d2164e950a25da35feb369e947a6ee6e",
+      "sha256_utf8_lf": "2cc5db3f9716290e1061ee31a23b4735d2164e950a25da35feb369e947a6ee6e"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/antes/html/index.html",
+      "sha256": "148e665a7d0e2093d945ed92c23587e6fbe36c9590835f58e5debd83349ff422",
+      "sha256_utf8_lf": "148e665a7d0e2093d945ed92c23587e6fbe36c9590835f58e5debd83349ff422"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/antes/html/keybd_closed_cb_900cfef5.png",
+      "sha256": "7d9bf8ae66370e4349b4f423ac5279501384e4374da1fde675e099582ed33a8a"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/antes/html/status.json",
+      "sha256": "4891dff67de8195f8d505e1d1c990e49530b37403c5439afe7ff9b644c7fdf98",
+      "sha256_utf8_lf": "4891dff67de8195f8d505e1d1c990e49530b37403c5439afe7ff9b644c7fdf98"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/antes/html/style_cb_0853b3de.css",
+      "sha256": "e813e80589ecd2b575695be7842800eda382b9e9cd3034f7980e628884c3c048",
+      "sha256_utf8_lf": "1b54edba892874f987fd65a5f0fc992bf4f5923ef6e53c687eb0ac0923dd932a"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/antes/html/z_145eef247bfb46b6_metadata_utils_py.html",
+      "sha256": "66c87440fbee0b0ecab5bef34f99343461051f8d6ae2011efb4484c40416771c",
+      "sha256_utf8_lf": "66c87440fbee0b0ecab5bef34f99343461051f8d6ae2011efb4484c40416771c"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/antes/html/z_145eef247bfb46b6_retriever_py.html",
+      "sha256": "1972b970727cb539c00c4da0b2afb6bc6cef676ba436745820a93ea222a46612",
+      "sha256_utf8_lf": "1972b970727cb539c00c4da0b2afb6bc6cef676ba436745820a93ea222a46612"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/antes/retriever.py",
+      "sha256": "c72deb7f33c2b0433d9d8d501249771b7d3e3bbbb154bd8541981d01d6240754",
+      "sha256_utf8_lf": "89ae7d7548cfca30b922bf13bc1db64dc407677297161a46ebf7cf8b11e18c7f"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/comparacao.json",
+      "sha256": "1f55bbb8f75c3b8e051c6c7dc69ed1e87f941524d464046237116c1ec22557f8",
+      "sha256_utf8_lf": "dcb7e15f43f19edbed1745855de2e5de6198b0c5f8b5ad6990797100d790f347"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/depois/.coverage",
+      "sha256": "f84e1c812b49d87d87a2e38a340990b217291ba6ece589bd6a7b0a29736ee9cf"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/depois/coverage.json",
+      "sha256": "04abbd901862915377f68b64fe919416f1481ab0dd81a03fea63dd704207a617",
+      "sha256_utf8_lf": "04abbd901862915377f68b64fe919416f1481ab0dd81a03fea63dd704207a617"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/depois/execucao.json",
+      "sha256": "04b29d895396c905f003d26533c1a38a3d46395b324c72a9886789749930fc78",
+      "sha256_utf8_lf": "6874a6f9140c75f4d4d0c25c76d94cc4d962ab0ff07c80a4a978bc7f1222fd3a"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/depois/execucao.txt",
+      "sha256": "845df7d2e00ca3b45abca8d51fb3ec8ea9dbcda1df66eb9138dfdad81ff1ee79",
+      "sha256_utf8_lf": "cfd4b6163c0dcb8b90fffb882f4daa0f474c4be5442104859caa9294f34e9938"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/depois/html/.gitignore",
+      "sha256": "962528463ab78acaec8811f7ce0f0b63058b4ec537c4fe6be4bec532c9b1451f",
+      "sha256_utf8_lf": "8c2eb1fa82c314dc11791274cb7aa967245d1908442d6e788bc77f6e1aa5c2b8"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/depois/html/class_index.html",
+      "sha256": "e0e57e2ac69a9482615f6a0e1d72edf6a9120448096aa78d821e4a94564faf2d",
+      "sha256_utf8_lf": "e0e57e2ac69a9482615f6a0e1d72edf6a9120448096aa78d821e4a94564faf2d"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/depois/html/coverage_html_cb_c74880ea.js",
+      "sha256": "344f30d7f3a0671e236e37465d4d9df9ba01763cba160eeec83d534ddccef9ae",
+      "sha256_utf8_lf": "420dceb04f21b928d771cf8aa731001cf8cfaea889cefc92ceab1c427f30f2cf"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/depois/html/favicon_32_cb_c827f16f.png",
+      "sha256": "bc8100fa8743c11bd243eb3259f4b012758651612fd9bf93bf8b734d17f02561"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/depois/html/function_index.html",
+      "sha256": "90f01f9a74fbbb0942fb2de94c86c3ac54a797269c0d52e24207452e5388fce8",
+      "sha256_utf8_lf": "90f01f9a74fbbb0942fb2de94c86c3ac54a797269c0d52e24207452e5388fce8"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/depois/html/index.html",
+      "sha256": "52ce0cf47ac5647ddfe2d24bcc17b63315ddc468b05b3f4ea7ba05a92db52dfe",
+      "sha256_utf8_lf": "52ce0cf47ac5647ddfe2d24bcc17b63315ddc468b05b3f4ea7ba05a92db52dfe"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/depois/html/keybd_closed_cb_900cfef5.png",
+      "sha256": "7d9bf8ae66370e4349b4f423ac5279501384e4374da1fde675e099582ed33a8a"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/depois/html/status.json",
+      "sha256": "b1898d12a7a8a3ca2bd222e8b8ebb4e43f0cea4e15a8e5a2faa2b1e196ee967f",
+      "sha256_utf8_lf": "b1898d12a7a8a3ca2bd222e8b8ebb4e43f0cea4e15a8e5a2faa2b1e196ee967f"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/depois/html/style_cb_0853b3de.css",
+      "sha256": "e813e80589ecd2b575695be7842800eda382b9e9cd3034f7980e628884c3c048",
+      "sha256_utf8_lf": "1b54edba892874f987fd65a5f0fc992bf4f5923ef6e53c687eb0ac0923dd932a"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/depois/html/z_145eef247bfb46b6_metadata_utils_py.html",
+      "sha256": "5a1fddf0b031d709c1b24728e6aad81de0e4df68e245828d4925f8cf7ef7d5a4",
+      "sha256_utf8_lf": "5a1fddf0b031d709c1b24728e6aad81de0e4df68e245828d4925f8cf7ef7d5a4"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/depois/html/z_145eef247bfb46b6_retriever_py.html",
+      "sha256": "38d10b7604d87ee5c5bc73eab9a3fa9a70f0306741f5b5c49aa4423f9bd1c8f4",
+      "sha256_utf8_lf": "38d10b7604d87ee5c5bc73eab9a3fa9a70f0306741f5b5c49aa4423f9bd1c8f4"
+    },
+    {
+      "arquivo": "docs/qualidade/IA-REF-04-evidencias/depois/retriever.py",
+      "sha256": "d8edac769a62a3d5039f599f71c0fa1a4160405ce82d2ed0fd2797faa11622f7",
+      "sha256_utf8_lf": "8606ec448b78b000e727c6cf955d1f89800033c0f1c64fefa219c5e32c20ca97"
+    },
+    {
+      "arquivo": "docs/qualidade/log-analise.md",
+      "sha256": "5fa6febe2f3a55e047ee519b5e44e5373c2e69f55b27c7315b3b4788ab8ede80",
+      "sha256_utf8_lf": "055395ce58ba24b7919f8d85d1f3f61ea098097102439f6bf83ff3fb8df4add9"
+    },
+    {
+      "arquivo": "docs/qualidade/relatorio-refatoracoes-sprint3-reforco-20261110.pdf",
+      "sha256": "6f08403d5f1caed8c3bd4ee338e346431c472209191055a1223e70feba359484"
+    },
+    {
+      "arquivo": "docs/testes/analise-critica-sprint3-reforco-20261110.pdf",
+      "sha256": "bd7e8aa93f68cc836550ef4bac29d5ea6cf252268901227eef9954bcae57544a"
+    },
+    {
+      "arquivo": "docs/testes/llm-log.md",
+      "sha256": "c6e172e9d6a40033205744377bbc029fcaaa5dbb5312e1becd0f0c023250afc5",
+      "sha256_utf8_lf": "61b3e2adffe4d21061a38f1d6f0d73618983aa1cd187f7bd5bdc37cc32816716"
+    },
+    {
+      "arquivo": "docs/testes/reforco-entrega-20261110/AUDITORIA-CRITERIOS.md",
+      "sha256": "43abf38f6f9e9aa5089846663ec5ba2dadc348a1d9824d69e067427195e5737d",
+      "sha256_utf8_lf": "43abf38f6f9e9aa5089846663ec5ba2dadc348a1d9824d69e067427195e5737d"
+    },
+    {
+      "arquivo": "docs/testes/reforco-entrega-20261110/ia-regressao.txt",
+      "sha256": "39d03a07e3efe19b19e6d9e64362c7597a8e2cd3f483465b3ed6f5f347adb3d4",
+      "sha256_utf8_lf": "cae060d4883864cc71d550eff458e47247b8556628043b88fb8b07b3422c574e"
+    },
+    {
+      "arquivo": "docs/testes/reforco-entrega-20261110/integracao-execucao.txt",
+      "sha256": "6b34dca66a44997c9cfb75084cb725142264a519a402644c584e705d870fb2ce",
+      "sha256_utf8_lf": "d69507f990256fb054b1ab0d154cdf89103680153e067b4c1c906833a05199d0"
+    },
+    {
+      "arquivo": "docs/testes/reforco-entrega-20261110/README.md",
+      "sha256": "74c2d4a0f424648f587f56b6472ca6e429a07eb99a38646c4d2a2228aeaff2df",
+      "sha256_utf8_lf": "f1234b4ed13a00496df4161e568bdd2609eaaa41e36e2ed5ccec9b210d894d8f"
+    },
+    {
+      "arquivo": "docs/testes/reforco-entrega-20261110/servicos-reais/fastapi-disabled.txt",
+      "sha256": "b2a3817241bcab351bf60a7c7b119ea140f0bdba1ce81cb4b58ab6f28fba732f",
+      "sha256_utf8_lf": "321f258ed82a3a3f2e202bde8187f7125b78fbe1b80fc36fccd7926733ed03a7"
+    },
+    {
+      "arquivo": "docs/testes/reforco-entrega-20261110/servicos-reais/fastapi-mock.txt",
+      "sha256": "74979401d20d7c2cf2f462afb84bd43afc54d49e1d3422e210da338f4342f728",
+      "sha256_utf8_lf": "9a62fd89f2c01ee7fd172cfbc6088c17a4c6db3654428b58c7ee5d0368a0e097"
+    },
+    {
+      "arquivo": "docs/testes/reforco-entrega-20261110/servicos-reais/integracao-real.json",
+      "sha256": "33d015f5526ef822d51d39f0a0a4465e4eae444e93fde580c51f3b3db3dd255a",
+      "sha256_utf8_lf": "b3473b6516952a9262fa843d18dcb06eb903dd1350b7a1cd30e8a79d39cc4b33"
+    },
+    {
+      "arquivo": "docs/testes/reforco-entrega-20261110/servicos-reais/live-opt-in.json",
+      "sha256": "a910d5abdcce4a3ccbd194e2bf8fa18b373fbf94b9234b9338924b0ced36a40c",
+      "sha256_utf8_lf": "a910d5abdcce4a3ccbd194e2bf8fa18b373fbf94b9234b9338924b0ced36a40c"
+    },
+    {
+      "arquivo": "docs/testes/reforco-entrega-20261110/servicos-reais/live-opt-in.txt",
+      "sha256": "279358e7c05b144e63577dd98016dc74a23fec10fdc3cf63b52d19c47932f737",
+      "sha256_utf8_lf": "28c315f13ac201dee8c5579f6d1d28ba9f9c291ec36b0d35979a32a5b0c531f5"
+    },
+    {
+      "arquivo": "docs/testes/reforco-entrega-20261110/servicos-reais/nest-configuracao_ausente.txt",
+      "sha256": "9c0ad2820fe6312dbfdaf7934577cc0353b86d6367a8b882154ee68a184484f8",
+      "sha256_utf8_lf": "9c0ad2820fe6312dbfdaf7934577cc0353b86d6367a8b882154ee68a184484f8"
+    },
+    {
+      "arquivo": "docs/testes/reforco-entrega-20261110/servicos-reais/nest-configuracao_invalida.txt",
+      "sha256": "9cec4aa11d54c0815b610589f2192c8f98f651a651f2dcc1f7c69d59f92853a2",
+      "sha256_utf8_lf": "9cec4aa11d54c0815b610589f2192c8f98f651a651f2dcc1f7c69d59f92853a2"
+    },
+    {
+      "arquivo": "docs/testes/reforco-entrega-20261110/servicos-reais/nest-disabled.txt",
+      "sha256": "5e277458d408fcdd21d7ddb6cc0cd7c4640f30ec7cc17e11bf164c934e5e9189",
+      "sha256_utf8_lf": "5e277458d408fcdd21d7ddb6cc0cd7c4640f30ec7cc17e11bf164c934e5e9189"
+    },
+    {
+      "arquivo": "docs/testes/reforco-entrega-20261110/servicos-reais/nest-fallback-controlado.txt",
+      "sha256": "9fa950404c71726632fc994fa4fe2a4c64c74f2159cdf9488f38ed39758df851",
+      "sha256_utf8_lf": "9fa950404c71726632fc994fa4fe2a4c64c74f2159cdf9488f38ed39758df851"
+    },
+    {
+      "arquivo": "docs/testes/reforco-entrega-20261110/servicos-reais/nest-indisponivel.txt",
+      "sha256": "825d7279985c18211ec32a77cbecfdf2d4604e4d721de7490598ffb605237637",
+      "sha256_utf8_lf": "825d7279985c18211ec32a77cbecfdf2d4604e4d721de7490598ffb605237637"
+    },
+    {
+      "arquivo": "docs/testes/reforco-entrega-20261110/servicos-reais/nest-mock.txt",
+      "sha256": "7926d7bb0f63b877876317646d1c23a13008b45b4dd0da07449f9d407e5f80c3",
+      "sha256_utf8_lf": "7926d7bb0f63b877876317646d1c23a13008b45b4dd0da07449f9d407e5f80c3"
+    },
+    {
+      "arquivo": "docs/testes/reforco-entrega-20261110/verificar_reforco.py",
+      "sha256": "c196767f55999ffcde87946bfa7b62adda237c6f2ba2c00fb51a93c4115c005f",
+      "sha256_utf8_lf": "c196767f55999ffcde87946bfa7b62adda237c6f2ba2c00fb51a93c4115c005f"
+    }
+  ],
+  "itens_academicos_principais": [
+    "BACK-REF-01",
+    "IA-REF-02",
+    "IA-REF-04"
+  ],
+  "complemento": "BACK-REF-03",
+  "limites": [
+    "Prompt histórico e snapshot exato indisponíveis.",
+    "Teto de branches do backend permanece declarado.",
+    "Benchmark anterior preservado, sem calibração ou LLM real.",
+    "Revisão humana e envio não certificados."
+  ]
+}
