@@ -48,12 +48,16 @@ $ nvm use
 $ npm ci
 ```
 
+### Windows / PowerShell
+
+Para iniciar os tres servicos com as variaveis corretas, siga o [roteiro PowerShell na raiz](../README.md#windows--powershell-evitar-o-erro-503-de-configuracao). O comando `./scripts/iniciar-local.ps1`, executado em `backend/`, prepara a configuracao local e inicia o NestJS.
+
 ### Execução local em sequência
 
 Após instalar as dependências, em `backend/`:
 
 ```bash
-npm run start:dev
+AI_SERVICE_URL=http://localhost:8000 AI_SERVICE_TIMEOUT_MS=30000 npm run start:dev
 ```
 
 Isso inicia o NestJS na porta 3000. Em outro terminal:
