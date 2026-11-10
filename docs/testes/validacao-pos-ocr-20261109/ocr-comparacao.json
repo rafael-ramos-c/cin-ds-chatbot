@@ -1,0 +1,67 @@
+{
+  "base_antes": "69b25873092eced0da4aab19ce42a12c5226ae3a",
+  "base_depois": "b40c4f43f055d704462efa02074d7413a0e0092d",
+  "documentos": [
+    {
+      "arquivo": "ppc_ec_anterior.pdf",
+      "sha256_antes": "15219e482dd000281ef5b25b4baba46e113fa52a5076482165091e97fadce69e",
+      "sha256_depois": "d9eb6dc38a39c20016796283d12567efac2f5883925af1550f2aadafaf3df350",
+      "paginas_antes": 59,
+      "paginas_depois": 59,
+      "paginas_alvo": [
+        {
+          "pagina": 22,
+          "caracteres_antes": 0,
+          "caracteres_depois": 0,
+          "amostra_depois": ""
+        }
+      ]
+    },
+    {
+      "arquivo": "ppc_si_anterior.pdf",
+      "sha256_antes": "13c21cbb00ef132611ffba903cd2dbcd1fcfe3700a7831e5861598187e894a55",
+      "sha256_depois": "47f8e699c02817c3e4450b41aed18ded9c17c2a5e4adbc0a88c5768dd591bde2",
+      "paginas_antes": 202,
+      "paginas_depois": 202,
+      "paginas_alvo": [
+        {
+          "pagina": 202,
+          "caracteres_antes": 0,
+          "caracteres_depois": 1005,
+          "amostra_depois": "SERVIÇO PÚBLICO FEDERAL \nUNIVERSIDADE FEDERAL DE PERNAMBUCO \nCENTRO DE INFORMÁTICA \n(GRADUAÇÃO EM SISTEMAS DE INFORMAÇÃO \nRecife, 13 de julho de 2012. \nNo dia 13 de julho de 2012, às 13h 30min, na sala de convivência do "
+        }
+      ]
+    },
+    {
+      "arquivo": "ppc_si_novo_2024.pdf",
+      "sha256_antes": "e0e4d45cc8497c0486065b855a76c98dc26ec2ccc48f2accffb3563aa694fac6",
+      "sha256_depois": "94520e2491db8b4cba68a458578e8674f6350558ed6b40ec68713fd4dd498cb6",
+      "paginas_antes": 245,
+      "paginas_depois": 245,
+      "paginas_alvo": [
+        {
+          "pagina": 149,
+          "caracteres_antes": 0,
+          "caracteres_depois": 2254,
+          "amostra_depois": "20/07/2023, 15:47 sipac.ufpe.br/sipac/protocolo/documento/documento visualizacao.jsf?imprimir=true&idDoc=2255732 \n444 à \noq \nUFPE \nMINISTÉRIO DA EDUCAÇÃO \nUNIVERSIDADE FEDERAL DE PERNAMBUCO \nDEPARTAMENTO DE LETRAS - CAC "
+        },
+        {
+          "pagina": 158,
+          "caracteres_antes": 0,
+          "caracteres_depois": 1431,
+          "amostra_depois": "18/08/2023, 16:35 sipac.ufpe.br/sipac/protocolo/documento/documento visualizacao.jsf?imprimir=true&idDoc=2311210 \nMINISTÉRIO DA EDUCAÇÃO \nUNIVERSIDADE FEDERAL DE PERNAMBUCO \nSECRETARIA GERAL - CIN \nEXTRATO DE ATA No 2480"
+        },
+        {
+          "pagina": 159,
+          "caracteres_antes": 0,
+          "caracteres_depois": 1401,
+          "amostra_depois": "18/08/2023, 15:48 sipac.ufpe.br/sipac/protocolo/documento/documento visualizacao.jsf?imprimir=true&idDoc=2311001 \nMINISTÉRIO DA EDUCAÇÃO \nUNIVERSIDADE FEDERAL DE PERNAMBUCO \nSECRETARIA GERAL - CIN \nEXTRATO DE ATA No 2478"
+        }
+      ]
+    }
+  ],
+  "limites": [
+    "Texto extraivel nao comprova fidelidade do OCR.",
+    "Pagina fisica inclui capa e anexos."
+  ]
+}

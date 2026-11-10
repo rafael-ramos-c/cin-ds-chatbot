@@ -52,6 +52,8 @@ NestJS: reinicie o terminal 2 pelo roteiro acima. `Servico de busca indisponivel
 indica que o endereco foi configurado, mas a conexao falhou; confira o terminal 1.
 O venv e necessario para os comandos Python, nao para Git ou NestJS.
 
+Validação pós-OCR e pendências conferidas em 09/11: [índice de evidências](docs/testes/validacao-pos-ocr-20261109/README.md).
+
 ### Execução corrigida do serviço de IA
 
 Fechamento do backend em 08/11: `AI_SERVICE_URL` explícita é obrigatória e as seis

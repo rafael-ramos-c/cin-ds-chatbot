@@ -114,3 +114,21 @@ As alterações de produção ficaram em `src/ingest.py` (avisos e retorno das p
 omitidas) e dependência de leitura de fontes; backend/interface/catálogo não foram
 editados. Os seis testes falhos atuais de URL foram registrados, não removidos.
 Evidências e limites: [validação dos PPCs](validacao-ppcs/README.md).
+
+
+## 09/11/2026 - Reingestão após OCR e revisão do fechamento
+
+Pedido de Rafael neste chat: "Com essa atualização de Ricardo, avance o que der
+relativo a minha parte e a de Victor para irmos encerrando essa Sprint 3".
+Execução assistida por Codex neste mesmo chat; snapshot exato não registrado.
+Esta rodada não é uma nova V1 nem altera os testes V1/V2 históricos.
+
+Atividades: comparação dos três PDFs do PR #35, backup local do ChromaDB,
+reingestão e auditoria de trechos/metadados/páginas/filtros, regressões correntes,
+ensaio de serviços reais com geração mock e revisão de governança/relatórios.
+Resultados e comandos: validacao-pos-ocr-20261109/README.md e manifestos adjacentes.
+Quatro páginas ganharam texto; EC22 segue sem extração. Não houve OCR executado
+nesta rodada, LLM real, benchmark de UI nem terceira refatoração inventada.
+Correções dos estados de dívida se baseiam no conteúdo do repositório; confirmação
+final por Ricardo/Eric ainda necessária. Autoria dos achados não foi separada
+entre pessoa e LLM, e não se afirma aprovação docente ou dos colegas.
