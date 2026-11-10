@@ -46,7 +46,7 @@ def construir(destino):
         story.append(t); story.append(Spacer(1, 8))
 
     p('Relatório de refatorações', 'Titulo')
-    p('Chatbot SecGrad | CInCoders | Sprint 3 | Revisão de 08/11/2026', 'Pequeno')
+    p('Chatbot SecGrad | CInCoders | Sprint 3 | Revisão de 09/11/2026', 'Pequeno')
     p('VERSÃO PARCIAL PARA REVISÃO - 2 DE 3 ITENS COMPROVADOS', 'Sub')
     p('O roteiro exige pelo menos três itens refatorados, cada um com ID, commit e V2 antes/depois. Este documento antecipa duas frentes com evidência preservada. Não está pronto para entrega final e não certifica a terceira refatoração ou o sistema atual sem regressões.')
     h('1. BACK-REF-01 | Victor | Duplicação de decisão')
@@ -95,9 +95,9 @@ def construir(destino):
     p('Na identificação registrada, a leitura do fluxo e o apoio de LLM localizaram responsabilidades misturadas no retriever e decisões com o mesmo retorno no fallback. O histórico não isola o que cada abordagem descobriu primeiro; portanto, não se afirma uma descoberta exclusiva da pessoa ou da LLM.')
     p('A inspeção dos trechos confirmou por que as mudanças são pequenas e preservam ordem/efeitos. Também impediu um falso enquadramento: adicionar avisos de páginas omitidas ou mudar configuração não é apenas refatorar. Esse é um julgamento de requisito e comportamento que cobertura sozinha não faz.')
     p('Vitest/coverage-v8 e coverage.py medem execução e branches; não diagnosticam SRP nem aprovam utilidade de extrações. Seus denominadores expõem que remoção de condicionais ou inclusão de função pode mudar percentuais sem perder/ganhar capacidade de teste. Não houve execução documentada de Sonar, jscpd ou analisador de smells; não se atribuem resultados a essas ferramentas.')
-    p('O uso de LLM serve à proposta e ao registro, com revisão crítica dos responsáveis. Sugestões não comprovadas devem permanecer abertas ou ser descartadas com motivo. A comparação manual versus LLM permanece limitada pela falta de registro separado de autoria dos achados; o log consolidado ainda precisa ser conferido pela equipe.')
+    p('O uso de LLM serve à proposta e ao registro, com revisão crítica dos responsáveis. Sugestões não comprovadas devem permanecer abertas ou ser descartadas com motivo. A comparação manual versus LLM permanece limitada pela falta de registro separado de autoria dos achados; o log consolidado de 09/11 distingue relatos e verificação independente e ainda requer conferência dos responsáveis.')
     h('Condições para a versão final')
-    p('Completar terceiro item, conferir links/hashes, integrar o registro de dívida técnica e log de identificação (docs/qualidade/divida-tecnica.md e log-analise.md) e revisar os itens com seus responsáveis. A correção de URL BACK-COR-URL-01 não é terceira refatoração. Este PDF parcial pode ser versionado agora, mas não cumpre sozinho o mínimo de três itens.')
+    p('Completar terceiro item, conferir links/hashes e revisar o registro de dívida técnica e log de identificação publicados no PR #35 e complementados em 09/11. Quatro páginas passaram a ter texto; EC22 segue sem extração. Ver docs/testes/validacao-pos-ocr-20261109/. A correção de URL BACK-COR-URL-01 não é terceira refatoração. Este PDF parcial pode ser versionado agora, mas não cumpre sozinho o mínimo de três itens.')
     p('Fontes: relatórios de BACK-REF-01/IA-REF-02 e seus manifestos; validação atual em docs/testes/validacao-ppcs/README.md. As evidências completas acompanham no repositório; não foram reexecutadas as suítes históricas para montar este documento.', 'Pequeno')
 
     def rodape(canvas, doc):
@@ -115,7 +115,7 @@ def construir(destino):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--saida', type=Path, default=HERE / 'relatorio-refatoracoes-sprint3-parcial-20261108.pdf')
+    parser.add_argument('--saida', type=Path, default=HERE / 'relatorio-refatoracoes-sprint3-parcial-20261109.pdf')
     args = parser.parse_args()
     if args.saida.exists():
         parser.error('Use uma saída nova; não substituir evidência anterior automaticamente.')

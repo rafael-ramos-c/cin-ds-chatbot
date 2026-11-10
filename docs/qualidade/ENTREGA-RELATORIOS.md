@@ -1,3 +1,15 @@
+## Atualização de 09/11/2026
+
+- [Análise crítica atualizada, 5 páginas](../testes/analise-critica-sprint3-revisao-20261109.pdf).
+- [Refatorações, 3 páginas, ainda parcial](relatorio-refatoracoes-sprint3-parcial-20261109.pdf): duas de três comprovadas.
+- [Reingestão e integração pós-OCR](../testes/validacao-pos-ocr-20261109/README.md).
+- Governança agora publicada e revisada: [dívidas](divida-tecnica.md) e [log](log-analise.md).
+
+Rafael assumiu os dois PDFs e o fechamento restante do backend. Eric entrega a
+terceira refatoração formal e benchmark/UI; Ricardo confere OCR/EC22 e curadoria.
+As orientações datadas de 07/11 e 08/11 abaixo são histórico; suas pendências
+resolvidas não devem ser reabertas automaticamente. Não substituir os PDFs antigos.
+
 # Relatórios da Sprint 3 - consolidação de Rafael
 
 ## Revisão vigente de 08/11

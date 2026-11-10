@@ -1,0 +1,195 @@
+{
+  "base_git": "b40c4f43f055d704462efa02074d7413a0e0092d",
+  "status": "validado_com_ressalva_EC22",
+  "documentos": 21,
+  "trechos": 6811,
+  "erros_auditoria": 0,
+  "pares_curso_perfil": 7,
+  "sem_texto": [
+    {
+      "arquivo": "ppc_ec_anterior.pdf",
+      "paginas": [
+        22
+      ]
+    }
+  ],
+  "ia_testes": 20,
+  "v2_us01": 21,
+  "backend_unitarios": 256,
+  "backend_e2e_comuns": 34,
+  "backend_opt_in": 2,
+  "cenarios_http": 10,
+  "pdf_paginas": {
+    "docs/testes/analise-critica-sprint3-revisao-20261109.pdf": 5,
+    "docs/qualidade/relatorio-refatoracoes-sprint3-parcial-20261109.pdf": 3
+  },
+  "producao_testes_ui_corpus_preservados": true,
+  "manifesto": [
+    {
+      "arquivo": "docs/qualidade/relatorio-refatoracoes-sprint3-parcial-20261109.pdf",
+      "bytes": 10880,
+      "sha256": "d4ecf6570323c40d0b8a1f76c9bb43918c96be0157b953b76f25f9632927c218"
+    },
+    {
+      "arquivo": "docs/testes/analise-critica-sprint3-revisao-20261109.pdf",
+      "bytes": 14580,
+      "sha256": "b56ff0567ba762ad74f23e5a671c9d762bbfcc65e7bf2af3fa217015904750b3"
+    },
+    {
+      "arquivo": "docs/testes/validacao-pos-ocr-20261109/auditoria-final-execucao.txt",
+      "bytes": 1502,
+      "sha256": "9689ffd416b0189c10e5df066e0a6e337c02656d26004032dcc385faa909ed72",
+      "sha256_utf8_lf": "8462aecee2cac65a748e483d3d99eaaf4b2b2382b5a2886dd9bfa66dc102f18d"
+    },
+    {
+      "arquivo": "docs/testes/validacao-pos-ocr-20261109/auditoria-final.json",
+      "bytes": 28580,
+      "sha256": "121037d2874ff57a4c1a48a957cd2741511e76d1d3657acf644842492cdd662c",
+      "sha256_utf8_lf": "0621ab5c00bddb6aed71ce278620fe428bf2fd854036590e31780d98f40ffcc0"
+    },
+    {
+      "arquivo": "docs/testes/validacao-pos-ocr-20261109/auditoria-interrompida.txt",
+      "bytes": 592,
+      "sha256": "2bdd3f45a6fff0715f9aacabcf1031c6fdb9318d07f390148d32cdd071c90d7d",
+      "sha256_utf8_lf": "317cc8fd481c5b611a16e6ea1bd6c43da3e3f17a6750084e6464c83984a6dedf"
+    },
+    {
+      "arquivo": "docs/testes/validacao-pos-ocr-20261109/backend-e2e.json",
+      "bytes": 14713,
+      "sha256": "182a68d5cc66afc7cfd2cf3551ca72ae958b2a5b64c34b416887e6ccb5c1f6d9",
+      "sha256_utf8_lf": "182a68d5cc66afc7cfd2cf3551ca72ae958b2a5b64c34b416887e6ccb5c1f6d9"
+    },
+    {
+      "arquivo": "docs/testes/validacao-pos-ocr-20261109/backend-e2e.txt",
+      "bytes": 377,
+      "sha256": "d84dd13f855bb476e354fda76be47bc5f6e0b9dec6952c0260a5325add47c92a",
+      "sha256_utf8_lf": "645fb267a70ae049ac9e716ed24fa0403ceb4a5ede274541bdaff2cbc45c1748"
+    },
+    {
+      "arquivo": "docs/testes/validacao-pos-ocr-20261109/backend-unitarios.json",
+      "bytes": 82916,
+      "sha256": "fcae91cfed08a190d61ace8129627c52dd9fdceb5e85818d87b4d0f9cba7e5e3",
+      "sha256_utf8_lf": "fcae91cfed08a190d61ace8129627c52dd9fdceb5e85818d87b4d0f9cba7e5e3"
+    },
+    {
+      "arquivo": "docs/testes/validacao-pos-ocr-20261109/backend-unitarios.txt",
+      "bytes": 383,
+      "sha256": "6db467577091834be2a2116ac5d8964c4a8ecf490dfa230dc622f233d24f30e2",
+      "sha256_utf8_lf": "f9191d4288de0289bc0c5491e44cd9424669762407d859754bb7bb61a597fd01"
+    },
+    {
+      "arquivo": "docs/testes/validacao-pos-ocr-20261109/ingestao.txt",
+      "bytes": 2421,
+      "sha256": "9dc8407ddd8ed2e94afd1abb4a5c1be9cd5688f17aa3341cb6e139e16e4468a1",
+      "sha256_utf8_lf": "f675036b24d0de7d5f6f72f6ac2571c3b2331f1d3868af35dc553ca13968a5cb"
+    },
+    {
+      "arquivo": "docs/testes/validacao-pos-ocr-20261109/ocr-comparacao.json",
+      "bytes": 2942,
+      "sha256": "42dbbafcd797c2ca723929e7bf3732d44416bea3fa699c0ae5c53160d02d5b3e",
+      "sha256_utf8_lf": "ad7c71a01d6fcddb564ce5728e9855556f4560bb96df8271829f1c2dc43a3d44"
+    },
+    {
+      "arquivo": "docs/testes/validacao-pos-ocr-20261109/README.md",
+      "bytes": 4918,
+      "sha256": "9b5da2fab411bf324d5c97d005f079fb11065f6745dc2932b8c359e715fa7839",
+      "sha256_utf8_lf": "91dd2753c84b06e48f6d4d36a62d74225075346da1b8361a121fd915843dc02e"
+    },
+    {
+      "arquivo": "docs/testes/validacao-pos-ocr-20261109/regressao-ia-validada.txt",
+      "bytes": 2685,
+      "sha256": "47cece5e94fb1b2e0032eb7af1d391958367b62b08f7eb40c5565b651fc50b3e",
+      "sha256_utf8_lf": "8895c51374bad8180dcce78beda951de114506e261a1851310ce5d75203ad272"
+    },
+    {
+      "arquivo": "docs/testes/validacao-pos-ocr-20261109/regressao-ia.txt",
+      "bytes": 2685,
+      "sha256": "d2f95c37c37ccb4882fa1af4bf7943b2b3a28c49e1a2bdb9737958514ff0ec24",
+      "sha256_utf8_lf": "685646ea3812ea5088a0e278d39d0840825777e14c571c1081350346f80981fc"
+    },
+    {
+      "arquivo": "docs/testes/validacao-pos-ocr-20261109/servicos-reais/fastapi-disabled.txt",
+      "bytes": 562,
+      "sha256": "1361db46b73c911026a63db97a8f88e45201bcb2e6cd3caf9fda213d60921f2a",
+      "sha256_utf8_lf": "6462113a1507ad5b36e11a32ab02b0fe4edb1676725d440d6ced1c9b9296332b"
+    },
+    {
+      "arquivo": "docs/testes/validacao-pos-ocr-20261109/servicos-reais/fastapi-mock.txt",
+      "bytes": 727,
+      "sha256": "4ad23c02395ace16f6cf0a59dbbe5c32a771b6f70cf96fb48d76260b8139bc51",
+      "sha256_utf8_lf": "641e4825f3fb39b0d5d1a5e3770cfe3cd9f3a66001d4bb4ab5aac733f232f47c"
+    },
+    {
+      "arquivo": "docs/testes/validacao-pos-ocr-20261109/servicos-reais/integracao-real.json",
+      "bytes": 20126,
+      "sha256": "e9d677372ecb86d29bec1dc1144b85808986b0d7a916caf0d34147af05e7cdef",
+      "sha256_utf8_lf": "aeb366ee56ef2a42656919ec5e41d3eeb378468dcedd5e008c5e2a2ad4ff34e6"
+    },
+    {
+      "arquivo": "docs/testes/validacao-pos-ocr-20261109/servicos-reais/live-opt-in.json",
+      "bytes": 1457,
+      "sha256": "c91ffeec0c0667c8dde0730cdc7e6ee4c8c1d347d85ff162d06dad2e7522d4a1",
+      "sha256_utf8_lf": "c91ffeec0c0667c8dde0730cdc7e6ee4c8c1d347d85ff162d06dad2e7522d4a1"
+    },
+    {
+      "arquivo": "docs/testes/validacao-pos-ocr-20261109/servicos-reais/live-opt-in.txt",
+      "bytes": 392,
+      "sha256": "ca32f4221db426b4949bf0e7c713b29ee39e7401d6fea6bf1e96ecc7c52d295a",
+      "sha256_utf8_lf": "378c86314868c1dd9ecf99812aa95685ee7c2c7a813e3f6e322df037298bbd68"
+    },
+    {
+      "arquivo": "docs/testes/validacao-pos-ocr-20261109/servicos-reais/nest-configuracao_ausente.txt",
+      "bytes": 796,
+      "sha256": "28e4a52b1fafaca0ecbb862a809a521b09a8ecfd5e5bf518e968da3b1f65e3e5",
+      "sha256_utf8_lf": "28e4a52b1fafaca0ecbb862a809a521b09a8ecfd5e5bf518e968da3b1f65e3e5"
+    },
+    {
+      "arquivo": "docs/testes/validacao-pos-ocr-20261109/servicos-reais/nest-configuracao_invalida.txt",
+      "bytes": 788,
+      "sha256": "a0193bf24d626f47c8bcc18fe932658d87dd82d40684c5cab35f13748cd9877c",
+      "sha256_utf8_lf": "a0193bf24d626f47c8bcc18fe932658d87dd82d40684c5cab35f13748cd9877c"
+    },
+    {
+      "arquivo": "docs/testes/validacao-pos-ocr-20261109/servicos-reais/nest-disabled.txt",
+      "bytes": 797,
+      "sha256": "51e62241e469c27ae783a80d4e3bc8c53328a7fdca1a9cd5ab229843bac80f70",
+      "sha256_utf8_lf": "51e62241e469c27ae783a80d4e3bc8c53328a7fdca1a9cd5ab229843bac80f70"
+    },
+    {
+      "arquivo": "docs/testes/validacao-pos-ocr-20261109/servicos-reais/nest-fallback-controlado.txt",
+      "bytes": 796,
+      "sha256": "5c23511c436ddbacd28d323cecc8d80577792cd266601cbb150251b4a59e90e0",
+      "sha256_utf8_lf": "5c23511c436ddbacd28d323cecc8d80577792cd266601cbb150251b4a59e90e0"
+    },
+    {
+      "arquivo": "docs/testes/validacao-pos-ocr-20261109/servicos-reais/nest-indisponivel.txt",
+      "bytes": 796,
+      "sha256": "1dbf181d120be84a2d25e6ed9ecd2b96a61429c2fce2e594f77cc62024a165d1",
+      "sha256_utf8_lf": "1dbf181d120be84a2d25e6ed9ecd2b96a61429c2fce2e594f77cc62024a165d1"
+    },
+    {
+      "arquivo": "docs/testes/validacao-pos-ocr-20261109/servicos-reais/nest-mock.txt",
+      "bytes": 796,
+      "sha256": "18a83f40e17a572940d3581c72b31efe37d42f98f2e362ef28f3e3843d7ebcd4",
+      "sha256_utf8_lf": "18a83f40e17a572940d3581c72b31efe37d42f98f2e362ef28f3e3843d7ebcd4"
+    },
+    {
+      "arquivo": "docs/testes/validacao-pos-ocr-20261109/v2-atual.txt",
+      "bytes": 1902,
+      "sha256": "bdb97bb965191e404877aa88de79ed7779c1d2d2884f9bbfcfe7e97ef67429e9",
+      "sha256_utf8_lf": "71db59ff6e0d990b108d6471b018ac7fbe02f572e3f6592ab0442154b622a02c"
+    }
+  ],
+  "nota_hash": "sha256 do arquivo local; sha256_utf8_lf permite comparar texto após conversão CRLF/LF do Git. PDFs usam hash binário.",
+  "pendencias": [
+    "EC22 e fidelidade OCR/curadoria",
+    "benchmark e apresentação UI",
+    "terceira refatoração formal",
+    "revisão final dos relatórios pelos responsáveis"
+  ],
+  "limites": [
+    "Geração mock; sem LLM real.",
+    "Extração/integração não certificam qualidade semântica.",
+    "V1/V2 e PDFs antigos preservados."
+  ]
+}

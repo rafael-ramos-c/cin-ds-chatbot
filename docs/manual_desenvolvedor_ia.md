@@ -133,3 +133,13 @@ Variáveis do RAG: `SECGRAD_DATA_DIR`, `SECGRAD_CHROMA_PATH`, `SECGRAD_COLLECTIO
 Defini-las antes de iniciar o processo; defaults estão em `src/config.py`.
 Resultados atuais e lacunas para Ricardo/Eric/Victor:
 [Validação dos PPCs](testes/validacao-ppcs/README.md).
+
+
+## Revisão pós-OCR de 09/11/2026
+
+A base local foi reingerida após o PR #35: 21 documentos e 6.811 trechos,
+sem divergências contra a extração atual, com sete pares curso/perfil verificados.
+Quatro páginas de SI ganharam texto; EC anterior, página física 22, continua sem
+extração. Ver [evidências e reprodução](testes/validacao-pos-ocr-20261109/README.md).
+Cada integrante precisa reingerir a base local após atualizar os PDFs: o ChromaDB
+não é enviado ao Git. A integração foi testada com geração mock, não LLM real.
