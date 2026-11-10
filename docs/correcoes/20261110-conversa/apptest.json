@@ -1,0 +1,6 @@
+{
+  "sem_excecoes": true,
+  "continuacao_com_aviso": true,
+  "historico_limpo_ao_trocar_curso": true,
+  "rede": "simulada para AppTest; integração real em integracao.json"
+}

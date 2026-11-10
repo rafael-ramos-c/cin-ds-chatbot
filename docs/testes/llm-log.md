@@ -180,3 +180,10 @@ refatoração não substituem a comparação histórica das suítes.
 Auditoria documental atualiza a preferência dos PDFs para reforco-20261110,
 mantendo o limite cinco/três páginas e os arquivos anteriores. O registro não
 substitui aprovação humana nem reconstrói prompts históricos ausentes.
+
+
+## Correção conversacional posterior — 10/11/2026
+
+Pedido: “Você acha que conseguimos melhorar/tratar ainda mais essa situação no nosso Chatbot? Se sim, tente ajustar. No final, me dê novamente os PDF, junto com o arquivo compactado para eu fazer uma nova entrega no Classroom à professora.”
+
+Assistência desta conversa: normalização de referências a formulário de segunda chamada, esclarecimento sem antecedente, histórico separado por curso/perfil, mensagem sobre endereço ausente nos trechos e filtro temático explícito. Sem nova V1 ou reescrita das suítes acadêmicas. Seis testes UI novos (18 totais), 27 IA e 21 V2 passaram. AppTest com rede simulada e cliente/Nest/FastAPI/Chroma reais registrados separadamente em docs/correcoes/20261110-conversa/. Sem alegação de autoria humana independente, modelo snapshot exato, novo benchmark geral ou LLM real. PDFs novos distinguem métricas históricas e correções funcionais.

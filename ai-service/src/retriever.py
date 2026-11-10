@@ -1,6 +1,8 @@
 from src.config import CHROMA_PATH, COLLECTION_NAME
 from src.metadata_utils import construir_filtro
 import math
+import unicodedata
+import re
 
 
 class InvalidSearchResult(RuntimeError):
@@ -90,6 +92,25 @@ def buscar_contexto(
 
     if where_filter:
         parametros["where"] = where_filter
+
+    # A busca vetorial isolada pode aproximar perguntas sobre estágio de
+    # passagens sem relação com o tema. Restringe apenas o assunto explícito,
+    # sem remover os filtros de curso/perfil nem modificar a distância.
+    pergunta_normalizada = ''.join(
+        c for c in unicodedata.normalize('NFKD', pergunta.lower())
+        if not unicodedata.combining(c)
+    )
+    if re.search(r'\bestag(?:io|ios|iar|iario|iaria)\b', pergunta_normalizada):
+        parametros['where_document'] = {'$or': [
+            {'$contains': termo}
+            for termo in ('estágio', 'Estágio', 'ESTÁGIO', 'estagi', 'Estagi', 'ESTAG')
+        ]}
+    elif re.search(r'\b(?:segunda|2a|2ª) chamada\b', pergunta_normalizada):
+        parametros['where_document'] = {'$or': [
+            {'$contains': termo} for termo in (
+                'segunda chamada', 'Segunda Chamada', 'Segunda chamada',
+                'SEGUNDA CHAMADA', '2ª chamada', '2ª Chamada', '2a chamada')
+        ]}
 
     resultados = collection.query(**parametros)
 

@@ -1,0 +1,38 @@
+{
+  "status": "conferido_com_limites_documentados",
+  "pdf_paginas": {
+    "docs/testes/analise-critica-sprint3-conversa-20261110.pdf": 5,
+    "docs/qualidade/relatorio-refatoracoes-sprint3-conversa-20261110.pdf": 3
+  },
+  "testes": {
+    "ui": 18,
+    "ia": 27,
+    "v2_historica": 21
+  },
+  "historico_v1_v2_preservado": true,
+  "backend_e_benchmark_completo": "não reexecutados nesta revisão",
+  "sha256": {
+    "ai-service/src/ingest.py": "792601628ceffbd9bcefcd167a1e078d2c0d00ff00e0f00b6db29ae97c015974",
+    "ai-service/src/pdf_text.py": "399c285fbf6b46ee25a4c39d0d0f617506346f8d278fa41c3c0935a4824daf01",
+    "ai-service/src/retriever.py": "1bb0adf6e47caafb220c6886c75cf1e9be7d458db269f0c99eee4138586c4e99",
+    "ai-service/tests/test_pdf_text.py": "6cdb62bf37e09f1fdfc862473b19b06767a67abe3225809c19526497f352f660",
+    "ai-service/tests/test_topic_filter.py": "f18a7eed3fe9401e3001451acc8711f085b09a24f58bf2a5fd754cad05409d31",
+    "app.py": "049699efc6af1f348b3a41f5f2090dd3dbc1f08721a5ee4aaf9e4793316f296b",
+    "docs/correcoes/20261110-conversa/apptest.json": "c8cb7caf2179c4ce92759aeea0624a0a3902f9e765065d047c5b15a12944dd19",
+    "docs/correcoes/20261110-conversa/integracao.json": "8cd8c3f6277397e5b70cced8ea822bf5ac113f248f78c9209dba5808cd679a48",
+    "docs/correcoes/20261110-conversa/README.md": "e6f4787417ca1ddfd7284280fa57c9758c04230bf24c0d50530ab61406800a40",
+    "docs/correcoes/20261110-conversa/testes-ia.txt": "5f53359102c6d61b9d350bfdcfb784254c7c173dec09731e4d48f42812a4f302",
+    "docs/correcoes/20261110-conversa/testes-ui.txt": "b3e09f2a1178c12e07b732eac81fe5953180e60306e5f5d8b90ce71ae0e63485",
+    "docs/correcoes/20261110-conversa/testes-v2.txt": "d348aa4acbc688f5290db70a32eb851530d255d6a6066604167f5ff6d15d98df",
+    "docs/correcoes/20261110-conversa/verificar_pacote.py": "eac4994eeb63a867cc426c17f76b47b8ebb5a051a9828f41da47282e35945550",
+    "docs/correcoes/20261110-texto-pdf/consulta.txt": "c8f770f60e91c3c38e828d429e21f2f943806b34e9ebebe3eb9a870a5bfbbacb",
+    "docs/correcoes/20261110-texto-pdf/ingestao.txt": "6a78d83f4538044ad6d3cc0b231048ed520177f70a313d0ec25f9e0c5b196417",
+    "docs/correcoes/20261110-texto-pdf/README.md": "e8cc3cc19bf961556d1f94ac34a2779a469b93e1c788eabe817e5ca1a1047208",
+    "docs/correcoes/20261110-texto-pdf/testes.txt": "5f53359102c6d61b9d350bfdcfb784254c7c173dec09731e4d48f42812a4f302",
+    "docs/qualidade/relatorio-refatoracoes-sprint3-conversa-20261110.pdf": "351e587b1fad6afefead0a0a4c4cb5537bd8e570dc09376ff58b8addd4696a81",
+    "docs/testes/analise-critica-sprint3-conversa-20261110.pdf": "709f8fa52f38ea92393a4489d40711f22b63fb7f41135fa052fd84e1cc1e01d2",
+    "src/ui/api_client.py": "6092c617430bb6f9a70ab17c2040a9924b9db48b3ba6e998947048ed19200cb0",
+    "src/ui/conversation.py": "bfeedbf3ff95280b273296755382ce8438d60f0db382eee59cb5deafd8c50674",
+    "tests/ui/test_conversation.py": "7628818440cb5110944457d538829795e13359253d741dbc40c9102e4ebd872a"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "sucesso": true,
+  "resposta": "Não encontrei um endereço para obter esse requerimento nos trechos consultados. A referência ao formulário, sozinha, não informa onde baixá-lo. Confirme o endereço com a secretaria ou coordenação do curso. Os trechos abaixo são referências da busca, não um link de download.\n\n[VERIFICAÇÃO DOCUMENTAL LIMITADA — SEM GERAÇÃO POR LLM]",
+  "fontes": [
+    {
+      "documento": "regulamento_tg.txt (pág. 1)",
+      "trecho": ". A entrega da proposta constitui a primeira fase cumprida do TG, sendo entendida como a primeira nota. Caso o discente não entregue a proposta na data marcada, ele levará FALTA nessa primeira nota e deverá solicitar segunda chamada (com apresentação de justificativa comprovada). Se devidamente justificada, o aluno deverá entregar o projeto até 5 (cinco) dias após a data original de entrega. Caso a solicitação não seja aprovada (por falta de comprovação, por exemplo), o discente receberá FALTA na segunda chamada da primeira nota e será considerado REPROVADO POR FALTA."
+    },
+    {
+      "documento": "regras_requerimentos.txt (pág. 1)",
+      "trecho": "Solicitação de segunda chamada\n\nPara solicitar a 2ª chamada ou revisão de prova o aluno deve preencher o Requerimento e enviar juntamente com o(s) documentos(s) comprobatório(s) para o e-mail  da Coordenação do Curso com cópia para secgrad@cin.ufpe.br.\n\n\nPrazos de solicitação:\n\n2ª Chamada: 05 (cinco) dias úteis após a realização da prova.\n\nRevisão de Prova: 02 (dois) dias úteis contado da divulgação da nota.\n\n\nSolicitação de dispensa de disciplina\n\nSolicitação de Dispensa de Disciplinas: Requerimento.\n\nAs indicações das dispensas pretendidas devem constar na folha de despacho."
+    },
+    {
+      "documento": "ppc_ia_novo_2024.pdf (pág. 49)",
+      "trecho": "avaliação parcial especificada no plano de ensino da disciplina. Tal concessão de 2ª \nchamada dependerá da justificativa apresentada, com documentação comprobatória, \npara a falta do aluno na data prevista, mediante requerimento entregue ao \ncoordenador do curso ou da área dentro do prazo de 05 (cinco) dias úteis decorridos \nda realização da prova pela sua turma. Deferido o requerimento, com base na \nLegislação Federal específica, a 2ª chamada deverá ser realizada dentro do prazo de \n08 (oito) dias, contados a partir da última avaliação parcial, abrangendo todo o \nconteúdo programático da disciplina. \nO professor responsável pela disciplina deve divulgar sua programação (Plano de"
+    }
+  ]
+}

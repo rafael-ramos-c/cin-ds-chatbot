@@ -8,6 +8,7 @@ from pypdf import PdfReader
 from src.config import CHROMA_PATH, COLLECTION_NAME
 from src.index_utils import sincronizar_documento
 from src.metadata_utils import enriquecer_metadados
+from src.pdf_text import normalizar_texto_pdf
 
 
 def obter_collection():
@@ -179,6 +180,7 @@ def indexar_documento(
             texto_pagina = (
                 pagina.extract_text() or ""
             )
+            texto_pagina = normalizar_texto_pdf(texto_pagina)
 
             if not texto_pagina.strip():
                 paginas_sem_texto.append(numero_pagina)

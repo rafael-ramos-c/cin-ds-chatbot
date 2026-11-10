@@ -1,0 +1,21 @@
+{
+  "contexto": "[Documento: norma_estagio_cc_novo_2024.pdf | Pág. 3 | Curso: Ciência da Computação]\nestagiário for igual ou maior que 1200h, salvo se a duração prevista para o estágio se situar \ntotalmente em período de férias escolares. \nCAPÍTULO VI \nDAS DISPOSIÇÕES GERAIS \nArt. 14. Os casos omissos e as interpretações deste regulamento devem ser resolvidos pelo \nColegiado do Curso de Ciência da Computação. \n130\n\n---\n\n[Documento: estagio_geral.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nOBSERVAÇÕES IMPORTANTES DO PREENCHIMENTO: \n- Assinaturas EXCLUSIVAMENTE DE FORMA ELETRÔNICA. \n- A data de ínicio deverá ser a mesma que consta na documentação inicial (ou da alteração da modalidade para obrigatório quando for caso)\n- A data de término deverá ser a mesma que consta na documentação inicial do estágio obrigatório (ou do termo de rescisão, ou do aditivo que alterou de obrigatório para não obrigatório).\n13. Como posso utilizar a carga horária cumprida no Estágio Não Obrigatório?\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 130 | Curso: Ciência da Computação]\nArt. 9º Além dos requisitos descritos no\nArt. 8º, o Termo de Compromisso de estágio não-obrigatório deverá: 129",
+  "fontes": [
+    {
+      "arquivo": "norma_estagio_cc_novo_2024.pdf",
+      "pagina": 3,
+      "curso": "Ciência da Computação"
+    },
+    {
+      "arquivo": "estagio_geral.txt",
+      "pagina": 1,
+      "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+    },
+    {
+      "arquivo": "ppc_cc_novo_2024.pdf",
+      "pagina": 130,
+      "curso": "Ciência da Computação"
+    }
+  ],
+  "distancia_minima": 0.47075605392456055
+}
