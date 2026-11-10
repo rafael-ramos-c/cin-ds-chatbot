@@ -1,0 +1,27 @@
+LEG-01 medido
+LEG-02 medido
+LEG-03 medido
+LEG-04 medido
+LEG-05 medido
+LEG-06 medido
+LEG-07 medido
+LEG-08 medido
+LEG-09 medido
+LEG-10 medido
+PPC-CC-novo medido
+PPC-CC-anterior medido
+PPC-EC-novo medido
+PPC-EC-anterior medido
+PPC-SI-novo medido
+PPC-SI-anterior medido
+PPC-IA-novo medido
+FORA-01 medido
+FORA-02 medido
+FORA-03 medido
+FORA-04 medido
+FORA-05 medido
+FORA-06 medido
+FORA-07 medido
+FORA-08 medido
+2026-11-10 17:10:31.657 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+{"infraestrutura_ok": true, "resumo": {"0.8": {"total": 25, "fallback_conforme": 15, "falsos_positivos_recuperacao": 10, "recusas_em_casos_dentro_escopo": 0}, "0.5": {"total": 25, "fallback_conforme": 18, "falsos_positivos_recuperacao": 7, "recusas_em_casos_dentro_escopo": 0}}, "erro": null}

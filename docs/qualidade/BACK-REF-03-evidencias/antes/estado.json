@@ -1,0 +1,72 @@
+{
+  "git_head": "0b334a74ff91e0bd98e5a792bc3b4cf25a307944",
+  "node": "v24.22.1",
+  "suite": "V2 de regressão corrente, não V2 acadêmica histórica",
+  "tests": [
+    {
+      "arquivo": "backend/src/ai-service/ai-service.service.spec.ts",
+      "sha256": "1c0e57b40b33693d980d774c0bb7df8e639df649f3f9b7a1e69b9717ab5d9c36",
+      "sha256_lf": "4ccd9b9c8b751f700a5ad699bb15a0c96b136d7ed08025d93631a7f4d4e43c69"
+    },
+    {
+      "arquivo": "backend/src/ai-service/generation.service.spec.ts",
+      "sha256": "fa0b595fd6d24f8d4192da513382feb0e5886514d96a4168e45b505125ebc77e",
+      "sha256_lf": "c30d60cb92dc14adb8bfeb99122d546a2e4ee030497d0bbb7b50e3394395f323"
+    },
+    {
+      "arquivo": "backend/src/app.controller.spec.ts",
+      "sha256": "f78f239e491687ca9df63da3702167138e33b430a65997365769dc5a5a8826c4",
+      "sha256_lf": "8f7004c497c489c55caab509cb10a0472a07bd8917e26001baa9120e080c3800"
+    },
+    {
+      "arquivo": "backend/src/orchestration/fallback.config.spec.ts",
+      "sha256": "2ebe5a88d4ff6d6ea7f8a6824614f3a1cab3eba9113e56fff52227ee3f0be920",
+      "sha256_lf": "fe0951132e1ed5facb2ffb7a8d546c63d0566d2550b01c2259f4e5b16dea7142"
+    },
+    {
+      "arquivo": "backend/src/orchestration/fallback.service.spec.ts",
+      "sha256": "75879f3882f550baab6b77c297968be32d6b7b9cc73406c8bbced49a446308d1",
+      "sha256_lf": "4687a6141a7989b397d1864603693ccee2dd12c1b274e86880c1d75289d66807"
+    },
+    {
+      "arquivo": "backend/src/orchestration/orchestration.service.spec.ts",
+      "sha256": "25b1788f55855681a961d7c1cd52a323eba3a2485179ded0096acd9afd29486e",
+      "sha256_lf": "df9a8acd1c195db11605b01a2135d0d88fccd6789faa83c09a74eb3fa96f6fb6"
+    },
+    {
+      "arquivo": "backend/test/generation-integration.spec.ts",
+      "sha256": "0c684d363fc0559db5816a9d80124ce41e52ca936e2cb5bcbbeb8fbed09e7111",
+      "sha256_lf": "5d70da615989b784994317639cd23646d38835eddf59cdbbd4fe00c1c1638f8b"
+    },
+    {
+      "arquivo": "backend/test/regressao-gerar/conversa-http.spec.ts",
+      "sha256": "66ffb4157d159ed0004d5503c7e6c4dc087f684cc24e94db6bd315fc73e15bc8",
+      "sha256_lf": "6746ab9427e20128d480cb2c52b1bb2ce9aa407d04a931bd149386be0a30a40f"
+    },
+    {
+      "arquivo": "backend/test/regressao-gerar/fallback-config.spec.ts",
+      "sha256": "4046e29f2055bab13f642cd6b3af1c1affac14a4ed5db98460f37d21cc52ba32",
+      "sha256_lf": "c4ce00823594c53e4ebff4f125e8810ea354122dbe4eb8301e03fc0d86b55338"
+    },
+    {
+      "arquivo": "backend/test/regressao-gerar/fallback-email.spec.ts",
+      "sha256": "07e2658e220591453328377b89d96afdc8aa1a9346db30a8d855a81dfffab133",
+      "sha256_lf": "b16274aa8c4b8697a909e25ffbb4a7f355373bec03b7c9449d017c661d7b544b"
+    },
+    {
+      "arquivo": "backend/test/regressao-gerar/orchestration.spec.ts",
+      "sha256": "fa9fe53167fa0aa4d0f33cc772b0563707c1cb6a167814cbbe814acaf7b02fd2",
+      "sha256_lf": "5e6523a137e128f9f4524b88d829721c971696f380f53651afdb0f1afeff2a2e"
+    }
+  ],
+  "producao": {
+    "arquivo": "backend/src/ai-service/ai-service.service.ts",
+    "sha256": "826cd14af79f70eb2f85eb588b134bd196eabf3e7226bb04492f6a8f4d00b708",
+    "sha256_lf": "40b86924a8d31010de8a3c54e188b61a7b553f3f6532c34465de4784b4266cfa"
+  },
+  "config": {
+    "arquivo": "backend/vitest.back-ref03.config.mts",
+    "sha256": "8a9fe154af11bf7bb32dd0b6b3b77e72274459a9f829736e6b19d1fbd0b7d7eb",
+    "sha256_lf": "8a9fe154af11bf7bb32dd0b6b3b77e72274459a9f829736e6b19d1fbd0b7d7eb"
+  }
+}

@@ -1,0 +1,10 @@
+27d0d9bd4a97556fab53b4d4a3762279cf6f8b8e BACK-REF-03: extrai politica de origem da construcao do endpoint
+2a33101868451c3220f6b939a3b8a10a330995e7 test(BACK-REF-03): congela regressao V2 antes da extracao
+0b334a74ff91e0bd98e5a792bc3b4cf25a307944 fix(sprint3): restaura limiar e exibe trechos documentais reais
+cd583e4491552f404444d76723853693c00cd398 feat: finaliza integracao da sprint 3 com resposta mock, benchmark e 3a refatoracao do ai-service
+c712a0c8ac2e6974d89fa19bff76f199943a123f Merge pull request #36 from rafael-ramos-c/test/ia-pos-ocr-sprint3
+f9b8641a482eed73b11081088fd362e324de1af4 docs(testes): valida base pos-OCR e atualiza relatorios da Sprint 3
+b40c4f43f055d704462efa02074d7413a0e0092d Merge pull request #35 from rafael-ramos-c/fix/envio-pdfs-governanca
+c293ba35cade036a071b3665d4b991087698da9f Merge pull request #34 from rafael-ramos-c/fix/inicializacao-local-sprint3
+aa439f24036239825dffa2880ca346f282217521 fix(dev): configura inicializacao local e documenta correcao do erro 503
+4d5ccbb5b7b2c511c3b3f06f7cb52b44aca347c4 fix(ocr-docs): inclui PDFs com camada OCR e relatorios de governanca em docs/qualidade/

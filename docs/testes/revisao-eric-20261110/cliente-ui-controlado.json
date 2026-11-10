@@ -1,0 +1,15 @@
+{
+  "metodo": "Resposta HTTP substituida por mock; sem navegador ou servicos reais.",
+  "prioriza_resposta_e_preserva_aviso_mock": true,
+  "retorno": {
+    "sucesso": true,
+    "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+    "fontes": [
+      {
+        "documento": "ppc.pdf (pág. 2)",
+        "trecho": "Página 2 do documento ppc.pdf"
+      }
+    ]
+  },
+  "limite": "A legenda de pagina nao e trecho textual do documento."
+}

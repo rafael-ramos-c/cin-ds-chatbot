@@ -1,0 +1,12 @@
+INFO:     Started server process [27808]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:51816 (Press CTRL+C to quit)
+INFO:     127.0.0.1:51821 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51828 - "POST /api/v1/buscar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51842 - "POST /api/v1/buscar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51843 - "POST /api/v1/gerar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51845 - "POST /api/v1/gerar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51849 - "POST /api/v1/buscar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51870 - "POST /api/v1/gerar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51870 - "POST /api/v1/gerar HTTP/1.1" 200 OK

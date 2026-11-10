@@ -1,4 +1,4 @@
-"""Relatório parcial: duas refatorações comprovadas; terceira pendente.
+"""Relatório das três refatorações, com histórico e execução corrente distinguidos.
 
 Executar com reportlab instalado. Não executa testes ou modifica produção.
 """
@@ -46,9 +46,9 @@ def construir(destino):
         story.append(t); story.append(Spacer(1, 8))
 
     p('Relatório de refatorações', 'Titulo')
-    p('Chatbot SecGrad | CInCoders | Sprint 3 | Revisão de 09/11/2026', 'Pequeno')
-    p('VERSÃO PARCIAL PARA REVISÃO - 2 DE 3 ITENS COMPROVADOS', 'Sub')
-    p('O roteiro exige pelo menos três itens refatorados, cada um com ID, commit e V2 antes/depois. Este documento antecipa duas frentes com evidência preservada. Não está pronto para entrega final e não certifica a terceira refatoração ou o sistema atual sem regressões.')
+    p('Chatbot SecGrad | CInCoders | Sprint 3 | Revisão de 10/11/2026', 'Pequeno')
+    p('TRÊS ITENS COM EVIDÊNCIAS ANTES E DEPOIS', 'Sub')
+    p('Três itens com ID e commits separados. Os dois primeiros preservam a V2 acadêmica histórica; o terceiro usa a V2 de regressão corrente, derivada da evolução de geração, sem substituir a baseline histórica. Testes delimitam a proteção: não certificam precisão semântica de respostas.')
     h('1. BACK-REF-01 | Victor | Duplicação de decisão')
     p('Local: backend/src/orchestration/fallback.service.ts, identificarSetor. Dois ifs adjacentes retornavam SecGrad. A duplicação fragmentava a manutenção do mesmo destino; uma alteração poderia atualizar só parte das palavras-chave. Categoria: Duplicated Code e integridade conceitual, sem atribuir violação de todos os princípios SOLID.')
     p('Escolha: pequena mudança com proteção da V2 e benefício claro de manutenção. Técnica: Consolidate Conditional Expression. Consolidam-se as cinco verificações com OR e um único retorno, preservando ordem, curto-circuito e prioridade dos ramos NEAP, pós-graduação e padrão.')
@@ -85,37 +85,40 @@ def construir(destino):
     p('A ingestão agora avisa sobre páginas sem texto e possui dois testes novos. É correção de observabilidade/contrato de retorno, não terceira refatoração sem mudança de comportamento. Do mesmo modo, alterar URL padrão é mudança funcional e não substitui a terceira entrega.', 'Pequeno')
 
     story.append(PageBreak())
-    p('Fechamento e reflexão crítica', 'Titulo')
-    h('3. Terceiro item | Eric | Evidência pendente')
-    p('Não há no material conferido evidência suficiente para registrar um terceiro item concluído. A modularização da interface e o ajuste do endereço do serviço não foram convertidos retrospectivamente em uma refatoração formal com resultados antes/depois. Não foram inventados ID, testes, métricas, autoria ou commit.')
-    h('O que Eric precisa entregar para substituir esta seção')
-    p('1. ID ligado ao registro de dívida; local exato, categoria, consequência e justificativa da escolha.\n2. Nome da técnica do catálogo e trecho antes/depois ou link do commit identificado.\n3. V2 executada antes da alteração, com resultado, versão de produção e suíte identificadas. Se o trecho não tem teste, caracterizar primeiro o comportamento.\n4. Mesma suíte após a refatoração, com logs e diferenças investigadas.\n5. Explicação do que foi preservado e do que melhorou; confirmação pelo responsável.')
-    p('Rafael substitui esta seção pelas evidências recebidas e mantém o limite total de três páginas, condensando as seções se necessário. Não anexar uma quarta página para contornar o limite. Ricardo continua responsável pela curadoria e pelo registro consolidado das dívidas conforme a divisão do grupo.')
-    h('Comparação: leitura humana, ferramentas e LLM')
-    p('Na identificação registrada, a leitura do fluxo e o apoio de LLM localizaram responsabilidades misturadas no retriever e decisões com o mesmo retorno no fallback. O histórico não isola o que cada abordagem descobriu primeiro; portanto, não se afirma uma descoberta exclusiva da pessoa ou da LLM.')
-    p('A inspeção dos trechos confirmou por que as mudanças são pequenas e preservam ordem/efeitos. Também impediu um falso enquadramento: adicionar avisos de páginas omitidas ou mudar configuração não é apenas refatorar. Esse é um julgamento de requisito e comportamento que cobertura sozinha não faz.')
-    p('Vitest/coverage-v8 e coverage.py medem execução e branches; não diagnosticam SRP nem aprovam utilidade de extrações. Seus denominadores expõem que remoção de condicionais ou inclusão de função pode mudar percentuais sem perder/ganhar capacidade de teste. Não houve execução documentada de Sonar, jscpd ou analisador de smells; não se atribuem resultados a essas ferramentas.')
-    p('O uso de LLM serve à proposta e ao registro, com revisão crítica dos responsáveis. Sugestões não comprovadas devem permanecer abertas ou ser descartadas com motivo. A comparação manual versus LLM permanece limitada pela falta de registro separado de autoria dos achados; o log consolidado de 09/11 distingue relatos e verificação independente e ainda requer conferência dos responsáveis.')
-    h('Condições para a versão final')
-    p('Completar terceiro item, conferir links/hashes e revisar o registro de dívida técnica e log de identificação publicados no PR #35 e complementados em 09/11. Quatro páginas passaram a ter texto; EC22 segue sem extração. Ver docs/testes/validacao-pos-ocr-20261109/. A correção de URL BACK-COR-URL-01 não é terceira refatoração. Este PDF parcial pode ser versionado agora, mas não cumpre sozinho o mínimo de três itens.')
-    p('Fontes: relatórios de BACK-REF-01/IA-REF-02 e seus manifestos; validação atual em docs/testes/validacao-ppcs/README.md. As evidências completas acompanham no repositório; não foram reexecutadas as suítes históricas para montar este documento.', 'Pequeno')
+    p('Origem da API e reflexão crítica', 'Titulo')
+    h('3. BACK-REF-03 | Rafael, assumindo fechamento de Eric')
+    p('Local: backend/src/ai-service/ai-service.service.ts, getEndpoint. Parsing, política detalhada de origem, construção da rota e tradução de exceção dividiam o mesmo fluxo. Categorias: Long Method relativo ao fluxo e coesão. A extração melhora a separação local de responsabilidades; não resolve todas as razões de mudança da classe.')
+    p('Técnica: Extract Function. O predicado origemInvalida(origin, base) recebe literalmente as sete condições OR, na mesma ordem. Leitura de ambiente, parsing, rota e catch ficam em getEndpoint. Mantêm-se protocolos, regex, credenciais, query, fragmento, caminho, mensagem HTTP e curto-circuito. A função é interna, sem nova API pública.')
+    p('Antes: getEndpoint contém if com sete condições. Depois: if (origemInvalida(origin, base)). Escolha: mudança pequena em política já protegida por testes de origens inválidas e dos dois endpoints. Não é a adição de timeout descrita por Eric, que já existia, nem a restauração funcional de 0,8.')
+    tabela([['Mesma configuração / Node 24.22.1', 'Antes', 'Depois'],
+            ['V2 de regressão corrente', '256/256', '256/256'],
+            ['Linhas do AiService', '64/64 (100%)', '65/65 (100%)'],
+            ['Branches do AiService', '84/84 (100%)', '84/84 (100%)'],
+            ['Funções do AiService', '8/10 (80%)', '9/11 (81,81%)']])
+    p('A seleção de 52 testes de geração está contida nos 256; não somar os totais. Hashes da suíte e configuração foram conferidos. A função acrescenta uma linha instrumentada e uma função coberta; não representa comportamento novo. A V2 acadêmica histórica de 105 casos permanece preservada e não é apresentada como reexecutada na produção atual.', 'Pequeno')
+    link('Congelamento anterior: 2a33101 | evidência antes da alteração', REPO + '/commit/2a33101')
+    link('Refatoração isolada: 27d0d9b | diff antes/depois', REPO + '/commit/27d0d9b')
+    p('Evidências: BACK-REF-03-evidencias/antes e depois (vitest-results.json, HTML e estado); comparacao.json. Configuração: backend/vitest.back-ref03.config.mts. Diagnóstico: BACK-REF-03-divida.md. Correções funcionais de UI/limiar ficaram no commit 0b334a7.', 'Pequeno')
+    h('Reflexão: inspeção, ferramentas e LLM')
+    p('Leitura do fluxo com apoio de LLM identificou decisão repetida, integridade vetorial misturada à formatação e política de URL dentro da construção. O histórico não separa autoria de cada achado; não se atribui descoberta exclusiva à pessoa ou à LLM. A inspeção do diff confirmou ordem e mensagens e rejeitou como refatoração a mudança do limiar e novos tratamentos de erro.')
+    p('Vitest/V8, coverage.py e lint medem caminhos e problemas locais, mas não diagnosticam SRP nem validam adequação documental. Não houve Sonar ou ferramenta de smells executada. O benchmark real encontrou aceitação indevida de perguntas externas apesar dos testes verdes: dívida QA-01 permanece aberta. EC22 foi justificada como contracapa administrativa, sem apagar a página. Ver docs/testes/fechamento-final-20261110/.')
 
     def rodape(canvas, doc):
         canvas.setFont('Helvetica', 8)
         canvas.setFillColor(colors.HexColor('#4a5c69'))
-        canvas.drawString(59, 30, 'Sprint 3 | PARCIAL - falta terceira refatoração')
+        canvas.drawString(59, 30, 'Sprint 3 | Três refatorações | 10/11/2026')
         canvas.drawRightString(A4[0] - 59, 30, str(doc.page))
 
     SimpleDocTemplate(str(destino), pagesize=A4, rightMargin=59, leftMargin=59,
                       topMargin=45, bottomMargin=48,
-                      title='Refatorações da Sprint 3 - parcial, duas de três',
+                      title='Refatorações da Sprint 3 - três itens',
                       author='Equipe CInCoders - consolidação de Rafael').build(
                           story, onFirstPage=rodape, onLaterPages=rodape)
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--saida', type=Path, default=HERE / 'relatorio-refatoracoes-sprint3-parcial-20261109.pdf')
+    parser.add_argument('--saida', type=Path, default=HERE / 'relatorio-refatoracoes-sprint3-final-20261110.pdf')
     args = parser.parse_args()
     if args.saida.exists():
         parser.error('Use uma saída nova; não substituir evidência anterior automaticamente.')

@@ -143,3 +143,17 @@ Quatro páginas de SI ganharam texto; EC anterior, página física 22, continua 
 extração. Ver [evidências e reprodução](testes/validacao-pos-ocr-20261109/README.md).
 Cada integrante precisa reingerir a base local após atualizar os PDFs: o ChromaDB
 não é enviado ao Git. A integração foi testada com geração mock, não LLM real.
+
+
+## Fechamento de 10/11/2026
+
+[Entrega e reprodução](ENTREGA-SPRINT3.md). O limiar padrão foi restaurado para
+0,8; para testar explicitamente 0,5, usar FALLBACK_DISTANCE_THRESHOLD no processo
+NestJS, sem declarar calibração. A fonte literal na UI é associada ao cabeçalho
+arquivo/página/curso de contexto; se a associação não é verificável, não há citação
+inventada. Essa dependência textual está registrada como API-01 para evolução.
+
+Benchmark: na raiz, executar `python scripts/benchmark_sprint3.py --casos docs/testes/fechamento-final-20261110/benchmark-casos.json --saida docs/testes/novo-benchmark`.
+Requer Node 24, backend compilado, ambiente Python do projeto e ChromaDB ingerido.
+Cria e encerra serviços em portas temporárias, gera respostas mock e usa AppTest,
+sem navegador. Não usar resultado de infraestrutura como métrica de qualidade.

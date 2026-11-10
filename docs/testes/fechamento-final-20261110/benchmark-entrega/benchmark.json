@@ -1,0 +1,1877 @@
+{
+  "utc": "2026-11-10T20:10:07.423488+00:00",
+  "git_head": "27d0d9bd4a97556fab53b4d4a3762279cf6f8b8e",
+  "node": "v24.22.1",
+  "casos_sha256": "366990e44c7f24521fa06cec6a0fafebbcd1b64476ccaa88a7f788dcae73edcc",
+  "modo": "mock",
+  "casos": [
+    {
+      "caso": {
+        "id": "LEG-01",
+        "grupo": "legado_sprint1",
+        "pergunta": "Como solicito dispensa de disciplina cursada externamente?",
+        "curso": "CC",
+        "perfil": "novo",
+        "fallback_esperado": false,
+        "expectativa_legada": "Deve detalhar o procedimento com apresentação de histórico e ementa via SecGrad.",
+        "fonte_legada": "requerimento_dispensa.pdf (pág 1-2)",
+        "limite": "Resposta acadêmica não avaliável com mock; nomes legados de fontes não equivalem a arquivos atuais."
+      },
+      "resultados": {
+        "0.8": {
+          "distancia_minima": 0.4091668725013733,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 85,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 83,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 74,
+              "curso": "Ciência da Computação"
+            }
+          ],
+          "contexto": "[Documento: ppc_cc_novo_2024.pdf | Pág. 85 | Curso: Ciência da Computação]\nFigura\n2.\nQuadro\nde\ndisciplinas\ne\natividades\nobrigatórias.\n84\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 83 | Curso: Ciência da Computação]\n320\n270\n62,5\nTotal\n3.200\n100\nA\nformação\ndo\negresso\ninclui\nas\ndisciplinas\nobrigatórias\nque\ndão\nao\negresso\na\nformação\nem\nconceitos\nbásicos\ne\nconceitos\nessenciais\nà\nformação\nprofissional.\nA\n33\nEmbora\nseja\nincomum,\nhá\nestudantes\nque\nconseguem\nconcluir\no\ncurso\ncom\num\nsemestre\na\nmenos,\nacelerando\na\nmatrícula\nem\ndisciplinas\neletivas\nou\ncursando\neletivas\nlivres\nainda\nno\ncomeço\ndo\ncurso\n(já\nque\nnão\nhá\nlimitação\npara\nisso).\n82\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 74 | Curso: Ciência da Computação]\nde\ndisciplinas\n(obrigatórias,\neletivas\nde\nperfil,\ne\neletivas\nlivres),\nACEx\ne\nAtividades\nComplementares.\nNão\nhá\ncarga\nhorária\ndefinida,\npara\nfins\nde\nintegralização,\npara\nestágio\ndevido\nà\nnão\nobrigatoriedade\ndeste\nno\ncurso.\n73",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 1.491
+        },
+        "0.5": {
+          "distancia_minima": 0.4091668725013733,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 85,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 83,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 74,
+              "curso": "Ciência da Computação"
+            }
+          ],
+          "contexto": "[Documento: ppc_cc_novo_2024.pdf | Pág. 85 | Curso: Ciência da Computação]\nFigura\n2.\nQuadro\nde\ndisciplinas\ne\natividades\nobrigatórias.\n84\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 83 | Curso: Ciência da Computação]\n320\n270\n62,5\nTotal\n3.200\n100\nA\nformação\ndo\negresso\ninclui\nas\ndisciplinas\nobrigatórias\nque\ndão\nao\negresso\na\nformação\nem\nconceitos\nbásicos\ne\nconceitos\nessenciais\nà\nformação\nprofissional.\nA\n33\nEmbora\nseja\nincomum,\nhá\nestudantes\nque\nconseguem\nconcluir\no\ncurso\ncom\num\nsemestre\na\nmenos,\nacelerando\na\nmatrícula\nem\ndisciplinas\neletivas\nou\ncursando\neletivas\nlivres\nainda\nno\ncomeço\ndo\ncurso\n(já\nque\nnão\nhá\nlimitação\npara\nisso).\n82\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 74 | Curso: Ciência da Computação]\nde\ndisciplinas\n(obrigatórias,\neletivas\nde\nperfil,\ne\neletivas\nlivres),\nACEx\ne\nAtividades\nComplementares.\nNão\nhá\ncarga\nhorária\ndefinida,\npara\nfins\nde\nintegralização,\npara\nestágio\ndevido\nà\nnão\nobrigatoriedade\ndeste\nno\ncurso.\n73",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 1.365
+        }
+      }
+    },
+    {
+      "caso": {
+        "id": "LEG-02",
+        "grupo": "legado_sprint1",
+        "pergunta": "Qual o prazo para pedir segunda chamada de prova?",
+        "curso": "CC",
+        "perfil": "novo",
+        "fallback_esperado": false,
+        "expectativa_legada": "Deve informar o prazo regimental em dias úteis acompanhado de atestado ou justificativa.",
+        "fonte_legada": "requerimento_2a_chamada.pdf (pág 1)",
+        "limite": "Resposta acadêmica não avaliável com mock; nomes legados de fontes não equivalem a arquivos atuais."
+      },
+      "resultados": {
+        "0.8": {
+          "distancia_minima": 0.39982736110687256,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "regulamento_tg.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            },
+            {
+              "arquivo": "pesquisa_faq.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            },
+            {
+              "arquivo": "regras_requerimentos.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            }
+          ],
+          "contexto": "[Documento: regulamento_tg.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\n. A entrega da proposta constitui a primeira fase cumprida do TG, sendo entendida como a primeira nota. Caso o discente não entregue a proposta na data marcada, ele levará FALTA nessa primeira nota e deverá solicitar segunda chamada (com apresentação de justificativa comprovada). Se devidamente justificada, o aluno deverá entregar o projeto até 5 (cinco) dias após a data original de entrega. Caso a solicitação não seja aprovada (por falta de comprovação, por exemplo), o discente receberá FALTA na segunda chamada da primeira nota e será considerado REPROVADO POR FALTA.\n\n---\n\n[Documento: pesquisa_faq.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\n. Uma vez cadastrado o projeto, o pesquisador deve acompanhar se o número do CAAE (Certificado de Apresentação de Apreciação Ética) foi gerado até um dia da finalização de envio do projeto, o que indica que o CEP aprovou a apresentação dos documentos anexados na plataforma. Caso contrário, o projeto será devolvido e o pesquisador fica a cargo de fazer os ajustes solicitados e o reenvio do projeto.\n\n---\n\n[Documento: regras_requerimentos.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nSolicitação de segunda chamada\n\nPara solicitar a 2ª chamada ou revisão de prova o aluno deve preencher o Requerimento e enviar juntamente com o(s) documentos(s) comprobatório(s) para o e-mail  da Coordenação do Curso com cópia para secgrad@cin.ufpe.br.\n\n\nPrazos de solicitação:\n\n2ª Chamada: 05 (cinco) dias úteis após a realização da prova.\n\nRevisão de Prova: 02 (dois) dias úteis contado da divulgação da nota.\n\n\nSolicitação de dispensa de disciplina\n\nSolicitação de Dispensa de Disciplinas: Requerimento.\n\nAs indicações das dispensas pretendidas devem constar na folha de despacho.",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 1.482
+        },
+        "0.5": {
+          "distancia_minima": 0.39982736110687256,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "regulamento_tg.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            },
+            {
+              "arquivo": "pesquisa_faq.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            },
+            {
+              "arquivo": "regras_requerimentos.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            }
+          ],
+          "contexto": "[Documento: regulamento_tg.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\n. A entrega da proposta constitui a primeira fase cumprida do TG, sendo entendida como a primeira nota. Caso o discente não entregue a proposta na data marcada, ele levará FALTA nessa primeira nota e deverá solicitar segunda chamada (com apresentação de justificativa comprovada). Se devidamente justificada, o aluno deverá entregar o projeto até 5 (cinco) dias após a data original de entrega. Caso a solicitação não seja aprovada (por falta de comprovação, por exemplo), o discente receberá FALTA na segunda chamada da primeira nota e será considerado REPROVADO POR FALTA.\n\n---\n\n[Documento: pesquisa_faq.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\n. Uma vez cadastrado o projeto, o pesquisador deve acompanhar se o número do CAAE (Certificado de Apresentação de Apreciação Ética) foi gerado até um dia da finalização de envio do projeto, o que indica que o CEP aprovou a apresentação dos documentos anexados na plataforma. Caso contrário, o projeto será devolvido e o pesquisador fica a cargo de fazer os ajustes solicitados e o reenvio do projeto.\n\n---\n\n[Documento: regras_requerimentos.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nSolicitação de segunda chamada\n\nPara solicitar a 2ª chamada ou revisão de prova o aluno deve preencher o Requerimento e enviar juntamente com o(s) documentos(s) comprobatório(s) para o e-mail  da Coordenação do Curso com cópia para secgrad@cin.ufpe.br.\n\n\nPrazos de solicitação:\n\n2ª Chamada: 05 (cinco) dias úteis após a realização da prova.\n\nRevisão de Prova: 02 (dois) dias úteis contado da divulgação da nota.\n\n\nSolicitação de dispensa de disciplina\n\nSolicitação de Dispensa de Disciplinas: Requerimento.\n\nAs indicações das dispensas pretendidas devem constar na folha de despacho.",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 1.547
+        }
+      }
+    },
+    {
+      "caso": {
+        "id": "LEG-03",
+        "grupo": "legado_sprint1",
+        "pergunta": "O estágio não obrigatório pode ser iniciado antes da assinatura do termo?",
+        "curso": "CC",
+        "perfil": "novo",
+        "fallback_esperado": false,
+        "expectativa_legada": "Deve recusar categoricamente e informar que a assinatura prévia do termo é obrigatória.",
+        "fonte_legada": "normas_estagio_CC.pdf (Seção 3)",
+        "limite": "Resposta acadêmica não avaliável com mock; nomes legados de fontes não equivalem a arquivos atuais."
+      },
+      "resultados": {
+        "0.8": {
+          "distancia_minima": 0.29580461978912354,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "estagio_geral.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            },
+            {
+              "arquivo": "estagio_geral.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            },
+            {
+              "arquivo": "estagio_geral.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            }
+          ],
+          "contexto": "[Documento: estagio_geral.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nOBSERVAÇÕES IMPORTANTES DO PREENCHIMENTO: \n- Assinaturas EXCLUSIVAMENTE DE FORMA ELETRÔNICA. \n- A data de ínicio deverá ser a mesma que consta na documentação inicial (ou da alteração da modalidade para obrigatório quando for caso)\n- A data de término deverá ser a mesma que consta na documentação inicial do estágio obrigatório (ou do termo de rescisão, ou do aditivo que alterou de obrigatório para não obrigatório).\n13. Como posso utilizar a carga horária cumprida no Estágio Não Obrigatório?\n\n---\n\n[Documento: estagio_geral.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\n3. Termo de rescisão (caso o aluno tenha saído do estágio antes da data final do contrato inicial)\nEm relação à situação 2, será necessário um Termo Aditivo (modelo da empresa/agente de integração ou da PROGRAD.)  + Plano de Atividades (modelo do CIn) referente a nova modalidade. Plano de atividades Não Obrigatório.\nApenas quando o estágio obrigatório for encerrado o aluno poderá enviar a documentação final para conclusão da disciplina. \n12. Como obter aprovação na disciplina de Estágio Obrigatório?\n\n---\n\n[Documento: estagio_geral.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nOBSERVAÇÕES IMPORTANTES DO PREENCHIMENTO: \n- Assinaturas EXCLUSIVAMENTE DE FORMA ELETRÔNICA. \n- A data de ínicio deverá ser a mesma que consta na documentação inicial (ou da alteração da modalidade para obrigatório quando for caso)\n- A data de término deverá ser a mesma que consta na documentação inicial do estágio obrigatório (ou do termo de rescisão, ou do aditivo que alterou de obrigatório para não obrigatório).\n14. Documentação final para estágio Não Obrigatório e Obrigatório",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 1.428
+        },
+        "0.5": {
+          "distancia_minima": 0.29580461978912354,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "estagio_geral.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            },
+            {
+              "arquivo": "estagio_geral.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            },
+            {
+              "arquivo": "estagio_geral.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            }
+          ],
+          "contexto": "[Documento: estagio_geral.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nOBSERVAÇÕES IMPORTANTES DO PREENCHIMENTO: \n- Assinaturas EXCLUSIVAMENTE DE FORMA ELETRÔNICA. \n- A data de ínicio deverá ser a mesma que consta na documentação inicial (ou da alteração da modalidade para obrigatório quando for caso)\n- A data de término deverá ser a mesma que consta na documentação inicial do estágio obrigatório (ou do termo de rescisão, ou do aditivo que alterou de obrigatório para não obrigatório).\n13. Como posso utilizar a carga horária cumprida no Estágio Não Obrigatório?\n\n---\n\n[Documento: estagio_geral.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\n3. Termo de rescisão (caso o aluno tenha saído do estágio antes da data final do contrato inicial)\nEm relação à situação 2, será necessário um Termo Aditivo (modelo da empresa/agente de integração ou da PROGRAD.)  + Plano de Atividades (modelo do CIn) referente a nova modalidade. Plano de atividades Não Obrigatório.\nApenas quando o estágio obrigatório for encerrado o aluno poderá enviar a documentação final para conclusão da disciplina. \n12. Como obter aprovação na disciplina de Estágio Obrigatório?\n\n---\n\n[Documento: estagio_geral.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nOBSERVAÇÕES IMPORTANTES DO PREENCHIMENTO: \n- Assinaturas EXCLUSIVAMENTE DE FORMA ELETRÔNICA. \n- A data de ínicio deverá ser a mesma que consta na documentação inicial (ou da alteração da modalidade para obrigatório quando for caso)\n- A data de término deverá ser a mesma que consta na documentação inicial do estágio obrigatório (ou do termo de rescisão, ou do aditivo que alterou de obrigatório para não obrigatório).\n14. Documentação final para estágio Não Obrigatório e Obrigatório",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 1.493
+        }
+      }
+    },
+    {
+      "caso": {
+        "id": "LEG-04",
+        "grupo": "legado_sprint1",
+        "pergunta": "Aluno de Ciência da Computação pode pagar estágio em empresa sem convênio com a UFPE?",
+        "curso": "CC",
+        "perfil": "novo",
+        "fallback_esperado": false,
+        "expectativa_legada": "Deve informar que o convênio ou agente de integração é requisito para validação.",
+        "fonte_legada": "normas_estagio_CC.pdf / EC.pdf",
+        "limite": "Resposta acadêmica não avaliável com mock; nomes legados de fontes não equivalem a arquivos atuais."
+      },
+      "resultados": {
+        "0.8": {
+          "distancia_minima": 0.327345609664917,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "norma_estagio_cc_novo_2024.pdf",
+              "pagina": 2,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "norma_estagio_cc_novo_2024.pdf",
+              "pagina": 3,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 130,
+              "curso": "Ciência da Computação"
+            }
+          ],
+          "contexto": "[Documento: norma_estagio_cc_novo_2024.pdf | Pág. 2 | Curso: Ciência da Computação]\nCAPÍTULO IV \nDA FORMALIZAÇÃO DO ESTÁGIO \nArt. 8° A autorização para a realização do estágio deverá ser dada pelo Coordenador de Estágio \ndo curso de Ciência da Computação do Centro de Informática (Cin) da UFPE, de acordo com a \nresolução vigente da UFPE, que assinará um Termo de Compromisso específico para cada caso, \napós as assinaturas do representante da Instituição ou Unidade concedente do estágio e do \nestagiário, e plano de atividades. \n§ 1 º Modelos dos Termos de Compromisso utilizados pela UFPE para cada caso \nencontram-se na página eletrônica da PROGRAD. \n§ 2° O Termo de Compromisso deve explicitar a responsabilidade pela cobertura do\n\n---\n\n[Documento: norma_estagio_cc_novo_2024.pdf | Pág. 3 | Curso: Ciência da Computação]\nde tecnologias de informação e de comunicação, o que deve ser informado no termo de \ncompromisso de estágio. \n§ 2° O modelo do Plano de Atividades utilizado pela UFPE encontra-se na página \neletrônica da PROGRAD. \nArt. 1 O. A responsável pela aprovação ou não do Plano de Atividades, como também pela \nassinatura do Termo de Compromisso do estágio não-obrigatório, é a Coordenação de Estágio \ndo curso de Ciência da Computação do Cin/UFPE. \nArt. 11. Para a realização de estágio não-obrigatório de até 20 (vinte) horas semanais, o discente \ndeve já ter cumprido, pelo menos, 32 (trinta e dois) créditos (ou 39,21% da carga horária) de\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 130 | Curso: Ciência da Computação]\nCAPÍTULO\nIV\nDA\nFORMALIZAÇÃO\nDO\nESTÁGIO\nArt.\n8°\nA\nautorização\npara\na\nrealização\ndo\nestágio\ndeverá\nser\ndada\npelo\nCoordenador\nde\nEstágio\ndo\ncurso\nde\nCiência\nda\nComputação\ndo\nCentro\nde\nInformática\n(CIn)\nda\nUFPE,\nde\nacordo\ncom\na\nresolução\nvigente\nda\nUFPE,\nque\nassinará\num\nTermo\nde\nCompromisso\nespecífico\npara\ncada\ncaso,\napós\nas\nassinaturas\ndo\nrepresentante\nda\nInstituição\nou\nUnidade\nconcedente\ndo\nestágio\ne\ndo\nestagiário,\ne\nplano\nde\natividades.\n§\n1°\nModelos\ndos\nTermos\nde\nCompromisso\nutilizados\npela\nUFPE\npara\ncada\ncaso\nencontram-se\nna\npágina\neletrônica\nda\nPROGRAD.\n§\n2°\nO\nTermo\nde\nCompromisso\ndeve\nexplicitar\na\nresponsabilidade\npela\ncobertura\ndo\nseguro\ncontra\nacidentes\npessoais\ndo\nestagiário,\ndurante\no",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 1.531
+        },
+        "0.5": {
+          "distancia_minima": 0.327345609664917,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "norma_estagio_cc_novo_2024.pdf",
+              "pagina": 2,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "norma_estagio_cc_novo_2024.pdf",
+              "pagina": 3,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 130,
+              "curso": "Ciência da Computação"
+            }
+          ],
+          "contexto": "[Documento: norma_estagio_cc_novo_2024.pdf | Pág. 2 | Curso: Ciência da Computação]\nCAPÍTULO IV \nDA FORMALIZAÇÃO DO ESTÁGIO \nArt. 8° A autorização para a realização do estágio deverá ser dada pelo Coordenador de Estágio \ndo curso de Ciência da Computação do Centro de Informática (Cin) da UFPE, de acordo com a \nresolução vigente da UFPE, que assinará um Termo de Compromisso específico para cada caso, \napós as assinaturas do representante da Instituição ou Unidade concedente do estágio e do \nestagiário, e plano de atividades. \n§ 1 º Modelos dos Termos de Compromisso utilizados pela UFPE para cada caso \nencontram-se na página eletrônica da PROGRAD. \n§ 2° O Termo de Compromisso deve explicitar a responsabilidade pela cobertura do\n\n---\n\n[Documento: norma_estagio_cc_novo_2024.pdf | Pág. 3 | Curso: Ciência da Computação]\nde tecnologias de informação e de comunicação, o que deve ser informado no termo de \ncompromisso de estágio. \n§ 2° O modelo do Plano de Atividades utilizado pela UFPE encontra-se na página \neletrônica da PROGRAD. \nArt. 1 O. A responsável pela aprovação ou não do Plano de Atividades, como também pela \nassinatura do Termo de Compromisso do estágio não-obrigatório, é a Coordenação de Estágio \ndo curso de Ciência da Computação do Cin/UFPE. \nArt. 11. Para a realização de estágio não-obrigatório de até 20 (vinte) horas semanais, o discente \ndeve já ter cumprido, pelo menos, 32 (trinta e dois) créditos (ou 39,21% da carga horária) de\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 130 | Curso: Ciência da Computação]\nCAPÍTULO\nIV\nDA\nFORMALIZAÇÃO\nDO\nESTÁGIO\nArt.\n8°\nA\nautorização\npara\na\nrealização\ndo\nestágio\ndeverá\nser\ndada\npelo\nCoordenador\nde\nEstágio\ndo\ncurso\nde\nCiência\nda\nComputação\ndo\nCentro\nde\nInformática\n(CIn)\nda\nUFPE,\nde\nacordo\ncom\na\nresolução\nvigente\nda\nUFPE,\nque\nassinará\num\nTermo\nde\nCompromisso\nespecífico\npara\ncada\ncaso,\napós\nas\nassinaturas\ndo\nrepresentante\nda\nInstituição\nou\nUnidade\nconcedente\ndo\nestágio\ne\ndo\nestagiário,\ne\nplano\nde\natividades.\n§\n1°\nModelos\ndos\nTermos\nde\nCompromisso\nutilizados\npela\nUFPE\npara\ncada\ncaso\nencontram-se\nna\npágina\neletrônica\nda\nPROGRAD.\n§\n2°\nO\nTermo\nde\nCompromisso\ndeve\nexplicitar\na\nresponsabilidade\npela\ncobertura\ndo\nseguro\ncontra\nacidentes\npessoais\ndo\nestagiário,\ndurante\no",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 1.469
+        }
+      }
+    },
+    {
+      "caso": {
+        "id": "LEG-05",
+        "grupo": "legado_sprint1",
+        "pergunta": "Quais são os requisitos para trancamento total de semestre?",
+        "curso": "CC",
+        "perfil": "novo",
+        "fallback_esperado": false,
+        "expectativa_legada": "Deve explicar os critérios regiminais para trancamento do semestre letivo.",
+        "fonte_legada": "normas_gerais_graduacao.pdf",
+        "limite": "Resposta acadêmica não avaliável com mock; nomes legados de fontes não equivalem a arquivos atuais."
+      },
+      "resultados": {
+        "0.8": {
+          "distancia_minima": 0.4180479049682617,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "diretrizes_extensao.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            },
+            {
+              "arquivo": "extensao_cin_faq.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            },
+            {
+              "arquivo": "pesquisa_faq.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            }
+          ],
+          "contexto": "[Documento: diretrizes_extensao.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nEm PROGRAMAS DE EXTENSÃO também comporão os objetivos específicos dessa modalidade os objetivos gerais de cada PROJETO que os integra. \n5) Justificativa (aplica-se a todas as modalidades): Este é o espaço onde devem ser apresentadas as informações que caracterizam a ação a ser desenvolvida como extensão universitária e sua relação com as diretrizes da Extensão. Deve ser apresentado:\na) Impacto e transformação social: Quais foram as questões da sociedade (comunidades, outras instituições de ensino, empresas, políticas públicas, situações de força maior) que demandaram pela realização da ação e como a ação contribuirá para solucionar essas questões;\n\n---\n\n[Documento: extensao_cin_faq.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nEm PROGRAMAS DE EXTENSÃO também comporão os objetivos específicos dessa modalidade os objetivos gerais de cada PROJETO que os integra.  \n5) Justificativa (aplica-se a todas as modalidades): Este é o espaço onde devem ser apresentadas as informações que caracterizam a ação a ser desenvolvida como extensão universitária e sua relação com as diretrizes da Extensão. Deve ser apresentado: \na) Impacto e transformação social: Quais foram as questões da sociedade (comunidades, outras instituições de ensino, empresas, políticas públicas, situações de força maior) que demandaram pela realização da ação e como a ação contribuirá para solucionar essas questões;\n\n---\n\n[Documento: pesquisa_faq.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nAntes de fazer a submissão do projeto na Plataforma, o pesquisador deve entrar em contato com o CEP para saber qual a próxima data de reunião com vagas disponíveis; o pesquisador deve organizar o cronograma do projeto de acordo com essa data de reunião do CEP, de modo que a coleta de dados seja definida para começar pelo menos 15 dias após a reunião do CEP, ainda com risco do projeto voltar para ajustes e correções. Pesquisas que coletam dados antes do parecer do CEP são rejeitadas.",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.244
+        },
+        "0.5": {
+          "distancia_minima": 0.4180479049682617,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "diretrizes_extensao.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            },
+            {
+              "arquivo": "extensao_cin_faq.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            },
+            {
+              "arquivo": "pesquisa_faq.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            }
+          ],
+          "contexto": "[Documento: diretrizes_extensao.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nEm PROGRAMAS DE EXTENSÃO também comporão os objetivos específicos dessa modalidade os objetivos gerais de cada PROJETO que os integra. \n5) Justificativa (aplica-se a todas as modalidades): Este é o espaço onde devem ser apresentadas as informações que caracterizam a ação a ser desenvolvida como extensão universitária e sua relação com as diretrizes da Extensão. Deve ser apresentado:\na) Impacto e transformação social: Quais foram as questões da sociedade (comunidades, outras instituições de ensino, empresas, políticas públicas, situações de força maior) que demandaram pela realização da ação e como a ação contribuirá para solucionar essas questões;\n\n---\n\n[Documento: extensao_cin_faq.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nEm PROGRAMAS DE EXTENSÃO também comporão os objetivos específicos dessa modalidade os objetivos gerais de cada PROJETO que os integra.  \n5) Justificativa (aplica-se a todas as modalidades): Este é o espaço onde devem ser apresentadas as informações que caracterizam a ação a ser desenvolvida como extensão universitária e sua relação com as diretrizes da Extensão. Deve ser apresentado: \na) Impacto e transformação social: Quais foram as questões da sociedade (comunidades, outras instituições de ensino, empresas, políticas públicas, situações de força maior) que demandaram pela realização da ação e como a ação contribuirá para solucionar essas questões;\n\n---\n\n[Documento: pesquisa_faq.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nAntes de fazer a submissão do projeto na Plataforma, o pesquisador deve entrar em contato com o CEP para saber qual a próxima data de reunião com vagas disponíveis; o pesquisador deve organizar o cronograma do projeto de acordo com essa data de reunião do CEP, de modo que a coleta de dados seja definida para começar pelo menos 15 dias após a reunião do CEP, ainda com risco do projeto voltar para ajustes e correções. Pesquisas que coletam dados antes do parecer do CEP são rejeitadas.",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.191
+        }
+      }
+    },
+    {
+      "caso": {
+        "id": "LEG-06",
+        "grupo": "legado_sprint1",
+        "pergunta": "Onde encontro o formulário de equivalência de componentes curriculares?",
+        "curso": "CC",
+        "perfil": "novo",
+        "fallback_esperado": false,
+        "expectativa_legada": "Deve indicar o link ou procedimento para obtenção do formulário oficial da SecGrad.",
+        "fonte_legada": "pagina_secgrad.pdf",
+        "limite": "Resposta acadêmica não avaliável com mock; nomes legados de fontes não equivalem a arquivos atuais."
+      },
+      "resultados": {
+        "0.8": {
+          "distancia_minima": 0.21283966302871704,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 283,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 234,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 272,
+              "curso": "Ciência da Computação"
+            }
+          ],
+          "contexto": "[Documento: ppc_cc_novo_2024.pdf | Pág. 283 | Curso: Ciência da Computação]\nUNIVERSIDADE FEDERAL DE PERNAMBUCO \nPRÓ-REITORIA DE GRADUAÇÃO  \nDIRETORIA DE DESENVOLVIMENTO DO ENSINO \n \nPROGRAMA DE COMPONENTE CURRICULAR \n \nTIPO DE COMPONENTE (Marque um X na opção)  \n Disciplina   Estágio \n Atividade Complementar   Módulo \n Trabalho de Graduação   Ação Curricular de Extensão \n \nSTATUS DO COMPONENTE (Marque um X na opção)  \n OBRIGATÓRIO  x ELETIVO  \n \nDADOS DO COMPONENTE                                                                                                                    \nCódigo Nome \nCarga Horária \nNº. de Créditos \nC. H.  Total Período \nTeórica Prática   \n Ética e Aspectos Jurídicos da \nComputação \n60  4 60\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 234 | Curso: Ciência da Computação]\nUNIVERSIDADE FEDERAL DE PERNAMBUCO \nPRÓ-REITORIA DE GRADUAÇÃO  \nDIRETORIA DE DESENVOLVIMENTO DO ENSINO \n \nPROGRAMA DE COMPONENTE CURRICULAR \n \nTIPO DE COMPONENTE (Marque um X na opção)  \n Disciplina   Estágio \n Atividade Complementar   Módulo \n Trabalho de Graduação   Ação Curricular de Extensão \n \nSTATUS DO COMPONENTE (Marque um X na opção)  \n OBRIGATÓRIO  x ELETIVO  \n \nDADOS DO COMPONENTE                                                                                                                    \nCódigo Nome \nCarga Horária \nNº. de Créditos \nC. H.  Total Período \nTeórica Prática   \n Internet das Coisas 45 15 3 60\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 272 | Curso: Ciência da Computação]\nUNIVERSIDADE FEDERAL DE PERNAMBUCO \nPRÓ-REITORIA DE GRADUAÇÃO  \nDIRETORIA DE DESENVOLVIMENTO DO ENSINO \n \nPROGRAMA DE COMPONENTE CURRICULAR \n \nTIPO DE COMPONENTE (Marque um X na opção)  \n Disciplina   Estágio \n Atividade Complementar   Módulo \n Trabalho de Graduação   Ação Curricular de Extensão \n \nSTATUS DO COMPONENTE (Marque um X na opção)  \n OBRIGATÓRIO  x ELETIVO  \n \nDADOS DO COMPONENTE                                                                                                                    \nCódigo Nome \nCarga Horária \nNº. de Créditos \nC. H.  Total Período \nTeórica Prática   \n Seminários em Segurança 30  2 30",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.181
+        },
+        "0.5": {
+          "distancia_minima": 0.21283966302871704,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 283,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 234,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 272,
+              "curso": "Ciência da Computação"
+            }
+          ],
+          "contexto": "[Documento: ppc_cc_novo_2024.pdf | Pág. 283 | Curso: Ciência da Computação]\nUNIVERSIDADE FEDERAL DE PERNAMBUCO \nPRÓ-REITORIA DE GRADUAÇÃO  \nDIRETORIA DE DESENVOLVIMENTO DO ENSINO \n \nPROGRAMA DE COMPONENTE CURRICULAR \n \nTIPO DE COMPONENTE (Marque um X na opção)  \n Disciplina   Estágio \n Atividade Complementar   Módulo \n Trabalho de Graduação   Ação Curricular de Extensão \n \nSTATUS DO COMPONENTE (Marque um X na opção)  \n OBRIGATÓRIO  x ELETIVO  \n \nDADOS DO COMPONENTE                                                                                                                    \nCódigo Nome \nCarga Horária \nNº. de Créditos \nC. H.  Total Período \nTeórica Prática   \n Ética e Aspectos Jurídicos da \nComputação \n60  4 60\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 234 | Curso: Ciência da Computação]\nUNIVERSIDADE FEDERAL DE PERNAMBUCO \nPRÓ-REITORIA DE GRADUAÇÃO  \nDIRETORIA DE DESENVOLVIMENTO DO ENSINO \n \nPROGRAMA DE COMPONENTE CURRICULAR \n \nTIPO DE COMPONENTE (Marque um X na opção)  \n Disciplina   Estágio \n Atividade Complementar   Módulo \n Trabalho de Graduação   Ação Curricular de Extensão \n \nSTATUS DO COMPONENTE (Marque um X na opção)  \n OBRIGATÓRIO  x ELETIVO  \n \nDADOS DO COMPONENTE                                                                                                                    \nCódigo Nome \nCarga Horária \nNº. de Créditos \nC. H.  Total Período \nTeórica Prática   \n Internet das Coisas 45 15 3 60\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 272 | Curso: Ciência da Computação]\nUNIVERSIDADE FEDERAL DE PERNAMBUCO \nPRÓ-REITORIA DE GRADUAÇÃO  \nDIRETORIA DE DESENVOLVIMENTO DO ENSINO \n \nPROGRAMA DE COMPONENTE CURRICULAR \n \nTIPO DE COMPONENTE (Marque um X na opção)  \n Disciplina   Estágio \n Atividade Complementar   Módulo \n Trabalho de Graduação   Ação Curricular de Extensão \n \nSTATUS DO COMPONENTE (Marque um X na opção)  \n OBRIGATÓRIO  x ELETIVO  \n \nDADOS DO COMPONENTE                                                                                                                    \nCódigo Nome \nCarga Horária \nNº. de Créditos \nC. H.  Total Período \nTeórica Prática   \n Seminários em Segurança 30  2 30",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.189
+        }
+      }
+    },
+    {
+      "caso": {
+        "id": "LEG-07",
+        "grupo": "legado_sprint1",
+        "pergunta": "Quem é o responsável por assinar o termo de compromisso de estágio de Engenharia da Computação?",
+        "curso": "EC",
+        "perfil": "novo",
+        "fallback_esperado": false,
+        "expectativa_legada": "Deve citar o coordenador/responsável de estágio do curso de Engenharia da Computação.",
+        "fonte_legada": "normas_estagio_EC.pdf",
+        "limite": "Resposta acadêmica não avaliável com mock; nomes legados de fontes não equivalem a arquivos atuais."
+      },
+      "resultados": {
+        "0.8": {
+          "distancia_minima": 0.2568731904029846,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "ppc_ec_novo_2024.pdf",
+              "pagina": 27,
+              "curso": "Engenharia da Computação"
+            },
+            {
+              "arquivo": "regulamento_tg.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            },
+            {
+              "arquivo": "ppc_ec_novo_2024.pdf",
+              "pagina": 29,
+              "curso": "Engenharia da Computação"
+            }
+          ],
+          "contexto": "[Documento: ppc_ec_novo_2024.pdf | Pág. 27 | Curso: Engenharia da Computação]\n26 \nA rápida mudança promovida pelos computadores e sua inclusão nas mais variadas \náreas de aplicação tornou estável a oferta de vagas para o profissional da Engenharia \nda Computação, e a perspectiva é de que se mantenha assim nos próximos anos. Na \nmaioria dos casos, o primeiro emprego surge através do estágio em uma grande \nempresa. O engenheiro da computação pode atuar tanto em companhias do setor de \ntecnologia, como nas empresas dos mais diversos segmentos. \nO curso de Engenharia da Computação da UFPE teve sua primeira turma ingressando \nna Universidade em 2002. O curso foi fruto da junção de esforços do então\n\n---\n\n[Documento: regulamento_tg.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\n2. Gestão da Disciplina\nAtualmente, os responsáveis pela disciplina para para Ciência da Computação (CC), Engenharia da Computação (EC) e Sistemas de Informação (SI) são, respectivamente, Juliano Manabu Iyoda, Carlos Alexandre Barros de Mello e Liliane Rose Benning Salgado. Caso tenha alguma dúvida ou problema, o aluno deve contactar o responsável no seu respectivo curso.\n\n---\n\n[Documento: ppc_ec_novo_2024.pdf | Pág. 29 | Curso: Engenharia da Computação]\naplicado para resolver problemas que envolvam computadores em seus múltiplos \ncomponentes, tais como, hardware, software, redes e processos. \nPode-se caracterizar um Engenheiro da Computação como um profissional que atua no \nprojeto de sistemas baseados no computador que são empregados para demandas e \naplicações especializadas. Com este perfil, um engenheiro da computação pode atuar \nem diferentes  indústrias tais como de computadores, automotiva, aeroespacial, de \ntelecomunicações, de energia, manufatura, de defesa e de eletrônicos. Um Engenheiro \nda Computação pode projetar dispositivos de alta tecnologia como circuitos integrados,",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.179
+        },
+        "0.5": {
+          "distancia_minima": 0.2568731904029846,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "ppc_ec_novo_2024.pdf",
+              "pagina": 27,
+              "curso": "Engenharia da Computação"
+            },
+            {
+              "arquivo": "regulamento_tg.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            },
+            {
+              "arquivo": "ppc_ec_novo_2024.pdf",
+              "pagina": 29,
+              "curso": "Engenharia da Computação"
+            }
+          ],
+          "contexto": "[Documento: ppc_ec_novo_2024.pdf | Pág. 27 | Curso: Engenharia da Computação]\n26 \nA rápida mudança promovida pelos computadores e sua inclusão nas mais variadas \náreas de aplicação tornou estável a oferta de vagas para o profissional da Engenharia \nda Computação, e a perspectiva é de que se mantenha assim nos próximos anos. Na \nmaioria dos casos, o primeiro emprego surge através do estágio em uma grande \nempresa. O engenheiro da computação pode atuar tanto em companhias do setor de \ntecnologia, como nas empresas dos mais diversos segmentos. \nO curso de Engenharia da Computação da UFPE teve sua primeira turma ingressando \nna Universidade em 2002. O curso foi fruto da junção de esforços do então\n\n---\n\n[Documento: regulamento_tg.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\n2. Gestão da Disciplina\nAtualmente, os responsáveis pela disciplina para para Ciência da Computação (CC), Engenharia da Computação (EC) e Sistemas de Informação (SI) são, respectivamente, Juliano Manabu Iyoda, Carlos Alexandre Barros de Mello e Liliane Rose Benning Salgado. Caso tenha alguma dúvida ou problema, o aluno deve contactar o responsável no seu respectivo curso.\n\n---\n\n[Documento: ppc_ec_novo_2024.pdf | Pág. 29 | Curso: Engenharia da Computação]\naplicado para resolver problemas que envolvam computadores em seus múltiplos \ncomponentes, tais como, hardware, software, redes e processos. \nPode-se caracterizar um Engenheiro da Computação como um profissional que atua no \nprojeto de sistemas baseados no computador que são empregados para demandas e \naplicações especializadas. Com este perfil, um engenheiro da computação pode atuar \nem diferentes  indústrias tais como de computadores, automotiva, aeroespacial, de \ntelecomunicações, de energia, manufatura, de defesa e de eletrônicos. Um Engenheiro \nda Computação pode projetar dispositivos de alta tecnologia como circuitos integrados,",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.188
+        }
+      }
+    },
+    {
+      "caso": {
+        "id": "LEG-08",
+        "grupo": "legado_sprint1",
+        "pergunta": "Como funciona o processo de mudança de perfil curricular em Sistemas de Informação?",
+        "curso": "SI",
+        "perfil": "novo",
+        "fallback_esperado": false,
+        "expectativa_legada": "Deve apresentar os pré-requisitos e o canal oficial de solicitação de mudança de perfil.",
+        "fonte_legada": "normas_estagio_SI.pdf",
+        "limite": "Resposta acadêmica não avaliável com mock; nomes legados de fontes não equivalem a arquivos atuais."
+      },
+      "resultados": {
+        "0.8": {
+          "distancia_minima": 0.22386544942855835,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "ppc_si_novo_2024.pdf",
+              "pagina": 91,
+              "curso": "Sistemas de Informação"
+            },
+            {
+              "arquivo": "ppc_si_novo_2024.pdf",
+              "pagina": 156,
+              "curso": "Sistemas de Informação"
+            },
+            {
+              "arquivo": "ppc_si_novo_2024.pdf",
+              "pagina": 48,
+              "curso": "Sistemas de Informação"
+            }
+          ],
+          "contexto": "[Documento: ppc_si_novo_2024.pdf | Pág. 91 | Curso: Sistemas de Informação]\nSistemas de Informação podem ser encontrados no Anexo V deste documento. \n14.2 Ações Curriculares de Extensão \n \nA Extensão Universitária é um processo interdisciplinar, educativo, cultural, científico e \npolítico que integra a formação acadêmica, profissional e cidadã do discente e promove\n\n---\n\n[Documento: ppc_si_novo_2024.pdf | Pág. 156 | Curso: Sistemas de Informação]\ntratou da seguinte pauta: \n \n1- Aprovação - Reforma Curricular no perfil do Curso de Graduação em Sistemas de \nInformação do Centro de Informática/UFPE: Principais mudanças: I - Tronco comum com \nCiência da Computação nos dois primeiros anos (já divulgado em reunião do pleno); II - \nDiversas disciplinas obrigatórias passaram a ser eletivas; III - Ênfases de Gestor de SI e \nAnalista e D; IV - Aumento das eletivas em comum com CC e EC; V- Fusão e elimina ção de \ndisciplinas de outros departamentos, e consequentemente diminuição de dependências de \nobrigatórias por oferta externa. O novo Projeto Pedagógico Curso de Graduação em Sistemas \nde Informação consta em anexo.\n\n---\n\n[Documento: ppc_si_novo_2024.pdf | Pág. 48 | Curso: Sistemas de Informação]\n47 \n \n9. Campo de Atuação Profissional \n \nDe acordo com os Referenciais Curriculares Nacionais dos cursos de Bacharelado e \nLicenciatura de abril de 2010 da Secretaria de Educação Superior do Ministério da \nEducação, o Bacharel em Sistemas de Informação pode atuar como pesquisador em \nInstituições de Ensino Superior, empresas e laboratórios de pesquisa científica e \ntecnológica; em empresas prestadoras de serviço de Tecnologia de Informação; em \nempresas desenvolvedoras de Sistemas de Informação. Também pode atuar de forma \nautônoma, em empresa própria ou prestando consultoria. \nDe forma mais ampla, o egresso do bacharelado em Sistemas de Informação possui um",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.184
+        },
+        "0.5": {
+          "distancia_minima": 0.22386544942855835,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "ppc_si_novo_2024.pdf",
+              "pagina": 91,
+              "curso": "Sistemas de Informação"
+            },
+            {
+              "arquivo": "ppc_si_novo_2024.pdf",
+              "pagina": 156,
+              "curso": "Sistemas de Informação"
+            },
+            {
+              "arquivo": "ppc_si_novo_2024.pdf",
+              "pagina": 48,
+              "curso": "Sistemas de Informação"
+            }
+          ],
+          "contexto": "[Documento: ppc_si_novo_2024.pdf | Pág. 91 | Curso: Sistemas de Informação]\nSistemas de Informação podem ser encontrados no Anexo V deste documento. \n14.2 Ações Curriculares de Extensão \n \nA Extensão Universitária é um processo interdisciplinar, educativo, cultural, científico e \npolítico que integra a formação acadêmica, profissional e cidadã do discente e promove\n\n---\n\n[Documento: ppc_si_novo_2024.pdf | Pág. 156 | Curso: Sistemas de Informação]\ntratou da seguinte pauta: \n \n1- Aprovação - Reforma Curricular no perfil do Curso de Graduação em Sistemas de \nInformação do Centro de Informática/UFPE: Principais mudanças: I - Tronco comum com \nCiência da Computação nos dois primeiros anos (já divulgado em reunião do pleno); II - \nDiversas disciplinas obrigatórias passaram a ser eletivas; III - Ênfases de Gestor de SI e \nAnalista e D; IV - Aumento das eletivas em comum com CC e EC; V- Fusão e elimina ção de \ndisciplinas de outros departamentos, e consequentemente diminuição de dependências de \nobrigatórias por oferta externa. O novo Projeto Pedagógico Curso de Graduação em Sistemas \nde Informação consta em anexo.\n\n---\n\n[Documento: ppc_si_novo_2024.pdf | Pág. 48 | Curso: Sistemas de Informação]\n47 \n \n9. Campo de Atuação Profissional \n \nDe acordo com os Referenciais Curriculares Nacionais dos cursos de Bacharelado e \nLicenciatura de abril de 2010 da Secretaria de Educação Superior do Ministério da \nEducação, o Bacharel em Sistemas de Informação pode atuar como pesquisador em \nInstituições de Ensino Superior, empresas e laboratórios de pesquisa científica e \ntecnológica; em empresas prestadoras de serviço de Tecnologia de Informação; em \nempresas desenvolvedoras de Sistemas de Informação. Também pode atuar de forma \nautônoma, em empresa própria ou prestando consultoria. \nDe forma mais ampla, o egresso do bacharelado em Sistemas de Informação possui um",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.175
+        }
+      }
+    },
+    {
+      "caso": {
+        "id": "LEG-09",
+        "grupo": "legado_sprint1",
+        "pergunta": "Qual o horário de funcionamento do restaurante universitário?",
+        "curso": "CC",
+        "perfil": "novo",
+        "fallback_esperado": true,
+        "expectativa_legada": "Deve acionar recusa/fallback amigável, pois não há contexto oficial na base da SecGrad.",
+        "fonte_legada": "N/A (Recusa Esperada)",
+        "limite": "Resposta acadêmica não avaliável com mock; nomes legados de fontes não equivalem a arquivos atuais."
+      },
+      "resultados": {
+        "0.8": {
+          "distancia_minima": 0.3349614143371582,
+          "fallback": false,
+          "fallback_conforme_expectativa": false,
+          "fontes": [
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 9,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 116,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "diretrizes_extensao.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            }
+          ],
+          "contexto": "[Documento: ppc_cc_novo_2024.pdf | Pág. 9 | Curso: Ciência da Computação]\nColégio\nde\nAplicação,\nCentro\nde\nConvenções,\nConcha\nAcústica,\nClube\nUniversitário,\nCreche,\nCasas\ndos\nEstudantes\nMasculina\ne\nFeminina\ne\no\nRestaurante\nUniversitário.\nNo\nCampus\nCentro,\nno\nRecife,\nencontram-se\no\nCentro\nde\nCiências\nJurídicas,\no\nNúcleo\nde\nTelevisão\ne\nRádios\nUniversitárias,\no\nCentro\nCultural\nBenfica,\no\nMemorial\nde\nMedicina\ne\no\nNúcleo\nde\nEducação\nContinuada.\nNo\nInterior,\nestão\no\nCentro\nAcadêmico\ndo\nAgreste,\nem\nCaruaru,\ne\no\nCentro\nAcadêmico\nde\nVitória\nde\nSanto\nAntão,\nlocalizado\nna\nZona\nda\nMata\nNorte.\nA\nUniversidade\noferece\n115\ncursos\nde\ngraduação\n(92\ncursos\nde\ngraduação\nnos\nCampi\ndo\nRecife\n–\n86\npresenciais\ne\n6\nna\nmodalidade\na\ndistância;\n15\nno\nCampus\ndo\nAgreste,\nem\nCaruaru\n–\ntodos\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 116 | Curso: Ciência da Computação]\n●\nAtendimento\ncom\nos\nprofissionais\nde\nsaúde\ndo\nNASE\n(Núcleo\nde\nAtenção\nà\nSaúde\ndo\nEstudante)\n41\n;\n●\nAcesso\nao\nRestaurante\nUniversitário,\nque\ntem\ncomo\npúblico\nbeneficiário:\nI\n-\nEstudantes\nregularmente\nmatriculados\nna\nUFPE,\naprovados\nno\nEdital\nde\nassistência\nestudantil,\ncom\nsubsídio\nintegral\ndas\nrefeições;\nII\n-\nEstudantes\nde\ngraduação\ne\npós-graduação\nregularmente\nmatriculados\nna\nUFPE,\ncom\nsubsídio\nparcial\ndas\nrefeições;\ne,\nII\n-\nServidores\nda\nUFPE\ne\nvisitantes,\nmediante\npagamento\nintegral\ndas\nrefeições\ndiretamente\nà\nCONTRATADA.\n(ver:\nhttps://www.ufpe.br/restaurante)\n●\nParticipação\nno\nPlantão\nde\nOrientação\nde\nMatrícula:\natividade\ndesenvolvida\npelo\nSetor\nPedagógico\nda\nPROAES\n(nos\ntrês\ncampi)\nque\n\n---\n\n[Documento: diretrizes_extensao.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\n. Por se situar no campo das relações, pode-se dizer que a diretriz Interação Dialógica atinge o cerne da dimensão ética dos processos de Extensão Universitária;",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.172
+        },
+        "0.5": {
+          "distancia_minima": 0.3349614143371582,
+          "fallback": false,
+          "fallback_conforme_expectativa": false,
+          "fontes": [
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 9,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 116,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "diretrizes_extensao.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            }
+          ],
+          "contexto": "[Documento: ppc_cc_novo_2024.pdf | Pág. 9 | Curso: Ciência da Computação]\nColégio\nde\nAplicação,\nCentro\nde\nConvenções,\nConcha\nAcústica,\nClube\nUniversitário,\nCreche,\nCasas\ndos\nEstudantes\nMasculina\ne\nFeminina\ne\no\nRestaurante\nUniversitário.\nNo\nCampus\nCentro,\nno\nRecife,\nencontram-se\no\nCentro\nde\nCiências\nJurídicas,\no\nNúcleo\nde\nTelevisão\ne\nRádios\nUniversitárias,\no\nCentro\nCultural\nBenfica,\no\nMemorial\nde\nMedicina\ne\no\nNúcleo\nde\nEducação\nContinuada.\nNo\nInterior,\nestão\no\nCentro\nAcadêmico\ndo\nAgreste,\nem\nCaruaru,\ne\no\nCentro\nAcadêmico\nde\nVitória\nde\nSanto\nAntão,\nlocalizado\nna\nZona\nda\nMata\nNorte.\nA\nUniversidade\noferece\n115\ncursos\nde\ngraduação\n(92\ncursos\nde\ngraduação\nnos\nCampi\ndo\nRecife\n–\n86\npresenciais\ne\n6\nna\nmodalidade\na\ndistância;\n15\nno\nCampus\ndo\nAgreste,\nem\nCaruaru\n–\ntodos\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 116 | Curso: Ciência da Computação]\n●\nAtendimento\ncom\nos\nprofissionais\nde\nsaúde\ndo\nNASE\n(Núcleo\nde\nAtenção\nà\nSaúde\ndo\nEstudante)\n41\n;\n●\nAcesso\nao\nRestaurante\nUniversitário,\nque\ntem\ncomo\npúblico\nbeneficiário:\nI\n-\nEstudantes\nregularmente\nmatriculados\nna\nUFPE,\naprovados\nno\nEdital\nde\nassistência\nestudantil,\ncom\nsubsídio\nintegral\ndas\nrefeições;\nII\n-\nEstudantes\nde\ngraduação\ne\npós-graduação\nregularmente\nmatriculados\nna\nUFPE,\ncom\nsubsídio\nparcial\ndas\nrefeições;\ne,\nII\n-\nServidores\nda\nUFPE\ne\nvisitantes,\nmediante\npagamento\nintegral\ndas\nrefeições\ndiretamente\nà\nCONTRATADA.\n(ver:\nhttps://www.ufpe.br/restaurante)\n●\nParticipação\nno\nPlantão\nde\nOrientação\nde\nMatrícula:\natividade\ndesenvolvida\npelo\nSetor\nPedagógico\nda\nPROAES\n(nos\ntrês\ncampi)\nque\n\n---\n\n[Documento: diretrizes_extensao.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\n. Por se situar no campo das relações, pode-se dizer que a diretriz Interação Dialógica atinge o cerne da dimensão ética dos processos de Extensão Universitária;",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.181
+        }
+      }
+    },
+    {
+      "caso": {
+        "id": "LEG-10",
+        "grupo": "legado_sprint1",
+        "pergunta": "Como faço para solicitar bolsa de pós-graduação no CIn?",
+        "curso": "CC",
+        "perfil": "novo",
+        "fallback_esperado": true,
+        "expectativa_legada": "Deve reconhecer limitação da base da SecGrad (graduação) e sugerir encaminhamento para a Pós-Graduação.",
+        "fonte_legada": "N/A (Fallback / Encaminhamento)",
+        "limite": "Resposta acadêmica não avaliável com mock; nomes legados de fontes não equivalem a arquivos atuais."
+      },
+      "resultados": {
+        "0.8": {
+          "distancia_minima": 0.33460068702697754,
+          "fallback": false,
+          "fallback_conforme_expectativa": false,
+          "fontes": [
+            {
+              "arquivo": "migracao_perfis.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 43,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 119,
+              "curso": "Ciência da Computação"
+            }
+          ],
+          "contexto": "[Documento: migracao_perfis.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação]\nDecisão irreversível: Uma vez homologada, a migração não poderá ser desfeita.\n\n\nAnálise individual: Cada caso é único. Avalie os impactos na sua trajetória acadêmica consultando os arquivos na página de Reformas Curriculares 2024.\n\n\nVigência: O novo perfil passará a valer a partir do semestre letivo seguinte ao da aprovação do pedido.\n\nPara solicitar a migração, o discente deve prencher o Requerimento Geral para Assuntos da Graduação disponível no site da secretaria da graduação do CIn.\n\n\nPRAZO PARA SOLICITAÇÕES: Para ser implementado, o  requerimento precisa ser enviado para a  secretaria da graduação até 1 mês antes da matrícula no semestre em que você deseja iniciar o novo perfil.\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 43 | Curso: Ciência da Computação]\ne\npós-graduação.\nAo\nlongo\ndo\ncurso,\no\nestudante\ndeve\nadquirir\nou\ndesenvolver\nseu\nsenso\ncrítico\ne\na\nconsciência\nde\nsua\ncidadania,\nque\npossibilitem\na\nprática\ndas\nseguintes\natitudes:\na)\nCompromisso\ncom\na\nética\ne\nresponsabilidade\nprofissional;\nb)\nResponsabilidade\nsocial,\npolítica\ne\nambiental;\nc)\nEspírito\nempreendedor\nque\npermite\nenxergar\noportunidades\ne\natuar\nde\nforma\na\nobter\nresultados\ne\nter\npostura\nsempre\nativa\ne\natuante;\nd)\nCapacidade\npara\ntrabalhar\nem\nequipe;\ne)\nBusca\npermanente\nda\natualização\nde\nconhecimentos\ne\ndos\nmeios\nde\ncomunicação.\nO\nperfil\nprofissional\nde\nconclusão\ndefinido\nneste\nprojeto,\ncom\nbase\nnos\ninsumos\nlevantados,\nconstitui\numa\ndas\nreferências\nfundamentais\npara\nconcepção\nda\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 119 | Curso: Ciência da Computação]\npara\ncom\na\npessoa\nque\nsofre.\nPossui\ncaráter\npreventivo,\numa\nvez\nque\npossibilita\numa\nvisão\nmais\nclara\ne\nampla\nde\nsi\nfrente\nà\nproblemática,\npodendo\ncontribuir\npara\no\nseu\nnão\nagravamento\ne\npara\nauxiliar\nnum\nmovimento\nque\npode\nser\npropulsor\nde\nmudança.\nA\nação\nse\ndá\nde\nforma\npresencial\ne\nindividual,\natravés\nda\nescuta\nsolidária\nrealizada\npor\num\nacolhedor\ndo\ngrupo.\nAo\nreceber\numa\nsolicitação,\num\nmembro\ndo\ngrupo\nviabiliza\no\nlocal,\naciona\no\nacolhedor\ndisponível\nno\nmomento\ne\ninforma,\nvia\ne-mail,\nao\nsolicitante\n118",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.193
+        },
+        "0.5": {
+          "distancia_minima": 0.33460068702697754,
+          "fallback": false,
+          "fallback_conforme_expectativa": false,
+          "fontes": [
+            {
+              "arquivo": "migracao_perfis.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 43,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 119,
+              "curso": "Ciência da Computação"
+            }
+          ],
+          "contexto": "[Documento: migracao_perfis.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação]\nDecisão irreversível: Uma vez homologada, a migração não poderá ser desfeita.\n\n\nAnálise individual: Cada caso é único. Avalie os impactos na sua trajetória acadêmica consultando os arquivos na página de Reformas Curriculares 2024.\n\n\nVigência: O novo perfil passará a valer a partir do semestre letivo seguinte ao da aprovação do pedido.\n\nPara solicitar a migração, o discente deve prencher o Requerimento Geral para Assuntos da Graduação disponível no site da secretaria da graduação do CIn.\n\n\nPRAZO PARA SOLICITAÇÕES: Para ser implementado, o  requerimento precisa ser enviado para a  secretaria da graduação até 1 mês antes da matrícula no semestre em que você deseja iniciar o novo perfil.\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 43 | Curso: Ciência da Computação]\ne\npós-graduação.\nAo\nlongo\ndo\ncurso,\no\nestudante\ndeve\nadquirir\nou\ndesenvolver\nseu\nsenso\ncrítico\ne\na\nconsciência\nde\nsua\ncidadania,\nque\npossibilitem\na\nprática\ndas\nseguintes\natitudes:\na)\nCompromisso\ncom\na\nética\ne\nresponsabilidade\nprofissional;\nb)\nResponsabilidade\nsocial,\npolítica\ne\nambiental;\nc)\nEspírito\nempreendedor\nque\npermite\nenxergar\noportunidades\ne\natuar\nde\nforma\na\nobter\nresultados\ne\nter\npostura\nsempre\nativa\ne\natuante;\nd)\nCapacidade\npara\ntrabalhar\nem\nequipe;\ne)\nBusca\npermanente\nda\natualização\nde\nconhecimentos\ne\ndos\nmeios\nde\ncomunicação.\nO\nperfil\nprofissional\nde\nconclusão\ndefinido\nneste\nprojeto,\ncom\nbase\nnos\ninsumos\nlevantados,\nconstitui\numa\ndas\nreferências\nfundamentais\npara\nconcepção\nda\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 119 | Curso: Ciência da Computação]\npara\ncom\na\npessoa\nque\nsofre.\nPossui\ncaráter\npreventivo,\numa\nvez\nque\npossibilita\numa\nvisão\nmais\nclara\ne\nampla\nde\nsi\nfrente\nà\nproblemática,\npodendo\ncontribuir\npara\no\nseu\nnão\nagravamento\ne\npara\nauxiliar\nnum\nmovimento\nque\npode\nser\npropulsor\nde\nmudança.\nA\nação\nse\ndá\nde\nforma\npresencial\ne\nindividual,\natravés\nda\nescuta\nsolidária\nrealizada\npor\num\nacolhedor\ndo\ngrupo.\nAo\nreceber\numa\nsolicitação,\num\nmembro\ndo\ngrupo\nviabiliza\no\nlocal,\naciona\no\nacolhedor\ndisponível\nno\nmomento\ne\ninforma,\nvia\ne-mail,\nao\nsolicitante\n118",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.186
+        }
+      }
+    },
+    {
+      "caso": {
+        "id": "PPC-CC-novo",
+        "grupo": "controle_documental",
+        "pergunta": "Qual o perfil profissional do egresso de Ciência da Computação segundo o projeto pedagógico?",
+        "curso": "CC",
+        "perfil": "novo",
+        "fallback_esperado": false,
+        "fonte_esperada": "ppc_cc_novo_2024.pdf"
+      },
+      "resultados": {
+        "0.8": {
+          "distancia_minima": 0.18833637237548828,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 43,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 70,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 44,
+              "curso": "Ciência da Computação"
+            }
+          ],
+          "contexto": "[Documento: ppc_cc_novo_2024.pdf | Pág. 43 | Curso: Ciência da Computação]\n8 Perfil Profissional do Egresso\nDe\nacordo\ncom\nas\nDiretrizes\nCurriculares\nNacionais\npara\nos\ncursos\nde\ngraduação\nna\nárea\nde\nComputação,\nResolução\nnº\n05/2016,\ndo\nConselho\nNacional\nde\nEducação\ne\nos\nReferenciais\nCurriculares\nNacionais\ndos\ncursos\nde\nBacharelado\ne\nLicenciatura,\nde\nabril\nde\n2010,\nda\nSecretaria\nde\nEducação\nSuperior\ndo\nMinistério\nda\nEducação,\no\nBacharel\nem\nCiência\nda\nComputação\ndeve\npossuir\numa\nsólida\nformação\nem\nCiência\nda\nComputação\ne\nMatemática,\nconhecer\nas\nestruturas\ne\nprocessos\ndos\nsistemas\nde\ncomputação\ncom\numa\nvisão\ninterdisciplinar\ne\nglobal\ndos\nsistemas,\ndominar\nos\nconceitos\nteóricos\nda\nCiência\nda\nComputação\ne\nseus\nimpactos\nnas\naplicações\npráticas,\ne\nter\ncapacidade\npara\ncriar\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 70 | Curso: Ciência da Computação]\n12.4 Avaliação e acompanhamento da concretização do projeto pedagógico\nA\navaliação\ndo\ndesenvolvimento\ndo\nProjeto\nPedagógico\ndar-se-á\nem\nrelação\nao\ncumprimento\nde\nseus\nobjetivos,\nperfil\ndo\negresso\ne\nhabilidades\ne\ncompetências.\nA\navaliação\nserá\nrealizada\ntambém\ncom\nrelação\nà\nnecessidade\nde\nflexibilização\ncurricular\nou\nde\nmodificação\nda\nestrutura\ncurricular,\ndas\natividades\ncomplementares\ne\ndo\ncorpo\ndocente\ne\ndiscente.\nO\ncurso\nde\nCiência\nda\nComputação\npossui\num\nNúcleo\nDocente\nEstruturante\n(NDE)\nconstituído\npor\ndocentes\nde\nreconhecida\nexperiência\ne\ndestaque\nacadêmico,\nresponsáveis\npelo\nacompanhamento\ndo\nProjeto\nPedagógico\ndo\nCurso\n(PPC),\nem\nconsonância\ncom\na\nResolução\nnº\n01,\nde\n17\nde\njunho\nde\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 44 | Curso: Ciência da Computação]\n9 Campo de Atuação Profissional\nDe\nacordo\ncom\nos\nReferenciais\nCurriculares\nNacionais\ndos\ncursos\nde\nBacharelado\ne\nLicenciatura\nde\nabril\nde\n2010\nda\nSecretaria\nde\nEducação\nSuperior\ndo\nMinistério\nda\nEducação,\no\nBacharel\nem\nCiência\nda\nComputação\n\"atua\nem\nindústrias\nde\ncomputadores;\nempresas\nde\nprogramas\nde\ncomputadores;\nsetores\nde\nTecnologia\nda\nInformação\nde\ninstituições\npúblicas\ne\nprivadas;\nem\nempresas\ne\nlaboratórios\nde\npesquisa\ncientífica\ne\ntecnológica.\nTambém\npode\natuar\nde\nforma\nautônoma,\nem\nempresa\nprópria\nou\nprestando\nconsultoria\".\nNesses\ndiferentes\ncampos\nde\natuação,\no\nbacharel\nem\nCiência\nda\nComputação\npode\ntrabalhar\nnos\nseguintes\npapéis:\nprogramador,\ngerente\nde\ndesenvolvimento,\ngerente\nde",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": true,
+          "segundos": 0.171
+        },
+        "0.5": {
+          "distancia_minima": 0.18833637237548828,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 43,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 70,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 44,
+              "curso": "Ciência da Computação"
+            }
+          ],
+          "contexto": "[Documento: ppc_cc_novo_2024.pdf | Pág. 43 | Curso: Ciência da Computação]\n8 Perfil Profissional do Egresso\nDe\nacordo\ncom\nas\nDiretrizes\nCurriculares\nNacionais\npara\nos\ncursos\nde\ngraduação\nna\nárea\nde\nComputação,\nResolução\nnº\n05/2016,\ndo\nConselho\nNacional\nde\nEducação\ne\nos\nReferenciais\nCurriculares\nNacionais\ndos\ncursos\nde\nBacharelado\ne\nLicenciatura,\nde\nabril\nde\n2010,\nda\nSecretaria\nde\nEducação\nSuperior\ndo\nMinistério\nda\nEducação,\no\nBacharel\nem\nCiência\nda\nComputação\ndeve\npossuir\numa\nsólida\nformação\nem\nCiência\nda\nComputação\ne\nMatemática,\nconhecer\nas\nestruturas\ne\nprocessos\ndos\nsistemas\nde\ncomputação\ncom\numa\nvisão\ninterdisciplinar\ne\nglobal\ndos\nsistemas,\ndominar\nos\nconceitos\nteóricos\nda\nCiência\nda\nComputação\ne\nseus\nimpactos\nnas\naplicações\npráticas,\ne\nter\ncapacidade\npara\ncriar\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 70 | Curso: Ciência da Computação]\n12.4 Avaliação e acompanhamento da concretização do projeto pedagógico\nA\navaliação\ndo\ndesenvolvimento\ndo\nProjeto\nPedagógico\ndar-se-á\nem\nrelação\nao\ncumprimento\nde\nseus\nobjetivos,\nperfil\ndo\negresso\ne\nhabilidades\ne\ncompetências.\nA\navaliação\nserá\nrealizada\ntambém\ncom\nrelação\nà\nnecessidade\nde\nflexibilização\ncurricular\nou\nde\nmodificação\nda\nestrutura\ncurricular,\ndas\natividades\ncomplementares\ne\ndo\ncorpo\ndocente\ne\ndiscente.\nO\ncurso\nde\nCiência\nda\nComputação\npossui\num\nNúcleo\nDocente\nEstruturante\n(NDE)\nconstituído\npor\ndocentes\nde\nreconhecida\nexperiência\ne\ndestaque\nacadêmico,\nresponsáveis\npelo\nacompanhamento\ndo\nProjeto\nPedagógico\ndo\nCurso\n(PPC),\nem\nconsonância\ncom\na\nResolução\nnº\n01,\nde\n17\nde\njunho\nde\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 44 | Curso: Ciência da Computação]\n9 Campo de Atuação Profissional\nDe\nacordo\ncom\nos\nReferenciais\nCurriculares\nNacionais\ndos\ncursos\nde\nBacharelado\ne\nLicenciatura\nde\nabril\nde\n2010\nda\nSecretaria\nde\nEducação\nSuperior\ndo\nMinistério\nda\nEducação,\no\nBacharel\nem\nCiência\nda\nComputação\n\"atua\nem\nindústrias\nde\ncomputadores;\nempresas\nde\nprogramas\nde\ncomputadores;\nsetores\nde\nTecnologia\nda\nInformação\nde\ninstituições\npúblicas\ne\nprivadas;\nem\nempresas\ne\nlaboratórios\nde\npesquisa\ncientífica\ne\ntecnológica.\nTambém\npode\natuar\nde\nforma\nautônoma,\nem\nempresa\nprópria\nou\nprestando\nconsultoria\".\nNesses\ndiferentes\ncampos\nde\natuação,\no\nbacharel\nem\nCiência\nda\nComputação\npode\ntrabalhar\nnos\nseguintes\npapéis:\nprogramador,\ngerente\nde\ndesenvolvimento,\ngerente\nde",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": true,
+          "segundos": 0.166
+        }
+      }
+    },
+    {
+      "caso": {
+        "id": "PPC-CC-anterior",
+        "grupo": "controle_documental",
+        "pergunta": "Qual o perfil profissional do egresso de Ciência da Computação segundo o projeto pedagógico?",
+        "curso": "CC",
+        "perfil": "anterior",
+        "fallback_esperado": false,
+        "fonte_esperada": "ppc_cc_anterior.pdf"
+      },
+      "resultados": {
+        "0.8": {
+          "distancia_minima": 0.22745579481124878,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "ppc_cc_anterior.pdf",
+              "pagina": 32,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_anterior.pdf",
+              "pagina": 7,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_anterior.pdf",
+              "pagina": 32,
+              "curso": "Ciência da Computação"
+            }
+          ],
+          "contexto": "[Documento: ppc_cc_anterior.pdf | Pág. 32 | Curso: Ciência da Computação]\nespecializada e um de formação livre diferenciadas por cada aluno, otimiza os recursos \nacadêmicos, pela viabilização de formar profissionais com uma grande variedade de perfis no \nquadro de um único curso.  A parte de formação básica da reformulação proposta integra os \nconteúdos comuns indispensáveis para três grandes classes de futuros profissionais:  cientistas da \ncomputação, engenheiros da computação e desenvolvedores de sistemas de informação.  \n \nNos próximos anos, prevemos um cisão dessa unidade pela oferta de três cursos distintos:  \n um curso de engenharia da computação  enfatizando os fundamentos ci entíficos e as \ntecnologias meios de hardware,\n\n---\n\n[Documento: ppc_cc_anterior.pdf | Pág. 7 | Curso: Ciência da Computação]\npodem adequar o conteúdo programático, à abordagem pedagógica e à seqüência de pré -\nrequisitos para as necessidades específicas dos alunos de computação de acordo com as \ndiretrizes do PNG e PP.  \n \n2.  Caracterização do perfil do profissional a ser formado \n \nEm termos do perfil do profissional a ser formado, a reformulação proposta segue as diretrizes 6 e \n13 e 14 do PNG e PP mencionadas na seção precedente. A organização do currículo em três \nnúcleos, um  de formação básica comum a todos os alunos, mais um de formação informática \nespecializada e um de formação livre diferenciadas por cada aluno, otimiza os recursos\n\n---\n\n[Documento: ppc_cc_anterior.pdf | Pág. 32 | Curso: Ciência da Computação]\npodem adequar o conteúdo programático, à abordagem pedagógica e à seqüência de pré -\nrequisitos para as necessidades  específicas dos alunos de computação de acordo com as \ndiretrizes do PNG e PP.  \n \n2.  Caracterização do perfil do profissional a ser formado \n \nEm termos do perfil do profissional a ser formado, a reformulação proposta segue as diretrizes 6 e \n13 e 14 do PNG e  PP mencionadas na seção precedente. A organização do currículo em três \nnúcleos, um de formação básica comum a todos os alunos, mais um de formação informática \nespecializada e um de formação livre diferenciadas por cada aluno, otimiza os recursos",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": true,
+          "segundos": 0.174
+        },
+        "0.5": {
+          "distancia_minima": 0.22745579481124878,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "ppc_cc_anterior.pdf",
+              "pagina": 32,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_anterior.pdf",
+              "pagina": 7,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_anterior.pdf",
+              "pagina": 32,
+              "curso": "Ciência da Computação"
+            }
+          ],
+          "contexto": "[Documento: ppc_cc_anterior.pdf | Pág. 32 | Curso: Ciência da Computação]\nespecializada e um de formação livre diferenciadas por cada aluno, otimiza os recursos \nacadêmicos, pela viabilização de formar profissionais com uma grande variedade de perfis no \nquadro de um único curso.  A parte de formação básica da reformulação proposta integra os \nconteúdos comuns indispensáveis para três grandes classes de futuros profissionais:  cientistas da \ncomputação, engenheiros da computação e desenvolvedores de sistemas de informação.  \n \nNos próximos anos, prevemos um cisão dessa unidade pela oferta de três cursos distintos:  \n um curso de engenharia da computação  enfatizando os fundamentos ci entíficos e as \ntecnologias meios de hardware,\n\n---\n\n[Documento: ppc_cc_anterior.pdf | Pág. 7 | Curso: Ciência da Computação]\npodem adequar o conteúdo programático, à abordagem pedagógica e à seqüência de pré -\nrequisitos para as necessidades específicas dos alunos de computação de acordo com as \ndiretrizes do PNG e PP.  \n \n2.  Caracterização do perfil do profissional a ser formado \n \nEm termos do perfil do profissional a ser formado, a reformulação proposta segue as diretrizes 6 e \n13 e 14 do PNG e PP mencionadas na seção precedente. A organização do currículo em três \nnúcleos, um  de formação básica comum a todos os alunos, mais um de formação informática \nespecializada e um de formação livre diferenciadas por cada aluno, otimiza os recursos\n\n---\n\n[Documento: ppc_cc_anterior.pdf | Pág. 32 | Curso: Ciência da Computação]\npodem adequar o conteúdo programático, à abordagem pedagógica e à seqüência de pré -\nrequisitos para as necessidades  específicas dos alunos de computação de acordo com as \ndiretrizes do PNG e PP.  \n \n2.  Caracterização do perfil do profissional a ser formado \n \nEm termos do perfil do profissional a ser formado, a reformulação proposta segue as diretrizes 6 e \n13 e 14 do PNG e  PP mencionadas na seção precedente. A organização do currículo em três \nnúcleos, um de formação básica comum a todos os alunos, mais um de formação informática \nespecializada e um de formação livre diferenciadas por cada aluno, otimiza os recursos",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": true,
+          "segundos": 0.173
+        }
+      }
+    },
+    {
+      "caso": {
+        "id": "PPC-EC-novo",
+        "grupo": "controle_documental",
+        "pergunta": "Qual o perfil profissional do egresso de Engenharia da Computação segundo o projeto pedagógico?",
+        "curso": "EC",
+        "perfil": "novo",
+        "fallback_esperado": false,
+        "fonte_esperada": "ppc_ec_novo_2024.pdf"
+      },
+      "resultados": {
+        "0.8": {
+          "distancia_minima": 0.211051344871521,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "ppc_ec_novo_2024.pdf",
+              "pagina": 27,
+              "curso": "Engenharia da Computação"
+            },
+            {
+              "arquivo": "ppc_ec_novo_2024.pdf",
+              "pagina": 55,
+              "curso": "Engenharia da Computação"
+            },
+            {
+              "arquivo": "ppc_ec_novo_2024.pdf",
+              "pagina": 28,
+              "curso": "Engenharia da Computação"
+            }
+          ],
+          "contexto": "[Documento: ppc_ec_novo_2024.pdf | Pág. 27 | Curso: Engenharia da Computação]\n26 \nA rápida mudança promovida pelos computadores e sua inclusão nas mais variadas \náreas de aplicação tornou estável a oferta de vagas para o profissional da Engenharia \nda Computação, e a perspectiva é de que se mantenha assim nos próximos anos. Na \nmaioria dos casos, o primeiro emprego surge através do estágio em uma grande \nempresa. O engenheiro da computação pode atuar tanto em companhias do setor de \ntecnologia, como nas empresas dos mais diversos segmentos. \nO curso de Engenharia da Computação da UFPE teve sua primeira turma ingressando \nna Universidade em 2002. O curso foi fruto da junção de esforços do então\n\n---\n\n[Documento: ppc_ec_novo_2024.pdf | Pág. 55 | Curso: Engenharia da Computação]\n54 \n8. Campo de Atuação Profissional \n \nDe acordo com os Referenciais Curriculares Nacionais dos cursos de Bacharelado e \nLicenciatura de abril de 2010 da Secretaria de Educação Superior do Ministério da \nEducação, o Engenheiro de Computação atua em empresas do setor de tecnologia da \ninformação; em indústria de computadores, periféricos e sistemas embarcados; em \nempresas de telecomunicação, de planejamento e desenvolvimento de equipamentos e \nsistemas computacionais; em empresas de automação de processos industriais e \ncomputacionais; em empresas e l aboratórios de pesquisa científica e tecnológica. \nTambém pode atuar de forma autônoma, em empresa própria ou prestando consultoria.\n\n---\n\n[Documento: ppc_ec_novo_2024.pdf | Pág. 28 | Curso: Engenharia da Computação]\n27 \n4. Justificativa para a reformulação do PPC \n \nConsiderando a história e a natureza do curso de Engenharia da Computação , no \nmundo, no Brasil e na UFPE, pode-se entender a evolução do curso e sua diferenciação \nmarcante de outros cursos que tratam de computação. Um curso de Engenharia da \nComputação se caracteriza por sua fundamentação adequada, por uma gama \nespecífica de conhecimentos para criar habilidades necessárias ao exercício da \nprofissão. São essenciais na formação do aluno incorporar habilidade para projetar e \nmodificar sistemas computaciona is, c onhecer boas práticas profissionais, considerar",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": true,
+          "segundos": 0.193
+        },
+        "0.5": {
+          "distancia_minima": 0.211051344871521,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "ppc_ec_novo_2024.pdf",
+              "pagina": 27,
+              "curso": "Engenharia da Computação"
+            },
+            {
+              "arquivo": "ppc_ec_novo_2024.pdf",
+              "pagina": 55,
+              "curso": "Engenharia da Computação"
+            },
+            {
+              "arquivo": "ppc_ec_novo_2024.pdf",
+              "pagina": 28,
+              "curso": "Engenharia da Computação"
+            }
+          ],
+          "contexto": "[Documento: ppc_ec_novo_2024.pdf | Pág. 27 | Curso: Engenharia da Computação]\n26 \nA rápida mudança promovida pelos computadores e sua inclusão nas mais variadas \náreas de aplicação tornou estável a oferta de vagas para o profissional da Engenharia \nda Computação, e a perspectiva é de que se mantenha assim nos próximos anos. Na \nmaioria dos casos, o primeiro emprego surge através do estágio em uma grande \nempresa. O engenheiro da computação pode atuar tanto em companhias do setor de \ntecnologia, como nas empresas dos mais diversos segmentos. \nO curso de Engenharia da Computação da UFPE teve sua primeira turma ingressando \nna Universidade em 2002. O curso foi fruto da junção de esforços do então\n\n---\n\n[Documento: ppc_ec_novo_2024.pdf | Pág. 55 | Curso: Engenharia da Computação]\n54 \n8. Campo de Atuação Profissional \n \nDe acordo com os Referenciais Curriculares Nacionais dos cursos de Bacharelado e \nLicenciatura de abril de 2010 da Secretaria de Educação Superior do Ministério da \nEducação, o Engenheiro de Computação atua em empresas do setor de tecnologia da \ninformação; em indústria de computadores, periféricos e sistemas embarcados; em \nempresas de telecomunicação, de planejamento e desenvolvimento de equipamentos e \nsistemas computacionais; em empresas de automação de processos industriais e \ncomputacionais; em empresas e l aboratórios de pesquisa científica e tecnológica. \nTambém pode atuar de forma autônoma, em empresa própria ou prestando consultoria.\n\n---\n\n[Documento: ppc_ec_novo_2024.pdf | Pág. 28 | Curso: Engenharia da Computação]\n27 \n4. Justificativa para a reformulação do PPC \n \nConsiderando a história e a natureza do curso de Engenharia da Computação , no \nmundo, no Brasil e na UFPE, pode-se entender a evolução do curso e sua diferenciação \nmarcante de outros cursos que tratam de computação. Um curso de Engenharia da \nComputação se caracteriza por sua fundamentação adequada, por uma gama \nespecífica de conhecimentos para criar habilidades necessárias ao exercício da \nprofissão. São essenciais na formação do aluno incorporar habilidade para projetar e \nmodificar sistemas computaciona is, c onhecer boas práticas profissionais, considerar",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": true,
+          "segundos": 0.18
+        }
+      }
+    },
+    {
+      "caso": {
+        "id": "PPC-EC-anterior",
+        "grupo": "controle_documental",
+        "pergunta": "Qual o perfil profissional do egresso de Engenharia da Computação segundo o projeto pedagógico?",
+        "curso": "EC",
+        "perfil": "anterior",
+        "fallback_esperado": false,
+        "fonte_esperada": "ppc_ec_anterior.pdf"
+      },
+      "resultados": {
+        "0.8": {
+          "distancia_minima": 0.18314528465270996,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "ppc_ec_anterior.pdf",
+              "pagina": 36,
+              "curso": "Engenharia da Computação"
+            },
+            {
+              "arquivo": "norma_estagio_ec_anterior_2023.pdf",
+              "pagina": 1,
+              "curso": "Engenharia da Computação"
+            },
+            {
+              "arquivo": "ppc_ec_anterior.pdf",
+              "pagina": 59,
+              "curso": "Engenharia da Computação"
+            }
+          ],
+          "contexto": "[Documento: ppc_ec_anterior.pdf | Pág. 36 | Curso: Engenharia da Computação]\nformados desse currículo proposto receberão o título único e indiferenciado de \"Engenheiro de \nComputação\", independentemente do perfil ou dos perfis que eles seguirão, Aliás, nada\n\n---\n\n[Documento: norma_estagio_ec_anterior_2023.pdf | Pág. 1 | Curso: Engenharia da Computação]\nUNIVERSIDADE FEDERAL DE PERNAMBUCO \nCENTRO DE INFORMÁTICA \nCURSO DE ENGENHARIA DA COMPUTAÇÃO \n \nEmenta: Dispõe a respeito do  \nEstágio Obrigatório e Não   \nObrigatório no âmbito do Curso de \nGraduação em Engenharia da \nComputação. \n \nEm 8 de agosto de 2023, O COLEGIADO DO CURSO DE GRADUAÇÃO EM \nENGENHARIA DA COMPUTAÇÃO DA UNIVERSIDADE FEDERAL DE \nPERNAMBUCO, no uso de suas atribuições, \n \nCONSIDERANDO \n- que o estágio é um elemento que completa a formação acadêmica do estudante \nno processo de ensino e aprendizagem, constituindo-se instrumento fundamental \nde integração, aquisição de experiência, aperfeiçoamento técnico -cultural, \ncientífico e de relacionamento humano;\n\n---\n\n[Documento: ppc_ec_anterior.pdf | Pág. 59 | Curso: Engenharia da Computação]\n5 900,00 \n1 \n2 400,00 \nTotal \n1 (UFPE 2000): Proposta de Projeto Pedagogico, UFPE, Pro-Reitoria para \n2 Assuntos Academicos, Recife, Outrubro 2000. \n3 (ForGrad 2000]: O currículo como expressao do projeto pedagodico, um \n4 processo flexível. Forum de Pro-Reitores de Graduacao das Universidades \n5 Brasileiras, Niteroi, Maio 2000. \n6 [CEElnf 1998): Diretrizes curriculares de cursos da area de computacao e \n7 informatica. Departamento de politica do ensino superior, coordenacao \n8 das comissoes de especialistas em ensino, Comissao de Especialistas de \n9 Ensino em Computacao e lnformatica, 1998. \n1 O [ACM/IEEE 2000): Computing Curricula 2001. Joint IEEE Computer",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": true,
+          "segundos": 0.166
+        },
+        "0.5": {
+          "distancia_minima": 0.18314528465270996,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "ppc_ec_anterior.pdf",
+              "pagina": 36,
+              "curso": "Engenharia da Computação"
+            },
+            {
+              "arquivo": "norma_estagio_ec_anterior_2023.pdf",
+              "pagina": 1,
+              "curso": "Engenharia da Computação"
+            },
+            {
+              "arquivo": "ppc_ec_anterior.pdf",
+              "pagina": 59,
+              "curso": "Engenharia da Computação"
+            }
+          ],
+          "contexto": "[Documento: ppc_ec_anterior.pdf | Pág. 36 | Curso: Engenharia da Computação]\nformados desse currículo proposto receberão o título único e indiferenciado de \"Engenheiro de \nComputação\", independentemente do perfil ou dos perfis que eles seguirão, Aliás, nada\n\n---\n\n[Documento: norma_estagio_ec_anterior_2023.pdf | Pág. 1 | Curso: Engenharia da Computação]\nUNIVERSIDADE FEDERAL DE PERNAMBUCO \nCENTRO DE INFORMÁTICA \nCURSO DE ENGENHARIA DA COMPUTAÇÃO \n \nEmenta: Dispõe a respeito do  \nEstágio Obrigatório e Não   \nObrigatório no âmbito do Curso de \nGraduação em Engenharia da \nComputação. \n \nEm 8 de agosto de 2023, O COLEGIADO DO CURSO DE GRADUAÇÃO EM \nENGENHARIA DA COMPUTAÇÃO DA UNIVERSIDADE FEDERAL DE \nPERNAMBUCO, no uso de suas atribuições, \n \nCONSIDERANDO \n- que o estágio é um elemento que completa a formação acadêmica do estudante \nno processo de ensino e aprendizagem, constituindo-se instrumento fundamental \nde integração, aquisição de experiência, aperfeiçoamento técnico -cultural, \ncientífico e de relacionamento humano;\n\n---\n\n[Documento: ppc_ec_anterior.pdf | Pág. 59 | Curso: Engenharia da Computação]\n5 900,00 \n1 \n2 400,00 \nTotal \n1 (UFPE 2000): Proposta de Projeto Pedagogico, UFPE, Pro-Reitoria para \n2 Assuntos Academicos, Recife, Outrubro 2000. \n3 (ForGrad 2000]: O currículo como expressao do projeto pedagodico, um \n4 processo flexível. Forum de Pro-Reitores de Graduacao das Universidades \n5 Brasileiras, Niteroi, Maio 2000. \n6 [CEElnf 1998): Diretrizes curriculares de cursos da area de computacao e \n7 informatica. Departamento de politica do ensino superior, coordenacao \n8 das comissoes de especialistas em ensino, Comissao de Especialistas de \n9 Ensino em Computacao e lnformatica, 1998. \n1 O [ACM/IEEE 2000): Computing Curricula 2001. Joint IEEE Computer",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": true,
+          "segundos": 0.187
+        }
+      }
+    },
+    {
+      "caso": {
+        "id": "PPC-SI-novo",
+        "grupo": "controle_documental",
+        "pergunta": "Qual o perfil profissional do egresso de Sistemas de Informação segundo o projeto pedagógico?",
+        "curso": "SI",
+        "perfil": "novo",
+        "fallback_esperado": false,
+        "fonte_esperada": "ppc_si_novo_2024.pdf"
+      },
+      "resultados": {
+        "0.8": {
+          "distancia_minima": 0.20257467031478882,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "ppc_si_novo_2024.pdf",
+              "pagina": 42,
+              "curso": "Sistemas de Informação"
+            },
+            {
+              "arquivo": "ppc_si_novo_2024.pdf",
+              "pagina": 91,
+              "curso": "Sistemas de Informação"
+            },
+            {
+              "arquivo": "ppc_si_novo_2024.pdf",
+              "pagina": 1,
+              "curso": "Sistemas de Informação"
+            }
+          ],
+          "contexto": "[Documento: ppc_si_novo_2024.pdf | Pág. 42 | Curso: Sistemas de Informação]\npreviamente, a pesquisa e a extensão devem ser consideradas igualmente \nimprescindíveis, não podendo ser negligenciadas por uma universidade que pretende \nformar cidadãos conscientes que são transforma dores da realidade na qual estão \ninseridos. \nA pesquisa, entendida como busca e desenvolvimento de novos conhecimentos em \nSistemas de Informação e áreas correlatas, deve ser incentivada durante toda a vida \nacadêmica do discente, a fim de garantir que possa contribuir com o avanço dos \nSistemas de Informação e, por conseguinte, da sociedade. Dessa forma, para \nintegralizar o currículo, é necessário que o aluno desenvolva e apresente um Trabalho\n\n---\n\n[Documento: ppc_si_novo_2024.pdf | Pág. 91 | Curso: Sistemas de Informação]\nSistemas de Informação podem ser encontrados no Anexo V deste documento. \n14.2 Ações Curriculares de Extensão \n \nA Extensão Universitária é um processo interdisciplinar, educativo, cultural, científico e \npolítico que integra a formação acadêmica, profissional e cidadã do discente e promove\n\n---\n\n[Documento: ppc_si_novo_2024.pdf | Pág. 1 | Curso: Sistemas de Informação]\nProjeto Pedagógico \nCurso de Graduação em Sistemas de Informação \n \n \n \nCentro de Informática \nUniversidade Federal de Pernambuco \n \n \n \n \n2023",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": true,
+          "segundos": 0.18
+        },
+        "0.5": {
+          "distancia_minima": 0.20257467031478882,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "ppc_si_novo_2024.pdf",
+              "pagina": 42,
+              "curso": "Sistemas de Informação"
+            },
+            {
+              "arquivo": "ppc_si_novo_2024.pdf",
+              "pagina": 91,
+              "curso": "Sistemas de Informação"
+            },
+            {
+              "arquivo": "ppc_si_novo_2024.pdf",
+              "pagina": 1,
+              "curso": "Sistemas de Informação"
+            }
+          ],
+          "contexto": "[Documento: ppc_si_novo_2024.pdf | Pág. 42 | Curso: Sistemas de Informação]\npreviamente, a pesquisa e a extensão devem ser consideradas igualmente \nimprescindíveis, não podendo ser negligenciadas por uma universidade que pretende \nformar cidadãos conscientes que são transforma dores da realidade na qual estão \ninseridos. \nA pesquisa, entendida como busca e desenvolvimento de novos conhecimentos em \nSistemas de Informação e áreas correlatas, deve ser incentivada durante toda a vida \nacadêmica do discente, a fim de garantir que possa contribuir com o avanço dos \nSistemas de Informação e, por conseguinte, da sociedade. Dessa forma, para \nintegralizar o currículo, é necessário que o aluno desenvolva e apresente um Trabalho\n\n---\n\n[Documento: ppc_si_novo_2024.pdf | Pág. 91 | Curso: Sistemas de Informação]\nSistemas de Informação podem ser encontrados no Anexo V deste documento. \n14.2 Ações Curriculares de Extensão \n \nA Extensão Universitária é um processo interdisciplinar, educativo, cultural, científico e \npolítico que integra a formação acadêmica, profissional e cidadã do discente e promove\n\n---\n\n[Documento: ppc_si_novo_2024.pdf | Pág. 1 | Curso: Sistemas de Informação]\nProjeto Pedagógico \nCurso de Graduação em Sistemas de Informação \n \n \n \nCentro de Informática \nUniversidade Federal de Pernambuco \n \n \n \n \n2023",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": true,
+          "segundos": 0.193
+        }
+      }
+    },
+    {
+      "caso": {
+        "id": "PPC-SI-anterior",
+        "grupo": "controle_documental",
+        "pergunta": "Qual o perfil profissional do egresso de Sistemas de Informação segundo o projeto pedagógico?",
+        "curso": "SI",
+        "perfil": "anterior",
+        "fallback_esperado": false,
+        "fonte_esperada": "ppc_si_anterior.pdf"
+      },
+      "resultados": {
+        "0.8": {
+          "distancia_minima": 0.2224000096321106,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "ppc_si_anterior.pdf",
+              "pagina": 16,
+              "curso": "Sistemas de Informação"
+            },
+            {
+              "arquivo": "ppc_si_anterior.pdf",
+              "pagina": 14,
+              "curso": "Sistemas de Informação"
+            },
+            {
+              "arquivo": "ppc_si_anterior.pdf",
+              "pagina": 16,
+              "curso": "Sistemas de Informação"
+            }
+          ],
+          "contexto": "[Documento: ppc_si_anterior.pdf | Pág. 16 | Curso: Sistemas de Informação]\nsuas\t\r  atividades\t\r  profissionais.\t\r  \n\t\r  \nCampo de Atuação Profissional \nDesta\t\r  forma,\t\r  seguindo\t\r  a\t\r  recomendação\t\r  da\t\r  Sociedade\t\r  Brasileira\t\r  de\t\r  Computação\t\r  [CR99],\t\r  \no\t\r  egresso\t\r  deste\t\r  curso\t\r  poderá\t\r  (não\t\r  exclusivamente):\t\r  \na) Atuar\t\r   no\t\r   projeto\t\r   e\t\r   desenvolvimento\t\r   de\t\r  sistemas\t\r   de\t\r   informação.\t\r   Neste\t\r  \nsentido,\t\r   poderá\t\r  desempenhar\t\r   os\t\r   papéis\t\r   de\t\r   analista\t\r   de\t\r   sistemas,\t\r  \nprogramador\t\r   de\t\r   sistemas,\t\r   gerente\t\r   de\t\r   desenvolvimento\t\r   de\t\r   sistemas\t\r   de\t\r  \ninformação,\t\r   gerente\t\r   de\t\r   projetos\t\r   de\t\r   sistemas\t\r   de\t\r   informação,\n\n---\n\n[Documento: ppc_si_anterior.pdf | Pág. 14 | Curso: Sistemas de Informação]\n• Gestão\t\r  de\t\r  Segurança\t\r  da\t\r  Informação.\t\r  \n\t\r  \nObjetivos do Curso \nObjetivo Geral \nFormar\t\r  profissionais\t\r  competentes\t\r   para\t\r   atuar\t\r   na\t\r   área\t\r   de\t\r   Sistemas\t\r   de\t\r   Informação,\t\r  \npromovendo\t\r   uma\t\r   formação\t\r   sólida\t\r   em\t\r   Administração\t\r   e\t\r   Computação,\t\r   além\t\r   de\t\r   uma\t\r  \nampla\t\r   formação\t\r   em\t\r   áreas\t\r   relacionadas\t\r   a\t\r   Sistemas\t\r   de\t\r   Informação\t\r   com\t\r   ênfase\t\r   no\t\r  \ndesenvolvimento\t\r  e/ou\t\r  customização\t\r  desses\t\r  sistemas,\t\r  na\t\r  gestão\t\r  das\t\r  organizações\t\r  e\t\r  em\t\r  \nestudos\t\r   humanísticos.\t\r   O\t\r   curso\t\r   não\t\r   possui\t\r   um\t\r   enfoque\t\r   exclusivamente\t\r   técnico,\t\r   ele\n\n---\n\n[Documento: ppc_si_anterior.pdf | Pág. 16 | Curso: Sistemas de Informação]\nde\t\r  informação\t\r  deve\t\r  ser\t\r  capaz\t\r  de\t\r  avaliar,\t\r  planejar,\t\r  implementar\t\r  e\t\r  gerenciar\t\r  sistemas\t\r  de\t\r  \ninformação\t\r   aplicados\t\r   nas\t\r   organizações.\t\r   Neste\t\r   contexto,\t\r   é\t\r   fundamental\t\r   que\t\r   o\t\r   egresso\t\r  \ntenha\t\r   um\t\r   profundo\t\r   conhecimento\t\r   tecnológico\t\r   alinhado\t\r   com\t\r   um\t\r   entendimento\t\r   em\t\r  \náreas\t\r  relacionadas\t\r  à\t\r  sua\t\r  atuação\t\r  profissional\t\r  tais\t\r  como\t\r  Marketing,\t\r  Ciências\t\r  Contábeis,\t\r  \nSociologia,\t\r  entre\t\r  outras.\t\r  \t\r  \nA\t\r   atuação\t\r   do\t\r   profissional\t\r   em\t\r   Sistemas\t\r   de\t\r   Informação\t\r   requer\t\r   que\t\r   ele\t\r   desenvolva",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": true,
+          "segundos": 0.191
+        },
+        "0.5": {
+          "distancia_minima": 0.2224000096321106,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "ppc_si_anterior.pdf",
+              "pagina": 16,
+              "curso": "Sistemas de Informação"
+            },
+            {
+              "arquivo": "ppc_si_anterior.pdf",
+              "pagina": 14,
+              "curso": "Sistemas de Informação"
+            },
+            {
+              "arquivo": "ppc_si_anterior.pdf",
+              "pagina": 16,
+              "curso": "Sistemas de Informação"
+            }
+          ],
+          "contexto": "[Documento: ppc_si_anterior.pdf | Pág. 16 | Curso: Sistemas de Informação]\nsuas\t\r  atividades\t\r  profissionais.\t\r  \n\t\r  \nCampo de Atuação Profissional \nDesta\t\r  forma,\t\r  seguindo\t\r  a\t\r  recomendação\t\r  da\t\r  Sociedade\t\r  Brasileira\t\r  de\t\r  Computação\t\r  [CR99],\t\r  \no\t\r  egresso\t\r  deste\t\r  curso\t\r  poderá\t\r  (não\t\r  exclusivamente):\t\r  \na) Atuar\t\r   no\t\r   projeto\t\r   e\t\r   desenvolvimento\t\r   de\t\r  sistemas\t\r   de\t\r   informação.\t\r   Neste\t\r  \nsentido,\t\r   poderá\t\r  desempenhar\t\r   os\t\r   papéis\t\r   de\t\r   analista\t\r   de\t\r   sistemas,\t\r  \nprogramador\t\r   de\t\r   sistemas,\t\r   gerente\t\r   de\t\r   desenvolvimento\t\r   de\t\r   sistemas\t\r   de\t\r  \ninformação,\t\r   gerente\t\r   de\t\r   projetos\t\r   de\t\r   sistemas\t\r   de\t\r   informação,\n\n---\n\n[Documento: ppc_si_anterior.pdf | Pág. 14 | Curso: Sistemas de Informação]\n• Gestão\t\r  de\t\r  Segurança\t\r  da\t\r  Informação.\t\r  \n\t\r  \nObjetivos do Curso \nObjetivo Geral \nFormar\t\r  profissionais\t\r  competentes\t\r   para\t\r   atuar\t\r   na\t\r   área\t\r   de\t\r   Sistemas\t\r   de\t\r   Informação,\t\r  \npromovendo\t\r   uma\t\r   formação\t\r   sólida\t\r   em\t\r   Administração\t\r   e\t\r   Computação,\t\r   além\t\r   de\t\r   uma\t\r  \nampla\t\r   formação\t\r   em\t\r   áreas\t\r   relacionadas\t\r   a\t\r   Sistemas\t\r   de\t\r   Informação\t\r   com\t\r   ênfase\t\r   no\t\r  \ndesenvolvimento\t\r  e/ou\t\r  customização\t\r  desses\t\r  sistemas,\t\r  na\t\r  gestão\t\r  das\t\r  organizações\t\r  e\t\r  em\t\r  \nestudos\t\r   humanísticos.\t\r   O\t\r   curso\t\r   não\t\r   possui\t\r   um\t\r   enfoque\t\r   exclusivamente\t\r   técnico,\t\r   ele\n\n---\n\n[Documento: ppc_si_anterior.pdf | Pág. 16 | Curso: Sistemas de Informação]\nde\t\r  informação\t\r  deve\t\r  ser\t\r  capaz\t\r  de\t\r  avaliar,\t\r  planejar,\t\r  implementar\t\r  e\t\r  gerenciar\t\r  sistemas\t\r  de\t\r  \ninformação\t\r   aplicados\t\r   nas\t\r   organizações.\t\r   Neste\t\r   contexto,\t\r   é\t\r   fundamental\t\r   que\t\r   o\t\r   egresso\t\r  \ntenha\t\r   um\t\r   profundo\t\r   conhecimento\t\r   tecnológico\t\r   alinhado\t\r   com\t\r   um\t\r   entendimento\t\r   em\t\r  \náreas\t\r  relacionadas\t\r  à\t\r  sua\t\r  atuação\t\r  profissional\t\r  tais\t\r  como\t\r  Marketing,\t\r  Ciências\t\r  Contábeis,\t\r  \nSociologia,\t\r  entre\t\r  outras.\t\r  \t\r  \nA\t\r   atuação\t\r   do\t\r   profissional\t\r   em\t\r   Sistemas\t\r   de\t\r   Informação\t\r   requer\t\r   que\t\r   ele\t\r   desenvolva",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": true,
+          "segundos": 0.174
+        }
+      }
+    },
+    {
+      "caso": {
+        "id": "PPC-IA-novo",
+        "grupo": "controle_documental",
+        "pergunta": "Qual o perfil profissional do egresso de Inteligência Artificial segundo o projeto pedagógico?",
+        "curso": "IA",
+        "perfil": "novo",
+        "fallback_esperado": false,
+        "fonte_esperada": "ppc_ia_novo_2024.pdf"
+      },
+      "resultados": {
+        "0.8": {
+          "distancia_minima": 0.24445843696594238,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "ppc_ia_novo_2024.pdf",
+              "pagina": 4,
+              "curso": "Inteligência Artificial"
+            },
+            {
+              "arquivo": "ppc_ia_novo_2024.pdf",
+              "pagina": 116,
+              "curso": "Inteligência Artificial"
+            },
+            {
+              "arquivo": "ppc_ia_novo_2024.pdf",
+              "pagina": 23,
+              "curso": "Inteligência Artificial"
+            }
+          ],
+          "contexto": "[Documento: ppc_ia_novo_2024.pdf | Pág. 4 | Curso: Inteligência Artificial]\nconhecimentos, ética e práticas; \n● A rápida evolução da Inteligência Artificial demanda profissionais atualizados \ncom as diversas tecnologias que estão relacionadas com a área; \n● O Curso de Inteligência Artificial deve considerar mudanças na tecnologia, \nnovos desenvolvimentos em pedagogia, e a importância da aprendizagem ao \nlongo da vida; \n● O time elaborador do projeto pedagógico do curso de Inteligência Artificial deve \nidentificar as habilidades e conhecimentos fundamentais que todos os \nbacharéis em Inteligência Artificial devem possuir; \n● O Curso de Inteligência Artificial deve permitir uma formação flexível, bem\n\n---\n\n[Documento: ppc_ia_novo_2024.pdf | Pág. 116 | Curso: Inteligência Artificial]\n2. Pela submissão do Programa ou do Projeto ao Colegiado da Graduação em Inteligência \nArtificial para aprovação por seus pares;   \n3. Pela avaliação e pela validação dos estudantes inscritos na ACEx.   \nParágrafo Único: O servidor Técnico Administrativo em Educação poderá propor e coordenar ações de \nextensão desde que não haja prejuízo das demais atribuições funcionais e cuja natureza e nível de \ncomplexidade sejam compatíveis com sua formação acadêmica, exceto no âmbito dos componentes \ncurriculares que possuam natureza extensionista. \n \n115\n\n---\n\n[Documento: ppc_ia_novo_2024.pdf | Pág. 23 | Curso: Inteligência Artificial]\nidealizados que podem constituir modelos básicos de subsídio teórico para outras \nciências, e orientar o desenvolvimento de aplicações práticas em diversas áreas da \nEngenharia. \n6.1 O que é Inteligência Artificial? \nO conceito de Inteligência Artificial remonta a ideias filosóficas antigas sobre a criação \nde \"máquinas pensantes\", mas o campo começou a se consolidar como uma disciplina \ncientífica na década de 1950. O termo \"Inteligência Artificial\" foi cunhado em 1956, \ndurante a conferência de Dartmouth (“Dartmouth Summer Research Project on \nArtificial Intelligence”), considerada o marco inicial da área. Nessa época, os",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": true,
+          "segundos": 0.209
+        },
+        "0.5": {
+          "distancia_minima": 0.24445843696594238,
+          "fallback": false,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "ppc_ia_novo_2024.pdf",
+              "pagina": 4,
+              "curso": "Inteligência Artificial"
+            },
+            {
+              "arquivo": "ppc_ia_novo_2024.pdf",
+              "pagina": 116,
+              "curso": "Inteligência Artificial"
+            },
+            {
+              "arquivo": "ppc_ia_novo_2024.pdf",
+              "pagina": 23,
+              "curso": "Inteligência Artificial"
+            }
+          ],
+          "contexto": "[Documento: ppc_ia_novo_2024.pdf | Pág. 4 | Curso: Inteligência Artificial]\nconhecimentos, ética e práticas; \n● A rápida evolução da Inteligência Artificial demanda profissionais atualizados \ncom as diversas tecnologias que estão relacionadas com a área; \n● O Curso de Inteligência Artificial deve considerar mudanças na tecnologia, \nnovos desenvolvimentos em pedagogia, e a importância da aprendizagem ao \nlongo da vida; \n● O time elaborador do projeto pedagógico do curso de Inteligência Artificial deve \nidentificar as habilidades e conhecimentos fundamentais que todos os \nbacharéis em Inteligência Artificial devem possuir; \n● O Curso de Inteligência Artificial deve permitir uma formação flexível, bem\n\n---\n\n[Documento: ppc_ia_novo_2024.pdf | Pág. 116 | Curso: Inteligência Artificial]\n2. Pela submissão do Programa ou do Projeto ao Colegiado da Graduação em Inteligência \nArtificial para aprovação por seus pares;   \n3. Pela avaliação e pela validação dos estudantes inscritos na ACEx.   \nParágrafo Único: O servidor Técnico Administrativo em Educação poderá propor e coordenar ações de \nextensão desde que não haja prejuízo das demais atribuições funcionais e cuja natureza e nível de \ncomplexidade sejam compatíveis com sua formação acadêmica, exceto no âmbito dos componentes \ncurriculares que possuam natureza extensionista. \n \n115\n\n---\n\n[Documento: ppc_ia_novo_2024.pdf | Pág. 23 | Curso: Inteligência Artificial]\nidealizados que podem constituir modelos básicos de subsídio teórico para outras \nciências, e orientar o desenvolvimento de aplicações práticas em diversas áreas da \nEngenharia. \n6.1 O que é Inteligência Artificial? \nO conceito de Inteligência Artificial remonta a ideias filosóficas antigas sobre a criação \nde \"máquinas pensantes\", mas o campo começou a se consolidar como uma disciplina \ncientífica na década de 1950. O termo \"Inteligência Artificial\" foi cunhado em 1956, \ndurante a conferência de Dartmouth (“Dartmouth Summer Research Project on \nArtificial Intelligence”), considerada o marco inicial da área. Nessa época, os",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": true,
+          "segundos": 0.228
+        }
+      }
+    },
+    {
+      "caso": {
+        "id": "FORA-01",
+        "grupo": "fora_escopo_adicional",
+        "pergunta": "carburador",
+        "curso": "CC",
+        "perfil": "novo",
+        "fallback_esperado": true
+      },
+      "resultados": {
+        "0.8": {
+          "distancia_minima": 0.7289758324623108,
+          "fallback": false,
+          "fallback_conforme_expectativa": false,
+          "fontes": [
+            {
+              "arquivo": "estagio_geral.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            },
+            {
+              "arquivo": "estagio_geral.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 159,
+              "curso": "Ciência da Computação"
+            }
+          ],
+          "contexto": "[Documento: estagio_geral.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nObs: Para o cálculo da carga horária cumprida pelo aluno, será considerada a carga horária de disciplinas obrigatórias cursadas e a carga horária de disciplinas dispensadas por equivalência com disciplinas obrigatórias de perfil do curso).\n\n---\n\n[Documento: estagio_geral.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nObs: Para o cálculo da carga horária cumprida pelo aluno, será considerada a carga horária de disciplinas obrigatórias cursadas e a carga horária de disciplinas dispensadas por equivalência com disciplinas obrigatórias de perfil do curso).\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 159 | Curso: Ciência da Computação]\n158",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.199
+        },
+        "0.5": {
+          "distancia_minima": 0.7289758324623108,
+          "fallback": true,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "estagio_geral.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            },
+            {
+              "arquivo": "estagio_geral.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 159,
+              "curso": "Ciência da Computação"
+            }
+          ],
+          "contexto": "[Documento: estagio_geral.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nObs: Para o cálculo da carga horária cumprida pelo aluno, será considerada a carga horária de disciplinas obrigatórias cursadas e a carga horária de disciplinas dispensadas por equivalência com disciplinas obrigatórias de perfil do curso).\n\n---\n\n[Documento: estagio_geral.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nObs: Para o cálculo da carga horária cumprida pelo aluno, será considerada a carga horária de disciplinas obrigatórias cursadas e a carga horária de disciplinas dispensadas por equivalência com disciplinas obrigatórias de perfil do curso).\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 159 | Curso: Ciência da Computação]\n158",
+          "resposta": null,
+          "template_email": "Assunto: carburador\n\nOlá,\n\nMeu nome é [Nome], matrícula [Matrícula], aluno(a) do curso de CC, perfil curricular novo.\n\nEstou entrando em contato sobre: carburador.\n\nResumo da situação:\n[Resumo da situação]\n\nMinha dúvida é:\ncarburador\n\nSetor sugerido:\nSecGrad\n\nAtenciosamente,\n[Nome]",
+          "setor_sugerido": "SecGrad",
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.209
+        }
+      }
+    },
+    {
+      "caso": {
+        "id": "FORA-02",
+        "grupo": "fora_escopo_adicional",
+        "pergunta": "Como consertar um carburador de motocicleta?",
+        "curso": "CC",
+        "perfil": "novo",
+        "fallback_esperado": true
+      },
+      "resultados": {
+        "0.8": {
+          "distancia_minima": 0.45356231927871704,
+          "fallback": false,
+          "fallback_conforme_expectativa": false,
+          "fontes": [
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 150,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "estagio_geral.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            },
+            {
+              "arquivo": "estagio_geral.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            }
+          ],
+          "contexto": "[Documento: ppc_cc_novo_2024.pdf | Pág. 150 | Curso: Ciência da Computação]\nParágrafo\nÚnico.\nEm\ncaso\nde\nexcedente\ndessa\ncarga\nhorária,\nesse\nexcedente\npode\nser\nconvertido\npara\ncarga\nhorária\nde\nAtividades\nComplementares\ndo\ndiscente.\nCAPÍTULO\nIII\nDOS\nCRITÉRIOS\nArt.\n4º\n-\nPara\ncursar\nas\ndisciplinas\nde\nformação\navançada,\né\npreciso\nsatisfazer\nos\ncritérios\nde\npreenchimento\nde\nvagas\nestabelecidos\npelo\ncolegiado\ndo\ncurso\nda\ndisciplina\nofertada,\ne\no\ndiscente\ndeverá\nter\nintegralizado,\npelo\nmenos,\n60%\nda\ncarga\nhorária\ntotal\ndo\ncurso\nde\nCiência\nda\nComputação.\nCAPÍTULO\nIV\nDISPOSIÇÕES\nGERAIS\nArt.\n5°\n-\nNão\nse\ntorna\nnecessária\na\nconfirmação\nou\nautorização\ndo\ncolegiado\ndo\ncurso\nde\nCiência\nda\nComputação\npara\na\nmatrícula\ndo\naluno\nnas\ndisciplinas\nde\nformação\navançada\ndesde\nque\nse\ncumpram\n\n---\n\n[Documento: estagio_geral.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nObs: Para o cálculo da carga horária cumprida pelo aluno, será considerada a carga horária de disciplinas obrigatórias cursadas e a carga horária de disciplinas dispensadas por equivalência com disciplinas obrigatórias de perfil do curso).\n\n---\n\n[Documento: estagio_geral.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nObs: Para o cálculo da carga horária cumprida pelo aluno, será considerada a carga horária de disciplinas obrigatórias cursadas e a carga horária de disciplinas dispensadas por equivalência com disciplinas obrigatórias de perfil do curso).",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.233
+        },
+        "0.5": {
+          "distancia_minima": 0.45356231927871704,
+          "fallback": false,
+          "fallback_conforme_expectativa": false,
+          "fontes": [
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 150,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "estagio_geral.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            },
+            {
+              "arquivo": "estagio_geral.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            }
+          ],
+          "contexto": "[Documento: ppc_cc_novo_2024.pdf | Pág. 150 | Curso: Ciência da Computação]\nParágrafo\nÚnico.\nEm\ncaso\nde\nexcedente\ndessa\ncarga\nhorária,\nesse\nexcedente\npode\nser\nconvertido\npara\ncarga\nhorária\nde\nAtividades\nComplementares\ndo\ndiscente.\nCAPÍTULO\nIII\nDOS\nCRITÉRIOS\nArt.\n4º\n-\nPara\ncursar\nas\ndisciplinas\nde\nformação\navançada,\né\npreciso\nsatisfazer\nos\ncritérios\nde\npreenchimento\nde\nvagas\nestabelecidos\npelo\ncolegiado\ndo\ncurso\nda\ndisciplina\nofertada,\ne\no\ndiscente\ndeverá\nter\nintegralizado,\npelo\nmenos,\n60%\nda\ncarga\nhorária\ntotal\ndo\ncurso\nde\nCiência\nda\nComputação.\nCAPÍTULO\nIV\nDISPOSIÇÕES\nGERAIS\nArt.\n5°\n-\nNão\nse\ntorna\nnecessária\na\nconfirmação\nou\nautorização\ndo\ncolegiado\ndo\ncurso\nde\nCiência\nda\nComputação\npara\na\nmatrícula\ndo\naluno\nnas\ndisciplinas\nde\nformação\navançada\ndesde\nque\nse\ncumpram\n\n---\n\n[Documento: estagio_geral.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nObs: Para o cálculo da carga horária cumprida pelo aluno, será considerada a carga horária de disciplinas obrigatórias cursadas e a carga horária de disciplinas dispensadas por equivalência com disciplinas obrigatórias de perfil do curso).\n\n---\n\n[Documento: estagio_geral.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nObs: Para o cálculo da carga horária cumprida pelo aluno, será considerada a carga horária de disciplinas obrigatórias cursadas e a carga horária de disciplinas dispensadas por equivalência com disciplinas obrigatórias de perfil do curso).",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.254
+        }
+      }
+    },
+    {
+      "caso": {
+        "id": "FORA-03",
+        "grupo": "fora_escopo_adicional",
+        "pergunta": "Qual a receita de bolo de chocolate?",
+        "curso": "CC",
+        "perfil": "novo",
+        "fallback_esperado": true
+      },
+      "resultados": {
+        "0.8": {
+          "distancia_minima": 0.5392674803733826,
+          "fallback": false,
+          "fallback_conforme_expectativa": false,
+          "fontes": [
+            {
+              "arquivo": "norma_estagio_cc_novo_2024.pdf",
+              "pagina": 3,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 131,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "regulamento_tg.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            }
+          ],
+          "contexto": "[Documento: norma_estagio_cc_novo_2024.pdf | Pág. 3 | Curso: Ciência da Computação]\nestagiário for igual ou maior que 1200h, salvo se a duração prevista para o estágio se situar \ntotalmente em período de férias escolares. \nCAPÍTULO VI \nDAS DISPOSIÇÕES GERAIS \nArt. 14. Os casos omissos e as interpretações deste regulamento devem ser resolvidos pelo \nColegiado do Curso de Ciência da Computação. \n130\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 131 | Curso: Ciência da Computação]\npelo\nestagiário\nfor\nigual\nou\nmaior\nque\n1200h,\nsalvo\nse\na\nduração\nprevista\npara\no\nestágio\nse\nsituar\ntotalmente\nem\nperíodo\nde\nférias\nescolares.\nCAPÍTULO\nVI\nDAS\nDISPOSIÇÕES\nGERAIS\nArt.\n14.\nOs\ncasos\nomissos\ne\nas\ninterpretações\ndeste\nregulamento\ndevem\nser\nresolvidos\npelo\nColegiado\ndo\nCurso\nde\nCiência\nda\nComputação.\n130\n\n---\n\n[Documento: regulamento_tg.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nQualidade da Apresentação Escrita (Relatório).\nVale 25% da nota final. \n\nQualidade da Apresentação Oral.\nVale 25% da nota final.\n\n\n\n11. Critérios de Diferenciação\nAos avaliadores caberá não somente a atribuição da nota final de cada projeto, mas também a diferenciação dos projetos que eventualmente acabem recebendo a mesma nota final. De forma a facilitar o trabalho de diferenciação, e até mesmo de tratamento dos casos duvidosos, tanto os que tendem \"para baixo\" quanto os que tendem \"para cima\", vamos listar alguns critérios.",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.226
+        },
+        "0.5": {
+          "distancia_minima": 0.5392674803733826,
+          "fallback": true,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "norma_estagio_cc_novo_2024.pdf",
+              "pagina": 3,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 131,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "regulamento_tg.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            }
+          ],
+          "contexto": "[Documento: norma_estagio_cc_novo_2024.pdf | Pág. 3 | Curso: Ciência da Computação]\nestagiário for igual ou maior que 1200h, salvo se a duração prevista para o estágio se situar \ntotalmente em período de férias escolares. \nCAPÍTULO VI \nDAS DISPOSIÇÕES GERAIS \nArt. 14. Os casos omissos e as interpretações deste regulamento devem ser resolvidos pelo \nColegiado do Curso de Ciência da Computação. \n130\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 131 | Curso: Ciência da Computação]\npelo\nestagiário\nfor\nigual\nou\nmaior\nque\n1200h,\nsalvo\nse\na\nduração\nprevista\npara\no\nestágio\nse\nsituar\ntotalmente\nem\nperíodo\nde\nférias\nescolares.\nCAPÍTULO\nVI\nDAS\nDISPOSIÇÕES\nGERAIS\nArt.\n14.\nOs\ncasos\nomissos\ne\nas\ninterpretações\ndeste\nregulamento\ndevem\nser\nresolvidos\npelo\nColegiado\ndo\nCurso\nde\nCiência\nda\nComputação.\n130\n\n---\n\n[Documento: regulamento_tg.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nQualidade da Apresentação Escrita (Relatório).\nVale 25% da nota final. \n\nQualidade da Apresentação Oral.\nVale 25% da nota final.\n\n\n\n11. Critérios de Diferenciação\nAos avaliadores caberá não somente a atribuição da nota final de cada projeto, mas também a diferenciação dos projetos que eventualmente acabem recebendo a mesma nota final. De forma a facilitar o trabalho de diferenciação, e até mesmo de tratamento dos casos duvidosos, tanto os que tendem \"para baixo\" quanto os que tendem \"para cima\", vamos listar alguns critérios.",
+          "resposta": null,
+          "template_email": "Assunto: Qual a receita de bolo de chocolate?\n\nOlá,\n\nMeu nome é [Nome], matrícula [Matrícula], aluno(a) do curso de CC, perfil curricular novo.\n\nEstou entrando em contato sobre: Qual a receita de bolo de chocolate?.\n\nResumo da situação:\n[Resumo da situação]\n\nMinha dúvida é:\nQual a receita de bolo de chocolate?\n\nSetor sugerido:\nSecGrad\n\nAtenciosamente,\n[Nome]",
+          "setor_sugerido": "SecGrad",
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.203
+        }
+      }
+    },
+    {
+      "caso": {
+        "id": "FORA-04",
+        "grupo": "fora_escopo_adicional",
+        "pergunta": "Qual a previsão do tempo em Marte?",
+        "curso": "CC",
+        "perfil": "novo",
+        "fallback_esperado": true
+      },
+      "resultados": {
+        "0.8": {
+          "distancia_minima": 0.45140326023101807,
+          "fallback": false,
+          "fallback_conforme_expectativa": false,
+          "fontes": [
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 45,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 63,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 125,
+              "curso": "Ciência da Computação"
+            }
+          ],
+          "contexto": "[Documento: ppc_cc_novo_2024.pdf | Pág. 45 | Curso: Ciência da Computação]\nà\nação\nprática.\nÀ\nguisa\nde\nilustração,\na\ndefinição\nconstrutivista\nproposta\npor\nautores\nda\nDidática\nProfissional\n[Pastré\net\nal.\n2006],\napresenta\no\nconceito\nde\ncompetência\nilustrando\nquatro\naspectos.\nEsses\ncomplementam-se,\ne\ndestinam-se\na\nservir\nde\ncritério\npara\navaliar\nprogressos:\n1.\nUm\nestudante\né\nmais\ncompetente\ndo\nque\noutro\nse\nele\npode\nfazer\nalgo\nque\no\nprimeiro\nnão\nfaz;\n2.\nUm\nestudante\né\nmais\ncompetente,\nse\nele\natua\nsobre\nisso\nde\numa\nmaneira\nmelhor:\nmais\nrápido,\npor\nexemplo,\nou\nmais\nconfiável\nou\nmais\ncompatível\nque\na\nmaneira\nde\nfazer\nde\noutros;\n3.\nUm\nestudante\né\nmais\ncompetente,\nse\nele\ntem\num\ndiretório\nde\nalternativas\nde\nrecursos\nque\nlhe\npermitem\nadaptar\no\nseu\ncomportamento\na\ndiferentes\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 63 | Curso: Ciência da Computação]\nde\ncerto\nassunto,\nquando\nutilizado\nno\ninício\ne\ntambém\nno\nfinal\nde\numa\ndisciplina.\nNa\nprática,\num\nteste\npara\ninventário\nde\nconceitos\né\nconstituído\nde\nquestões\nde\nmúltipla\nescolha\na\nfim\nde\nrevelar\num\nmal\nentendimento\na\nrespeito\nde\num\nassunto.\nHá\ntrabalhos\nenvolvendo,\npor\nexemplo,\ninventário\nde\nconceitos\npara\num\ncurso\nintrodutório\nde\nprogramação.\nPode-se\nir\num\npouco\nalém\nda\nsimples\ntentativa\nde\ncompreender\no\naprendizado\ndos\nestudantes\nna\nbusca\nde\ncompreender\naté\nque\nponto\nos\nestudantes\nestão\ncientes\ndos\npassos\nque\nutilizam\nna\nsolução\nde\nproblemas\ne\ncomo\neles\npodem\nexplicar\nestes\npassos.\nTécnicas\nde\navaliação\nem\nsala\nde\naula\npodem\nser\nutilizadas\ncomo\nmeio\npara\nobter\na\nresposta\nna\ndireção\nde\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 125 | Curso: Ciência da Computação]\nSANTOS FILHO, José Camilo dos. Internacionalização da Educação Superior: redefinições,justificativas e estratégias. Sér.-Estud., Campo Grande , v. 25, n. 53, p. 11-34, jan. 2020 .Disponível em<http://educa.fcc.org.br/scielo.php?script=sci_arttext&pid=S2318-19822020000100011&lng=pt&nrm=iso>. acessos em 18 dez. 2022. Epub 12-Maio-2020.https://doi.org/10.20435/serie-estudos.v0i0.1383.\nAs seguintes referências também foram citadas ao longo do documento (os links foramacessados em Julho de 2023):\nhttp://portal.mec.gov.br/docman/novembro-2016-pdf/52101-rces005-16-pdf/file\nhttps://portal.cin.ufpe.br/pesquisa-e-extensao/extensao/projetos-de-extensao/",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.305
+        },
+        "0.5": {
+          "distancia_minima": 0.45140326023101807,
+          "fallback": false,
+          "fallback_conforme_expectativa": false,
+          "fontes": [
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 45,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 63,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 125,
+              "curso": "Ciência da Computação"
+            }
+          ],
+          "contexto": "[Documento: ppc_cc_novo_2024.pdf | Pág. 45 | Curso: Ciência da Computação]\nà\nação\nprática.\nÀ\nguisa\nde\nilustração,\na\ndefinição\nconstrutivista\nproposta\npor\nautores\nda\nDidática\nProfissional\n[Pastré\net\nal.\n2006],\napresenta\no\nconceito\nde\ncompetência\nilustrando\nquatro\naspectos.\nEsses\ncomplementam-se,\ne\ndestinam-se\na\nservir\nde\ncritério\npara\navaliar\nprogressos:\n1.\nUm\nestudante\né\nmais\ncompetente\ndo\nque\noutro\nse\nele\npode\nfazer\nalgo\nque\no\nprimeiro\nnão\nfaz;\n2.\nUm\nestudante\né\nmais\ncompetente,\nse\nele\natua\nsobre\nisso\nde\numa\nmaneira\nmelhor:\nmais\nrápido,\npor\nexemplo,\nou\nmais\nconfiável\nou\nmais\ncompatível\nque\na\nmaneira\nde\nfazer\nde\noutros;\n3.\nUm\nestudante\né\nmais\ncompetente,\nse\nele\ntem\num\ndiretório\nde\nalternativas\nde\nrecursos\nque\nlhe\npermitem\nadaptar\no\nseu\ncomportamento\na\ndiferentes\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 63 | Curso: Ciência da Computação]\nde\ncerto\nassunto,\nquando\nutilizado\nno\ninício\ne\ntambém\nno\nfinal\nde\numa\ndisciplina.\nNa\nprática,\num\nteste\npara\ninventário\nde\nconceitos\né\nconstituído\nde\nquestões\nde\nmúltipla\nescolha\na\nfim\nde\nrevelar\num\nmal\nentendimento\na\nrespeito\nde\num\nassunto.\nHá\ntrabalhos\nenvolvendo,\npor\nexemplo,\ninventário\nde\nconceitos\npara\num\ncurso\nintrodutório\nde\nprogramação.\nPode-se\nir\num\npouco\nalém\nda\nsimples\ntentativa\nde\ncompreender\no\naprendizado\ndos\nestudantes\nna\nbusca\nde\ncompreender\naté\nque\nponto\nos\nestudantes\nestão\ncientes\ndos\npassos\nque\nutilizam\nna\nsolução\nde\nproblemas\ne\ncomo\neles\npodem\nexplicar\nestes\npassos.\nTécnicas\nde\navaliação\nem\nsala\nde\naula\npodem\nser\nutilizadas\ncomo\nmeio\npara\nobter\na\nresposta\nna\ndireção\nde\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 125 | Curso: Ciência da Computação]\nSANTOS FILHO, José Camilo dos. Internacionalização da Educação Superior: redefinições,justificativas e estratégias. Sér.-Estud., Campo Grande , v. 25, n. 53, p. 11-34, jan. 2020 .Disponível em<http://educa.fcc.org.br/scielo.php?script=sci_arttext&pid=S2318-19822020000100011&lng=pt&nrm=iso>. acessos em 18 dez. 2022. Epub 12-Maio-2020.https://doi.org/10.20435/serie-estudos.v0i0.1383.\nAs seguintes referências também foram citadas ao longo do documento (os links foramacessados em Julho de 2023):\nhttp://portal.mec.gov.br/docman/novembro-2016-pdf/52101-rces005-16-pdf/file\nhttps://portal.cin.ufpe.br/pesquisa-e-extensao/extensao/projetos-de-extensao/",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.209
+        }
+      }
+    },
+    {
+      "caso": {
+        "id": "FORA-05",
+        "grupo": "fora_escopo_adicional",
+        "pergunta": "Quem ganhou a Copa do Mundo de 1994?",
+        "curso": "CC",
+        "perfil": "novo",
+        "fallback_esperado": true
+      },
+      "resultados": {
+        "0.8": {
+          "distancia_minima": 0.49987632036209106,
+          "fallback": false,
+          "fallback_conforme_expectativa": false,
+          "fontes": [
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 66,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 6,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 5,
+              "curso": "Ciência da Computação"
+            }
+          ],
+          "contexto": "[Documento: ppc_cc_novo_2024.pdf | Pág. 66 | Curso: Ciência da Computação]\nde\naproveitamento\nserá\nfeita:\n30\nhttps://www.ufpe.br/documents/39459/0/resolucao_04_1994.pdf/b2179116-4093-4bcf-8329-34e\n776eb8006\n29\nDisponível\nem:\nhttps://sigrh.ufpe.br/sigrh/downloadArquivo?idArquivo=1227459&key=4af0ce6c46f8a34cb67310\n843265cc76\n.\nAcesso\nem:\n28\njun.\n2023.\n65\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 6 | Curso: Ciência da Computação]\nMassa\nFerreira\nLima\nRoberto\nSouto\nMaior\nde\nBarros\nRobson\ndo\nNascimento\nFidalgo\nRuy\nJosé\nGuerra\nBarretto\nde\nQueiroz\nSérgio\nCastelo\nBranco\nSoares\nSérgio\nRicardo\nde\nMelo\nQueiroz\nSérgio\nVanderlei\nCavalcante\nSilvio\nde\nBarros\nMelo\nSimone\nCristiane\ndos\nSantos\nStefan\nMichael\nBlawid\nTeresa\nBernarda\nLudermir\nTsang\nIng\nRen\nValéria\nCesário\nTimes\nAlves\nVeronica\nTeichrieb\nVinícius\nCardoso\nGarcia\n5\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 5 | Curso: Ciência da Computação]\nde\nMedeiros\nSantos\nAndson\nMarreiros\nBalieiro\nAnjolina\nGrisi\nde\nOliveira\nAugusto\nCezar\nAlves\nSampaio\nBernadette\nFarias\nLóscio\nBreno\nAlexandro\nFerreira\nde\nMiranda\nCarina\nFrota\nAlves\n4",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.203
+        },
+        "0.5": {
+          "distancia_minima": 0.49987632036209106,
+          "fallback": false,
+          "fallback_conforme_expectativa": false,
+          "fontes": [
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 66,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 6,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 5,
+              "curso": "Ciência da Computação"
+            }
+          ],
+          "contexto": "[Documento: ppc_cc_novo_2024.pdf | Pág. 66 | Curso: Ciência da Computação]\nde\naproveitamento\nserá\nfeita:\n30\nhttps://www.ufpe.br/documents/39459/0/resolucao_04_1994.pdf/b2179116-4093-4bcf-8329-34e\n776eb8006\n29\nDisponível\nem:\nhttps://sigrh.ufpe.br/sigrh/downloadArquivo?idArquivo=1227459&key=4af0ce6c46f8a34cb67310\n843265cc76\n.\nAcesso\nem:\n28\njun.\n2023.\n65\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 6 | Curso: Ciência da Computação]\nMassa\nFerreira\nLima\nRoberto\nSouto\nMaior\nde\nBarros\nRobson\ndo\nNascimento\nFidalgo\nRuy\nJosé\nGuerra\nBarretto\nde\nQueiroz\nSérgio\nCastelo\nBranco\nSoares\nSérgio\nRicardo\nde\nMelo\nQueiroz\nSérgio\nVanderlei\nCavalcante\nSilvio\nde\nBarros\nMelo\nSimone\nCristiane\ndos\nSantos\nStefan\nMichael\nBlawid\nTeresa\nBernarda\nLudermir\nTsang\nIng\nRen\nValéria\nCesário\nTimes\nAlves\nVeronica\nTeichrieb\nVinícius\nCardoso\nGarcia\n5\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 5 | Curso: Ciência da Computação]\nde\nMedeiros\nSantos\nAndson\nMarreiros\nBalieiro\nAnjolina\nGrisi\nde\nOliveira\nAugusto\nCezar\nAlves\nSampaio\nBernadette\nFarias\nLóscio\nBreno\nAlexandro\nFerreira\nde\nMiranda\nCarina\nFrota\nAlves\n4",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.196
+        }
+      }
+    },
+    {
+      "caso": {
+        "id": "FORA-06",
+        "grupo": "fora_escopo_adicional",
+        "pergunta": "Como trocar o pneu de uma bicicleta?",
+        "curso": "CC",
+        "perfil": "novo",
+        "fallback_esperado": true
+      },
+      "resultados": {
+        "0.8": {
+          "distancia_minima": 0.37337690591812134,
+          "fallback": false,
+          "fallback_conforme_expectativa": false,
+          "fontes": [
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 104,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "regulamento_tg.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            },
+            {
+              "arquivo": "regulamento_tg.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            }
+          ],
+          "contexto": "[Documento: ppc_cc_novo_2024.pdf | Pág. 104 | Curso: Ciência da Computação]\ngestão\nda\naprendizagem\".\nO\nque\ntornou\nesta\napresentação\nespecial\nfoi\no\nfato\nde\no\naluno,\nque\né\nsurdo,\nconviver\nna\nprática\ncom\na\nproblemática\nda\nsua\npesquisa.\nFigura\n5.\nDivisão\ninterna\ndos\nblocos\nque\ncompõem\no\nCIn.\n103\n\n---\n\n[Documento: regulamento_tg.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nIntrodução - trata-se de uma das partes mais importantes do documento. Deve começar com uma explicação bem clara do tópico e dos objetivos do projeto, de tal maneira que a natureza e a abrangência do trabalho possam ser facilmente entendidas por um leitor não-especialista. É aqui que deve aparecer uma descrição resumida do contexto específico no qual o projeto se insere, bem como de sua relevância para outros trabalhos relacionados. Além disso, é importante que se dê os apontadores para as seções que contêm o material técnico do trabalho.\n\n---\n\n[Documento: regulamento_tg.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\n4. Avaliação\nUm bom projeto de TG envolve uma combinação de uma boa pesquisa sobre o \"estado-da-arte\", uma implementação não-trivial, ou um trabalho teórico bem-fundamentado, e um relatório bem organizado e bem escrito que especifique os detalhes relevantes do projeto e que deixe bem claro seu contexto, seus objetivos, e os resultados obtidos. Os projetos excepcionais invariavelmente avançam fronteiras, como por exemplo, desenvolvendo uma aplicação complexa que ainda não existe, ou melhorando significativamente uma aplicação ou um método já existente(s) seja através de sua funcionalidade, desempenho, etc.",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.22
+        },
+        "0.5": {
+          "distancia_minima": 0.37337690591812134,
+          "fallback": false,
+          "fallback_conforme_expectativa": false,
+          "fontes": [
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 104,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "regulamento_tg.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            },
+            {
+              "arquivo": "regulamento_tg.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            }
+          ],
+          "contexto": "[Documento: ppc_cc_novo_2024.pdf | Pág. 104 | Curso: Ciência da Computação]\ngestão\nda\naprendizagem\".\nO\nque\ntornou\nesta\napresentação\nespecial\nfoi\no\nfato\nde\no\naluno,\nque\né\nsurdo,\nconviver\nna\nprática\ncom\na\nproblemática\nda\nsua\npesquisa.\nFigura\n5.\nDivisão\ninterna\ndos\nblocos\nque\ncompõem\no\nCIn.\n103\n\n---\n\n[Documento: regulamento_tg.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nIntrodução - trata-se de uma das partes mais importantes do documento. Deve começar com uma explicação bem clara do tópico e dos objetivos do projeto, de tal maneira que a natureza e a abrangência do trabalho possam ser facilmente entendidas por um leitor não-especialista. É aqui que deve aparecer uma descrição resumida do contexto específico no qual o projeto se insere, bem como de sua relevância para outros trabalhos relacionados. Além disso, é importante que se dê os apontadores para as seções que contêm o material técnico do trabalho.\n\n---\n\n[Documento: regulamento_tg.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\n4. Avaliação\nUm bom projeto de TG envolve uma combinação de uma boa pesquisa sobre o \"estado-da-arte\", uma implementação não-trivial, ou um trabalho teórico bem-fundamentado, e um relatório bem organizado e bem escrito que especifique os detalhes relevantes do projeto e que deixe bem claro seu contexto, seus objetivos, e os resultados obtidos. Os projetos excepcionais invariavelmente avançam fronteiras, como por exemplo, desenvolvendo uma aplicação complexa que ainda não existe, ou melhorando significativamente uma aplicação ou um método já existente(s) seja através de sua funcionalidade, desempenho, etc.",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.219
+        }
+      }
+    },
+    {
+      "caso": {
+        "id": "FORA-07",
+        "grupo": "fora_escopo_adicional",
+        "pergunta": "Qual o melhor investimento em criptomoedas?",
+        "curso": "CC",
+        "perfil": "novo",
+        "fallback_esperado": true
+      },
+      "resultados": {
+        "0.8": {
+          "distancia_minima": 0.4056650996208191,
+          "fallback": false,
+          "fallback_conforme_expectativa": false,
+          "fontes": [
+            {
+              "arquivo": "pesquisa_faq.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 104,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "pesquisa_faq.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            }
+          ],
+          "contexto": "[Documento: pesquisa_faq.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\n\"Permite-se a realocação de recursos, dentro da mesma rubrica, desde que essa seja necessária à pesquisa realizada.\n\n\nPoderão ser feitos remanejamentos de despesas, de Capital para Custeio, ou vice-versa, nos termos do art. 46 do Decreto nº 9.283, de 7 de fevereiro de 2018. Os remanejamentos deverão ser justificados no Relatório de Execução do Objeto (REO), observados os itens financiáveis listados na Ação e respeitando o estabelecido a seguir:\n\n\nI- até 20% do valor do projeto (Custeio e Capital) poderão ser remanejados sem anuência do CNPq; e\n\nII- acima de 20% o beneficiário deverá obter anuência formal do CNPq para o remanejamento, previamente ao dispêndio realizado\".\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 104 | Curso: Ciência da Computação]\ngestão\nda\naprendizagem\".\nO\nque\ntornou\nesta\napresentação\nespecial\nfoi\no\nfato\nde\no\naluno,\nque\né\nsurdo,\nconviver\nna\nprática\ncom\na\nproblemática\nda\nsua\npesquisa.\nFigura\n5.\nDivisão\ninterna\ndos\nblocos\nque\ncompõem\no\nCIn.\n103\n\n---\n\n[Documento: pesquisa_faq.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\n3.8.13. O pagamento do incentivo pela publicação de artigos é condicionado à presença de pelo menos um dos seus autores (ou representante) em evento de divulgação da produção do CIn/UFPE; \n\n3.8.14. O valor de referência do incentivo é de R$ 1.000,00 (hum mil reais) por cada ponto obtido; \n\n3.8.15. O auxílio financeiro atribuído ao Docente não poderá ultrapassar o valor correspondente a 20 pontos;",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.222
+        },
+        "0.5": {
+          "distancia_minima": 0.4056650996208191,
+          "fallback": false,
+          "fallback_conforme_expectativa": false,
+          "fontes": [
+            {
+              "arquivo": "pesquisa_faq.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 104,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "pesquisa_faq.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            }
+          ],
+          "contexto": "[Documento: pesquisa_faq.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\n\"Permite-se a realocação de recursos, dentro da mesma rubrica, desde que essa seja necessária à pesquisa realizada.\n\n\nPoderão ser feitos remanejamentos de despesas, de Capital para Custeio, ou vice-versa, nos termos do art. 46 do Decreto nº 9.283, de 7 de fevereiro de 2018. Os remanejamentos deverão ser justificados no Relatório de Execução do Objeto (REO), observados os itens financiáveis listados na Ação e respeitando o estabelecido a seguir:\n\n\nI- até 20% do valor do projeto (Custeio e Capital) poderão ser remanejados sem anuência do CNPq; e\n\nII- acima de 20% o beneficiário deverá obter anuência formal do CNPq para o remanejamento, previamente ao dispêndio realizado\".\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 104 | Curso: Ciência da Computação]\ngestão\nda\naprendizagem\".\nO\nque\ntornou\nesta\napresentação\nespecial\nfoi\no\nfato\nde\no\naluno,\nque\né\nsurdo,\nconviver\nna\nprática\ncom\na\nproblemática\nda\nsua\npesquisa.\nFigura\n5.\nDivisão\ninterna\ndos\nblocos\nque\ncompõem\no\nCIn.\n103\n\n---\n\n[Documento: pesquisa_faq.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\n3.8.13. O pagamento do incentivo pela publicação de artigos é condicionado à presença de pelo menos um dos seus autores (ou representante) em evento de divulgação da produção do CIn/UFPE; \n\n3.8.14. O valor de referência do incentivo é de R$ 1.000,00 (hum mil reais) por cada ponto obtido; \n\n3.8.15. O auxílio financeiro atribuído ao Docente não poderá ultrapassar o valor correspondente a 20 pontos;",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.237
+        }
+      }
+    },
+    {
+      "caso": {
+        "id": "FORA-08",
+        "grupo": "fora_escopo_adicional",
+        "pergunta": "Como renovar meu passaporte?",
+        "curso": "CC",
+        "perfil": "novo",
+        "fallback_esperado": true
+      },
+      "resultados": {
+        "0.8": {
+          "distancia_minima": 0.5426644086837769,
+          "fallback": false,
+          "fallback_conforme_expectativa": false,
+          "fontes": [
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 109,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "pesquisa_faq.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 208,
+              "curso": "Ciência da Computação"
+            }
+          ],
+          "contexto": "[Documento: ppc_cc_novo_2024.pdf | Pág. 109 | Curso: Ciência da Computação]\nFigura\n11.\nMapa\ndo\nMezanino\ndo\nBloco\nE.\n108\n\n---\n\n[Documento: pesquisa_faq.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nCadastro do projeto na Plataforma Brasil .\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 208 | Curso: Ciência da Computação]\nc) Integral tripla: cálculo de volume, centro de massa, momento de inércia. \n \n \nBIBLIOGRAFIA BÁSICA \n1. Leithold, Cálculo com geometria analítica Vol. 1, Editora Harper & Row do Brasil, 1982. \n2. D.M.Flemming, Cálculo B, Editora Makron Books, 2006. \n3. D.P.Morgado e M.C.Ferreira, Cálculo diferencial e integral de funções de várias variáveis, UFRJ Editora, 2015. \n \nBIBLIOGRAFIA COMPLEMENTAR \n1. M.A.Munem e D.J. Foulis, Cálculo - Vol 2, Editora LTC, 1982. \n2. Anton, Bivens e Davis, Cálculo - Vol 2, Editora BookMan, 2007. \n3. W.Kaplan, Cálculo Avançado, Vol. 2, Editora Edgar Blucher, 1972. \n4. H.L.Guidorizzi, Um Curso de Cálculo - Vol. 2, Editora LTC, 2014.",
+          "resposta": "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+          "template_email": null,
+          "setor_sugerido": null,
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.263
+        },
+        "0.5": {
+          "distancia_minima": 0.5426644086837769,
+          "fallback": true,
+          "fallback_conforme_expectativa": true,
+          "fontes": [
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 109,
+              "curso": "Ciência da Computação"
+            },
+            {
+              "arquivo": "pesquisa_faq.txt",
+              "pagina": 1,
+              "curso": "Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial"
+            },
+            {
+              "arquivo": "ppc_cc_novo_2024.pdf",
+              "pagina": 208,
+              "curso": "Ciência da Computação"
+            }
+          ],
+          "contexto": "[Documento: ppc_cc_novo_2024.pdf | Pág. 109 | Curso: Ciência da Computação]\nFigura\n11.\nMapa\ndo\nMezanino\ndo\nBloco\nE.\n108\n\n---\n\n[Documento: pesquisa_faq.txt | Pág. 1 | Curso: Ciência da Computação | Engenharia da Computação | Sistemas de Informação | Inteligência Artificial]\nCadastro do projeto na Plataforma Brasil .\n\n---\n\n[Documento: ppc_cc_novo_2024.pdf | Pág. 208 | Curso: Ciência da Computação]\nc) Integral tripla: cálculo de volume, centro de massa, momento de inércia. \n \n \nBIBLIOGRAFIA BÁSICA \n1. Leithold, Cálculo com geometria analítica Vol. 1, Editora Harper & Row do Brasil, 1982. \n2. D.M.Flemming, Cálculo B, Editora Makron Books, 2006. \n3. D.P.Morgado e M.C.Ferreira, Cálculo diferencial e integral de funções de várias variáveis, UFRJ Editora, 2015. \n \nBIBLIOGRAFIA COMPLEMENTAR \n1. M.A.Munem e D.J. Foulis, Cálculo - Vol 2, Editora LTC, 1982. \n2. Anton, Bivens e Davis, Cálculo - Vol 2, Editora BookMan, 2007. \n3. W.Kaplan, Cálculo Avançado, Vol. 2, Editora Edgar Blucher, 1972. \n4. H.L.Guidorizzi, Um Curso de Cálculo - Vol. 2, Editora LTC, 2014.",
+          "resposta": null,
+          "template_email": "Assunto: Como renovar meu passaporte?\n\nOlá,\n\nMeu nome é [Nome], matrícula [Matrícula], aluno(a) do curso de CC, perfil curricular novo.\n\nEstou entrando em contato sobre: Como renovar meu passaporte?.\n\nResumo da situação:\n[Resumo da situação]\n\nMinha dúvida é:\nComo renovar meu passaporte?\n\nSetor sugerido:\nSecGrad\n\nAtenciosamente,\n[Nome]",
+          "setor_sugerido": "SecGrad",
+          "citacoes_com_arquivo_e_pagina": true,
+          "fonte_esperada_recuperada": null,
+          "segundos": 0.189
+        }
+      }
+    }
+  ],
+  "infraestrutura_ok": true,
+  "versoes": {
+    "chromadb": "1.5.9",
+    "pypdf": "6.18.1",
+    "streamlit": "1.64.0"
+  },
+  "documentos_sha256": {
+    ".gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "diretrizes_extensao.txt": "cadd159ac059b467d95cf3eace0ba5c9cb763708389762a189dea0ac75544b2d",
+    "estagio_geral.txt": "35b8499c76c25800ccaaac4d35f060453ca7451d13ce0add8b14981dd7786c48",
+    "extensao_cin_faq.txt": "9fa0f37440e2bce1e139457d9bc5f9a7505a4ada7a4173d8cfe9f3071f060109",
+    "metadata.json": "8f0cf26d41d81f869e77a75b1a2fef479db216288b79fedd373793bc3686c66a",
+    "migracao_perfis.txt": "2720407c7ffea8048db8697409e977d09fa94694d24af09546ad262c9b8d2768",
+    "norma_estagio_cc_anterior_2016-2.pdf": "7bdcc9248906574793895f300933a63fbccd47b51e041d1f50d132e24c46e56c",
+    "norma_estagio_cc_novo_2024.pdf": "b9ab4963236a8bceea37f3217a2c29ab5fe9abd2e742117688b06b4a67dc3948",
+    "norma_estagio_ec_anterior_2023.pdf": "dc1822e62d9ce24d1221fd7dca74ae0cacba12ff962370e795ca21e9ae829bc2",
+    "norma_estagio_ec_novo_2024.pdf": "23aceacf6946fe3fb4be83473fe4ff095041ac1a75ecb4fc4340dc9c792b2670",
+    "norma_estagio_ia_novo_2024.pdf": "1a471789e5e9f48fa575f2cce16f01ad10c4630fd78a8dce9feca1d6baca5039",
+    "norma_estagio_si_anterior_2022.pdf": "e4e014057ea2bba89caef6505feb5133e96a3607548b36b95a0d008e2cfb4b03",
+    "norma_estagio_si_novo_2024.pdf": "4eb7a98a666463f1cc55f17151f32617fbac092d0412c3ee6fe3595df78a5930",
+    "pesquisa_faq.txt": "4cd06e41496c345cd6fbc81a15e6aa5c74c425c9c1fac7b5ad74cfb7d5fed920",
+    "ppc_cc_anterior.pdf": "7774e7c5b032466df0b443392c41d21744aa8d5aca4aaa09f7ff2690a8f38516",
+    "ppc_cc_novo_2024.pdf": "0165bd8831adcd5557f0d8bcd7b08dedb33efd89b122d1c2b5e2e03b7ea75ec7",
+    "ppc_ec_anterior.pdf": "d9eb6dc38a39c20016796283d12567efac2f5883925af1550f2aadafaf3df350",
+    "ppc_ec_novo_2024.pdf": "17fe8a729b31adfe986e62a7c75db0d6c22ffb4d9a86bd0f02db23acbb287860",
+    "ppc_ia_novo_2024.pdf": "f0b80bbfc0894614d396c818f946e0206a40dbf9e5281fbddf6cc3f3b1bef838",
+    "ppc_si_anterior.pdf": "47f8e699c02817c3e4450b41aed18ded9c17c2a5e4adbc0a88c5768dd591bde2",
+    "ppc_si_novo_2024.pdf": "94520e2491db8b4cba68a458578e8674f6350558ed6b40ec68713fd4dd498cb6",
+    "regras_requerimentos.txt": "04e9d78ffc20e53528471b35c6bdafb6fb9046a6648adbbd14d3f1e3c7385bb6",
+    "regulamento_tg.txt": "b10781e1c1e8266cb38bb0906d4d6b058b0e92bd7fae86bf7e97fb876c8ccf2b",
+    "requirements.txt": "21779e08b5c912f233e61f96bd5acf6a1b754c1faef3a7887100fd7ddd4fc643"
+  },
+  "limites": [
+    "Não mede qualidade de resposta de LLM real.",
+    "Não seleciona limiar ideal; amostra pequena e sem representatividade estatística.",
+    "AppTest verifica elementos, não pixels em navegador."
+  ],
+  "resumo": {
+    "0.8": {
+      "total": 25,
+      "fallback_conforme": 15,
+      "falsos_positivos_recuperacao": 10,
+      "recusas_em_casos_dentro_escopo": 0
+    },
+    "0.5": {
+      "total": 25,
+      "fallback_conforme": 18,
+      "falsos_positivos_recuperacao": 7,
+      "recusas_em_casos_dentro_escopo": 0
+    }
+  },
+  "ui": {
+    "metodo": "AppTest headless com chamadas HTTP reais ao NestJS; apenas URL redirecionada para porta temporária.",
+    "markdown": [
+      "<style>\n.main-header {\n    font-size: 2.2rem;\n    color: #000000;\n    font-weight: bold;\n    margin-bottom: 0.2rem;\n}\n.sub-header {\n    font-size: 1.1rem;\n    color: #595959;\n    margin-bottom: 1.5rem;\n}\n.disclaimer-box {\n    background-color: #f8f9fa;\n    border-left: 4px solid #E31B23;\n    padding: 0.8rem;\n    border-radius: 4px;\n    font-size: 0.85rem;\n    color: #495057;\n    margin-bottom: 1rem;\n}\n</style>",
+      "<div class=\"main-header\">🎓 Assistente - SecGrad CIn</div>",
+      "<div class=\"sub-header\">Tire dúvidas sobre estágio, dispensas, 2ª chamada e procedimentos acadêmicos.</div>",
+      "<div class=\"disclaimer-box\">\n    <strong>⚠️ Aviso importante:</strong> Este assistente consulta documentos oficiais e resoluções da SecGrad para gerar respostas baseadas em evidências. Para decisões administrativas formais, consulte sempre a documentação oficial ou a secretaria.\n</div>",
+      "Olá! Sou o assistente virtual da SecGrad CIn. Estou configurado para o curso de **Ciência da Computação** (Perfil Novo / Vigente). Como posso ajudar hoje?",
+      "Qual o perfil profissional do egresso de Ciência da Computação segundo o projeto pedagógico?",
+      "[SIMULAÇÃO DE INTEGRAÇÃO — NÃO É RESPOSTA ACADÊMICA]",
+      "- **ppc_cc_novo_2024.pdf (pág. 43)**",
+      "- **ppc_cc_novo_2024.pdf (pág. 70)**",
+      "- **ppc_cc_novo_2024.pdf (pág. 44)**",
+      "### Contexto do Aluno",
+      "---",
+      "---"
+    ],
+    "trechos_texto": [
+      "8 Perfil Profissional do Egresso\nDe\nacordo\ncom\nas\nDiretrizes\nCurriculares\nNacionais\npara\nos\ncursos\nde\ngraduação\nna\nárea\nde\nComputação,\nResolução\nnº\n05/2016,\ndo\nConselho\nNacional\nde\nEducação\ne\nos\nReferenciais\nCurriculares\nNacionais\ndos\ncursos\nde\nBacharelado\ne\nLicenciatura,\nde\nabril\nde\n2010,\nda\nSecretaria\nde\nEducação\nSuperior\ndo\nMinistério\nda\nEducação,\no\nBacharel\nem\nCiência\nda\nComputação\ndeve\npossuir\numa\nsólida\nformação\nem\nCiência\nda\nComputação\ne\nMatemática,\nconhecer\nas\nestruturas\ne\nprocessos\ndos\nsistemas\nde\ncomputação\ncom\numa\nvisão\ninterdisciplinar\ne\nglobal\ndos\nsistemas,\ndominar\nos\nconceitos\nteóricos\nda\nCiência\nda\nComputação\ne\nseus\nimpactos\nnas\naplicações\npráticas,\ne\nter\ncapacidade\npara\ncriar",
+      "12.4 Avaliação e acompanhamento da concretização do projeto pedagógico\nA\navaliação\ndo\ndesenvolvimento\ndo\nProjeto\nPedagógico\ndar-se-á\nem\nrelação\nao\ncumprimento\nde\nseus\nobjetivos,\nperfil\ndo\negresso\ne\nhabilidades\ne\ncompetências.\nA\navaliação\nserá\nrealizada\ntambém\ncom\nrelação\nà\nnecessidade\nde\nflexibilização\ncurricular\nou\nde\nmodificação\nda\nestrutura\ncurricular,\ndas\natividades\ncomplementares\ne\ndo\ncorpo\ndocente\ne\ndiscente.\nO\ncurso\nde\nCiência\nda\nComputação\npossui\num\nNúcleo\nDocente\nEstruturante\n(NDE)\nconstituído\npor\ndocentes\nde\nreconhecida\nexperiência\ne\ndestaque\nacadêmico,\nresponsáveis\npelo\nacompanhamento\ndo\nProjeto\nPedagógico\ndo\nCurso\n(PPC),\nem\nconsonância\ncom\na\nResolução\nnº\n01,\nde\n17\nde\njunho\nde",
+      "9 Campo de Atuação Profissional\nDe\nacordo\ncom\nos\nReferenciais\nCurriculares\nNacionais\ndos\ncursos\nde\nBacharelado\ne\nLicenciatura\nde\nabril\nde\n2010\nda\nSecretaria\nde\nEducação\nSuperior\ndo\nMinistério\nda\nEducação,\no\nBacharel\nem\nCiência\nda\nComputação\n\"atua\nem\nindústrias\nde\ncomputadores;\nempresas\nde\nprogramas\nde\ncomputadores;\nsetores\nde\nTecnologia\nda\nInformação\nde\ninstituições\npúblicas\ne\nprivadas;\nem\nempresas\ne\nlaboratórios\nde\npesquisa\ncientífica\ne\ntecnológica.\nTambém\npode\natuar\nde\nforma\nautônoma,\nem\nempresa\nprópria\nou\nprestando\nconsultoria\".\nNesses\ndiferentes\ncampos\nde\natuação,\no\nbacharel\nem\nCiência\nda\nComputação\npode\ntrabalhar\nnos\nseguintes\npapéis:\nprogramador,\ngerente\nde\ndesenvolvimento,\ngerente\nde"
+    ],
+    "aviso_mock_visivel": true,
+    "pagina_visivel": true,
+    "trecho_literal_visivel": true,
+    "segundo_envio_sem_excecao": true,
+    "fallback_visual_limiar_05": true,
+    "minuta_visual_limiar_05": true
+  },
+  "processos_temporarios_encerrados": true
+}

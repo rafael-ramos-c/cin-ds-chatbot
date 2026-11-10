@@ -92,11 +92,13 @@ for msg in st.session_state.messages:
         if "sources" in msg and msg["sources"]:
             with st.expander("📄 Fontes e Trechos Utilizados"):
                 for src in msg["sources"]:
-                    doc_nome = str(src.get('documento', 'Documento Não Identificado')).split(' (pág')[0]
+                    doc_nome = str(src.get('documento', 'Documento Não Identificado'))
                     trecho_txt = src.get('trecho', '')
                     st.markdown(f"- **{doc_nome}**")
                     if trecho_txt:
-                        st.caption(f'"{trecho_txt}"')
+                        st.text(trecho_txt)
+                    else:
+                        st.caption('Trecho literal não disponibilizado para esta fonte.')
 
 # -----------------------------------------------------------------------------
 # Processamento de Entrada (Caixa de Texto ou Seleção via Callback)
@@ -136,11 +138,13 @@ if prompt:
             if fontes:
                 with st.expander("📄 Fontes e Trechos Utilizados"):
                     for src in fontes:
-                        doc_nome = str(src.get('documento', 'Documento Oficial')).split(' (pág')[0]
+                        doc_nome = str(src.get('documento', 'Documento Oficial'))
                         trecho_txt = src.get('trecho') or src.get('excerpt', '')
                         st.markdown(f"- **{doc_nome}**")
                         if trecho_txt:
-                            st.caption(f'"{trecho_txt}"')
+                            st.text(trecho_txt)
+                        else:
+                            st.caption('Trecho literal não disponibilizado para esta fonte.')
 
     # 3. Guarda a resposta no histórico da sessão
     st.session_state.messages.append({"role": "assistant", "content": resposta_texto, "sources": fontes})

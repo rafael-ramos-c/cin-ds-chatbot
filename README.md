@@ -1,7 +1,11 @@
 # 🎓 Chatbot SecGrad — Assistente de Orientação Acadêmica
 
-> **Estado atual:** protótipo Streamlit, orquestrador NestJS e serviço FastAPI/ChromaDB. A rota pública é `POST /api/v1/conversa`. A geração real por LLM ainda não está implementada: o modo `mock` retorna somente um aviso explícito. A UI atualmente prioriza o contexto recuperado e, por isso, não comprova a exibição de uma resposta gerada. Validação da ingestão e pendências atuais: [PPCs e integração](docs/testes/validacao-ppcs/README.md).
+> **Estado atual:** protótipo Streamlit, orquestrador NestJS e serviço FastAPI/ChromaDB. A rota pública é `POST /api/v1/conversa`. A geração real por LLM ainda não está implementada: o modo `mock` retorna somente um aviso explícito. A UI prioriza a resposta (incluindo o aviso de simulação) e apresenta trechos literais associados às fontes; não há resposta de LLM real nesta versão. Validação da ingestão e pendências atuais: [PPCs e integração](docs/testes/validacao-ppcs/README.md).
 
+
+## Sprint 3 - material de entrega
+
+[Índice da entrega e ressalvas](docs/ENTREGA-SPRINT3.md). Testes e refatorações documentados não significam precisão semântica total: o benchmark mantém a calibração do fallback como dívida aberta.
 
 ### Windows / PowerShell: evitar o erro 503 de configuracao
 

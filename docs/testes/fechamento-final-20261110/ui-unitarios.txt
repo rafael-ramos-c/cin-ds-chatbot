@@ -1,0 +1,17 @@
+test_contexto_invalido_ou_vazio (test_api_client.ClienteUiTest.test_contexto_invalido_ou_vazio) ... ok
+test_erro_de_conexao (test_api_client.ClienteUiTest.test_erro_de_conexao) ... ok
+test_erro_http_permanece_visivel (test_api_client.ClienteUiTest.test_erro_http_permanece_visivel) ... ok
+test_fallback_exibe_minuta (test_api_client.ClienteUiTest.test_fallback_exibe_minuta) ... ok
+test_fonte_sem_trecho_nao_usa_legenda_como_citacao (test_api_client.ClienteUiTest.test_fonte_sem_trecho_nao_usa_legenda_como_citacao) ... ok
+test_fontes_repetidas_na_mesma_pagina (test_api_client.ClienteUiTest.test_fontes_repetidas_na_mesma_pagina) ... ok
+test_nao_associa_fonte_divergente (test_api_client.ClienteUiTest.test_nao_associa_fonte_divergente) ... ok
+test_nao_inventa_trecho_sem_cabecalho (test_api_client.ClienteUiTest.test_nao_inventa_trecho_sem_cabecalho) ... ok
+test_preserva_linhas_do_trecho (test_api_client.ClienteUiTest.test_preserva_linhas_do_trecho) ... ok
+test_prioriza_mock_sem_expor_contexto_no_corpo (test_api_client.ClienteUiTest.test_prioriza_mock_sem_expor_contexto_no_corpo) ... ok
+test_sem_fontes (test_api_client.ClienteUiTest.test_sem_fontes) ... ok
+test_sem_resposta_nao_apresenta_contexto_como_geracao (test_api_client.ClienteUiTest.test_sem_resposta_nao_apresenta_contexto_como_geracao) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.002s
+
+OK

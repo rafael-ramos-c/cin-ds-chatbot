@@ -1,0 +1,48 @@
+commit 27d0d9bd4a97556fab53b4d4a3762279cf6f8b8e
+Author:     Rafael040305 <eurafaelramosc@gmail.com>
+AuthorDate: Tue Nov 10 16:55:35 2026 -0300
+Commit:     Rafael040305 <eurafaelramosc@gmail.com>
+CommitDate: Tue Nov 10 16:55:35 2026 -0300
+
+    BACK-REF-03: extrai politica de origem da construcao do endpoint
+
+diff --git a/backend/src/ai-service/ai-service.service.ts b/backend/src/ai-service/ai-service.service.ts
+index ef4d4bd..315a0a8 100644
+--- a/backend/src/ai-service/ai-service.service.ts
++++ b/backend/src/ai-service/ai-service.service.ts
+@@ -14,6 +14,18 @@ function isRecord(value: unknown): value is Record<string, unknown> {
+   return typeof value === 'object' && value !== null && !Array.isArray(value);
+ }
+ 
++function origemInvalida(origin: string, base: URL) {
++  return (
++    !['http:', 'https:'].includes(base.protocol) ||
++    base.username ||
++    base.password ||
++    base.search ||
++    base.hash ||
++    base.pathname !== '/' ||
++    !/^https?:\/\/[^/?#\\]+\/?$/i.test(origin)
++  );
++}
++
+ function isResponse(value: unknown): value is BuscarContextoResponse {
+   return (
+     isRecord(value) &&
+@@ -204,15 +216,7 @@ export class AiService {
+     try {
+       const origin = process.env.AI_SERVICE_URL?.trim() ?? '';
+       const base = new URL(origin);
+-      if (
+-        !['http:', 'https:'].includes(base.protocol) ||
+-        base.username ||
+-        base.password ||
+-        base.search ||
+-        base.hash ||
+-        base.pathname !== '/' ||
+-        !/^https?:\/\/[^/?#\\]+\/?$/i.test(origin)
+-      ) {
++      if (origemInvalida(origin, base)) {
+         throw new Error('Invalid origin');
+       }
+       return new URL('/api/v1/buscar', base);

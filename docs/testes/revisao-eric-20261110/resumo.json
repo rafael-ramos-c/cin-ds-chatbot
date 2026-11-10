@@ -1,0 +1,33 @@
+{
+  "commit_revisado": "cd583e4491552f404444d76723853693c00cd398",
+  "base_anterior": "c712a0c8ac2e6974d89fa19bff76f199943a123f",
+  "arquivos_do_commit": [
+    "backend/package-lock.json",
+    "backend/src/orchestration/fallback.config.ts",
+    "src/ui/api_client.py"
+  ],
+  "testes": {
+    "total": 256,
+    "aprovados": 254,
+    "falhas": 2
+  },
+  "falhas": [
+    {
+      "teste": "fallback config usa 0.8 provisório somente quando a variável está ausente",
+      "arquivo": "C:/Users/Rafael/OneDrive/RafaelASUS/ProjetoDS/codigo/cin-ds-chatbot/backend/src/orchestration/fallback.config.spec.ts"
+    },
+    {
+      "teste": "US-02 — configuração do limite de distância usa o limite provisório 0.8 quando a variável está ausente",
+      "arquivo": "C:/Users/Rafael/OneDrive/RafaelASUS/ProjetoDS/codigo/cin-ds-chatbot/backend/test/regressao-gerar/fallback-config.spec.ts"
+    }
+  ],
+  "prioridade_resposta_mock_verificada_com_chamada_controlada": true,
+  "benchmark_novo_no_commit": false,
+  "terceira_refatoracao_nova_no_commit": false,
+  "codigo_de_producao_alterado_nesta_revisao": false,
+  "limites": [
+    "UI verificada com HTTP mock, sem navegador.",
+    "Nao houve benchmark nem calibracao nesta revisao.",
+    "Pacote ou registros locais ainda nao publicados por Eric podem existir; nao foram presumidos."
+  ]
+}

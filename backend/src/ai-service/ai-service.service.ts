@@ -14,6 +14,18 @@ function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
 }
 
+function origemInvalida(origin: string, base: URL) {
+  return (
+    !['http:', 'https:'].includes(base.protocol) ||
+    base.username ||
+    base.password ||
+    base.search ||
+    base.hash ||
+    base.pathname !== '/' ||
+    !/^https?:\/\/[^/?#\\]+\/?$/i.test(origin)
+  );
+}
+
 function isResponse(value: unknown): value is BuscarContextoResponse {
   return (
     isRecord(value) &&
@@ -204,15 +216,7 @@ export class AiService {
     try {
       const origin = process.env.AI_SERVICE_URL?.trim() ?? '';
       const base = new URL(origin);
-      if (
-        !['http:', 'https:'].includes(base.protocol) ||
-        base.username ||
-        base.password ||
-        base.search ||
-        base.hash ||
-        base.pathname !== '/' ||
-        !/^https?:\/\/[^/?#\\]+\/?$/i.test(origin)
-      ) {
+      if (origemInvalida(origin, base)) {
         throw new Error('Invalid origin');
       }
       return new URL('/api/v1/buscar', base);
