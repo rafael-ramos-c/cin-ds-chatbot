@@ -1,6 +1,32 @@
+import re
+
 import requests
 
 NESTJS_API_URL = "http://localhost:3000/api/v1/conversa"
+
+
+def extrair_trechos(contexto, fontes):
+    """Associa texto literal às fontes, sem inventar citação para formato desconhecido."""
+    if not isinstance(contexto, str):
+        return [""] * len(fontes)
+    padrao = re.compile(
+        r"(?:\A|\n\n---\n\n)\[Documento: (.*?) \| Pág\. (\d+) \| Curso: (.*?)\]\n"
+    )
+    cabecalhos = list(padrao.finditer(contexto))
+    trechos = []
+    for indice, fonte in enumerate(fontes):
+        if indice >= len(cabecalhos):
+            trechos.append("")
+            continue
+        atual = cabecalhos[indice]
+        arquivo, pagina, curso = atual.groups()
+        if (arquivo != fonte.get("arquivo") or int(pagina) != fonte.get("pagina")
+                or curso != fonte.get("curso")):
+            trechos.append("")
+            continue
+        fim = cabecalhos[indice + 1].start() if indice + 1 < len(cabecalhos) else len(contexto)
+        trechos.append(contexto[atual.end():fim].strip())
+    return trechos
 
 def enviar_pergunta(prompt: str, curso: str, perfil: str):
     """
@@ -42,18 +68,18 @@ def enviar_pergunta(prompt: str, curso: str, perfil: str):
                 if resposta_gerada:
                     texto_final = str(resposta_gerada).strip()
                 else:
-                    ctx = data.get("contexto", "")
-                    texto_final = ctx.strip() if ctx.strip() else "Consulta concluída, mas nenhum texto relevante foi extraído dos documentos."
+                    texto_final = "Consulta documental concluída. Consulte as fontes abaixo; não foi recebida uma resposta gerada."
             
             # 3. Tratamento das fontes
             fontes_brutas = data.get("fontes") or []
+            trechos = extrair_trechos(data.get("contexto", ""), fontes_brutas)
             fontes_formatadas = []
-            for item in fontes_brutas:
+            for item, trecho in zip(fontes_brutas, trechos):
                 arquivo = item.get("arquivo", "Documento Oficial")
                 pagina = item.get("pagina", 1)
                 fontes_formatadas.append({
                     "documento": f"{arquivo} (pág. {pagina})",
-                    "trecho": f"Página {pagina} do documento {arquivo}"
+                    "trecho": trecho,
                 })
             
             return {

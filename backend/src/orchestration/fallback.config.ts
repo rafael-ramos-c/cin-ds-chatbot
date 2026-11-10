@@ -1,5 +1,5 @@
 // Provisório: precisa de calibração com o corpus e a métrica de busca reais.
-export const LIMITE_DISTANCIA_PROVISORIO = 0.5;
+export const LIMITE_DISTANCIA_PROVISORIO = 0.8;
 export const FALLBACK_DISTANCE_THRESHOLD = Symbol(
   'FALLBACK_DISTANCE_THRESHOLD',
 );
