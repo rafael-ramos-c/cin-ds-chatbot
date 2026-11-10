@@ -1,0 +1,76 @@
+{
+  "git_antes_da_refatoracao": "2a33101868451c3220f6b939a3b8a10a330995e7",
+  "testes_antes": 256,
+  "testes_depois": 256,
+  "identidade_suite_confirmada": true,
+  "quantidade_arquivos_teste": 11,
+  "node": "v24.22.1",
+  "cobertura": {
+    "antes": {
+      "lines": {
+        "total": 64,
+        "covered": 64,
+        "skipped": 0,
+        "pct": 100
+      },
+      "statements": {
+        "total": 67,
+        "covered": 65,
+        "skipped": 0,
+        "pct": 97.01
+      },
+      "functions": {
+        "total": 10,
+        "covered": 8,
+        "skipped": 0,
+        "pct": 80
+      },
+      "branches": {
+        "total": 84,
+        "covered": 84,
+        "skipped": 0,
+        "pct": 100
+      },
+      "branchesTrue": {
+        "total": 0,
+        "covered": 0,
+        "skipped": 0,
+        "pct": "Unknown"
+      }
+    },
+    "depois": {
+      "lines": {
+        "total": 65,
+        "covered": 65,
+        "skipped": 0,
+        "pct": 100
+      },
+      "statements": {
+        "total": 68,
+        "covered": 66,
+        "skipped": 0,
+        "pct": 97.05
+      },
+      "functions": {
+        "total": 11,
+        "covered": 9,
+        "skipped": 0,
+        "pct": 81.81
+      },
+      "branches": {
+        "total": 84,
+        "covered": 84,
+        "skipped": 0,
+        "pct": 100
+      },
+      "branchesTrue": {
+        "total": 0,
+        "covered": 0,
+        "skipped": 0,
+        "pct": "Unknown"
+      }
+    }
+  },
+  "commit_refatoracao": "27d0d9bd4a97556fab53b4d4a3762279cf6f8b8e",
+  "commit_congelamento": "2a33101"
+}

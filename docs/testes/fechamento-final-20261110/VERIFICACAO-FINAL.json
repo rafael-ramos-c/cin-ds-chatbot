@@ -1,0 +1,475 @@
+{
+  "utc": "2026-11-10T20:13:08.025624+00:00",
+  "status": "artefatos_verificados_com_ressalvas_documentadas",
+  "git_head": "27d0d9bd4a97556fab53b4d4a3762279cf6f8b8e",
+  "node": "v24.22.1",
+  "paginas_pdf": {
+    "docs/testes/analise-critica-sprint3-final-20261110.pdf": 5,
+    "docs/qualidade/relatorio-refatoracoes-sprint3-final-20261110.pdf": 3
+  },
+  "suite_identica_antes_depois": true,
+  "historicos_preservados": true,
+  "corpus_inalterado_desde_auditoria_6811": true,
+  "benchmark": {
+    "0.8": {
+      "total": 25,
+      "fallback_conforme": 15,
+      "falsos_positivos_recuperacao": 10,
+      "recusas_em_casos_dentro_escopo": 0
+    },
+    "0.5": {
+      "total": 25,
+      "fallback_conforme": 18,
+      "falsos_positivos_recuperacao": 7,
+      "recusas_em_casos_dentro_escopo": 0
+    }
+  },
+  "manifesto": [
+    {
+      "arquivo": "app.py",
+      "sha256": "254df55dcc9016f0755014ec849dff2c02e3fb0cd4fec493273e1db3f58c36bc",
+      "sha256_utf8_lf": "c3fa6e01436747b229999791c9c482245b7dbb94e2d2b55dffa5d812ac50bd6f"
+    },
+    {
+      "arquivo": "backend/src/ai-service/ai-service.service.ts",
+      "sha256": "15f0cd9d6f9e59817485ff95d597732dda4531f3a56342db236a72a4ff3ffe26",
+      "sha256_utf8_lf": "2237d2c1208fcdce12bae07ec1171503a0ec29bbebad375b1908be223db7e224"
+    },
+    {
+      "arquivo": "backend/src/orchestration/fallback.config.ts",
+      "sha256": "45c58df52e31868ba04d556d49c7c4c7890f1a4d8a216b1e581f347422f195b5",
+      "sha256_utf8_lf": "5cff255c17725eed30490b6c686c9eea9149fa95873d53ccd6369af595870eec"
+    },
+    {
+      "arquivo": "docs/ENTREGA-SPRINT3.md",
+      "sha256": "46d3438d4b004edf90ddeed8b473b231e0bc14bb27deefdc3d81426074185ded",
+      "sha256_utf8_lf": "a3b55f374b15287f9bdfa12df6c7bc45f9d227cd9eb6ccffddfc897e41cc9289"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/antes/ai-service.service.ts",
+      "sha256": "826cd14af79f70eb2f85eb588b134bd196eabf3e7226bb04492f6a8f4d00b708",
+      "sha256_utf8_lf": "40b86924a8d31010de8a3c54e188b61a7b553f3f6532c34465de4784b4266cfa"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/antes/coverage/ai-service.service.ts.html",
+      "sha256": "6c3fd79563699d91841451f0ca887b2a8e12191952f824163ec7c4709646affe",
+      "sha256_utf8_lf": "6c3fd79563699d91841451f0ca887b2a8e12191952f824163ec7c4709646affe"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/antes/coverage/base.css",
+      "sha256": "3f876e51f0a46864ffa7665b4b7a1f5fb5f6f37fb6a28f014e2b12d82962c852",
+      "sha256_utf8_lf": "3f876e51f0a46864ffa7665b4b7a1f5fb5f6f37fb6a28f014e2b12d82962c852"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/antes/coverage/block-navigation.js",
+      "sha256": "cd8db34b1fbeb973354a93f8b4133c7c7eab34cdda9429a0434be91384783b7e",
+      "sha256_utf8_lf": "cd8db34b1fbeb973354a93f8b4133c7c7eab34cdda9429a0434be91384783b7e"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/antes/coverage/coverage-final.json",
+      "sha256": "c08cb6a6eedf62cd0f6807687ef85c519b34ac601af032ab340e257495001b72",
+      "sha256_utf8_lf": "c08cb6a6eedf62cd0f6807687ef85c519b34ac601af032ab340e257495001b72"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/antes/coverage/coverage-summary.json",
+      "sha256": "09204038118cb0473bfe21e1b7f3999016001b9ef87cd85798210cdccdc57e0d",
+      "sha256_utf8_lf": "09204038118cb0473bfe21e1b7f3999016001b9ef87cd85798210cdccdc57e0d"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/antes/coverage/favicon.png",
+      "sha256": "5b0cfd52dc0bfbe544f4e1a9c77aa46b8629b0e0aad6c54f95eef457b86c2a89"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/antes/coverage/index.html",
+      "sha256": "7ce18aa173645b42722cb6cd5c7c8ffd4e8bf9553464e2efb1855d4a44997e45",
+      "sha256_utf8_lf": "7ce18aa173645b42722cb6cd5c7c8ffd4e8bf9553464e2efb1855d4a44997e45"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/antes/coverage/prettify.css",
+      "sha256": "ea3fe433f9450698ca8a230271688e7aeec12f99c8a7ef6c94379abb38f27823",
+      "sha256_utf8_lf": "ea3fe433f9450698ca8a230271688e7aeec12f99c8a7ef6c94379abb38f27823"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/antes/coverage/prettify.js",
+      "sha256": "fa1b1e1b906ddcfa08b46f161c0f924f506e1a31b4f3e09b8caaa2463ef52c18",
+      "sha256_utf8_lf": "fa1b1e1b906ddcfa08b46f161c0f924f506e1a31b4f3e09b8caaa2463ef52c18"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/antes/coverage/sort-arrow-sprite.png",
+      "sha256": "42c895355f9838ede83fdfdca90127d8471aefed5ecf5342374f65ec7c3f10ab"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/antes/coverage/sorter.js",
+      "sha256": "f8cc5d157379d844fd695ad567b6c29b3c1f0812964ddf6f95c26327e434bab5",
+      "sha256_utf8_lf": "f8cc5d157379d844fd695ad567b6c29b3c1f0812964ddf6f95c26327e434bab5"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/antes/estado.json",
+      "sha256": "9595b509a062e6cd7179177160eab8598d24f539aa22511a5d011208b8fdc2c6",
+      "sha256_utf8_lf": "a491f0d8f70f0d01cfb6174ca3b44e2d20931e36bb6e3c7d94799e9f52df7743"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/antes/execucao.txt",
+      "sha256": "24f3580332463bb89d7705920b3174c79b8ac9efdab6018a10c5910740885fda",
+      "sha256_utf8_lf": "8e7e4300fb87a13b987ed43060b2ca46a79b77e45d6051a7202b04347d0916f7"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/antes/vitest-results.json",
+      "sha256": "faa6e84be1057578cf70688bf05e449563b201e204f7a357e3976a1911039b93",
+      "sha256_utf8_lf": "faa6e84be1057578cf70688bf05e449563b201e204f7a357e3976a1911039b93"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/BACK-REF-03.diff",
+      "sha256": "9638514111314559566411be0353ff57aa6656d7b6a9c352c861bfcc9f6f267d",
+      "sha256_utf8_lf": "9638514111314559566411be0353ff57aa6656d7b6a9c352c861bfcc9f6f267d"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/comparacao.json",
+      "sha256": "371b72d6709dc025f92ecbd872a040969edda02facb57eeb3078f72d9f38e2fa",
+      "sha256_utf8_lf": "2f186e421ddd91d9ea418e3c32a35f4d5d617daa1f835e8eba0f4b6593431f39"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/depois/ai-service.service.ts",
+      "sha256": "15f0cd9d6f9e59817485ff95d597732dda4531f3a56342db236a72a4ff3ffe26",
+      "sha256_utf8_lf": "2237d2c1208fcdce12bae07ec1171503a0ec29bbebad375b1908be223db7e224"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/depois/coverage/ai-service.service.ts.html",
+      "sha256": "f31de7a9c192c1d4e99b0fce2da36d9a9d07f2c44bc9f1e532a2503bbb8835d5",
+      "sha256_utf8_lf": "f31de7a9c192c1d4e99b0fce2da36d9a9d07f2c44bc9f1e532a2503bbb8835d5"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/depois/coverage/base.css",
+      "sha256": "3f876e51f0a46864ffa7665b4b7a1f5fb5f6f37fb6a28f014e2b12d82962c852",
+      "sha256_utf8_lf": "3f876e51f0a46864ffa7665b4b7a1f5fb5f6f37fb6a28f014e2b12d82962c852"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/depois/coverage/block-navigation.js",
+      "sha256": "cd8db34b1fbeb973354a93f8b4133c7c7eab34cdda9429a0434be91384783b7e",
+      "sha256_utf8_lf": "cd8db34b1fbeb973354a93f8b4133c7c7eab34cdda9429a0434be91384783b7e"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/depois/coverage/coverage-final.json",
+      "sha256": "ed64d225792180d6897b93e2b4816c3e53207c80d414222e8a9b22ab406b44c0",
+      "sha256_utf8_lf": "ed64d225792180d6897b93e2b4816c3e53207c80d414222e8a9b22ab406b44c0"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/depois/coverage/coverage-summary.json",
+      "sha256": "4ab9483eb4c927b2e30280383d338e834519cfa79d52f1d1145096e37af1f4fd",
+      "sha256_utf8_lf": "4ab9483eb4c927b2e30280383d338e834519cfa79d52f1d1145096e37af1f4fd"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/depois/coverage/favicon.png",
+      "sha256": "5b0cfd52dc0bfbe544f4e1a9c77aa46b8629b0e0aad6c54f95eef457b86c2a89"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/depois/coverage/index.html",
+      "sha256": "245f2d78bc33e8f85b5a81c425bb0e86c45de9130d2e7d5af21dee6118c60295",
+      "sha256_utf8_lf": "245f2d78bc33e8f85b5a81c425bb0e86c45de9130d2e7d5af21dee6118c60295"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/depois/coverage/prettify.css",
+      "sha256": "ea3fe433f9450698ca8a230271688e7aeec12f99c8a7ef6c94379abb38f27823",
+      "sha256_utf8_lf": "ea3fe433f9450698ca8a230271688e7aeec12f99c8a7ef6c94379abb38f27823"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/depois/coverage/prettify.js",
+      "sha256": "fa1b1e1b906ddcfa08b46f161c0f924f506e1a31b4f3e09b8caaa2463ef52c18",
+      "sha256_utf8_lf": "fa1b1e1b906ddcfa08b46f161c0f924f506e1a31b4f3e09b8caaa2463ef52c18"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/depois/coverage/sort-arrow-sprite.png",
+      "sha256": "42c895355f9838ede83fdfdca90127d8471aefed5ecf5342374f65ec7c3f10ab"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/depois/coverage/sorter.js",
+      "sha256": "f8cc5d157379d844fd695ad567b6c29b3c1f0812964ddf6f95c26327e434bab5",
+      "sha256_utf8_lf": "f8cc5d157379d844fd695ad567b6c29b3c1f0812964ddf6f95c26327e434bab5"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/depois/estado.json",
+      "sha256": "f872996f65b9895b5ab027369438282f8c3333e8e6d39d4ba33d337ddeecb321",
+      "sha256_utf8_lf": "f53cc4478230ffd7663c7f822516d4ba5eea16d2a6860152d78813a55f4eb159"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/depois/execucao.txt",
+      "sha256": "e760352a86c31a2b28755a08d430f87e92827cce4c30dcc01f6c295717e3cb38",
+      "sha256_utf8_lf": "3e48238e742f22a72037aa93ea8032b7d5ac31d9c3d34ac4a11853362ca00de0"
+    },
+    {
+      "arquivo": "docs/qualidade/BACK-REF-03-evidencias/depois/vitest-results.json",
+      "sha256": "78f7b67c1a74404af7adbc5bab367fee8c6e2c969c8d7ff3bf154fd7a2f4b9eb",
+      "sha256_utf8_lf": "78f7b67c1a74404af7adbc5bab367fee8c6e2c969c8d7ff3bf154fd7a2f4b9eb"
+    },
+    {
+      "arquivo": "docs/qualidade/divida-tecnica.md",
+      "sha256": "8e8ff75177c5d10d5769af3ad5e00c20a7588f14c89f9df3177d4bea2b962f34",
+      "sha256_utf8_lf": "35b88e74cfc369c43b604770179becbda440230675e7406cf716b1bda2960d75"
+    },
+    {
+      "arquivo": "docs/qualidade/log-analise.md",
+      "sha256": "cc9d2822839e3508b2b00cca905e9df07df118bc5221855ab0462ac5c1f3450f",
+      "sha256_utf8_lf": "136c556975269d7b7992f4cfca869bb942db1f053a929d5648b186c554fa8a62"
+    },
+    {
+      "arquivo": "docs/qualidade/relatorio-refatoracoes-sprint3-final-20261110.pdf",
+      "sha256": "c8b02953f86621f0ca5c3cb16a17a9d0a3345ffafa2feff594544678b4f412c3"
+    },
+    {
+      "arquivo": "docs/testes/analise-critica-sprint3-final-20261110.pdf",
+      "sha256": "f335b786d71f1295185483caa2abdb6e2f0d9a18cdb31739e533311ae2b5c011"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/backend-build.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256_utf8_lf": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/backend-e2e.json",
+      "sha256": "52fec5d793e975d6fe2fa3a7449a2c6ec8f4e239bed498ec2941ec1a385d37ac",
+      "sha256_utf8_lf": "52fec5d793e975d6fe2fa3a7449a2c6ec8f4e239bed498ec2941ec1a385d37ac"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/backend-e2e.txt",
+      "sha256": "9a061d137bd8817a9e808b65ff837ebbfc57f5b8ec7f93f18c9ed5a532df603a",
+      "sha256_utf8_lf": "3a5086f5cfa36d3a512c2e051b0cbd031bac0c9a74e44bd4ae4aa3d62d6eff5f"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/backend-lint.txt",
+      "sha256": "4c7a62b7542b18ba9eeb6302e382cd078be9db4b92266f6cf4188b76dfa4d824",
+      "sha256_utf8_lf": "dc3303d69167e8baea4acc14a5c22adda85dfd73a19a4f3749a768ffa35ef1a0"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/backend-unitarios-corrigidos.json",
+      "sha256": "a52474bbadc61a8771f14e33367593d27b4699aeb9f5cc143374588aed6b533c",
+      "sha256_utf8_lf": "a52474bbadc61a8771f14e33367593d27b4699aeb9f5cc143374588aed6b533c"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/backend-unitarios-corrigidos.txt",
+      "sha256": "cfc404829e687d891dae0f6f49ac44c750290988e6baf70eeeebe563f41cbc59",
+      "sha256_utf8_lf": "dfe19b7da111f5eb80e5e5fee545fcef56cafccde47f49327af05baafa2ef32c"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/benchmark-casos-oraculo-inicial.json",
+      "sha256": "f0f159f01e0925be3336a8973c293aa35b57a7c7999a086066ea4f53fa1750b8",
+      "sha256_utf8_lf": "748ebb3fa2929ceac9a4c400d052ad314e9c77277bdf6c781ee6c089fdb9f855"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/benchmark-casos.json",
+      "sha256": "366990e44c7f24521fa06cec6a0fafebbcd1b64476ccaa88a7f788dcae73edcc",
+      "sha256_utf8_lf": "a1a349551a05e12651d3d7aa864d03c8bfea1a365ca474795dc5b4f6904c5c81"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/benchmark-entrega/benchmark.json",
+      "sha256": "4291dc5d7245fe823a81738a16d9c815a57832e6867c8b856e52ec09fc5c709f",
+      "sha256_utf8_lf": "b6cf7d3169a04019d621fe5a02e8c3848e6473b14551f4ef0dcb33febadfa1fb"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/benchmark-entrega/fastapi.txt",
+      "sha256": "e2127e28bd796d0c7c611fb585418700a71bb96edaa517735c018a86a0aeb90b",
+      "sha256_utf8_lf": "ad3dcb4a4a76550ccc7984196f0b4ffc0d425c3ea1d347a0c84d31999b88596a"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/benchmark-entrega/nestjs-0.5.txt",
+      "sha256": "d7f5550dae221e7a72471e68323977b0819fa8cf46a18348134ad0839e9a7ea3",
+      "sha256_utf8_lf": "d7f5550dae221e7a72471e68323977b0819fa8cf46a18348134ad0839e9a7ea3"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/benchmark-entrega/nestjs-0.8.txt",
+      "sha256": "7e1afc694dd446a62d8d8433525e93edfa681594b2ae8f4937b306f289a1165c",
+      "sha256_utf8_lf": "7e1afc694dd446a62d8d8433525e93edfa681594b2ae8f4937b306f289a1165c"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/benchmark-entrega-execucao.txt",
+      "sha256": "c3765cc810649f1e30435612fe140e1c93264866531bd2cb5a69ff4f1f8e80fc",
+      "sha256_utf8_lf": "f4e25c2c1927a765240d4ae88f4a7d74455edc304219f37014643fadab42faf0"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/benchmark-execucao.txt",
+      "sha256": "42a9efd94a1321df6e5286ff340c8fb57f6267030baf0ea2a529b5d7397668dc",
+      "sha256_utf8_lf": "fd17da45708968ff213cd445e80f30593764a7a3e9b9cad6441cd7d6fec5605f"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/benchmark-final/benchmark.json",
+      "sha256": "19dc89eba70c829b54db5a76248b2b7bcd7ef3dda8ba4712e43ef8a0a2fa61d6",
+      "sha256_utf8_lf": "781654882956704c956bd54a81a17baa640852dc1dee7bc9a1d829fd91458b8c"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/benchmark-final/fastapi.txt",
+      "sha256": "cb8a1e3d9c3fb66f7e46303b06eae5aab97899f10bd50db27548855d6072458c",
+      "sha256_utf8_lf": "a2a4eaa0ae56ce3c6a2aaa9cec548bfb6bbf58c252ab5c5f6ddcecf052a82c90"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/benchmark-final/nestjs-0.5.txt",
+      "sha256": "8d41853523149a57984779727865d292ba67a238df8d0bb0d11286ab3888f820",
+      "sha256_utf8_lf": "8d41853523149a57984779727865d292ba67a238df8d0bb0d11286ab3888f820"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/benchmark-final/nestjs-0.8.txt",
+      "sha256": "7ed16ad9b32f3832257a952555072564de133127d321581404a8841afde27155",
+      "sha256_utf8_lf": "7ed16ad9b32f3832257a952555072564de133127d321581404a8841afde27155"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/benchmark-final-execucao.txt",
+      "sha256": "fd1ca217f5348947da0c09a1595e430169516aad62185b0dada38b65b254cb7f",
+      "sha256_utf8_lf": "711b8df17675f1c4c6b97896d81d61516c7fc2acba78ab06839575272563a15f"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/benchmark-real/benchmark.json",
+      "sha256": "527a06a7ace02b471a16ac36e0edbc8c6c6541119fb9abb84f41c0b6f0a65e2b",
+      "sha256_utf8_lf": "97a9152a787540ce164cc85804d3a57c45c1b668406ac22d32e87f928a7f74ab"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/benchmark-real/fastapi.txt",
+      "sha256": "2af967459147855c11e583c0d5a74941b0c07eeb684679d613b9c6966acefae4",
+      "sha256_utf8_lf": "215f5d8e2f8a89660b573fb6d8b4decdb9fb3612a574ba3c6a30985491a51e9b"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/benchmark-real/nestjs-0.5.txt",
+      "sha256": "91c28997d86dcb7e775b82a82c69c90f1892d10120f63f9ec9282999c0172dc2",
+      "sha256_utf8_lf": "91c28997d86dcb7e775b82a82c69c90f1892d10120f63f9ec9282999c0172dc2"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/benchmark-real/nestjs-0.8.txt",
+      "sha256": "f91774a3ef9e6278b33502bae9d5e708666f7f1b5c265a2e72cc256fe17ec40a",
+      "sha256_utf8_lf": "f91774a3ef9e6278b33502bae9d5e708666f7f1b5c265a2e72cc256fe17ec40a"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/BENCHMARK.md",
+      "sha256": "c9d862bdb68cc349f9097176fd8c42fd27236c5c8dbc55985b51b120117ab7db",
+      "sha256_utf8_lf": "03fc688fb4e09e435b4f4c402e17d627881ecf39670eb6269ceff1ed6f311cca"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/ec-pagina-22.png",
+      "sha256": "84b00f35ee8e10a5461f966d630b77598842b8a30ff46aec1e0ace37bd5deed8"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/geracao-52.json",
+      "sha256": "79d718df9264509f30a5ba99b3b84c8ec4c4a0fe5a854cf79c66fa34ec66d220",
+      "sha256_utf8_lf": "79d718df9264509f30a5ba99b3b84c8ec4c4a0fe5a854cf79c66fa34ec66d220"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/geracao-52.txt",
+      "sha256": "49865249a8e0087b0a31836c21b6648e4ed440b030f63acdd8faba3a1f75f8b1",
+      "sha256_utf8_lf": "75fb086d695b4044ad36f05b7b2f70b0670dccde9bef97fac3e1261d6f7b7cb1"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/HISTORICO-GIT.txt",
+      "sha256": "52bcb8c012bafbc360868ec8fb451d172c175819eaef9699693fa0a85c39c23b",
+      "sha256_utf8_lf": "52bcb8c012bafbc360868ec8fb451d172c175819eaef9699693fa0a85c39c23b"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/ia-regressao.txt",
+      "sha256": "6e2e1fa228d23f0b6b0b52b5ddabb128a3cd1c381f541889d82d4c8b5eba7087",
+      "sha256_utf8_lf": "51db0dc5cd640ff495b4f7105316387f83c3b2ea75203911e9d9384b7ef7a19f"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/ia-v2.txt",
+      "sha256": "06c72279dabc690533c22cab940e686d6e9263ef497bb84a572cd9b6556b6752",
+      "sha256_utf8_lf": "b39f89ff6f47bd96082d2637aa522f352e03eb47bfcb098d449a47302323a1d0"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/integracao-execucao.txt",
+      "sha256": "6b34dca66a44997c9cfb75084cb725142264a519a402644c584e705d870fb2ce",
+      "sha256_utf8_lf": "d69507f990256fb054b1ab0d154cdf89103680153e067b4c1c906833a05199d0"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/README.md",
+      "sha256": "0090afcd38e6fa8b2971901b5e11875cc0e583e87edde13f190d6c6674f4529b",
+      "sha256_utf8_lf": "ad965555c4f916703708b97056948f595ad239ce3e9e6d536ffd5c8e8c61d214"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/servicos-reais/fastapi-disabled.txt",
+      "sha256": "53ba030070f4eefaecc1e8602ba6395a9ee2f94afedab28bddf0f9b780053109",
+      "sha256_utf8_lf": "6614aaa54129cb07377c3b04ebc8dd8e4ddca6bb5f73bcc96b806d835042d8b7"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/servicos-reais/fastapi-mock.txt",
+      "sha256": "698e848fb13182e7a14c3959bf021ddfd9a37dc083eef8cc83ec79b62740107a",
+      "sha256_utf8_lf": "6996de9d916a441fee43e7dee6d93020ad312ad3f33356c810b3ee2a00a20da8"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/servicos-reais/integracao-real.json",
+      "sha256": "aa9deb34e8ee169a4515726850b606f8d48902b935f436b0ed473f336b935922",
+      "sha256_utf8_lf": "eb5703f26177de131d4a464b4d573d2397d5c25edb52f7314c47a0adff39991c"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/servicos-reais/live-opt-in.json",
+      "sha256": "3644d7b6d7930a684d9ee7f8d9ebbd13845997f1be0785de4d0daa8c7ab4d126",
+      "sha256_utf8_lf": "3644d7b6d7930a684d9ee7f8d9ebbd13845997f1be0785de4d0daa8c7ab4d126"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/servicos-reais/live-opt-in.txt",
+      "sha256": "c351fb84de2cedf12d33e811ea03f394d016f1e9e15021aab65a0ab5706b317d",
+      "sha256_utf8_lf": "e2d3237e219297a2dd263cef9fbe721c2d427a86ffa018713b8df05cd07926af"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/servicos-reais/nest-configuracao_ausente.txt",
+      "sha256": "ba26952d0c0c86f23d6b88e7884eb45119bbc14f4e69665a16bf9d200556c8c2",
+      "sha256_utf8_lf": "ba26952d0c0c86f23d6b88e7884eb45119bbc14f4e69665a16bf9d200556c8c2"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/servicos-reais/nest-configuracao_invalida.txt",
+      "sha256": "433905fba1a3943f304cd3b4ecafa5550ae3a56efb6f34ba9752268a77236e43",
+      "sha256_utf8_lf": "433905fba1a3943f304cd3b4ecafa5550ae3a56efb6f34ba9752268a77236e43"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/servicos-reais/nest-disabled.txt",
+      "sha256": "a367077898a9ab729258865b299e404880cd870e3df2155671e6e0bc21991ce3",
+      "sha256_utf8_lf": "a367077898a9ab729258865b299e404880cd870e3df2155671e6e0bc21991ce3"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/servicos-reais/nest-fallback-controlado.txt",
+      "sha256": "7e71d6ca1219bacb47357eb5c066b758f75418d75329a978869ecea8353e7650",
+      "sha256_utf8_lf": "7e71d6ca1219bacb47357eb5c066b758f75418d75329a978869ecea8353e7650"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/servicos-reais/nest-indisponivel.txt",
+      "sha256": "66dd1c8aff0790cdd34a663d836d4887d85485b7b5f33b3395882f45d30a52f0",
+      "sha256_utf8_lf": "66dd1c8aff0790cdd34a663d836d4887d85485b7b5f33b3395882f45d30a52f0"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/servicos-reais/nest-mock.txt",
+      "sha256": "c5c2cb2bf664162bd65f8894b9e4a4d5abe8b24dd1385795066aadac6133d576",
+      "sha256_utf8_lf": "c5c2cb2bf664162bd65f8894b9e4a4d5abe8b24dd1385795066aadac6133d576"
+    },
+    {
+      "arquivo": "docs/testes/fechamento-final-20261110/ui-unitarios.txt",
+      "sha256": "37fb3cf31e23d0715c9e170aceab5c845dd04fff5eef67a6cb5933ec46e64fa6",
+      "sha256_utf8_lf": "21e6cd2ac3e400c517b12e20c0341d8475082a041d2f6469644e027acb914347"
+    },
+    {
+      "arquivo": "docs/testes/llm-log.md",
+      "sha256": "48ca0e91361868c58fc03f14261caf6289167454c8840fd320e1d527f33ce1a1",
+      "sha256_utf8_lf": "b569e22719a2818fed47050d004f47066098edb026579180561718b6dceeba9c"
+    },
+    {
+      "arquivo": "docs/testes/matriz-rastreabilidade.md",
+      "sha256": "822fcac6131b2e643f50efad91e5ba363366715ee3f785372562bf55256daa2f",
+      "sha256_utf8_lf": "785c2c8f8ab51983cd3a2547a6269e9dd0dc693d6c855005dc61ed2557a30e5c"
+    },
+    {
+      "arquivo": "scripts/benchmark_sprint3.py",
+      "sha256": "373bb406fee26d4507fb5772e1ec4389be5e46a385a27a6080353b0f596069cb",
+      "sha256_utf8_lf": "373bb406fee26d4507fb5772e1ec4389be5e46a385a27a6080353b0f596069cb"
+    },
+    {
+      "arquivo": "src/ui/api_client.py",
+      "sha256": "5b303b46bfe22231072083c199a20f4327a813c984f8ffe09b8145f8b636221d",
+      "sha256_utf8_lf": "58d3739c502d5fc23c7dc8029f436a470c8df722581515f05b93d0cf6e30a181"
+    },
+    {
+      "arquivo": "tests/ui/test_api_client.py",
+      "sha256": "623816e64a0affbbe83266493397c418e7802574ff5eccc9f33d998b326efc86",
+      "sha256_utf8_lf": "623816e64a0affbbe83266493397c418e7802574ff5eccc9f33d998b326efc86"
+    }
+  ],
+  "ressalvas": [
+    "Geração mock e teste UI headless; sem LLM real ou inspeção de pixels em navegador.",
+    "QA-01 aberta: falsos positivos de escopo; limiar 0,8 não calibrado.",
+    "Prompt V2 integral e snapshot exato históricos do backend indisponíveis.",
+    "V1 backend no teto de branches; meta estrita de aumento não atingível no mesmo recorte.",
+    "BACK-REF-03 usa V2 de regressão corrente, distinta da V2 acadêmica histórica.",
+    "Revisão humana, publicação dos commits e envio à professora não certificados."
+  ]
+}

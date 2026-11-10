@@ -21,8 +21,7 @@ Proteção: executar antes/depois a mesma suíte corrente V2 de regressão (256 
 que contém as regressões de URL e os 52 casos de geração citados por Eric.
 Configuração congelada: backend/vitest.back-ref03.config.mts; cobertura restrita
 ao AiService. Os testes acadêmicos V1/V2 históricos permanecem imutáveis e não
-são reatribuídos a esta nova execução. Status inicial: identificado; refatorar
-somente após salvar a execução anterior aprovada.
+são reatribuídos a esta nova execução. Status: Refatorado. Execução anterior congelada em 2a33101; alteração isolada em 27d0d9b. Antes/depois 256/256, mesma suíte e configuração. Linhas: 64/64 e 65/65; branches: 84/84 em ambos. Evidências e hashes nas pastas antes/depois.
 
 Identificação: inspeção do módulo com apoio de Codex/LLM neste chat em 10/11.
 Rafael assumiu esta etapa de Eric; autoria da execução não é atribuída a Eric.

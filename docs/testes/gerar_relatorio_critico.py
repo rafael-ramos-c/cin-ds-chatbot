@@ -9,7 +9,7 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, PageBreak, 
 
 HERE = Path(__file__).resolve().parent
 styles = getSampleStyleSheet()
-styles.add(ParagraphStyle(name='BodyLocal', fontName='Helvetica', fontSize=10, leading=13.5, spaceAfter=7))
+styles.add(ParagraphStyle(name='BodyLocal', fontName='Helvetica', fontSize=9.8, leading=13, spaceAfter=6))
 styles.add(ParagraphStyle(name='TitleLocal', fontName='Helvetica-Bold', fontSize=20, leading=24, spaceAfter=15))
 styles.add(ParagraphStyle(name='HeadLocal', fontName='Helvetica-Bold', fontSize=12, leading=16, spaceBefore=9, spaceAfter=7))
 styles.add(ParagraphStyle(name='SmallLocal', fontName='Helvetica', fontSize=8.3, leading=11, spaceAfter=6))
@@ -37,7 +37,7 @@ def table(rows, widths):
 
 
 title('Análise crítica de testes')
-p('Chatbot SecGrad | Sprint 3 | CInCoders | Revisão de 09/11/2026', 'SmallLocal')
+p('Chatbot SecGrad | Sprint 3 | CInCoders | Revisão de 10/11/2026', 'SmallLocal')
 h('1 Contexto e resultado principal')
 p('A análise compara testes produzidos com apoio de LLM e suas melhorias para três histórias: US-01, busca documental filtrada com fontes; US-02, fallback quando não há evidência suficiente; US-03, rascunho de e-mail para encaminhamento. A V2 exerce os 26 casos aprovados. Cobertura estrutural alta, porém, não certifica a qualidade semântica do corpus, a integração completa ou a força dos oráculos.')
 p('A IA usa Python, FastAPI, unittest e coverage.py 7.17.0 com branches. A US-01 foi medida sobre a produção e421ff9, com hashes idênticos entre V1 e V2. A refatoração posterior IA-REF-02 tem evidências separadas. O backend usa NestJS/TypeScript, Vitest e coverage-v8 4.1.11, Node 24.21.0. As US-02/03 foram medidas na baseline histórica 9d328dc, anterior à integração com /gerar. Regressões atuais não substituem essas suítes acadêmicas.')
@@ -107,11 +107,12 @@ table([
 h('7 Conclusão e alcance')
 p('A equipe usaria LLM para propor testes e explorar classes de entrada, preservando requisitos externos como oráculo e revisando casos contra eles. A evidência mostra por que quantidade e cobertura não bastam: 65 testes e 100% de branches no backend deixavam obrigações HTTP incompletas. O ganho da V2 está na ligação entre requisito, entrada, resultado e fronteira realmente exercitada.')
 p('A IA teve aumento controlado de branches de 76,19% para 97,62%; o backend permaneceu no teto de 100% no escopo original. O atendimento literal da meta de aumento do backend requer a ressalva de teto e eventual alinhamento com o monitor, sem degradar V1, trocar denominadores ou inventar um delta.')
-p('As suítes históricas foram preservadas; os 105 testes acadêmicos não se confundem com regressões adaptadas a /gerar. Em 07/11, a auditoria mediu 21 documentos e 6.799 trechos, com cinco páginas sem extração. O PR #35 atualizou três PDFs: SI anterior 202 e SI novo 149/158/159 agora possuem texto; EC anterior 22 continua sem extração. A revisão de 09/11 reingere e audita o corpus separadamente; hashes, contagens e resultados em validacao-pos-ocr-20261109/. Extração não certifica fidelidade do OCR.')
-p('Em 07/11, o cliente UI ocultou a resposta mock e uma pergunta sobre carburador não acionou fallback (distância 0,454, limiar 0,8). As seis regressões de URL então encontradas foram corrigidas em 08/11 sem mudar testes: suíte corrente 256/256, e2e 34 aprovados mais dois opt-in aprovados com FastAPI real; lint/build aprovados. Um ensaio separado verificou dez chamadas HTTP com corpus real, geração mock, fallback controlado e erros seguros. Fontes: fechamento-backend-20261108/. Isso não substitui os indicadores V1/V2 acima. O roteiro de inicialização foi corrigido e a integração repetida em 09/11. Governança foi publicada e revisada com ressalvas. UI, benchmark/calibração, EC22 e terceira refatoração permanecem pendentes; não se afirma LLM real.')
+p('As suítes e medições históricas foram preservadas. A base pós-OCR tem 21 documentos e 6.811 trechos, com sete pares curso/perfil auditados. EC anterior 22 continua sem texto: inspeção visual e relato de Ricardo identificam contracapa com etiqueta administrativa, sem conteúdo curricular corrido; exclusão justificada, não OCR declarado bem-sucedido. Quatro páginas de SI ganharam texto, cuja fidelidade Ricardo relatou conferir.')
+p('No fechamento de 10/11, Node 24.22.1: 256 testes correntes do backend, 34 e2e mais dois opt-in, 20 da IA, 21 V2 da US-01 e 12 do cliente UI aprovados; seleção de 52 é subconjunto. Build e lint passaram, com dois avisos preexistentes. BACK-REF-03 tem mesma regressão corrente 256/256 antes/depois e commit próprio; não substitui V2 acadêmica histórica. AppTest com HTTP real confirmou aviso mock, página e trecho literal. Sem navegador ou LLM real.')
+p('Benchmark: 25 perguntas, 50 chamadas comparando limiares. Com 0,8: 15/25 decisões de fallback conforme expectativa, dez aceitações fora do escopo e nenhuma recusa dos 15 casos dentro. Com 0,5: 18/25, sete aceitações externas. Sete controles recuperaram o PPC esperado. Pergunta curta carburador e frase completa não equivalem. Não há limiar calibrado; mantém-se 0,8 provisório, registra-se QA-01 e não se afirma precisão de resposta acadêmica com mock. Evidências, oráculos e limitações: fechamento-final-20261110/.')
 h('Apêndices e evidências entregues com o PDF')
 p('A: matriz-rastreabilidade.md; B: llm-log.md e suas referências integrais; memória de cálculo: inventario-consolidado.md e indicadores-consolidados.json. Índice e instruções: CONSOLIDACAO-SPRINT3.md. Todos ficam na mesma pasta docs/testes e devem acompanhar este PDF.', 'SmallLocal')
-p('HTML IA: relatorios/us01-controlado/v1/html/index.html e v2/html/index.html. HTML backend: evidencias-backend/01_V1/execucao/coverage/index.html e 02_V2/execucao/coverage/index.html. Comparação backend: 02_V2/comparacao-v1-v2.json; inventários CSV e análise original preservados no mesmo pacote. Importação: evidencias-backend/IMPORTACAO.json.', 'SmallLocal')
+p('HTMLs e manifestos: consulte CONSOLIDACAO-SPRINT3.md. IA em relatorios/us01-controlado/; backend em evidencias-backend/01_V1/ e 02_V2/. Os inventários e registros originais acompanham os relatórios.', 'SmallLocal')
 
 
 def footer(canvas, doc):
@@ -123,8 +124,8 @@ def footer(canvas, doc):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--saida', type=Path, default=HERE / 'analise-critica-sprint3-revisao-20261109.pdf')
+    parser.add_argument('--saida', type=Path, default=HERE / 'analise-critica-sprint3-final-20261110.pdf')
     args = parser.parse_args()
     if args.saida.exists():
         parser.error('Escolha uma saída nova para preservar os relatórios anteriores.')
-    SimpleDocTemplate(str(args.saida), pagesize=A4, rightMargin=59, leftMargin=59, topMargin=48, bottomMargin=48, title='Análise crítica de testes - revisão 09/11/2026', author='Equipe CInCoders').build(story, onFirstPage=footer, onLaterPages=footer)
+    SimpleDocTemplate(str(args.saida), pagesize=A4, rightMargin=59, leftMargin=59, topMargin=48, bottomMargin=48, title='Análise crítica de testes - revisão 10/11/2026', author='Equipe CInCoders').build(story, onFirstPage=footer, onLaterPages=footer)

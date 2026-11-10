@@ -1,3 +1,11 @@
+## Entrega vigente - 10/11/2026
+
+Leia primeiro [ENTREGA-SPRINT3](../ENTREGA-SPRINT3.md). PDFs finais: [análise crítica](analise-critica-sprint3-final-20261110.pdf)
+e [três refatorações](../qualidade/relatorio-refatoracoes-sprint3-final-20261110.pdf).
+[Evidências atuais](fechamento-final-20261110/README.md), incluindo benchmark com
+falhas de escopo registradas e terceira refatoração com antes/depois.
+As seções datadas abaixo são históricas e não substituem este índice.
+
 ## Revisão pós-OCR de 09/11
 
 [Índice da nova validação](validacao-pos-ocr-20261109/README.md). O PR #35 publicou

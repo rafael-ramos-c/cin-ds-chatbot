@@ -1,0 +1,243 @@
+{
+  "nota": "Casos definidos antes da execução, sem escolher limiar a partir do resultado. Não é calibração estatisticamente representativa.",
+  "casos": [
+    {
+      "id": "LEG-01",
+      "grupo": "legado_sprint1",
+      "pergunta": "Como solicito dispensa de disciplina cursada externamente?",
+      "curso": "CC",
+      "perfil": "novo",
+      "fallback_esperado": false,
+      "expectativa_legada": "Deve detalhar o procedimento com apresentação de histórico e ementa via SecGrad.",
+      "fonte_legada": "requerimento_dispensa.pdf (pág 1-2)",
+      "limite": "Resposta acadêmica não avaliável com mock; nomes legados de fontes não equivalem a arquivos atuais."
+    },
+    {
+      "id": "LEG-02",
+      "grupo": "legado_sprint1",
+      "pergunta": "Qual o prazo para pedir segunda chamada de prova?",
+      "curso": "CC",
+      "perfil": "novo",
+      "fallback_esperado": false,
+      "expectativa_legada": "Deve informar o prazo regimental em dias úteis acompanhado de atestado ou justificativa.",
+      "fonte_legada": "requerimento_2a_chamada.pdf (pág 1)",
+      "limite": "Resposta acadêmica não avaliável com mock; nomes legados de fontes não equivalem a arquivos atuais."
+    },
+    {
+      "id": "LEG-03",
+      "grupo": "legado_sprint1",
+      "pergunta": "O estágio não obrigatório pode ser iniciado antes da assinatura do termo?",
+      "curso": "CC",
+      "perfil": "novo",
+      "fallback_esperado": false,
+      "expectativa_legada": "Deve recusar categoricamente e informar que a assinatura prévia do termo é obrigatória.",
+      "fonte_legada": "normas_estagio_CC.pdf (Seção 3)",
+      "limite": "Resposta acadêmica não avaliável com mock; nomes legados de fontes não equivalem a arquivos atuais."
+    },
+    {
+      "id": "LEG-04",
+      "grupo": "legado_sprint1",
+      "pergunta": "Aluno de Ciência da Computação pode pagar estágio em empresa sem convênio com a UFPE?",
+      "curso": "CC",
+      "perfil": "novo",
+      "fallback_esperado": false,
+      "expectativa_legada": "Deve informar que o convênio ou agente de integração é requisito para validação.",
+      "fonte_legada": "normas_estagio_CC.pdf / EC.pdf",
+      "limite": "Resposta acadêmica não avaliável com mock; nomes legados de fontes não equivalem a arquivos atuais."
+    },
+    {
+      "id": "LEG-05",
+      "grupo": "legado_sprint1",
+      "pergunta": "Quais são os requisitos para trancamento total de semestre?",
+      "curso": "CC",
+      "perfil": "novo",
+      "fallback_esperado": false,
+      "expectativa_legada": "Deve explicar os critérios regiminais para trancamento do semestre letivo.",
+      "fonte_legada": "normas_gerais_graduacao.pdf",
+      "limite": "Resposta acadêmica não avaliável com mock; nomes legados de fontes não equivalem a arquivos atuais."
+    },
+    {
+      "id": "LEG-06",
+      "grupo": "legado_sprint1",
+      "pergunta": "Onde encontro o formulário de equivalência de componentes curriculares?",
+      "curso": "CC",
+      "perfil": "novo",
+      "fallback_esperado": false,
+      "expectativa_legada": "Deve indicar o link ou procedimento para obtenção do formulário oficial da SecGrad.",
+      "fonte_legada": "pagina_secgrad.pdf",
+      "limite": "Resposta acadêmica não avaliável com mock; nomes legados de fontes não equivalem a arquivos atuais."
+    },
+    {
+      "id": "LEG-07",
+      "grupo": "legado_sprint1",
+      "pergunta": "Quem é o responsável por assinar o termo de compromisso de estágio de Engenharia da Computação?",
+      "curso": "EC",
+      "perfil": "novo",
+      "fallback_esperado": false,
+      "expectativa_legada": "Deve citar o coordenador/responsável de estágio do curso de Engenharia da Computação.",
+      "fonte_legada": "normas_estagio_EC.pdf",
+      "limite": "Resposta acadêmica não avaliável com mock; nomes legados de fontes não equivalem a arquivos atuais."
+    },
+    {
+      "id": "LEG-08",
+      "grupo": "legado_sprint1",
+      "pergunta": "Como funciona o processo de mudança de perfil curricular em Sistemas de Informação?",
+      "curso": "SI",
+      "perfil": "novo",
+      "fallback_esperado": false,
+      "expectativa_legada": "Deve apresentar os pré-requisitos e o canal oficial de solicitação de mudança de perfil.",
+      "fonte_legada": "normas_estagio_SI.pdf",
+      "limite": "Resposta acadêmica não avaliável com mock; nomes legados de fontes não equivalem a arquivos atuais."
+    },
+    {
+      "id": "LEG-09",
+      "grupo": "legado_sprint1",
+      "pergunta": "Qual o horário de funcionamento do restaurante universitário?",
+      "curso": "CC",
+      "perfil": "novo",
+      "fallback_esperado": true,
+      "expectativa_legada": "Deve acionar recusa/fallback amigável, pois não há contexto oficial na base da SecGrad.",
+      "fonte_legada": "N/A (Recusa Esperada)",
+      "limite": "Resposta acadêmica não avaliável com mock; nomes legados de fontes não equivalem a arquivos atuais."
+    },
+    {
+      "id": "LEG-10",
+      "grupo": "legado_sprint1",
+      "pergunta": "Como faço para solicitar bolsa de pós-graduação no CIn?",
+      "curso": "CC",
+      "perfil": "novo",
+      "fallback_esperado": true,
+      "expectativa_legada": "Deve reconhecer limitação da base da SecGrad (graduação) e sugerir encaminhamento para a Pós-Graduação.",
+      "fonte_legada": "N/A (Fallback / Encaminhamento)",
+      "limite": "Resposta acadêmica não avaliável com mock; nomes legados de fontes não equivalem a arquivos atuais."
+    },
+    {
+      "id": "PPC-CC-novo",
+      "grupo": "controle_documental",
+      "pergunta": "Qual o perfil profissional do egresso de Ciência da Computação segundo o projeto pedagógico?",
+      "curso": "CC",
+      "perfil": "novo",
+      "fallback_esperado": false,
+      "fonte_esperada": "ppc_cc_novo_2024.pdf"
+    },
+    {
+      "id": "PPC-CC-anterior",
+      "grupo": "controle_documental",
+      "pergunta": "Qual o perfil profissional do egresso de Ciência da Computação segundo o projeto pedagógico?",
+      "curso": "CC",
+      "perfil": "anterior",
+      "fallback_esperado": false,
+      "fonte_esperada": "ppc_cc_anterior.pdf"
+    },
+    {
+      "id": "PPC-EC-novo",
+      "grupo": "controle_documental",
+      "pergunta": "Qual o perfil profissional do egresso de Engenharia da Computação segundo o projeto pedagógico?",
+      "curso": "EC",
+      "perfil": "novo",
+      "fallback_esperado": false,
+      "fonte_esperada": "ppc_ec_novo_2024.pdf"
+    },
+    {
+      "id": "PPC-EC-anterior",
+      "grupo": "controle_documental",
+      "pergunta": "Qual o perfil profissional do egresso de Engenharia da Computação segundo o projeto pedagógico?",
+      "curso": "EC",
+      "perfil": "anterior",
+      "fallback_esperado": false,
+      "fonte_esperada": "ppc_ec_anterior.pdf"
+    },
+    {
+      "id": "PPC-SI-novo",
+      "grupo": "controle_documental",
+      "pergunta": "Qual o perfil profissional do egresso de Sistemas de Informação segundo o projeto pedagógico?",
+      "curso": "SI",
+      "perfil": "novo",
+      "fallback_esperado": false,
+      "fonte_esperada": "ppc_si_novo_2024.pdf"
+    },
+    {
+      "id": "PPC-SI-anterior",
+      "grupo": "controle_documental",
+      "pergunta": "Qual o perfil profissional do egresso de Sistemas de Informação segundo o projeto pedagógico?",
+      "curso": "SI",
+      "perfil": "anterior",
+      "fallback_esperado": false,
+      "fonte_esperada": "ppc_si_anterior.pdf"
+    },
+    {
+      "id": "PPC-IA-novo",
+      "grupo": "controle_documental",
+      "pergunta": "Qual o perfil profissional do egresso de Inteligência Artificial segundo o projeto pedagógico?",
+      "curso": "IA",
+      "perfil": "novo",
+      "fallback_esperado": false,
+      "fonte_esperada": "ppc_ia_novo_2024.pdf"
+    },
+    {
+      "id": "FORA-01",
+      "grupo": "fora_escopo_adicional",
+      "pergunta": "carburador",
+      "curso": "CC",
+      "perfil": "novo",
+      "fallback_esperado": true
+    },
+    {
+      "id": "FORA-02",
+      "grupo": "fora_escopo_adicional",
+      "pergunta": "Como consertar um carburador de motocicleta?",
+      "curso": "CC",
+      "perfil": "novo",
+      "fallback_esperado": true
+    },
+    {
+      "id": "FORA-03",
+      "grupo": "fora_escopo_adicional",
+      "pergunta": "Qual a receita de bolo de chocolate?",
+      "curso": "CC",
+      "perfil": "novo",
+      "fallback_esperado": true
+    },
+    {
+      "id": "FORA-04",
+      "grupo": "fora_escopo_adicional",
+      "pergunta": "Qual a previsão do tempo em Marte?",
+      "curso": "CC",
+      "perfil": "novo",
+      "fallback_esperado": true
+    },
+    {
+      "id": "FORA-05",
+      "grupo": "fora_escopo_adicional",
+      "pergunta": "Quem ganhou a Copa do Mundo de 1994?",
+      "curso": "CC",
+      "perfil": "novo",
+      "fallback_esperado": true
+    },
+    {
+      "id": "FORA-06",
+      "grupo": "fora_escopo_adicional",
+      "pergunta": "Como trocar o pneu de uma bicicleta?",
+      "curso": "CC",
+      "perfil": "novo",
+      "fallback_esperado": true
+    },
+    {
+      "id": "FORA-07",
+      "grupo": "fora_escopo_adicional",
+      "pergunta": "Qual o melhor investimento em criptomoedas?",
+      "curso": "CC",
+      "perfil": "novo",
+      "fallback_esperado": true
+    },
+    {
+      "id": "FORA-08",
+      "grupo": "fora_escopo_adicional",
+      "pergunta": "Como renovar meu passaporte?",
+      "curso": "CC",
+      "perfil": "novo",
+      "fallback_esperado": true
+    }
+  ],
+  "revisao_oraculo": "Corrigida capitalização de ppc_CC/... para nomes reais ppc_cc/...; primeira medição preservada. Perguntas, fallback esperado e limiares não alterados."
+}

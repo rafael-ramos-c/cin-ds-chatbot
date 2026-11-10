@@ -132,3 +132,33 @@ nesta rodada, LLM real, benchmark de UI nem terceira refatoração inventada.
 Correções dos estados de dívida se baseiam no conteúdo do repositório; confirmação
 final por Ricardo/Eric ainda necessária. Autoria dos achados não foi separada
 entre pessoa e LLM, e não se afirma aprovação docente ou dos colegas.
+
+
+## 10/11/2026 - Fechamento de UI, benchmark e BACK-REF-03
+
+Prompt do usuário: "Chat, o Eric e o Ricardo disseram que avançaram na parte dele,
+porém o Eric disse que está com dificuldade nessa parte final de responsabilidade
+dele, então, ele pediu que, se houvesse mais alguma coisa a ser feita, que eu
+tomasse essa responsabilidade final dele do Sprint 3 (então, além de Victor,
+assumirei a responsabilidade de Eric nessa parte final da Sprint 3). Os dois me
+mandaram um mensagem, e o Eric também me mandou um print. Baseado em tudo isso,
+tente finalizar/ajustar esse final da Sprint 3 para eu poder entregar à professora."
+
+Os relatos de Eric e Ricardo fornecidos na mesma mensagem são distinguidos das
+execuções feitas aqui em ../qualidade/log-analise.md. Apoio por Codex neste chat;
+modelo exato/snapshot não disponibilizado. Não foi aberta nova conversa V1.
+
+Resposta/implementação gerada: restauração do padrão provisório 0,8; associação
+de trechos literais a arquivo/página/curso no cliente; 12 testes UI; benchmark
+reproduzível e 25 casos; Extração interna de predicado da URL com 256/256 antes
+e depois; PDFs finais e pacote acadêmico. Commits e arquivos completos são a
+saída preservada, não um relato de código supostamente executado por Eric.
+
+Diagnóstico crítico: benchmark mostrou falha de escopo mesmo com testes verdes;
+primeiro oráculo de fonte tinha capitalização incorreta e foi corrigido antes
+da execução final, mantendo o resultado inicial. Lint passou com dois avisos
+preexistentes, não com zero avisos. AppTest foi headless; geração é mock.
+
+Evidências: fechamento-final-20261110/ e ../qualidade/BACK-REF-03-evidencias/.
+Comandos e hashes na verificação final. Esta rodada suplementa o histórico,
+sem reescrever V1/V2, prompts originais ou métricas da comparação acadêmica.
