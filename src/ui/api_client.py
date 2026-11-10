@@ -37,9 +37,13 @@ def enviar_pergunta(prompt: str, curso: str, perfil: str):
                     f"```text\n{template}\n```"
                 )
             else:
-                # 2. Se o ai-service retornou contexto válido
-                ctx = data.get("contexto") or data.get("resposta") or ""
-                texto_final = ctx.strip() if ctx.strip() else "Consulta concluída, mas nenhum texto relevante foi extraído dos documentos."
+                # 2. PRIORIDADE À RESPOSTA GERADA (com o aviso de simulação), usando o contexto apenas como fallback
+                resposta_gerada = data.get("resposta")
+                if resposta_gerada:
+                    texto_final = str(resposta_gerada).strip()
+                else:
+                    ctx = data.get("contexto", "")
+                    texto_final = ctx.strip() if ctx.strip() else "Consulta concluída, mas nenhum texto relevante foi extraído dos documentos."
             
             # 3. Tratamento das fontes
             fontes_brutas = data.get("fontes") or []
