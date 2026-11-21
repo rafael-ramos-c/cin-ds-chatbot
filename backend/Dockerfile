@@ -1,21 +1,49 @@
-FROM node:24-bookworm-slim AS build
+FROM node:24-alpine AS base
+
+# O Prisma escolhe a engine pela versão do `openssl`; sem o binário, a
+# node:alpine cai no fallback 1.1.x, cuja libssl não existe na imagem.
+RUN apk add --no-cache openssl
+
+# ---- Development ----
+FROM base AS development
+
 WORKDIR /app
 
-COPY package.json package-lock.json ./
+COPY package*.json ./
 RUN npm ci
 
-COPY nest-cli.json tsconfig.json tsconfig.build.json ./
-COPY src ./src
+COPY . .
+
+EXPOSE 3000
+
+# ---- Build ----
+FROM base AS build
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm ci
+
+COPY . .
+RUN npx prisma generate --schema prisma/schema.prisma
 RUN npm run build
 
-FROM node:24-bookworm-slim AS production
-WORKDIR /app
-ENV NODE_ENV=production
+# ---- Production ----
+FROM base AS production
 
-COPY package.json package-lock.json ./
-RUN npm ci --omit=dev && npm cache clean --force
+WORKDIR /app
+
+COPY package*.json ./
+COPY prisma ./prisma
+# --ignore-scripts: o `prepare` chama o husky, que é devDependency e não
+# existe aqui (npm ci falharia com exit 127).
+RUN npm ci --omit=dev --ignore-scripts
+# Client já gerado no estágio de build (com --ignore-scripts, os
+# postinstall do Prisma não rodam aqui).
+COPY --from=build /app/node_modules/.prisma ./node_modules/.prisma
 
 COPY --from=build /app/dist ./dist
-USER node
+
 EXPOSE 3000
-CMD ["node", "dist/main.js"]
+
+CMD ["node", "dist/main"]

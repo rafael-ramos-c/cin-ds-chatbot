@@ -1,7 +1,4 @@
-import {
-  BadRequestException,
-  ServiceUnavailableException,
-} from '@nestjs/common';
+import { BadRequestException, ServiceUnavailableException } from '@nestjs/common';
 import { describe, expect, it, vi } from 'vitest';
 import { AiService } from '../../src/ai-service/ai-service.service.js';
 import type { BuscarContextoResponse } from '../../src/ai-service/ai-service.types.js';
@@ -12,9 +9,7 @@ import type { OrchestrationRequest } from '../../src/orchestration/orchestration
 function preparar(threshold = 0.8) {
   const ai = new AiService();
   const buscar = vi.spyOn(ai, 'buscarContexto');
-  const gerar = vi
-    .spyOn(ai, 'gerarResposta')
-    .mockResolvedValue('Resposta gerada.');
+  const gerar = vi.spyOn(ai, 'gerarResposta').mockResolvedValue('Resposta gerada.');
   const fallback = new FallbackService();
   const gerarEmail = vi.spyOn(fallback, 'gerarEmail');
   const service = new OrchestrationService(ai, fallback, threshold);
@@ -54,25 +49,24 @@ describe('US-02 — decisão de fallback', () => {
     expect(gerarEmail).not.toHaveBeenCalled();
   });
 
-  it.each([0.8, 0.8001, 1.2])(
-    'aciona fallback para distância %s no limite ou acima',
-    async (distancia) => {
-      const { service, buscar, gerarEmail, request, resultado } = preparar();
-      buscar.mockResolvedValue({ ...resultado, distancia_minima: distancia });
-      const resposta = await service.processar(request);
-      expect(resposta).toMatchObject({
-        ...resultado,
-        distancia_minima: distancia,
-        fallback_acionado: true,
-        setor_sugerido: 'SecGrad',
-      });
-      expect(resposta).toHaveProperty(
-        'template_email',
-        expect.stringContaining(request.consulta.pergunta),
-      );
-      expect(gerarEmail).toHaveBeenCalledExactlyOnceWith(request);
-    },
-  );
+  it.each([
+    0.8, 0.8001, 1.2,
+  ])('aciona fallback para distância %s no limite ou acima', async (distancia) => {
+    const { service, buscar, gerarEmail, request, resultado } = preparar();
+    buscar.mockResolvedValue({ ...resultado, distancia_minima: distancia });
+    const resposta = await service.processar(request);
+    expect(resposta).toMatchObject({
+      ...resultado,
+      distancia_minima: distancia,
+      fallback_acionado: true,
+      setor_sugerido: 'SecGrad',
+    });
+    expect(resposta).toHaveProperty(
+      'template_email',
+      expect.stringContaining(request.consulta.pergunta),
+    );
+    expect(gerarEmail).toHaveBeenCalledExactlyOnceWith(request);
+  });
 
   it('aceita uma distância imediatamente abaixo do limite', async () => {
     const { service, buscar, request, resultado } = preparar();
@@ -85,31 +79,30 @@ describe('US-02 — decisão de fallback', () => {
     });
   });
 
-  it.each(['', '   ', '\n\t '])(
-    'aciona fallback para contexto vazio ou branco (%j)',
-    async (contexto) => {
-      const { service, buscar, gerarEmail, request, resultado } = preparar();
-      buscar.mockResolvedValue({
-        ...resultado,
-        contexto,
-        distancia_minima: 0.1,
-      });
-      const resposta = await service.processar(request);
-      expect(resposta).toMatchObject({
-        ...resultado,
-        contexto,
-        distancia_minima: 0.1,
-        fallback_acionado: true,
-        setor_sugerido: 'SecGrad',
-      });
-      expect(resposta.template_email).toContain(
-        'Meu nome é Ana, matrícula 12345',
-      );
-      expect(resposta.template_email).toContain(request.consulta.pergunta);
-      expect(resposta.template_email).toContain('Preciso de orientação.');
-      expect(gerarEmail).toHaveBeenCalledExactlyOnceWith(request);
-    },
-  );
+  it.each([
+    '',
+    '   ',
+    '\n\t ',
+  ])('aciona fallback para contexto vazio ou branco (%j)', async (contexto) => {
+    const { service, buscar, gerarEmail, request, resultado } = preparar();
+    buscar.mockResolvedValue({
+      ...resultado,
+      contexto,
+      distancia_minima: 0.1,
+    });
+    const resposta = await service.processar(request);
+    expect(resposta).toMatchObject({
+      ...resultado,
+      contexto,
+      distancia_minima: 0.1,
+      fallback_acionado: true,
+      setor_sugerido: 'SecGrad',
+    });
+    expect(resposta.template_email).toContain('Meu nome é Ana, matrícula 12345');
+    expect(resposta.template_email).toContain(request.consulta.pergunta);
+    expect(resposta.template_email).toContain('Preciso de orientação.');
+    expect(gerarEmail).toHaveBeenCalledExactlyOnceWith(request);
+  });
 
   it('respeita o limite injetado e preserva os dados retornados pela busca', async () => {
     const { service, buscar, request, resultado } = preparar(1.5);
@@ -131,16 +124,17 @@ describe('US-02 — decisão de fallback', () => {
     expect(buscar.mock.calls[0][0]).not.toHaveProperty('dados_email');
   });
 
-  it.each([undefined, null, {}])(
-    'rejeita requisição sem consulta antes da busca (%j)',
-    async (request) => {
-      const { service, buscar } = preparar();
-      await expect(
-        service.processar(request as unknown as OrchestrationRequest),
-      ).rejects.toBeInstanceOf(BadRequestException);
-      expect(buscar).not.toHaveBeenCalled();
-    },
-  );
+  it.each([
+    undefined,
+    null,
+    {},
+  ])('rejeita requisição sem consulta antes da busca (%j)', async (request) => {
+    const { service, buscar } = preparar();
+    await expect(
+      service.processar(request as unknown as OrchestrationRequest),
+    ).rejects.toBeInstanceOf(BadRequestException);
+    expect(buscar).not.toHaveBeenCalled();
+  });
 
   it('valida dados pessoais mesmo quando a busca poderia responder', async () => {
     const { service, buscar, request } = preparar();
@@ -148,17 +142,13 @@ describe('US-02 — decisão de fallback', () => {
       ...request,
       dados_email: { nome: 123 },
     } as unknown as OrchestrationRequest;
-    await expect(service.processar(invalido)).rejects.toBeInstanceOf(
-      BadRequestException,
-    );
+    await expect(service.processar(invalido)).rejects.toBeInstanceOf(BadRequestException);
     expect(buscar).not.toHaveBeenCalled();
   });
 
   it('propaga indisponibilidade da busca sem produzir rascunho', async () => {
     const { service, buscar, gerarEmail, request } = preparar();
-    const erro = new ServiceUnavailableException(
-      'Serviço de busca indisponível.',
-    );
+    const erro = new ServiceUnavailableException('Serviço de busca indisponível.');
     buscar.mockRejectedValue(erro);
     await expect(service.processar(request)).rejects.toBe(erro);
     expect(gerarEmail).not.toHaveBeenCalled();
@@ -170,9 +160,7 @@ describe('US-02 — decisão de fallback', () => {
     const resposta = await service.processar(request);
     expect(resposta.fallback_acionado).toBe(true);
     if (!resposta.fallback_acionado) throw new Error('Fallback esperado');
-    expect(resposta.template_email).toContain(
-      'Meu nome é Ana, matrícula 12345',
-    );
+    expect(resposta.template_email).toContain('Meu nome é Ana, matrícula 12345');
     expect(resposta.template_email).toContain('Preciso de orientação.');
     expect(resposta.setor_sugerido).toBe('SecGrad');
   });

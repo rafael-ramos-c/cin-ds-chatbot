@@ -4,7 +4,7 @@ import {
   GatewayTimeoutException,
   ServiceUnavailableException,
 } from '@nestjs/common';
-import { AiService } from './ai-service.service.js';
+import { AiService } from './ai-service.service';
 
 const resultado = {
   contexto: 'Trecho recuperado',
@@ -31,9 +31,9 @@ describe('AiService', () => {
 
   it('envia POST ao host configurado com os padrões do FastAPI', async () => {
     fetchMock.mockResolvedValue(Response.json(resultado));
-    expect(
-      await service.buscarContexto({ pergunta: 'Como solicitar dispensa?' }),
-    ).toEqual(resultado);
+    expect(await service.buscarContexto({ pergunta: 'Como solicitar dispensa?' })).toEqual(
+      resultado,
+    );
     const [url, options] = fetchMock.mock.calls[0]!;
     expect(url).toBeInstanceOf(URL);
     expect((url as URL).href).toBe('http://busca.test:8000/api/v1/buscar');
@@ -61,9 +61,7 @@ describe('AiService', () => {
       top_k: 5,
     };
     expect(await service.buscarContexto(consulta)).toEqual(vazio);
-    expect(JSON.parse(fetchMock.mock.calls[0]![1]!.body as string)).toEqual(
-      consulta,
-    );
+    expect(JSON.parse(fetchMock.mock.calls[0]![1]!.body as string)).toEqual(consulta);
   });
 
   it.each([
@@ -94,44 +92,49 @@ describe('AiService', () => {
     expect(fetchMock).not.toHaveBeenCalled();
   });
 
-  it.each(['http://busca.test:8000', 'https://busca.test/'])(
-    'aceita origem válida %s',
-    async (origin) => {
-      vi.stubEnv('AI_SERVICE_URL', origin);
-      fetchMock.mockResolvedValue(Response.json(resultado));
-      await expect(
-        service.buscarContexto({ pergunta: 'Teste' }),
-      ).resolves.toEqual(resultado);
-      expect((fetchMock.mock.calls[0]![0] as URL).href).toBe(
-        new URL('/api/v1/buscar', origin).href,
-      );
-    },
-  );
-
-  it.each(['1', '30000', '2147483647', ' 5000 '])(
-    'usa timeout configurado válido %j',
-    async (raw) => {
-      vi.stubEnv('AI_SERVICE_TIMEOUT_MS', raw);
-      const timeout = vi.spyOn(AbortSignal, 'timeout');
-      fetchMock.mockResolvedValue(Response.json(resultado));
-      await service.buscarContexto({ pergunta: 'Teste' });
-      expect(timeout).toHaveBeenCalledExactlyOnceWith(Number(raw));
-    },
-  );
+  it.each([
+    'http://busca.test:8000',
+    'https://busca.test/',
+  ])('aceita origem válida %s', async (origin) => {
+    vi.stubEnv('AI_SERVICE_URL', origin);
+    fetchMock.mockResolvedValue(Response.json(resultado));
+    await expect(service.buscarContexto({ pergunta: 'Teste' })).resolves.toEqual(resultado);
+    expect((fetchMock.mock.calls[0]![0] as URL).href).toBe(new URL('/api/v1/buscar', origin).href);
+  });
 
   it.each([
-    '', ' ', '0', '-1', '1.5', 'NaN', 'Infinity',
-    '1e3', '0x10', 'abc', '2147483648', '9007199254740992',
-  ])(
-    'rejeita timeout inválido %j antes da busca',
-    async (raw) => {
-      vi.stubEnv('AI_SERVICE_TIMEOUT_MS', raw);
-      await expect(service.buscarContexto({ pergunta: 'Teste' })).rejects.toThrow(
-        'Tempo limite do serviço de busca não configurado corretamente.',
-      );
-      expect(fetchMock).not.toHaveBeenCalled();
-    },
-  );
+    '1',
+    '30000',
+    '2147483647',
+    ' 5000 ',
+  ])('usa timeout configurado válido %j', async (raw) => {
+    vi.stubEnv('AI_SERVICE_TIMEOUT_MS', raw);
+    const timeout = vi.spyOn(AbortSignal, 'timeout');
+    fetchMock.mockResolvedValue(Response.json(resultado));
+    await service.buscarContexto({ pergunta: 'Teste' });
+    expect(timeout).toHaveBeenCalledExactlyOnceWith(Number(raw));
+  });
+
+  it.each([
+    '',
+    ' ',
+    '0',
+    '-1',
+    '1.5',
+    'NaN',
+    'Infinity',
+    '1e3',
+    '0x10',
+    'abc',
+    '2147483648',
+    '9007199254740992',
+  ])('rejeita timeout inválido %j antes da busca', async (raw) => {
+    vi.stubEnv('AI_SERVICE_TIMEOUT_MS', raw);
+    await expect(service.buscarContexto({ pergunta: 'Teste' })).rejects.toThrow(
+      'Tempo limite do serviço de busca não configurado corretamente.',
+    );
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
 
   it.each([
     { pergunta: '' },
@@ -139,9 +142,7 @@ describe('AiService', () => {
     { pergunta: 'Teste', top_k: 0 },
     { pergunta: 'Teste', top_k: 1.5 },
   ])('rejeita consulta inválida %j', async (consulta) => {
-    await expect(service.buscarContexto(consulta)).rejects.toThrow(
-      BadRequestException,
-    );
+    await expect(service.buscarContexto(consulta)).rejects.toThrow(BadRequestException);
     expect(fetchMock).not.toHaveBeenCalled();
   });
 
@@ -152,17 +153,12 @@ describe('AiService', () => {
     );
   });
 
-  it.each([422, 500, 503])(
-    'trata HTTP %i sem repassar o corpo interno',
-    async (status) => {
-      fetchMock.mockResolvedValue(
-        new Response('traceback privado', { status }),
-      );
-      await expect(
-        service.buscarContexto({ pergunta: 'Teste' }),
-      ).rejects.toThrow('Falha na resposta do serviço de busca.');
-    },
-  );
+  it.each([422, 500, 503])('trata HTTP %i sem repassar o corpo interno', async (status) => {
+    fetchMock.mockResolvedValue(new Response('traceback privado', { status }));
+    await expect(service.buscarContexto({ pergunta: 'Teste' })).rejects.toThrow(
+      'Falha na resposta do serviço de busca.',
+    );
+  });
 
   it.each([
     null,
@@ -186,9 +182,7 @@ describe('AiService', () => {
 
   it.each(['conexão', 'corpo'])('trata timeout durante %s', async (etapa) => {
     const controller = new AbortController();
-    const timeout = vi
-      .spyOn(AbortSignal, 'timeout')
-      .mockReturnValue(controller.signal);
+    const timeout = vi.spyOn(AbortSignal, 'timeout').mockReturnValue(controller.signal);
     const abort = () => {
       controller.abort();
       throw new DOMException('timeout interno', 'TimeoutError');

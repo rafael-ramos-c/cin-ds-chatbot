@@ -1,0 +1,56 @@
+name: Qualidade SecGrad
+on:
+  push:
+  pull_request:
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    env:
+      KEYCLOAK_AUTH_SERVER_URL: http://localhost:8080/auth
+      KEYCLOAK_REALM: Local
+      KEYCLOAK_CLIENT_ID: secgrad-back
+      DATABASE_URL: postgresql://secgrad:secgrad-local@localhost:5432/secgrad
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '24', cache: npm, cache-dependency-path: backend/package-lock.json }
+      - run: npm ci --ignore-scripts
+        working-directory: backend
+      - run: npm run prisma:generate
+        working-directory: backend
+      - run: npm run lint
+        working-directory: backend
+      - run: npm test
+        working-directory: backend
+      - run: npm run build
+        working-directory: backend
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '24', cache: npm, cache-dependency-path: frontend/package-lock.json }
+      - run: npm ci --ignore-scripts
+        working-directory: frontend
+      - run: npm run lint
+        working-directory: frontend
+      - run: npm test
+        working-directory: frontend
+      - run: npm run build
+        working-directory: frontend
+  ai:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11', cache: pip, cache-dependency-path: ai-service/requirements-dev.txt }
+      - run: python -m pip install -r requirements-dev.txt
+        working-directory: ai-service
+      - run: python -m unittest discover -s tests -v
+        working-directory: ai-service
+  compose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: cp .env.example .env
+      - run: docker compose config --quiet

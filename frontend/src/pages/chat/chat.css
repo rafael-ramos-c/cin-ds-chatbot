@@ -1,0 +1,24 @@
+.secgrad-chat { max-width: 1080px; margin: 0 auto; padding: 1.5rem; color: var(--foreground, #20232b); }
+.secgrad-chat h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: .5rem; }
+.secgrad-chat header p { margin-bottom: 1rem; }
+.secgrad-notice { border-left: 4px solid #bd1828; background: #f6f7fa; color: #252936; padding: 1rem; border-radius: .35rem; }
+.secgrad-settings { display: flex; flex-wrap: wrap; align-items: end; gap: 1rem; margin: 1.5rem 0; }
+.secgrad-settings label { flex: 1; min-width: 220px; }
+.secgrad-chat label { display: block; font-weight: 600; }
+.secgrad-chat select, .secgrad-chat textarea { display: block; width: 100%; border: 1px solid #a3a8b3; border-radius: .5rem; padding: .7rem; background: white; color: #20232b; margin-top: .4rem; }
+.secgrad-chat button { padding: .7rem 1rem; background: #b51b2b; color: white; border-radius: .5rem; font-weight: 600; cursor: pointer; }
+.secgrad-chat button:disabled { opacity: .5; cursor: default; }
+.secgrad-chat :focus-visible { outline: 3px solid #3762b7; outline-offset: 3px; }
+.secgrad-message { padding: 1rem; margin: 1rem 0; border: 1px solid #d9dde5; border-radius: .7rem; overflow-wrap: anywhere; }
+.secgrad-message.user { background: #f1f3f7; color: #20232b; }
+.secgrad-answer, .secgrad-excerpt { white-space: pre-wrap; line-height: 1.65; margin-top: .6rem; }
+.secgrad-message details { margin-top: .8rem; }
+.secgrad-message summary { cursor: pointer; font-weight: 600; }
+.secgrad-caption { font-size: .85rem; color: #586174; margin: .7rem 0; }
+.secgrad-source { border-top: 1px solid #d9dde5; margin-top: 1rem; padding-top: .8rem; }
+.secgrad-source h2 { font-size: 1rem; font-weight: 700; }
+.secgrad-email { white-space: pre-wrap; overflow-wrap: anywhere; background: #f5f6f8; color: #20232b; padding: 1rem; margin-top: .7rem; }
+.secgrad-error { color: #a21122; background: #fff0f1; padding: 1rem; border-radius: .5rem; }
+.secgrad-input { margin-top: 1rem; }
+.secgrad-input button { margin-top: .7rem; }
+@media (max-width: 600px) { .secgrad-chat { padding: 1rem; } .secgrad-settings label { min-width: 100%; } }

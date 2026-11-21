@@ -17,6 +17,7 @@ from pypdf import PdfReader
 from src.config import CHROMA_PATH, COLLECTION_NAME, DATA_DIR, PROJECT_ROOT
 from src.ingest import text_splitter
 from src.metadata_utils import CURSOS, construir_filtro, enriquecer_metadados
+from src.pdf_text import normalizar_texto_pdf
 from src.retriever import buscar_contexto
 from src.validate_catalog import validar_catalogo
 
@@ -37,7 +38,7 @@ def auditar():
         path = DATA_DIR / item['arquivo']
         print(f'Auditando {path.name}', flush=True)
         if path.suffix.lower() == '.pdf':
-            paginas = [page.extract_text() or '' for page in PdfReader(path).pages]
+            paginas = [normalizar_texto_pdf(page.extract_text() or '') for page in PdfReader(path).pages]
         else:
             try:
                 paginas = [path.read_text(encoding='utf-8')]

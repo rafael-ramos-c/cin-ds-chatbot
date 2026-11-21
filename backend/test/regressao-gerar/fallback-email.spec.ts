@@ -8,8 +8,17 @@ const service = new FallbackService();
 describe('US-03 — rascunho de e-mail', () => {
   it('compõe o rascunho completo e remove espaços externos dos campos', () => {
     const resultado = service.gerarEmail({
-      consulta: { pergunta: 'Como encaminhar meu pedido?', curso: ' Computação ', perfil: ' 2023 ' },
-      dados_email: { nome: ' Ana ', matricula: ' 12345 ', assunto: ' Apoio pedagógico ', resumo: ' Preciso de apoio. ' },
+      consulta: {
+        pergunta: 'Como encaminhar meu pedido?',
+        curso: ' Computação ',
+        perfil: ' 2023 ',
+      },
+      dados_email: {
+        nome: ' Ana ',
+        matricula: ' 12345 ',
+        assunto: ' Apoio pedagógico ',
+        resumo: ' Preciso de apoio. ',
+      },
     });
     expect(resultado).toEqual({
       setor_sugerido: 'NEAP',
@@ -36,7 +45,9 @@ Ana`,
   });
 
   it('usa marcadores de preenchimento e a pergunta como assunto quando os dados são omitidos', () => {
-    expect(service.gerarEmail({ consulta: { pergunta: 'Como solicitar uma declaração?' } })).toEqual({
+    expect(
+      service.gerarEmail({ consulta: { pergunta: 'Como solicitar uma declaração?' } }),
+    ).toEqual({
       setor_sugerido: 'SecGrad',
       template_email: `Assunto: Como solicitar uma declaração?
 
@@ -67,7 +78,13 @@ Atenciosamente,
       dados_email: { nome: ' ', matricula: '', assunto: '\n', resumo: '\t ' },
     });
     expect(comBrancos).toEqual(service.gerarEmail({ consulta: { pergunta: consulta.pergunta } }));
-    for (const marcador of ['[Nome]', '[Matrícula]', '[Curso]', '[Perfil curricular]', '[Resumo da situação]']) {
+    for (const marcador of [
+      '[Nome]',
+      '[Matrícula]',
+      '[Curso]',
+      '[Perfil curricular]',
+      '[Resumo da situação]',
+    ]) {
       expect(comBrancos.template_email).toContain(marcador);
     }
     expect(comBrancos.template_email).not.toMatch(/undefined|null/);
@@ -102,22 +119,32 @@ Atenciosamente,
     expect(service.identificarSetor(assunto)).toBe(setor);
   });
 
-  it.each([undefined, {}, { nome: '', matricula: '123', assunto: 'Pedido', resumo: 'Resumo' }])(
-    'aceita dados opcionais válidos (%j)',
-    (dados) => {
-      expect(() => service.validarDadosEmail(dados)).not.toThrow();
-    },
-  );
-
-  it.each([null, [], 'Ana', 10, true])('rejeita estrutura inválida de dados (%j)', (dados) => {
-    expect(() => service.validarDadosEmail(dados as unknown as DadosEmailFallback)).toThrow(BadRequestException);
-    expect(() => service.gerarEmail({
-      consulta: { pergunta: 'Ajuda?' },
-      dados_email: dados as unknown as DadosEmailFallback,
-    })).toThrow(BadRequestException);
+  it.each([
+    undefined,
+    {},
+    { nome: '', matricula: '123', assunto: 'Pedido', resumo: 'Resumo' },
+  ])('aceita dados opcionais válidos (%j)', (dados) => {
+    expect(() => service.validarDadosEmail(dados)).not.toThrow();
   });
 
-  it.each(['nome', 'matricula', 'assunto', 'resumo'] as const)('rejeita valor não textual no campo %s', (campo) => {
+  it.each([null, [], 'Ana', 10, true])('rejeita estrutura inválida de dados (%j)', (dados) => {
+    expect(() => service.validarDadosEmail(dados as unknown as DadosEmailFallback)).toThrow(
+      BadRequestException,
+    );
+    expect(() =>
+      service.gerarEmail({
+        consulta: { pergunta: 'Ajuda?' },
+        dados_email: dados as unknown as DadosEmailFallback,
+      }),
+    ).toThrow(BadRequestException);
+  });
+
+  it.each([
+    'nome',
+    'matricula',
+    'assunto',
+    'resumo',
+  ] as const)('rejeita valor não textual no campo %s', (campo) => {
     for (const valor of [null, 42, false, [], {}]) {
       const dados = { [campo]: valor } as unknown as DadosEmailFallback;
       expect(() => service.validarDadosEmail(dados)).toThrow(BadRequestException);

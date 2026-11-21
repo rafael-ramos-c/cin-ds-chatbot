@@ -1,0 +1,383 @@
+
+> secgrad@1.0.0 lint
+> biome check src/ test/
+
+src\ai-service\ai-service.service.spec.ts:37:28 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+
+    35 │       resultado,
+    36 │     );
+  > 37 │     const [url, options] = fetchMock.mock.calls[0]!;
+       │                            ^^^^^^^^^^^^^^^^^^^^^^^^
+    38 │     expect(url).toBeInstanceOf(URL);
+    39 │     expect((url as URL).href).toBe('http://busca.test:8000/api/v1/buscar');
+
+
+src\ai-service\ai-service.service.spec.ts:45:23 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+
+    43 │       headers: { 'Content-Type': 'application/json' },
+    44 │     });
+  > 45 │     expect(JSON.parse(options!.body as string)).toEqual({
+       │                       ^^^^^^^^
+    46 │       pergunta: 'Como solicitar dispensa?',
+    47 │       curso: 'Geral',
+
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+
+     43  43 │         headers: { 'Content-Type': 'application/json' },
+     44  44 │       });
+     45     │ - ····expect(JSON.parse(options!.body·as·string)).toEqual({
+         45 │ + ····expect(JSON.parse(options?.body·as·string)).toEqual({
+     46  46 │         pergunta: 'Como solicitar dispensa?',
+     47  47 │         curso: 'Geral',
+
+
+src\ai-service\ai-service.service.spec.ts:51:12 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+
+    49 │       top_k: 3,
+    50 │     });
+  > 51 │     expect(options!.signal).toBeInstanceOf(AbortSignal);
+       │            ^^^^^^^^
+    52 │   });
+    53 │
+
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+
+     49  49 │         top_k: 3,
+     50  50 │       });
+     51     │ - ····expect(options!.signal).toBeInstanceOf(AbortSignal);
+         51 │ + ····expect(options?.signal).toBeInstanceOf(AbortSignal);
+     52  52 │     });
+     53  53 │
+
+
+src\ai-service\ai-service.service.spec.ts:64:23 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+
+    62 │     };
+    63 │     expect(await service.buscarContexto(consulta)).toEqual(vazio);
+  > 64 │     expect(JSON.parse(fetchMock.mock.calls[0]![1]!.body as string)).toEqual(consulta);
+       │                       ^^^^^^^^^^^^^^^^^^^^^^^^
+    65 │   });
+    66 │
+
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+
+     62  62 │       };
+     63  63 │       expect(await service.buscarContexto(consulta)).toEqual(vazio);
+     64     │ - ····expect(JSON.parse(fetchMock.mock.calls[0]![1]!.body·as·string)).toEqual(consulta);
+         64 │ + ····expect(JSON.parse(fetchMock.mock.calls[0]?.[1]!.body·as·string)).toEqual(consulta);
+     65  65 │     });
+     66  66 │
+
+
+src\ai-service\ai-service.service.spec.ts:64:23 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+
+    62 │     };
+    63 │     expect(await service.buscarContexto(consulta)).toEqual(vazio);
+  > 64 │     expect(JSON.parse(fetchMock.mock.calls[0]![1]!.body as string)).toEqual(consulta);
+       │                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    65 │   });
+    66 │
+
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+
+     62  62 │       };
+     63  63 │       expect(await service.buscarContexto(consulta)).toEqual(vazio);
+     64     │ - ····expect(JSON.parse(fetchMock.mock.calls[0]![1]!.body·as·string)).toEqual(consulta);
+         64 │ + ····expect(JSON.parse(fetchMock.mock.calls[0]![1]?.body·as·string)).toEqual(consulta);
+     65  65 │     });
+     66  66 │
+
+
+src\ai-service\ai-service.service.spec.ts:102:13 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+
+    100 │     fetchMock.mockResolvedValue(Response.json(resultado));
+    101 │     await expect(service.buscarContexto({ pergunta: 'Teste' })).resolves.toEqual(resultado);
+  > 102 │     expect((fetchMock.mock.calls[0]![0] as URL).href).toBe(new URL('/api/v1/buscar', origin).href);
+        │             ^^^^^^^^^^^^^^^^^^^^^^^^
+    103 │   });
+    104 │
+
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+
+    100 100 │       fetchMock.mockResolvedValue(Response.json(resultado));
+    101 101 │       await expect(service.buscarContexto({ pergunta: 'Teste' })).resolves.toEqual(resultado);
+    102     │ - ····expect((fetchMock.mock.calls[0]![0]·as·URL).href).toBe(new·URL('/api/v1/buscar',·origin).href);
+        102 │ + ····expect((fetchMock.mock.calls[0]?.[0]·as·URL).href).toBe(new·URL('/api/v1/buscar',·origin).href);
+    103 103 │     });
+    104 104 │
+
+
+src\ai-service\generation.service.spec.ts:32:25 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+
+    30 │     const timeout = vi.spyOn(AbortSignal, 'timeout');
+    31 │     await expect(service.gerarResposta('P', 'C')).resolves.toBe('Resposta documental.');
+  > 32 │     const [url, init] = fetchMock.mock.calls[0]!;
+       │                         ^^^^^^^^^^^^^^^^^^^^^^^^
+    33 │     expect(url).toBeInstanceOf(URL);
+    34 │     expect((url as URL).href).toBe('http://ia.test:8000/api/v1/gerar');
+
+
+src\ai-service\generation.service.spec.ts:43:23 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+
+    41 │       },
+    42 │     });
+  > 43 │     expect(JSON.parse(init!.body as string)).toEqual({
+       │                       ^^^^^
+    44 │       pergunta: 'P',
+    45 │       contexto: 'C',
+
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+
+     41  41 │         },
+     42  42 │       });
+     43     │ - ····expect(JSON.parse(init!.body·as·string)).toEqual({
+         43 │ + ····expect(JSON.parse(init?.body·as·string)).toEqual({
+     44  44 │         pergunta: 'P',
+     45  45 │         contexto: 'C',
+
+
+test\app.e2e-spec.ts:66:28 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+
+    64 │       });
+    65 │     expect(fetchMock).toHaveBeenCalledTimes(2);
+  > 66 │     const [url, options] = fetchMock.mock.calls[0]!;
+       │                            ^^^^^^^^^^^^^^^^^^^^^^^^
+    67 │     expect(url).toBeInstanceOf(URL);
+    68 │     expect((url as URL).href).toBe('http://busca.test:8000/api/v1/buscar');
+
+
+test\app.e2e-spec.ts:70:23 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+
+    68 │     expect((url as URL).href).toBe('http://busca.test:8000/api/v1/buscar');
+    69 │     expect(options?.method).toBe('POST');
+  > 70 │     expect(JSON.parse(options!.body as string)).toEqual(consulta);
+       │                       ^^^^^^^^
+    71 │     const [gerarUrl, gerarInit] = fetchMock.mock.calls[1]!;
+    72 │     expect((gerarUrl as URL).pathname).toBe('/api/v1/gerar');
+
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+
+     68  68 │       expect((url as URL).href).toBe('http://busca.test:8000/api/v1/buscar');
+     69  69 │       expect(options?.method).toBe('POST');
+     70     │ - ····expect(JSON.parse(options!.body·as·string)).toEqual(consulta);
+         70 │ + ····expect(JSON.parse(options?.body·as·string)).toEqual(consulta);
+     71  71 │       const [gerarUrl, gerarInit] = fetchMock.mock.calls[1]!;
+     72  72 │       expect((gerarUrl as URL).pathname).toBe('/api/v1/gerar');
+
+
+test\app.e2e-spec.ts:71:35 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+
+    69 │     expect(options?.method).toBe('POST');
+    70 │     expect(JSON.parse(options!.body as string)).toEqual(consulta);
+  > 71 │     const [gerarUrl, gerarInit] = fetchMock.mock.calls[1]!;
+       │                                   ^^^^^^^^^^^^^^^^^^^^^^^^
+    72 │     expect((gerarUrl as URL).pathname).toBe('/api/v1/gerar');
+    73 │     expect(JSON.parse(gerarInit!.body as string)).toEqual({
+
+
+test\app.e2e-spec.ts:73:23 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+
+    71 │     const [gerarUrl, gerarInit] = fetchMock.mock.calls[1]!;
+    72 │     expect((gerarUrl as URL).pathname).toBe('/api/v1/gerar');
+  > 73 │     expect(JSON.parse(gerarInit!.body as string)).toEqual({
+       │                       ^^^^^^^^^^
+    74 │       pergunta: consulta.pergunta,
+    75 │       contexto: resultado.contexto,
+
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+
+     71  71 │       const [gerarUrl, gerarInit] = fetchMock.mock.calls[1]!;
+     72  72 │       expect((gerarUrl as URL).pathname).toBe('/api/v1/gerar');
+     73     │ - ····expect(JSON.parse(gerarInit!.body·as·string)).toEqual({
+         73 │ + ····expect(JSON.parse(gerarInit?.body·as·string)).toEqual({
+     74  74 │         pergunta: consulta.pergunta,
+     75  75 │         contexto: resultado.contexto,
+
+
+test\app.e2e-spec.ts:123:23 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+
+    121 │       .send({ consulta: { pergunta: 'Dispensa?' } })
+    122 │       .expect(201);
+  > 123 │     expect(JSON.parse(fetchMock.mock.calls[0]![1]!.body as string)).toEqual({
+        │                       ^^^^^^^^^^^^^^^^^^^^^^^^
+    124 │       pergunta: 'Dispensa?',
+    125 │       curso: 'Geral',
+
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+
+    121 121 │         .send({ consulta: { pergunta: 'Dispensa?' } })
+    122 122 │         .expect(201);
+    123     │ - ····expect(JSON.parse(fetchMock.mock.calls[0]![1]!.body·as·string)).toEqual({
+        123 │ + ····expect(JSON.parse(fetchMock.mock.calls[0]?.[1]!.body·as·string)).toEqual({
+    124 124 │         pergunta: 'Dispensa?',
+    125 125 │         curso: 'Geral',
+
+
+test\app.e2e-spec.ts:123:23 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+
+    121 │       .send({ consulta: { pergunta: 'Dispensa?' } })
+    122 │       .expect(201);
+  > 123 │     expect(JSON.parse(fetchMock.mock.calls[0]![1]!.body as string)).toEqual({
+        │                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    124 │       pergunta: 'Dispensa?',
+    125 │       curso: 'Geral',
+
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+
+    121 121 │         .send({ consulta: { pergunta: 'Dispensa?' } })
+    122 122 │         .expect(201);
+    123     │ - ····expect(JSON.parse(fetchMock.mock.calls[0]![1]!.body·as·string)).toEqual({
+        123 │ + ····expect(JSON.parse(fetchMock.mock.calls[0]![1]?.body·as·string)).toEqual({
+    124 124 │         pergunta: 'Dispensa?',
+    125 125 │         curso: 'Geral',
+
+
+test\app.e2e-spec.ts:159:23 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+
+    157 │     expect(response.body.template_email).toContain(consulta.pergunta);
+    158 │     expect(response.body.template_email).toContain('Preciso de orientação.');
+  > 159 │     expect(JSON.parse(fetchMock.mock.calls[0]![1]!.body as string)).toEqual(consulta);
+        │                       ^^^^^^^^^^^^^^^^^^^^^^^^
+    160 │   });
+    161 │
+
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+
+    157 157 │       expect(response.body.template_email).toContain(consulta.pergunta);
+    158 158 │       expect(response.body.template_email).toContain('Preciso de orientação.');
+    159     │ - ····expect(JSON.parse(fetchMock.mock.calls[0]![1]!.body·as·string)).toEqual(consulta);
+        159 │ + ····expect(JSON.parse(fetchMock.mock.calls[0]?.[1]!.body·as·string)).toEqual(consulta);
+    160 160 │     });
+    161 161 │
+
+
+test\app.e2e-spec.ts:159:23 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+
+    157 │     expect(response.body.template_email).toContain(consulta.pergunta);
+    158 │     expect(response.body.template_email).toContain('Preciso de orientação.');
+  > 159 │     expect(JSON.parse(fetchMock.mock.calls[0]![1]!.body as string)).toEqual(consulta);
+        │                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    160 │   });
+    161 │
+
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+
+    157 157 │       expect(response.body.template_email).toContain(consulta.pergunta);
+    158 158 │       expect(response.body.template_email).toContain('Preciso de orientação.');
+    159     │ - ····expect(JSON.parse(fetchMock.mock.calls[0]![1]!.body·as·string)).toEqual(consulta);
+        159 │ + ····expect(JSON.parse(fetchMock.mock.calls[0]![1]?.body·as·string)).toEqual(consulta);
+    160 160 │     });
+    161 161 │
+
+
+test\generation-integration.spec.ts:114:23 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+
+    112 │     expect((buscarUrl as URL).pathname).toBe('/api/v1/buscar');
+    113 │     expect((gerarUrl as URL).pathname).toBe('/api/v1/gerar');
+  > 114 │     expect(JSON.parse(buscarInit!.body as string)).toEqual(consulta);
+        │                       ^^^^^^^^^^^
+    115 │     expect(JSON.parse(gerarInit!.body as string)).toEqual({
+    116 │       pergunta: consulta.pergunta,
+
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+
+    112 112 │       expect((buscarUrl as URL).pathname).toBe('/api/v1/buscar');
+    113 113 │       expect((gerarUrl as URL).pathname).toBe('/api/v1/gerar');
+    114     │ - ····expect(JSON.parse(buscarInit!.body·as·string)).toEqual(consulta);
+        114 │ + ····expect(JSON.parse(buscarInit?.body·as·string)).toEqual(consulta);
+    115 115 │       expect(JSON.parse(gerarInit!.body as string)).toEqual({
+    116 116 │         pergunta: consulta.pergunta,
+
+
+test\regressao-gerar\conversa-http.spec.ts:168:11 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+
+    166 │       const aguardarAbort = () =>
+    167 │         new Promise<never>((_resolve, reject) => {
+  > 168 │           signal!.addEventListener('abort', () => reject(new Error(detalheInterno)), {
+        │           ^^^^^^^
+    169 │             once: true,
+    170 │           });
+
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+
+    166 166 │         const aguardarAbort = () =>
+    167 167 │           new Promise<never>((_resolve, reject) => {
+    168     │ - ··········signal!.addEventListener('abort',·()·=>·reject(new·Error(detalheInterno)),·{
+        168 │ + ··········signal?.addEventListener('abort',·()·=>·reject(new·Error(detalheInterno)),·{
+    169 169 │               once: true,
+    170 170 │             });
+
+
+test\regressao-gerar\conversa-http.spec.ts:291:23 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+
+    289 │     expect(String(url)).toBe('http://busca.invalid/api/v1/buscar');
+    290 │     expect(init).toMatchObject({ method: 'POST', redirect: 'error' });
+  > 291 │     expect(JSON.parse(init!.body as string)).toEqual({
+        │                       ^^^^^
+    292 │       pergunta,
+    293 │       curso: 'Geral',
+
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+
+    289 289 │       expect(String(url)).toBe('http://busca.invalid/api/v1/buscar');
+    290 290 │       expect(init).toMatchObject({ method: 'POST', redirect: 'error' });
+    291     │ - ····expect(JSON.parse(init!.body·as·string)).toEqual({
+        291 │ + ····expect(JSON.parse(init?.body·as·string)).toEqual({
+    292 292 │         pergunta,
+    293 293 │         curso: 'Geral',
+
+
+test\regressao-gerar\conversa-http.spec.ts:317:18 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+
+    315 │     expect(JSON.stringify(body)).not.toContain(detalheInterno);
+    316 │     expect(fetchMock).toHaveBeenCalledTimes(1);
+  > 317 │     const init = fetchMock.mock.calls[0][1]!;
+        │                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    318 │     expect(JSON.parse(init.body as string)).toEqual(consulta);
+    319 │     for (const dado of Object.values(dados_email)) expect(init.body).not.toContain(dado);
+
+
+The number of diagnostics exceeds the limit allowed. Use --max-diagnostics to increase it.
+Diagnostics not shown: 4.
+Checked 63 files in 61ms. No fixes applied.
+Found 24 warnings.

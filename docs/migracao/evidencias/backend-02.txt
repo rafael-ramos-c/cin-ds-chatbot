@@ -1,0 +1,67 @@
+
+> secgrad@1.0.0 test:cov
+> vitest run --coverage
+
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - ESM syntax in a file loaded as CommonJS (vitest.config.ts:1:1). Use a `.mjs` extension or set `"type": "module"` in the closest package.json
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+
+ RUN  v4.1.12 C:/Users/Rafael/OneDrive/RafaelASUS/ProjetoDS/codigo/cin-ds-chatbot/backend
+      Coverage enabled with v8
+
+[Nest] 9720  - 12/11/2026, 14:49:31   DEBUG [KeycloakIdentitySource] Falha ao verificar o token: "exp" claim timestamp check failed
+[Nest] 9720  - 12/11/2026, 14:49:31   DEBUG [KeycloakIdentitySource] Falha ao verificar o token: unexpected "iss" claim value
+[Nest] 9720  - 12/11/2026, 14:49:31   DEBUG [KeycloakIdentitySource] Falha ao verificar o token: signature verification failed
+[Nest] 26000  - 12/11/2026, 14:49:32   ERROR [HttpExceptionFilter] undefined /api/v1/tasks -> 500 INTERNAL_ERROR
+Error: boom
+    at C:/Users/Rafael/OneDrive/RafaelASUS/ProjetoDS/codigo/cin-ds-chatbot/backend/src/common/filters/http-exception.filter.spec.ts:82:18
+    at file:///C:/Users/Rafael/OneDrive/RafaelASUS/ProjetoDS/codigo/cin-ds-chatbot/backend/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11
+    at file:///C:/Users/Rafael/OneDrive/RafaelASUS/ProjetoDS/codigo/cin-ds-chatbot/backend/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26
+    at file:///C:/Users/Rafael/OneDrive/RafaelASUS/ProjetoDS/codigo/cin-ds-chatbot/backend/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20
+    at new Promise (<anonymous>)
+    at runWithCancel (file:///C:/Users/Rafael/OneDrive/RafaelASUS/ProjetoDS/codigo/cin-ds-chatbot/backend/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)
+    at file:///C:/Users/Rafael/OneDrive/RafaelASUS/ProjetoDS/codigo/cin-ds-chatbot/backend/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20
+    at new Promise (<anonymous>)
+    at runWithTimeout (file:///C:/Users/Rafael/OneDrive/RafaelASUS/ProjetoDS/codigo/cin-ds-chatbot/backend/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)
+    at file:///C:/Users/Rafael/OneDrive/RafaelASUS/ProjetoDS/codigo/cin-ds-chatbot/backend/node_modules/@vitest/runner/dist/chunk-artifact.js:2956:64
+
+ Test Files  14 passed (14)
+      Tests  293 passed (293)
+   Start at  14:49:29
+   Duration  3.80s (transform 1.34s, setup 0ms, import 20.40s, tests 1.51s, environment 2ms)
+
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+-------------------|---------|----------|---------|---------|-------------------
+All files          |   92.21 |    85.71 |    90.9 |   93.33 |
+ src/ai-service    |   97.05 |      100 |   81.81 |     100 |
+  ...ce.service.ts |   97.05 |      100 |   81.81 |     100 |
+ ...uth/decorators |   33.33 |      100 |       0 |      40 |
+  ....decorator.ts |       0 |      100 |       0 |       0 | 5-8
+  ....decorator.ts |   66.66 |      100 |       0 |     100 |
+ ...on/auth/guards |   72.72 |    41.66 |     100 |   72.72 |
+  auth.guard.ts    |   91.66 |       75 |     100 |   91.66 | 36
+  roles.guard.ts   |      50 |       25 |     100 |      50 | 22-29
+ .../auth/identity |   94.23 |    80.55 |     100 |      96 |
+  ...ity-source.ts |   94.11 |    80.55 |     100 |   95.91 | 57,134
+ ...mon/exceptions |     100 |       75 |     100 |     100 |
+  ....exception.ts |     100 |       50 |     100 |     100 | 9
+ ...common/filters |   90.24 |       70 |     100 |   90.24 |
+  ...ion.filter.ts |   90.24 |       70 |     100 |   90.24 | 116,123,127,131
+ src/config        |   81.25 |    68.62 |     100 |   80.64 |
+  ...ase.config.ts |    90.9 |    41.66 |     100 |    90.9 | 8
+  ...validation.ts |   73.68 |    78.94 |     100 |   72.22 | 12,19-21,31,36
+  ...oak.config.ts |     100 |    58.33 |     100 |     100 | 4-7,9-11
+ ...s/conversation |     100 |       90 |     100 |     100 |
+  ...on.service.ts |     100 |       90 |     100 |     100 | 19,42,84
+ ...modules/health |   66.66 |      100 |   33.33 |      80 |
+  ...controller.ts |   66.66 |      100 |   33.33 |      80 | 23
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 92.21% ( 320/347 )
+Branches     : 85.71% ( 258/301 )
+Functions    : 90.9% ( 60/66 )
+Lines        : 93.33% ( 308/330 )
+================================================================================

@@ -1,0 +1,39 @@
+[
+  {
+    "command": [
+      "run",
+      "test:cov"
+    ],
+    "exit_code": 0,
+    "seconds": 10.95,
+    "log": "frontend-01.txt"
+  },
+  {
+    "command": [
+      "run",
+      "lint"
+    ],
+    "exit_code": 0,
+    "seconds": 3.64,
+    "log": "frontend-02.txt"
+  },
+  {
+    "command": [
+      "run",
+      "build"
+    ],
+    "exit_code": 0,
+    "seconds": 10.88,
+    "log": "frontend-03.txt"
+  },
+  {
+    "command": [
+      "audit",
+      "--omit=dev",
+      "--json"
+    ],
+    "exit_code": 0,
+    "seconds": 1.63,
+    "log": "frontend-04.txt"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-12",
+  "project_id": "secgrad",
+  "sources": {
+    "cincoders-reactjs-boilerplate-main": {
+      "files": 150,
+      "tree_sha256": "ab0b82dee1bfcaa4ebf263fe9b3bc4152061851a9884fbdb97ab7ef85d94e8a2"
+    },
+    "cincoders-nestjs-boilerplate-main": {
+      "files": 141,
+      "tree_sha256": "3628541fd42e513e48650ddbecfc8da1743565622a0c1fe5b106fd9f727320cf"
+    }
+  },
+  "original_revision": "cfad132",
+  "generation": "Templates fornecidos pelo usuário; marcadores substituídos em cópia isolada; setup.sh não executado; funcionalidades próprias portadas."
+}

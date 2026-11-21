@@ -1,11 +1,8 @@
 import { BadRequestException, Inject, Injectable } from '@nestjs/common';
-import { AiService } from '../ai-service/ai-service.service.js';
-import { FALLBACK_DISTANCE_THRESHOLD } from './fallback.config.js';
-import { FallbackService } from './fallback.service.js';
-import type {
-  OrchestrationRequest,
-  OrchestrationResult,
-} from './orchestration.types.js';
+import { AiService } from '../ai-service/ai-service.service';
+import { FALLBACK_DISTANCE_THRESHOLD } from './fallback.config';
+import { FallbackService } from './fallback.service';
+import type { OrchestrationRequest, OrchestrationResult } from './orchestration.types';
 
 @Injectable()
 export class OrchestrationService {
