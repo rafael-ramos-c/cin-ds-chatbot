@@ -1,177 +1,149 @@
-# 🎓 Chatbot SecGrad — Assistente de Orientação Acadêmica
+# Chatbot SecGrad — Assistente de Orientação Acadêmica
 
-> **Estado atual:** protótipo Streamlit, orquestrador NestJS e serviço FastAPI/ChromaDB. A rota pública é `POST /api/v1/conversa`. A geração real por LLM ainda não está implementada: o modo `mock` retorna somente um aviso explícito. A UI prioriza a resposta (incluindo o aviso de simulação) e apresenta trechos literais associados às fontes; não há resposta de LLM real nesta versão. Validação da ingestão e pendências atuais: [PPCs e integração](docs/testes/validacao-ppcs/README.md).
+Frontend React 18/Vite/Cinnamon e backend NestJS 11/Node 24 adaptados dos dois boilerplates CInCoders fornecidos à equipe. O serviço Python FastAPI/ChromaDB mantém a recuperação documental.
 
+**Estado real:** código migrado e validado por testes e builds locais. O conjunto Docker/PostgreSQL/Keycloak ainda precisa ser executado em máquina com Docker. O realm incluído é de desenvolvimento; LDAP institucional depende da configuração do CIn. A geração pode usar a API da OpenAI quando configurada. A integração tem testes locais com respostas simuladas do provedor e aguarda validação com uma conta autorizada.
 
-## Sprint 3 - material de entrega
+## Arquitetura
 
-[Índice da entrega e ressalvas](docs/ENTREGA-SPRINT3.md). Testes e refatorações documentados não significam precisão semântica total: o benchmark mantém a calibração do fallback como dívida aberta.
+```text
+React + Cinnamon → Keycloak (login)
+       │ Bearer token
+       ▼
+NestJS /secgrad/api/v1/conversa → FastAPI → ChromaDB + documentos
+       │
+       └→ PostgreSQL/Prisma (base do template e verificação de saúde)
+```
 
-### Windows / PowerShell: evitar o erro 503 de configuracao
+As perguntas não são persistidas no PostgreSQL nesta versão. A conversa fica no estado da tela e é descartada ao limpar, mudar curso/perfil ou recarregar. O PostgreSQL mantém a infraestrutura Prisma do template; as tabelas de tarefas do exemplo não estão expostas como funcionalidade do chatbot.
 
-Na raiz do repositorio, use tres terminais separados. Se os servicos ja estiverem
-rodando, pare-os com Ctrl+C antes de reiniciar; nao abra duas instancias na mesma porta.
+## Executar no Windows — forma recomendada
 
-**Terminal 1 — FastAPI**, usando o ambiente Python do projeto e a base ja ingerida:
+Pré-requisitos: Git, Docker Desktop com engine Linux/Compose V2 ativo; Node.js 24 para testes e desenvolvimento fora dos contêineres. O ambiente Python local existente pode continuar sendo usado para os testes de IA.
+
+Na raiz do repositório, no PowerShell:
+
+```powershell
+Copy-Item .env.example .env
+docker compose up -d --build ai-service
+docker compose exec ai-service python -m src.validate_catalog
+docker compose exec ai-service python -m src.ingest_batch
+docker compose up -d --build
+docker compose ps
+```
+
+Só copie o exemplo se ainda não existir `.env`. Não sobrescreva configurações pessoais/institucionais. A primeira ingestão pode baixar o modelo de embeddings e demorar. O banco vetorial local antigo não é automaticamente copiado para o volume Docker: a ingestão acima cria a base do contêiner com o catálogo atual.
+
+Abra **http://localhost:5173/secgrad/**. Use `user` / `user` para o usuário de desenvolvimento ou `admin` / `admin` para o administrador do realm local. Essas contas são fornecidas pelo template e **não são contas LDAP**. A senha administrativa do console do Keycloak vem de `KEYCLOAK_ADMIN_PASSWORD` no `.env` (console em http://localhost:8080/auth).
+
+Um comando auxiliar equivalente é `./scripts/iniciar-templates.ps1`; ele verifica se Docker está disponível e só ingere documentos quando solicitado com `-Ingerir`.
+
+Para parar: `docker compose down`. Esse comando preserva volumes. Não use `down -v` se quiser manter bancos e índices.
+
+## Desenvolvimento com terminais separados
+
+Primeiro, configure `.env` na raiz e inicie os bancos/Keycloak:
+
+```powershell
+docker compose up -d postgres keycloak
+```
+
+Terminal 1, raiz do projeto, usando o Python já instalado:
 
 ```powershell
 .\venv\Scripts\Activate.ps1
 cd ai-service
 $env:SECGRAD_GENERATION_MODE = "mock"
-python -m uvicorn main:app --reload --port 8000
+python -m uvicorn main:app --port 8000 --host 127.0.0.1
 ```
 
-`mock` e uma simulacao explicita de integracao, nao uma LLM real nem uma resposta
-academica validada. Sem esse modo, a geracao com contexto retorna 503. Nao use
-resultados simulados como prova de qualidade das respostas no benchmark.
+Em uma instalação nova, crie um ambiente Python e instale `ai-service/requirements.txt`. Caso a base local ainda não exista, execute `python -m src.ingest_batch` dentro de `ai-service` antes de iniciar o serviço.
 
-**Terminal 2 — NestJS**, na raiz (Node.js 24 e `npm ci` em `backend/` previamente instalados):
+Terminal 2:
 
 ```powershell
-.\backend\scripts\iniciar-local.ps1
+cd backend
+Copy-Item .env.example .env
+npm.cmd ci
+npm.cmd run prisma:generate
+npm.cmd run migration:run
+npm.cmd run build
+npm.cmd start
 ```
 
-Esse comando configura `AI_SERVICE_URL=http://127.0.0.1:8000` e timeout de 30000 ms
-somente quando as variaveis estiverem ausentes, valida a configuracao e executa
-`npm run start:dev` em `backend/`. Valores ja definidos sao preservados; uma URL
-invalida gera orientacao antes de iniciar. Nao altera o padrao de producao nem
-carrega `.env` automaticamente. Para conferir sem iniciar: acrescente
-`-VerificarConfiguracao`. Se precisar mudar o endereco neste terminal:
+Terminal 3:
 
 ```powershell
-$env:AI_SERVICE_URL = "http://127.0.0.1:8000"
-.\backend\scripts\iniciar-local.ps1
+cd frontend
+Copy-Item .env.example .env
+npm.cmd ci
+npm.cmd run dev
 ```
 
-**Terminal 3 — interface**, na raiz:
+As credenciais e URLs dos ambientes devem coincidir. O `.env.example` do backend usa a mesma configuração local padrão do Compose. Se alterar senha/realm/cliente no `.env` da raiz, ajuste também os arquivos dos serviços. Depois de editar TypeScript do backend, reexecute o build antes de iniciar; não use o antigo comando Streamlit como interface oficial.
+
+## Testes
 
 ```powershell
-.\venv\Scripts\Activate.ps1
-python -m streamlit run app.py
+cd backend
+npm.cmd ci
+npm.cmd run prisma:generate
+npm.cmd test
+npm.cmd run test:e2e
+npm.cmd run lint
+npm.cmd run build
+cd ..\frontend
+npm.cmd ci
+npm.cmd test
+npm.cmd run lint
+npm.cmd run build
+cd ..\ai-service
+..\venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-As variaveis de um terminal nao sao compartilhadas com os demais. A mensagem
-`Servico de busca nao configurado` indica configuracao ausente/invalida no
-NestJS: reinicie o terminal 2 pelo roteiro acima. `Servico de busca indisponivel`
-indica que o endereco foi configurado, mas a conexao falhou; confira o terminal 1.
-O venv e necessario para os comandos Python, nao para Git ou NestJS.
+Os testes HTTP de migração usam o bootstrap real, substituindo PostgreSQL e o provedor externo por dependências de teste. A validação de JWT tem teste separado com assinatura RSA e servidor JWKS locais reais. Isso **não substitui** executar o login no Keycloak e a integração institucional.
 
-Validação pós-OCR e pendências conferidas em 09/11: [índice de evidências](docs/testes/validacao-pos-ocr-20261109/README.md).
+As regressões do contrato HTTP anterior ficam identificadas em `backend/test/legacy-support`; não são rotas públicas da aplicação nova. Os testes históricos `backend/test/sprint3-v2` e os relatórios da Sprint 3 foram preservados; são evidências das revisões anteriores, não medições automáticas da migração.
 
-### Execução corrigida do serviço de IA
+## Geração por LLM
 
-Fechamento do backend em 08/11: `AI_SERVICE_URL` explícita é obrigatória e as seis
-regressões de URL foram corrigidas. Comandos PowerShell, resultados correntes e
-limites em [fechamento do backend](docs/testes/fechamento-backend-20261108/README.md).
-Relatórios mais recentes e pendências acadêmicas: [guia dos PDFs](docs/qualidade/ENTREGA-RELATORIOS.md).
+Para gerar respostas localmente sem uma chave de API, instale e inicie o Ollama no Windows e rode `ollama pull qwen3:4b`. No `.env`, defina `SECGRAD_GENERATION_MODE=ollama` e `AI_SERVICE_TIMEOUT_MS=60000`. Com Docker Desktop, o serviço de IA acessa o Ollama em `http://host.docker.internal:11434`. Em execução direta, ele usa `http://127.0.0.1:11434`. Mantenha a API do Ollama no computador local. Depois rode `docker compose up -d --build ai-service backend` e abra o chat. Os volumes e a base indexada são reaproveitados.
 
-Na raiz, instale `python -m pip install -r ai-service/requirements-dev.txt`; entre em `ai-service`, execute `python -m src.validate_catalog`, `python -m src.ingest_batch` e `python -m uvicorn main:app --reload --port 8000`. Swagger: http://localhost:8000/docs. Para testes: `python -m unittest discover -s tests -v`. A dependência `httpx` é usada nos testes HTTP.
+Para usar a API da OpenAI no Compose, configure `SECGRAD_GENERATION_MODE=openai` e `OPENAI_API_KEY` no `.env` local. `SECGRAD_OPENAI_MODEL` é opcional e usa `gpt-5.4-mini` por padrão. Com FastAPI executado diretamente, defina essas variáveis no ambiente do processo. Use uma chave de projeto autorizada, armazenada somente no servidor, e perguntas de teste sem dados pessoais. O modo `mock` continua disponível para testar a integração local.
 
-O catálogo canônico é `data/raw/metadata.json`; `ai-service/data/` é legado. Contagens antigas precisam ser medidas novamente após atualizar os documentos. A geração simulada requer `SECGRAD_GENERATION_MODE=mock` e retorna aviso explícito. Sem configuração retorna 503 para contexto não vazio; contexto vazio retorna `resposta: null`.
+O serviço envia à API a pergunta e os trechos recuperados. O modelo retorna texto e citações literais. Uma resposta sem evidência identificável devolve `null`, que aciona o fallback existente no Nest. Uma falha do provedor devolve `503`. A conferência literal verifica a presença dos trechos e dos links citados. A correção da orientação precisa ser avaliada com perguntas de referência.
 
-Assistente conversacional baseado em **RAG (Retrieval-Augmented Generation)**, desenvolvido para responder a dúvidas frequentes sobre procedimentos acadêmicos, normas e requerimentos da Secretaria de Graduação (SecGrad) do Centro de Informática da Universidade Federal de Pernambuco (**CIn-UFPE**).
+Antes da demonstração, reingira o catálogo para incorporar o endereço oficial de segunda chamada e ensaie uma consulta com fonte, uma pergunta fora do escopo e um caso de indisponibilidade do provedor.
 
-O protótipo separa interface, orquestração e recuperação vetorial. React, autenticação Keycloak/LDAP e orquestração Docker Compose/Swarm são requisitos gerais ainda pendentes de comprovação nesta versão.
+## Contrato e comportamento
 
----
+- Rota autenticada: `POST /secgrad/api/v1/conversa`.
+- Sucesso: envelope do template com `statusCode`, `timestamp`, `path`, `data`.
+- Erros: Problem Details; 401/403 para identidade/permissão, 422 para entrada inválida, 502/503/504 para falhas técnicas externas.
+- Campos do chatbot ficam em `data`: `resposta`, `fontes`, `contexto`, `distancia_minima`, `fallback_acionado` e, quando necessário, `template_email`/`setor_sugerido`.
+- Cada fonte inclui arquivo, página, curso e trecho associado. Formatos não reconhecidos não recebem citação inventada.
+- `historico` opcional recebe até dez perguntas anteriores; resolve apenas referências limitadas a requerimentos de segunda chamada, não uma memória conversacional geral.
+- Limiar `0.8` permanece provisório; distância vetorial não é probabilidade de acerto.
+- Simulação não responde fatos acadêmicos. Trechos recuperados podem ser irrelevantes; ausência de link não autoriza inventar endereço.
+- `/api/v1/ingestar` existe somente no serviço interno de IA; não há proxy público de ingestão no NestJS.
 
-## 🎯 Escopo do MVP — Sprint 2
+Exemplo de corpo (com Bearer válido no cabeçalho):
 
-O Produto Mínimo Viável (MVP) contempla as seguintes funcionalidades:
-
-- **Requerimentos Acadêmicos:** orientações sobre dispensa de disciplinas, segunda chamada de prova, revisão de nota e requerimentos gerais da secretaria.
-
-- **Normas de Estágio:** consulta às regras de estágio supervisionado por curso (Ciência da Computação, Engenharia da Computação e Sistemas de Informação) e perfis curriculares.
-
-- **Respostas Auditáveis com Citação:** indicação obrigatória do documento oficial utilizado como referência e do número da página correspondente.
-
-- **Tratamento de Incerteza (Fallback Estruturado):** recusa de respostas sem respaldo documental e geração de um rascunho de e-mail formal para a SecGrad quando não houver informações suficientes na base de conhecimento.
-
-> **Princípio do sistema:** priorizar a confiabilidade das informações acadêmicas, garantindo rastreabilidade das fontes e reduzindo a ocorrência de respostas não fundamentadas.
-
----
-
-## 🏛️ Arquitetura do Sistema
-
-A solução é organizada em serviços desacoplados, com responsabilidades específicas:
-
-| Serviço | Tecnologias | Responsabilidades |
-|---------|-------------|-------------------|
-| `app.py`, `src/ui/` | Streamlit, requests | Interface atual; consome o NestJS |
-| `backend/` | NestJS 12, Node.js 24 | Contrato HTTP, busca/geração, fallback e rascunho de e-mail |
-| `ai-service/` | Python, FastAPI, LangChain, ChromaDB | Ingestão documental, geração de embeddings e recuperação vetorial |
-| Planejado | React, Keycloak/LDAP, Docker Compose/Swarm | Stack geral solicitada; não apresentar como pronta |
-
-### 🔍 Funcionamento do RAG
-
-O mecanismo de recuperação aumentada por geração segue o fluxo conceitual:
-
-1. **Ingestão documental:** processamento dos documentos normativos fornecidos pela SecGrad.
-2. **Fragmentação (Chunking):** divisão dos documentos em trechos menores, preservando metadados relevantes.
-3. **Vetorização (Embeddings):** representação semântica dos trechos para permitir buscas por similaridade.
-4. **Armazenamento vetorial:** indexação dos documentos no ChromaDB.
-5. **Recuperação semântica:** identificação dos trechos mais relevantes para a pergunta do usuário.
-6. **Geração fundamentada:** construção de respostas com base nos documentos recuperados, acompanhadas das respectivas referências.
-7. **Fallback:** quando não houver suporte documental suficiente, o sistema evita gerar uma resposta não fundamentada e oferece um rascunho de e-mail para a secretaria.
-
----
-
-## 👥 Equipe e Responsabilidades
-
-| Integrante | Área | Responsabilidades |
-|------------|------|-------------------|
-| **Rafael Ramos** | Inteligência Artificial & RAG | Microsserviço de IA (`ai-service`), pipeline RAG, chunking, embeddings e ChromaDB |
-| **Eric** | Front-end & QA | Interface de usuário, benchmarks de qualidade e registros de arquitetura |
-| **Ricardo** | Engenharia de Conhecimento | Curadoria documental, organização das normas da SecGrad e catálogo de metadados (`metadata.json`) |
-| **Victor** | Back-end & Autenticação | Serviço NestJS (`backend`), integração com Keycloak e orquestração de rotas |
-
----
-
-## 🛠️ Stack Tecnológica
-
-A arquitetura do projeto utiliza as seguintes tecnologias:
-
-| Camada | Tecnologias |
-|--------|-------------|
-| **Front-end obrigatório (pendente)** | React |
-| **Protótipo do MVP** | Streamlit |
-| **Back-end atual** | NestJS 12, Node.js 24 |
-| **Autenticação obrigatória (pendente)** | Keycloak, LDAP |
-| **Microsserviço de IA** | Python 3.11+, FastAPI, Uvicorn |
-| **Busca Vetorial & RAG** | ChromaDB, PyPDF, LangChain Text Splitters |
-| **Geração atual** | Desabilitada por padrão; simulação explícita por configuração |
-| **Infraestrutura obrigatória (pendente)** | Docker Compose ou Swarm |
-
----
-
-## 🚀 Como Executar o Projeto Localmente
-
-Siga as etapas abaixo para configurar o ambiente de desenvolvimento e executar o MVP.
-
-### 📋 Pré-requisitos
-
-Antes de iniciar, certifique-se de possuir:
-
-- **Python 3.11 ou superior**
-- **Node.js 24 / npm** (conforme `backend/package.json`)
-- **Git** instalado
-- **pip** (gerenciador de pacotes do Python)
-
-### 1. Clonar o Repositório
-
-Clone o repositório e acesse o diretório do projeto:
-
-```bash
-git clone https://github.com/rafael-ramos-c/cin-ds-chatbot.git
-cd cin-ds-chatbot
+```json
+{"consulta":{"pergunta":"Como solicito segunda chamada?","curso":"IA","perfil":"novo","top_k":3},"historico":[]}
 ```
 
-As instruções completas dos três terminais e a auditoria dos PPCs estão em
-[Manual do serviço de IA](docs/manual_desenvolvedor_ia.md).
-Os requisitos acadêmicos, relatórios históricos V1/V2 e refatorações estão em
-[Consolidação da Sprint 3](docs/testes/CONSOLIDACAO-SPRINT3.md).
+## Limites e implantação institucional
 
+O Compose usa as versões locais de Keycloak/PostgreSQL da base fornecida, sem certificar que sejam as versões aprovadas para produção. Antes de publicar, alinhe versão do Keycloak, LDAP, clientes/papéis, HTTPS, senhas e URLs com os responsáveis. Variáveis `VITE_*` são públicas; nunca inclua segredo de cliente nelas.
 
-## Correções documentais e conversa limitada — 10/11
+Não remova os guards para contornar um erro de login. O backend exige configuração do Keycloak e não oferece desativação silenciosa da autenticação.
 
-Normalização de páginas com extração vertical, filtros temáticos explícitos e continuação limitada de formulário de segunda chamada. Ao trocar curso/perfil o histórico é limpo. Sem endereço nos trechos, o pedido de download informa a ausência na consulta. Não é LLM real nem cobertura de qualquer conversa. [Evidências, testes e limites](docs/correcoes/20261110-conversa/README.md).
+## Documentação e origem
+
+- [Guia da migração e pendências](docs/MIGRACAO-TEMPLATES.md).
+- [Contrato autenticado](docs/contrato-api-template.md).
+- [Origem e identificação dos templates](template-sources.json).
+- [Índice histórico da Sprint 3](docs/ENTREGA-SPRINT3.md).
+
+Os arquivos Python de interface na raiz e em `src/ui` são o protótipo histórico Streamlit. Não fazem parte do caminho oficial React → NestJS e não foram usados como prova de aderência ao template.

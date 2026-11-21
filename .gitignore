@@ -187,3 +187,11 @@ __pycache__/
 .DS_Store
 *.pyc
 .streamlit/
+
+# Ambientes da migração React/NestJS (evidências históricas continuam versionadas)
+node_modules/
+/backend/coverage/
+/frontend/coverage/
+*.tsbuildinfo
+.env.local
+.env.*.local

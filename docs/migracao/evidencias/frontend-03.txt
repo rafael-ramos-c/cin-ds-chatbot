@@ -1,0 +1,19 @@
+
+> secgrad-frontend@0.1.0 build
+> tsc -b && vite build
+
+vite v7.3.8 building client environment for production...
+transforming...
+✓ 8802 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                      0.50 kB │ gzip:   0.31 kB
+dist/assets/cin-logo-imh90w6n.svg    9.85 kB │ gzip:   3.71 kB
+dist/assets/index-Bvx7IcWU.css     178.30 kB │ gzip:  28.91 kB
+dist/assets/index-B_TclnVW.js      894.90 kB │ gzip: 306.47 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 7.89s

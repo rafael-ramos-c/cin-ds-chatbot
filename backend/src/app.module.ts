@@ -1,12 +1,28 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller.js';
-import { AppService } from './app.service.js';
-import { AiServiceModule } from './ai-service/ai-service.module.js';
-import { OrchestrationModule } from './orchestration/orchestration.module.js';
+import { ConfigModule } from '@nestjs/config';
+import { APP_PIPE } from '@nestjs/core';
+import { ZodValidationPipe } from 'nestjs-zod';
+import { AuthModule } from './common/auth/auth.module';
+import databaseConfig from './config/database.config';
+import { validateEnv } from './config/env.validation';
+import keycloakConfig from './config/keycloak.config';
+import swaggerConfig from './config/swagger.config';
+import { PrismaModule } from './database/prisma.module';
+import { ConversationModule } from './modules/conversation/conversation.module';
+import { HealthModule } from './modules/health/health.module';
 
 @Module({
-  imports: [AiServiceModule, OrchestrationModule],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      validate: validateEnv,
+      load: [databaseConfig, swaggerConfig, keycloakConfig],
+    }),
+    PrismaModule,
+    AuthModule,
+    HealthModule,
+    ConversationModule,
+  ],
+  providers: [{ provide: APP_PIPE, useClass: ZodValidationPipe }],
 })
 export class AppModule {}

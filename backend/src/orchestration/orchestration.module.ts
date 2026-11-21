@@ -1,11 +1,8 @@
 import { Module } from '@nestjs/common';
-import { AiServiceModule } from '../ai-service/ai-service.module.js';
-import {
-  FALLBACK_DISTANCE_THRESHOLD,
-  readFallbackDistanceThreshold,
-} from './fallback.config.js';
-import { FallbackService } from './fallback.service.js';
-import { OrchestrationService } from './orchestration.service.js';
+import { AiServiceModule } from '../ai-service/ai-service.module';
+import { FALLBACK_DISTANCE_THRESHOLD, readFallbackDistanceThreshold } from './fallback.config';
+import { FallbackService } from './fallback.service';
+import { OrchestrationService } from './orchestration.service';
 
 @Module({
   imports: [AiServiceModule],

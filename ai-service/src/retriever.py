@@ -1,5 +1,5 @@
 from src.config import CHROMA_PATH, COLLECTION_NAME
-from src.metadata_utils import construir_filtro
+from src.metadata_utils import construir_filtro, normalizar_curso, normalizar_perfil
 import math
 import unicodedata
 import re
@@ -45,6 +45,14 @@ def obter_collection():
     return client.get_or_create_collection(
         name=COLLECTION_NAME
     )
+
+
+def _filtrar_documentos(parametros, filtro):
+    where = parametros.get("where")
+    if not where:
+        return {**parametros, "where": filtro}
+    filtros = where.get("$and", [where])
+    return {**parametros, "where": {"$and": [*filtros, filtro]}}
 
 
 def buscar_contexto(
@@ -100,11 +108,26 @@ def buscar_contexto(
         c for c in unicodedata.normalize('NFKD', pergunta.lower())
         if not unicodedata.combining(c)
     )
+    prioridade = None
     if re.search(r'\bestag(?:io|ios|iar|iario|iaria)\b', pergunta_normalizada):
         parametros['where_document'] = {'$or': [
             {'$contains': termo}
             for termo in ('estágio', 'Estágio', 'ESTÁGIO', 'estagi', 'Estagi', 'ESTAG')
         ]}
+        if re.search(r'\b(quando.{0,35}\b(?:posso|pode|poderei|comeco|comecar)|a partir de|requisitos?|pre[- ]?requisitos?|qual semestre)\b', pergunta_normalizada):
+            prioridade = _filtrar_documentos(parametros, {"tipo_documento": "norma_estagio"})
+            prioridade = _filtrar_documentos(prioridade, {"documento": {"$ne": "estagio_geral.txt"}})
+            termos = (
+                'deve já ter cumprido', 'terceiro semestre', 'requisitos para',
+                'pré-requisitos', 'pré-requisito', 'para a realização de estágio',
+                'Para a realização de estágio', 'poderá iniciar',
+            )
+            # A norma vigente de SI usa integralização no trecho que completa
+            # o artigo de elegibilidade. Pré-requisitos também aparece em formalização.
+            if normalizar_curso(curso) == "si" and normalizar_perfil(perfil) == "novo":
+                termos = tuple(t for t in termos if not t.startswith('pré-requisito'))
+                termos += ('deve ter integralizado', 'integralizaram')
+            prioridade['where_document'] = {'$or': [{'$contains': termo} for termo in termos]}
     elif re.search(r'\b(?:segunda|2a|2ª) chamada\b', pergunta_normalizada):
         parametros['where_document'] = {'$or': [
             {'$contains': termo} for termo in (
@@ -112,7 +135,14 @@ def buscar_contexto(
                 'SEGUNDA CHAMADA', '2ª chamada', '2ª Chamada', '2a chamada')
         ]}
 
-    resultados = collection.query(**parametros)
+        # O TG tem procedimento próprio e usa a mesma expressão "segunda chamada".
+        if (re.search(r'\b(prova|avaliacao|exame|formulario|requerimento)\b', pergunta_normalizada)
+                and not re.search(r'\b(tg|tcc|trabalho de graduacao|trabalho de conclusao)\b', pergunta_normalizada)):
+            parametros = _filtrar_documentos(parametros, {"documento": {"$ne": "regulamento_tg.txt"}})
+
+    resultados = collection.query(**(prioridade or parametros))
+    if prioridade is not None and not any(resultados.get("documents") or []):
+        resultados = collection.query(**parametros)
 
     documentos = (
         resultados["documents"][0]

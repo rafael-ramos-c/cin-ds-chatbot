@@ -1,8 +1,8 @@
 import { createServer, type Server } from 'node:http';
 import type { AddressInfo } from 'node:net';
 import { Test, type TestingModule } from '@nestjs/testing';
-import { AppModule } from '../src/app.module.js';
 import { AiService } from '../src/ai-service/ai-service.service.js';
+import { AppModule } from '../src/app.module.js';
 import { OrchestrationService } from '../src/orchestration/orchestration.service.js';
 
 describe('AiService (HTTP integration)', () => {
@@ -77,9 +77,11 @@ describe('AiService (HTTP integration)', () => {
       perfil: '2023',
       top_k: 2,
     };
-    await expect(
-      module.get(AiService).buscarContexto(consulta),
-    ).resolves.toEqual({ contexto: '', fontes: [], distancia_minima: 1 });
+    await expect(module.get(AiService).buscarContexto(consulta)).resolves.toEqual({
+      contexto: '',
+      fontes: [],
+      distancia_minima: 1,
+    });
     expect(received).toEqual({
       method: 'POST',
       url: '/api/v1/buscar',
@@ -93,43 +95,40 @@ describe('AiService (HTTP integration)', () => {
     [1, 'Trecho normativo', true],
     [0.1, '', true],
     [0.1, '   ', true],
-  ] as const)(
-    'orquestra a resposta HTTP com distância %s, contexto %j e fallback %s',
-    async (valor, trecho, esperado) => {
-      distancia = valor;
-      contexto = trecho;
-      fontes = [{ arquivo: 'norma.pdf', pagina: 1, curso: 'CC' }];
-      const consulta = { pergunta: 'Apoio pedagógico?', curso: 'CC' };
-      const result = await module.get(OrchestrationService).processar({
-        consulta,
-        dados_email: { nome: 'Ana', matricula: '123' },
+  ] as const)('orquestra a resposta HTTP com distância %s, contexto %j e fallback %s', async (valor, trecho, esperado) => {
+    distancia = valor;
+    contexto = trecho;
+    fontes = [{ arquivo: 'norma.pdf', pagina: 1, curso: 'CC' }];
+    const consulta = { pergunta: 'Apoio pedagógico?', curso: 'CC' };
+    const result = await module.get(OrchestrationService).processar({
+      consulta,
+      dados_email: { nome: 'Ana', matricula: '123' },
+    });
+    expect(result).toMatchObject({
+      contexto: trecho,
+      fontes,
+      distancia_minima: valor,
+      fallback_acionado: esperado,
+    });
+    expect(chamadas[0].body).toEqual({
+      ...consulta,
+      perfil: 'Todos',
+      top_k: 3,
+    });
+    if (result.fallback_acionado) {
+      expect(chamadas).toHaveLength(1);
+      expect(result.setor_sugerido).toBe('NEAP');
+      expect(result.template_email).toContain('Ana');
+    } else {
+      expect(result).not.toHaveProperty('template_email');
+      expect(result.resposta).toBe('Resposta gerada.');
+      expect(chamadas[1]).toEqual({
+        method: 'POST',
+        url: '/api/v1/gerar',
+        body: { pergunta: consulta.pergunta, contexto: trecho },
       });
-      expect(result).toMatchObject({
-        contexto: trecho,
-        fontes,
-        distancia_minima: valor,
-        fallback_acionado: esperado,
-      });
-      expect(chamadas[0].body).toEqual({
-        ...consulta,
-        perfil: 'Todos',
-        top_k: 3,
-      });
-      if (result.fallback_acionado) {
-        expect(chamadas).toHaveLength(1);
-        expect(result.setor_sugerido).toBe('NEAP');
-        expect(result.template_email).toContain('Ana');
-      } else {
-        expect(result).not.toHaveProperty('template_email');
-        expect(result.resposta).toBe('Resposta gerada.');
-        expect(chamadas[1]).toEqual({
-          method: 'POST',
-          url: '/api/v1/gerar',
-          body: { pergunta: consulta.pergunta, contexto: trecho },
-        });
-      }
-    },
-  );
+    }
+  });
 
   it('contexto sem fontes aciona fallback e não chama geração', async () => {
     distancia = 0.4;

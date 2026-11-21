@@ -1,0 +1,163 @@
+{
+  "backend": [
+    {
+      "command": [
+        "run",
+        "prisma:generate"
+      ],
+      "exit_code": 0,
+      "seconds": 2.18,
+      "log": "backend-01.txt"
+    },
+    {
+      "command": [
+        "run",
+        "test:cov"
+      ],
+      "exit_code": 0,
+      "seconds": 5.06,
+      "log": "backend-02.txt"
+    },
+    {
+      "command": [
+        "run",
+        "test:e2e"
+      ],
+      "exit_code": 0,
+      "seconds": 3.17,
+      "log": "backend-03.txt"
+    },
+    {
+      "command": [
+        "run",
+        "lint"
+      ],
+      "exit_code": 0,
+      "seconds": 0.67,
+      "log": "backend-04.txt"
+    },
+    {
+      "command": [
+        "run",
+        "build"
+      ],
+      "exit_code": 0,
+      "seconds": 4.32,
+      "log": "backend-05.txt"
+    },
+    {
+      "command": [
+        "audit",
+        "--omit=dev",
+        "--json"
+      ],
+      "exit_code": 0,
+      "seconds": 1.78,
+      "log": "backend-06.txt"
+    }
+  ],
+  "frontend": [
+    {
+      "command": [
+        "run",
+        "test:cov"
+      ],
+      "exit_code": 0,
+      "seconds": 10.95,
+      "log": "frontend-01.txt"
+    },
+    {
+      "command": [
+        "run",
+        "lint"
+      ],
+      "exit_code": 0,
+      "seconds": 3.64,
+      "log": "frontend-02.txt"
+    },
+    {
+      "command": [
+        "run",
+        "build"
+      ],
+      "exit_code": 0,
+      "seconds": 10.88,
+      "log": "frontend-03.txt"
+    },
+    {
+      "command": [
+        "audit",
+        "--omit=dev",
+        "--json"
+      ],
+      "exit_code": 0,
+      "seconds": 1.63,
+      "log": "frontend-04.txt"
+    }
+  ],
+  "ai-service": [
+    {
+      "command": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 0.98,
+      "log": "ai-service-01.txt"
+    }
+  ],
+  "preservacao": {
+    "arquivos_conferidos": 551,
+    "alterados": []
+  },
+  "integracao_documental": {
+    "resultado": "1 teste aprovado",
+    "log": "backend-live.txt",
+    "reais": [
+      "JWT assinado e JWKS local",
+      "NestJS",
+      "FastAPI",
+      "ChromaDB e documentos locais"
+    ],
+    "substituido": [
+      "Prisma/PostgreSQL"
+    ],
+    "nao_comprova": [
+      "Keycloak real",
+      "LDAP institucional",
+      "Docker completo"
+    ]
+  },
+  "ambiente": {
+    "node": "24.22.2",
+    "python": "3.14.5",
+    "docker_disponivel": false,
+    "data": "2026-11-12"
+  },
+  "cobertura_escopo": {
+    "backend": "src/**/*.ts, excluindo módulos, DTOs, entidades, main, database e testes; ver vitest.config.ts",
+    "frontend": "chat.service.ts, página chat e services/api.ts; ver vitest.config.ts"
+  },
+  "audit_producao": {
+    "backend": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "frontend": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    }
+  }
+}

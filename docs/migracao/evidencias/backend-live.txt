@@ -1,0 +1,21 @@
+
+> secgrad@1.0.0 test:live
+> vitest run --config vitest.e2e.config.ts test/migration-live.e2e-spec.ts
+
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - ESM syntax in a file loaded as CommonJS (vitest.e2e.config.ts:1:1). Use a `.mjs` extension or set `"type": "module"` in the closest package.json
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+
+ RUN  v4.1.12 C:/Users/Rafael/OneDrive/RafaelASUS/ProjetoDS/codigo/cin-ds-chatbot/backend
+
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  14:51:39
+   Duration  2.19s (transform 227ms, setup 0ms, import 1.47s, tests 539ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.19.1 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice

@@ -1,0 +1,11 @@
+node_modules
+dist
+coverage
+.git
+.env
+.env.local
+__pycache__
+chroma_db
+tests
+venv
+*.pyc

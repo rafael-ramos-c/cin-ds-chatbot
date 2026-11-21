@@ -1,6 +1,6 @@
 import { BadRequestException } from '@nestjs/common';
-import { FallbackService } from './fallback.service.js';
-import type { DadosEmailFallback } from './orchestration.types.js';
+import { FallbackService } from './fallback.service';
+import type { DadosEmailFallback } from './orchestration.types';
 
 const service = new FallbackService();
 
@@ -74,12 +74,15 @@ Ana`);
     expect(email.template_email).not.toMatch(/undefined|null/);
   });
 
-  it.each([null, [], 'invalid', { nome: 123 }, { matricula: null }])(
-    'rejeita dados de e-mail inválidos %j',
-    (dados) => {
-      expect(() =>
-        service.validarDadosEmail(dados as DadosEmailFallback),
-      ).toThrow(BadRequestException);
-    },
-  );
+  it.each([
+    null,
+    [],
+    'invalid',
+    { nome: 123 },
+    { matricula: null },
+  ])('rejeita dados de e-mail inválidos %j', (dados) => {
+    expect(() => service.validarDadosEmail(dados as DadosEmailFallback)).toThrow(
+      BadRequestException,
+    );
+  });
 });

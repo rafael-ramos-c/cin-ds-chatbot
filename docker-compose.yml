@@ -1,0 +1,111 @@
+# Ambiente local. Keycloak e seus papéis foram preservados do boilerplate fornecido.
+services:
+  postgres:
+    image: postgres:14.2
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-secgrad}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-secgrad-local}
+      POSTGRES_DB: ${POSTGRES_DB:-secgrad}
+    ports: ["127.0.0.1:5432:5432"]
+    volumes: ["postgres_data:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  keycloak-db:
+    image: postgres:14.4-alpine
+    environment:
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-secgrad-local}
+      POSTGRES_DB: keycloak
+    volumes: ["keycloak_data:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U keycloak -d keycloak"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  keycloak:
+    image: quay.io/keycloak/keycloak:18.0.0
+    command: ["start-dev", "--http-relative-path=/auth", "--import-realm"]
+    ports: ["127.0.0.1:8080:8080"]
+    environment:
+      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN:-admin}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD:-admin-local}
+      KC_DB: postgres
+      KC_DB_URL_HOST: keycloak-db
+      KC_DB_URL_DATABASE: keycloak
+      KC_DB_USERNAME: keycloak
+      KC_DB_PASSWORD: ${POSTGRES_PASSWORD:-secgrad-local}
+      KC_HOSTNAME_URL: ${KEYCLOAK_PUBLIC_URL:-http://localhost:8080/auth}
+      KC_HOSTNAME_STRICT: "false"
+      KC_HOSTNAME_STRICT_HTTPS: "false"
+    volumes: ["./backend/setup/realm.json:/opt/keycloak/data/import/realm.json:ro"]
+    depends_on:
+      keycloak-db: { condition: service_healthy }
+  migrate:
+    build: { context: ./backend, target: build }
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-secgrad}:${POSTGRES_PASSWORD:-secgrad-local}@postgres:5432/${POSTGRES_DB:-secgrad}
+    command: ["npx", "prisma", "migrate", "deploy", "--schema", "prisma/schema.prisma"]
+    depends_on:
+      postgres: { condition: service_healthy }
+  ai-service:
+    build: ./ai-service
+    environment:
+      SECGRAD_DATA_DIR: /app/data/raw
+      SECGRAD_CHROMA_PATH: /app/chroma_db
+      SECGRAD_GENERATION_MODE: ${SECGRAD_GENERATION_MODE:-disabled}
+      SECGRAD_OLLAMA_URL: ${SECGRAD_OLLAMA_URL:-http://host.docker.internal:11434}
+      SECGRAD_OPENAI_MODEL: ${SECGRAD_OPENAI_MODEL:-gpt-5.4-mini}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      SECGRAD_COLLECTION: secgrad_normas
+    volumes:
+      - ./data/raw:/app/data/raw:ro
+      - chroma_data:/app/chroma_db
+      - model_cache:/root/.cache/chroma
+    expose: ["8000"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+      start_period: 30s
+  backend:
+    build: { context: ./backend, target: production }
+    ports: ["127.0.0.1:3000:3000"]
+    environment:
+      PORT: 3000
+      API_PREFIX: secgrad/api
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:5173}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-secgrad}:${POSTGRES_PASSWORD:-secgrad-local}@postgres:5432/${POSTGRES_DB:-secgrad}
+      KEYCLOAK_AUTH_SERVER_URL: ${KEYCLOAK_PUBLIC_URL:-http://localhost:8080/auth}
+      KEYCLOAK_REALM: ${KEYCLOAK_REALM:-Local}
+      KEYCLOAK_CLIENT_ID: secgrad-back
+      KEYCLOAK_JWKS_URL: http://keycloak:8080/auth/realms/${KEYCLOAK_REALM:-Local}/protocol/openid-connect/certs
+      AI_SERVICE_URL: http://ai-service:8000
+      AI_SERVICE_TIMEOUT_MS: ${AI_SERVICE_TIMEOUT_MS:-30000}
+      FALLBACK_DISTANCE_THRESHOLD: ${FALLBACK_DISTANCE_THRESHOLD:-0.8}
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+      ai-service: { condition: service_healthy }
+      keycloak: { condition: service_started }
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/secgrad/api/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: ${VITE_API_URL:-http://localhost:3000/secgrad/api/v1}
+        VITE_KEYCLOAK_JSON: ${VITE_KEYCLOAK_JSON}
+    ports: ["127.0.0.1:5173:80"]
+    depends_on:
+      backend: { condition: service_healthy }
+volumes:
+  postgres_data:
+  keycloak_data:
+  chroma_data:
+  model_cache:

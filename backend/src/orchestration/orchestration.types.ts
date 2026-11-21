@@ -1,7 +1,4 @@
-import type {
-  BuscarContextoRequest,
-  BuscarContextoResponse,
-} from '../ai-service/ai-service.types.js';
+import type { BuscarContextoRequest, BuscarContextoResponse } from '../ai-service/ai-service.types';
 
 export type SetorSugerido = 'SecGrad' | 'NEAP' | 'Secretaria de Pós-Graduação';
 
@@ -23,7 +20,4 @@ export interface EmailFallback {
 }
 
 export type OrchestrationResult = BuscarContextoResponse &
-  (
-    | { fallback_acionado: false; resposta: string }
-    | ({ fallback_acionado: true } & EmailFallback)
-  );
+  ({ fallback_acionado: false; resposta: string } | ({ fallback_acionado: true } & EmailFallback));

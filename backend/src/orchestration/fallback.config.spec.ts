@@ -1,4 +1,4 @@
-import { readFallbackDistanceThreshold } from './fallback.config.js';
+import { readFallbackDistanceThreshold } from './fallback.config';
 
 describe('fallback config', () => {
   afterEach(() => vi.unstubAllEnvs());

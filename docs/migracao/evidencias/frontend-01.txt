@@ -1,0 +1,38 @@
+
+> secgrad-frontend@0.1.0 test:cov
+> vitest run --coverage
+
+
+ RUN  v4.1.12 C:/Users/Rafael/OneDrive/RafaelASUS/ProjetoDS/codigo/cin-ds-chatbot/frontend
+      Coverage enabled with v8
+
+
+ Test Files  8 passed (8)
+      Tests  49 passed (49)
+   Start at  14:51:44
+   Duration  9.26s (transform 510ms, setup 2.92s, import 22.08s, tests 555ms, environment 9.30s)
+
+ % Coverage report from v8
+------------------|---------|----------|---------|---------|-------------------
+File              | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+------------------|---------|----------|---------|---------|-------------------
+All files         |   92.51 |    84.48 |   93.54 |   95.68 |
+ modules/chat     |   94.73 |    88.23 |     100 |     100 |
+  chat.service.ts |   94.73 |    88.23 |     100 |     100 | 15-18,32
+ pages/chat       |   94.54 |    83.33 |   93.33 |   97.22 |
+  index.tsx       |   94.54 |    83.33 |   93.33 |   97.22 | 52
+ services         |   90.41 |     82.5 |    90.9 |   93.93 |
+  api.ts          |   90.41 |     82.5 |    90.9 |   93.93 | 28,89,113,124
+------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 92.51% ( 136/147 )
+Branches     : 84.48% ( 98/116 )
+Functions    : 93.54% ( 29/31 )
+Lines        : 95.68% ( 111/116 )
+================================================================================
+npm notice
+npm notice New major version of npm available! 11.19.1 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice

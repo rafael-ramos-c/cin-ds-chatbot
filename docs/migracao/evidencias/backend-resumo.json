@@ -1,0 +1,57 @@
+[
+  {
+    "command": [
+      "run",
+      "prisma:generate"
+    ],
+    "exit_code": 0,
+    "seconds": 2.18,
+    "log": "backend-01.txt"
+  },
+  {
+    "command": [
+      "run",
+      "test:cov"
+    ],
+    "exit_code": 0,
+    "seconds": 5.06,
+    "log": "backend-02.txt"
+  },
+  {
+    "command": [
+      "run",
+      "test:e2e"
+    ],
+    "exit_code": 0,
+    "seconds": 3.17,
+    "log": "backend-03.txt"
+  },
+  {
+    "command": [
+      "run",
+      "lint"
+    ],
+    "exit_code": 0,
+    "seconds": 0.67,
+    "log": "backend-04.txt"
+  },
+  {
+    "command": [
+      "run",
+      "build"
+    ],
+    "exit_code": 0,
+    "seconds": 4.32,
+    "log": "backend-05.txt"
+  },
+  {
+    "command": [
+      "audit",
+      "--omit=dev",
+      "--json"
+    ],
+    "exit_code": 0,
+    "seconds": 1.78,
+    "log": "backend-06.txt"
+  }
+]

@@ -5,10 +5,7 @@ import {
   Injectable,
   ServiceUnavailableException,
 } from '@nestjs/common';
-import type {
-  BuscarContextoRequest,
-  BuscarContextoResponse,
-} from './ai-service.types.js';
+import type { BuscarContextoRequest, BuscarContextoResponse } from './ai-service.types';
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
@@ -47,9 +44,7 @@ function isResponse(value: unknown): value is BuscarContextoResponse {
 
 @Injectable()
 export class AiService {
-  async buscarContexto(
-    consulta: BuscarContextoRequest,
-  ): Promise<BuscarContextoResponse> {
+  async buscarContexto(consulta: BuscarContextoRequest): Promise<BuscarContextoResponse> {
     if (
       !consulta ||
       typeof consulta.pergunta !== 'string' ||
@@ -83,9 +78,7 @@ export class AiService {
       });
     } catch {
       if (signal.aborted) {
-        throw new GatewayTimeoutException(
-          'Tempo limite do serviço de busca excedido.',
-        );
+        throw new GatewayTimeoutException('Tempo limite do serviço de busca excedido.');
       }
       throw new ServiceUnavailableException('Serviço de busca indisponível.');
     }
@@ -100,9 +93,7 @@ export class AiService {
       result = await response.json();
     } catch {
       if (signal.aborted) {
-        throw new GatewayTimeoutException(
-          'Tempo limite do serviço de busca excedido.',
-        );
+        throw new GatewayTimeoutException('Tempo limite do serviço de busca excedido.');
       }
       throw new BadGatewayException('Resposta inválida do serviço de busca.');
     }
@@ -120,15 +111,8 @@ export class AiService {
     };
   }
 
-  async gerarResposta(
-    pergunta: string,
-    contexto: string,
-  ): Promise<string | null> {
-    if (
-      typeof pergunta !== 'string' ||
-      !pergunta.trim() ||
-      typeof contexto !== 'string'
-    ) {
+  async gerarResposta(pergunta: string, contexto: string): Promise<string | null> {
+    if (typeof pergunta !== 'string' || !pergunta.trim() || typeof contexto !== 'string') {
       throw new BadRequestException('Dados para geração inválidos.');
     }
 
@@ -148,9 +132,7 @@ export class AiService {
       });
     } catch {
       if (signal.aborted) {
-        throw new GatewayTimeoutException(
-          'Tempo limite do serviço de geração excedido.',
-        );
+        throw new GatewayTimeoutException('Tempo limite do serviço de geração excedido.');
       }
       throw new ServiceUnavailableException('Serviço de geração indisponível.');
     }
@@ -158,14 +140,10 @@ export class AiService {
     if (!response.ok) {
       await response.body?.cancel().catch(() => undefined);
       if (response.status === 503) {
-        throw new ServiceUnavailableException(
-          'Serviço de geração indisponível.',
-        );
+        throw new ServiceUnavailableException('Serviço de geração indisponível.');
       }
       if (response.status === 504) {
-        throw new GatewayTimeoutException(
-          'Tempo limite do serviço de geração excedido.',
-        );
+        throw new GatewayTimeoutException('Tempo limite do serviço de geração excedido.');
       }
       throw new BadGatewayException('Falha na resposta do serviço de geração.');
     }
@@ -175,21 +153,14 @@ export class AiService {
       result = await response.json();
     } catch {
       if (signal.aborted) {
-        throw new GatewayTimeoutException(
-          'Tempo limite do serviço de geração excedido.',
-        );
+        throw new GatewayTimeoutException('Tempo limite do serviço de geração excedido.');
       }
       throw new BadGatewayException('Resposta inválida do serviço de geração.');
     }
-    if (
-      !isRecord(result) ||
-      (result.resposta !== null && typeof result.resposta !== 'string')
-    ) {
+    if (!isRecord(result) || (result.resposta !== null && typeof result.resposta !== 'string')) {
       throw new BadGatewayException('Resposta inválida do serviço de geração.');
     }
-    return typeof result.resposta === 'string' && result.resposta.trim()
-      ? result.resposta
-      : null;
+    return typeof result.resposta === 'string' && result.resposta.trim() ? result.resposta : null;
   }
 
   private getTimeoutMs(): number {
@@ -221,9 +192,7 @@ export class AiService {
       }
       return new URL('/api/v1/buscar', base);
     } catch {
-      throw new ServiceUnavailableException(
-        'Serviço de busca não configurado.',
-      );
+      throw new ServiceUnavailableException('Serviço de busca não configurado.');
     }
   }
 }

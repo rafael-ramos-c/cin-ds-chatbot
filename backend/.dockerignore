@@ -3,6 +3,9 @@ dist
 coverage
 .git
 .env
-.env.*
-*.log
-*.tsbuildinfo
+.env.local
+__pycache__
+chroma_db
+tests
+venv
+*.pyc

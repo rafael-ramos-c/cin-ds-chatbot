@@ -1,0 +1,15 @@
+[
+  {
+    "command": [
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "exit_code": 0,
+    "seconds": 0.98,
+    "log": "ai-service-01.txt"
+  }
+]

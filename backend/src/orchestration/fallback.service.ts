@@ -4,7 +4,7 @@ import type {
   EmailFallback,
   OrchestrationRequest,
   SetorSugerido,
-} from './orchestration.types.js';
+} from './orchestration.types';
 
 @Injectable()
 export class FallbackService {
@@ -18,9 +18,7 @@ export class FallbackService {
         (value) => value !== undefined && typeof value !== 'string',
       )
     ) {
-      throw new BadRequestException(
-        'Dados para o e-mail de fallback inválidos.',
-      );
+      throw new BadRequestException('Dados para o e-mail de fallback inválidos.');
     }
   }
 
@@ -35,8 +33,7 @@ export class FallbackService {
       texto.includes('segunda chamada')
     )
       return 'SecGrad';
-    if (texto.includes('pedagógic') || texto.includes('pedagogic'))
-      return 'NEAP';
+    if (texto.includes('pedagógic') || texto.includes('pedagogic')) return 'NEAP';
     if (
       texto.includes('pós-graduação') ||
       texto.includes('pos-graduacao') ||
