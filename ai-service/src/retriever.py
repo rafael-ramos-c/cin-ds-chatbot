@@ -1,5 +1,5 @@
 from src.config import CHROMA_PATH, COLLECTION_NAME
-from src.metadata_utils import construir_filtro
+from src.metadata_utils import construir_filtro, normalizar_curso, normalizar_perfil
 import math
 import unicodedata
 import re
@@ -117,13 +117,17 @@ def buscar_contexto(
         if re.search(r'\b(quando.{0,35}\b(?:posso|pode|poderei|comeco|comecar)|a partir de|requisitos?|pre[- ]?requisitos?|qual semestre)\b', pergunta_normalizada):
             prioridade = _filtrar_documentos(parametros, {"tipo_documento": "norma_estagio"})
             prioridade = _filtrar_documentos(prioridade, {"documento": {"$ne": "estagio_geral.txt"}})
-            prioridade['where_document'] = {'$or': [
-                {'$contains': termo} for termo in (
-                    'deve já ter cumprido', 'terceiro semestre', 'requisitos para',
-                    'pré-requisitos', 'pré-requisito', 'para a realização de estágio',
-                    'Para a realização de estágio', 'poderá iniciar',
-                )
-            ]}
+            termos = (
+                'deve já ter cumprido', 'terceiro semestre', 'requisitos para',
+                'pré-requisitos', 'pré-requisito', 'para a realização de estágio',
+                'Para a realização de estágio', 'poderá iniciar',
+            )
+            # A norma vigente de SI usa integralização no trecho que completa
+            # o artigo de elegibilidade. Pré-requisitos também aparece em formalização.
+            if normalizar_curso(curso) == "si" and normalizar_perfil(perfil) == "novo":
+                termos = tuple(t for t in termos if not t.startswith('pré-requisito'))
+                termos += ('deve ter integralizado', 'integralizaram')
+            prioridade['where_document'] = {'$or': [{'$contains': termo} for termo in termos]}
     elif re.search(r'\b(?:segunda|2a|2ª) chamada\b', pergunta_normalizada):
         parametros['where_document'] = {'$or': [
             {'$contains': termo} for termo in (

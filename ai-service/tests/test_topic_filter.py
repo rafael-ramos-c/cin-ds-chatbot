@@ -51,3 +51,17 @@ class TopicFilterTest(unittest.TestCase):
         self.assertIn({'documento': {'$ne': 'estagio_geral.txt'}}, c.parametros['where']['$and'])
         self.assertEqual(resultado['fontes'][0]['arquivo'], 'norma.pdf')
         self.assertEqual(resultado['distancia_minima'], 0.52)
+
+    def test_si_vigente_prioriza_trecho_que_completa_artigo_de_estagio(self):
+        class ColecaoComNorma(Colecao):
+            def query(self, **kwargs):
+                self.parametros = kwargs
+                return {'documents': [['alunos que integralizaram']],
+                        'metadatas': [[{'documento': 'norma.pdf', 'pagina': 3}]],
+                        'distances': [[0.52]]}
+
+        c = ColecaoComNorma()
+        buscar_contexto('Quando posso iniciar estágio não obrigatório?', 'SI', 'novo', collection=c)
+        termos = c.parametros['where_document']['$or']
+        self.assertIn({'$contains': 'integralizaram'}, termos)
+        self.assertNotIn({'$contains': 'pré-requisitos'}, termos)

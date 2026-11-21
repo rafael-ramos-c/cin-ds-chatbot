@@ -56,6 +56,7 @@ services:
       SECGRAD_DATA_DIR: /app/data/raw
       SECGRAD_CHROMA_PATH: /app/chroma_db
       SECGRAD_GENERATION_MODE: ${SECGRAD_GENERATION_MODE:-disabled}
+      SECGRAD_OLLAMA_URL: ${SECGRAD_OLLAMA_URL:-http://host.docker.internal:11434}
       SECGRAD_OPENAI_MODEL: ${SECGRAD_OPENAI_MODEL:-gpt-5.4-mini}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
       SECGRAD_COLLECTION: secgrad_normas
@@ -83,7 +84,7 @@ services:
       KEYCLOAK_CLIENT_ID: secgrad-back
       KEYCLOAK_JWKS_URL: http://keycloak:8080/auth/realms/${KEYCLOAK_REALM:-Local}/protocol/openid-connect/certs
       AI_SERVICE_URL: http://ai-service:8000
-      AI_SERVICE_TIMEOUT_MS: 30000
+      AI_SERVICE_TIMEOUT_MS: ${AI_SERVICE_TIMEOUT_MS:-30000}
       FALLBACK_DISTANCE_THRESHOLD: ${FALLBACK_DISTANCE_THRESHOLD:-0.8}
     depends_on:
       migrate: { condition: service_completed_successfully }

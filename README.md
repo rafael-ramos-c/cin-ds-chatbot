@@ -107,6 +107,8 @@ As regressões do contrato HTTP anterior ficam identificadas em `backend/test/le
 
 ## Geração por LLM
 
+Para gerar respostas localmente sem uma chave de API, instale e inicie o Ollama no Windows e rode `ollama pull qwen3:4b`. No `.env`, defina `SECGRAD_GENERATION_MODE=ollama` e `AI_SERVICE_TIMEOUT_MS=60000`. Com Docker Desktop, o serviço de IA acessa o Ollama em `http://host.docker.internal:11434`. Em execução direta, ele usa `http://127.0.0.1:11434`. Mantenha a API do Ollama no computador local. Depois rode `docker compose up -d --build ai-service backend` e abra o chat. Os volumes e a base indexada são reaproveitados.
+
 Para usar a API da OpenAI no Compose, configure `SECGRAD_GENERATION_MODE=openai` e `OPENAI_API_KEY` no `.env` local. `SECGRAD_OPENAI_MODEL` é opcional e usa `gpt-5.4-mini` por padrão. Com FastAPI executado diretamente, defina essas variáveis no ambiente do processo. Use uma chave de projeto autorizada, armazenada somente no servidor, e perguntas de teste sem dados pessoais. O modo `mock` continua disponível para testar a integração local.
 
 O serviço envia à API a pergunta e os trechos recuperados. O modelo retorna texto e citações literais. Uma resposta sem evidência identificável devolve `null`, que aciona o fallback existente no Nest. Uma falha do provedor devolve `503`. A conferência literal verifica a presença dos trechos e dos links citados. A correção da orientação precisa ser avaliada com perguntas de referência.
