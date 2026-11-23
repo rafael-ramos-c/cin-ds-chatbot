@@ -34,6 +34,19 @@ class OllamaGenerationTest(unittest.TestCase):
             ):
                 self.assertIsNone(gerar_resposta('Onde encontro o formulário?', self.contexto))
 
+    def test_pergunta_generica_de_estagio_pede_elegibilidade_sem_mudar_pedidos_especificos(self):
+        for pergunta, esperado in (
+            ('A partir de quando posso fazer estágio?', 'Quais são os requisitos curriculares'),
+            ('Quando posso fazer estágio obrigatório?', 'Quando posso fazer estágio obrigatório?'),
+            ('Quando posso fazer estágio de 30 horas?', 'Quando posso fazer estágio de 30 horas?'),
+        ):
+            with self.subTest(pergunta=pergunta), patch.dict(os.environ, {'SECGRAD_GENERATION_MODE': 'ollama'}, clear=True), patch(
+                'src.ollama_generation._LOCAL_HTTP.open', return_value=self.envelope(None, [])
+            ) as request:
+                gerar_resposta(pergunta, self.contexto)
+                messages = json.loads(request.call_args.args[0].data)['messages']
+                self.assertIn(f'Pergunta:\n{esperado}', messages[1]['content'])
+
     def test_interrompido_ou_indisponivel_e_falha_tecnica(self):
         with patch.dict(os.environ, {'SECGRAD_GENERATION_MODE': 'ollama'}, clear=True):
             for params in ({'return_value': self.envelope(None, [], 'length')}, {'side_effect': TimeoutError}):
