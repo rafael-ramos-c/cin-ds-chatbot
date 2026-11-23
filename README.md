@@ -2,7 +2,7 @@
 
 Frontend React 18/Vite/Cinnamon e backend NestJS 11/Node 24 adaptados dos dois boilerplates CInCoders fornecidos à equipe. O serviço Python FastAPI/ChromaDB mantém a recuperação documental.
 
-**Estado real:** código migrado e validado por testes e builds locais. O conjunto Docker/PostgreSQL/Keycloak ainda precisa ser executado em máquina com Docker. O realm incluído é de desenvolvimento; LDAP institucional depende da configuração do CIn. A geração pode usar a API da OpenAI quando configurada. A integração tem testes locais com respostas simuladas do provedor e aguarda validação com uma conta autorizada.
+**Entrega da Sprint 4:** a demonstração usa Docker Compose, Keycloak local e geração com Qwen3 4B no Ollama. O Ollama fica na máquina que hospeda o chatbot. Quem apresenta usa o navegador, sem chave de API. A autenticação institucional está prevista para uma etapa posterior, a cargo dos stakeholders.
 
 ## Arquitetura
 
@@ -19,24 +19,20 @@ As perguntas não são persistidas no PostgreSQL nesta versão. A conversa fica 
 
 ## Executar no Windows — forma recomendada
 
-Pré-requisitos: Git, Docker Desktop com engine Linux/Compose V2 ativo; Node.js 24 para testes e desenvolvimento fora dos contêineres. O ambiente Python local existente pode continuar sendo usado para os testes de IA.
+Pré-requisitos para a demo: Git, Docker Desktop com Compose V2 em execução e Ollama instalado na máquina anfitriã. Node.js 24 e Python são necessários apenas para desenvolvimento e testes fora dos contêineres.
 
-Na raiz do repositório, no PowerShell:
+Na raiz do repositório, no PowerShell, para a primeira execução:
 
 ```powershell
-Copy-Item .env.example .env
-docker compose up -d --build ai-service
-docker compose exec ai-service python -m src.validate_catalog
-docker compose exec ai-service python -m src.ingest_batch
-docker compose up -d --build
-docker compose ps
+ollama pull qwen3:4b
+.\scripts\iniciar-templates.ps1 -Demo -Ingerir
 ```
 
-Só copie o exemplo se ainda não existir `.env`. Não sobrescreva configurações pessoais/institucionais. A primeira ingestão pode baixar o modelo de embeddings e demorar. O banco vetorial local antigo não é automaticamente copiado para o volume Docker: a ingestão acima cria a base do contêiner com o catálogo atual.
+Nas próximas execuções, use `.\scripts\iniciar-templates.ps1 -Demo`. Use também `-Ingerir` quando o catálogo ou seus arquivos mudarem. O script cria `.env` se estiver ausente, verifica o acesso ao modelo a partir do Windows e do contêiner de IA e sobe os serviços. A primeira ingestão pode baixar o modelo de embeddings. Se o script informar que o Ollama não responde, rode `ollama serve` em outro terminal e tente novamente.
 
 Abra **http://localhost:5173/secgrad/**. Use `user` / `user` para o usuário de desenvolvimento ou `admin` / `admin` para o administrador do realm local. Essas contas são fornecidas pelo template e **não são contas LDAP**. A senha administrativa do console do Keycloak vem de `KEYCLOAK_ADMIN_PASSWORD` no `.env` (console em http://localhost:8080/auth).
 
-Um comando auxiliar equivalente é `./scripts/iniciar-templates.ps1`; ele verifica se Docker está disponível e só ingere documentos quando solicitado com `-Ingerir`.
+Para verificar o estado, rode `docker compose ps`. Faça uma pergunta de ensaio antes de começar a apresentação para carregar o modelo.
 
 Para parar: `docker compose down`. Esse comando preserva volumes. Não use `down -v` se quiser manter bancos e índices.
 
@@ -113,7 +109,7 @@ Para usar a API da OpenAI no Compose, configure `SECGRAD_GENERATION_MODE=openai`
 
 O serviço envia à API a pergunta e os trechos recuperados. O modelo retorna texto e citações literais. Uma resposta sem evidência identificável devolve `null`, que aciona o fallback existente no Nest. Uma falha do provedor devolve `503`. A conferência literal verifica a presença dos trechos e dos links citados. A correção da orientação precisa ser avaliada com perguntas de referência.
 
-Antes da demonstração, reingira o catálogo para incorporar o endereço oficial de segunda chamada e ensaie uma consulta com fonte, uma pergunta fora do escopo e um caso de indisponibilidade do provedor.
+Antes da demonstração, percorra os cenários do [roteiro da Sprint 4](docs/ENTREGA-SPRINT4.md).
 
 ## Contrato e comportamento
 
@@ -141,7 +137,8 @@ Não remova os guards para contornar um erro de login. O backend exige configura
 
 ## Documentação e origem
 
-- [Guia da migração e pendências](docs/MIGRACAO-TEMPLATES.md).
+- [Roteiro de apresentação e validação da Sprint 4](docs/ENTREGA-SPRINT4.md).
+- [Histórico da migração dos templates](docs/MIGRACAO-TEMPLATES.md).
 - [Contrato autenticado](docs/contrato-api-template.md).
 - [Origem e identificação dos templates](template-sources.json).
 - [Índice histórico da Sprint 3](docs/ENTREGA-SPRINT3.md).

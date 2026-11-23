@@ -1,5 +1,7 @@
 # Migração para os templates CInCoders — 12/11/2026
 
+Este documento registra a execução original da migração. Para o escopo e a execução atuais com Docker, Qwen e autenticação local, consulte o [fechamento da Sprint 4](ENTREGA-SPRINT4.md).
+
 ## O que mudou
 
 O frontend oficial agora fica em `frontend/`, baseado no boilerplate React/Vite/Cinnamon recebido. O backend foi adaptado ao boilerplate NestJS com ConfigModule, Prisma, autenticação Keycloak/JWKS, RBAC, envelope de sucesso, Problem Details e health check. O domínio de busca, geração e fallback foi integrado a essa estrutura. O serviço FastAPI e o catálogo documental foram preservados.

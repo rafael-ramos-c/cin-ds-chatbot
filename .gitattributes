@@ -1,4 +1,8 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 
+# Biome usa LF no backend, inclusive em checkouts no Windows.
+backend/**/*.ts text eol=lf
+backend/**/*.json text eol=lf
+
 *.pdf binary

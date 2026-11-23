@@ -23,7 +23,7 @@ export default function ChatPage() {
   }
   async function submit(event: React.FormEvent) {
     event.preventDefault();
-    if (!question.trim() || busy) return;
+    if (!question.trim() || pending.current) return;
     const text = question.trim();
     const controller = new AbortController(); pending.current = controller;
     setBusy(true); setError(''); setQuestion('');
@@ -35,6 +35,7 @@ export default function ChatPage() {
     } catch (err) {
       if (!controller.signal.aborted) {
         setError(err instanceof Error && err.name === 'TimeoutError' ? 'O servidor demorou para responder. Tente novamente.' : err instanceof Error ? err.message : 'Falha de conexão com o servidor.');
+        setMessages((m) => m.slice(0, -1));
         setQuestion(text);
       }
     } finally {

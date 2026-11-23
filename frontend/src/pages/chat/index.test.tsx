@@ -25,8 +25,12 @@ describe('Fluxos da tela SecGrad', () => {
     render(<ChatPage />); submit(); expect(await screen.findByText('Olá, preciso de ajuda.')).toBeInTheDocument(); expect(screen.getByText(/Nenhuma mensagem é enviada automaticamente/)).toBeInTheDocument();
   });
   it('exibe erro e permite tentar novamente', async () => {
-    send.mockRejectedValue(new Error('Servidor indisponível')); render(<ChatPage />); submit();
+    send.mockRejectedValueOnce(new Error('Servidor indisponível')); render(<ChatPage />); submit();
     expect(await screen.findByRole('alert')).toHaveTextContent('Servidor indisponível'); expect(screen.getByLabelText('Sua pergunta')).toHaveValue('Como solicito segunda chamada?'); expect(screen.getByRole('button', { name: 'Enviar pergunta' })).toBeEnabled();
+    fireEvent.click(screen.getByRole('button', { name: 'Enviar pergunta' }));
+    expect(await screen.findByText(result.resposta!)).toBeInTheDocument();
+    expect(screen.getAllByLabelText('Mensagem enviada')).toHaveLength(1);
+    expect(send.mock.calls[1][3]).toEqual([]);
   });
   it('descarta resposta que chega depois de limpar a conversa', async () => {
     let resolve!: (r: ChatResult) => void; send.mockReturnValue(new Promise((r) => { resolve = r; }));
